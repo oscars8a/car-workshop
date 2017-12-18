@@ -7,10 +7,7 @@
     'category': 'Industries',
     'author':
         'Óscar Soto, '
-        'Javier Izco, '
-        'Javier Garcia, '
-        'Sergio Lop, '
-        'Dario Lodeiros',
+        'SDI Soluciones Informáticas',
     'website': 'https://github.com/oscars8a/car-workshop.git',
     'license': 'GPL-3',
     'depends': [
@@ -19,11 +16,7 @@
         'hr_timesheet',
     ],
     'data': [
-        '',
+        'views/car-workshop.xml',
     ],
     'installable': True,
-    'auto_install': False,
-    'external_dependencies': {
-        'python': [''],
-    }
 }

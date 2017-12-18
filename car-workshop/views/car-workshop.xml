@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_workshop_config">
+            <field name="name">workshop action</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Main Menu-->
+        <menuitem id="main_workshop_menu" name="Workshop"
+                  sequence="1" action="action_workshop_config"/>
+
+        <!--Repairs Menus-->
+        <menuitem id="repairs_menu" name="Repairs"
+                  parent="main_workshop_menu"
+                  sequence="1"/>
+
+    </data>
+</odoo>
