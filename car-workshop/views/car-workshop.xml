@@ -51,6 +51,24 @@
             <field name="view_mode">kanban,form</field>
         </record>
 
+        <!--Action Wheels Menu-->
+        <record model="ir.actions.act_window" id="action_car_vwheels_config">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+            <!--DONDE el campo es_rueda = True-->
+            <!--<field name="context">{"is_wheel":1}</field>-->
+        </record>
+
+        <!--Action Products Menu-->
+        <record model="ir.actions.act_window" id="action_car_vproducts_config">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
 
         <!--Main Menu-->
         <menuitem id="main_car_workshop_menu" name="Car Workshop"
@@ -97,6 +115,16 @@
         <menuitem id="car_vbrands_menu" name="Brand"
                   parent="car_vconfig_menus"
                   sequence="2" action="action_car_vbrands_config"/>
+
+        <!--Wheels Menu-->
+        <menuitem id="car_wheels_menu" name="Wheels"
+                  parent="car_vconfig_menus"
+                  sequence="3" action="action_car_vwheels_config"/>
+
+        <!--Products Menu-->
+        <menuitem id="car_vproducts_menu" name="Products"
+                  parent="car_vconfig_menus"
+                  sequence="4" action="action_car_vproducts_config"/>
 
 
     </data>
