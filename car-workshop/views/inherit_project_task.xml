@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <!--Inherit Form View Project Project-->
+        <record id="view_task_form2" model="ir.ui.view">
+            <field name="name">Order</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="vehicle"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

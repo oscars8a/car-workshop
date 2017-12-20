@@ -17,6 +17,9 @@
     ],
     'data': [
         'views/car-workshop.xml',
+        'views/inherit_fleet_vehicle.xml',
+        'views/inherit_project_project.xml',
+        'views/inherit_project_task.xml',
     ],
     'installable': True,
 }

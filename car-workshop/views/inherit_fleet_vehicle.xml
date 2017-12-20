@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View Fleet Vehicle -->
+        <record id="fleet_vehicle_view_form" model="ir.ui.view">
+            <field name="name">Vehicle</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <field name="model_year" position="after">
+                    <field name="res_partner"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

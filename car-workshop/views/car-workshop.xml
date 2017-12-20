@@ -2,30 +2,86 @@
 <odoo>
     <data>
 
-        <!-- Action Main Menu -->
-        <record model="ir.actions.act_window" id="action_car_workshop_config">
-            <field name="name">workshop action</field>
+        <!--Action Repairs Menu-->
+        <record model="ir.actions.act_window" id="action_car_repairs_config">
+            <field name="name">Repairs</field>
             <field name="res_model">project.project</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
         </record>
 
-        <!--Action Repairs Menu-->
-        <record model="ir.actions.act_window" id="action_car_repairs_config">
-            <field name="name">workshop action</field>
+        <!--Action Orders Menu-->
+        <record model="ir.actions.act_window" id="action_car_orders_config">
+            <field name="name">Orders</field>
             <field name="res_model">project.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!--Action Customers Menu-->
+        <record model="ir.actions.act_window" id="action_car_customers_config">
+            <field name="name">Customers</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="context">{"search_default_customer":1}</field>
+        </record>
+
+        <!--Action Vehicles Menu-->
+        <record model="ir.actions.act_window" id="action_car_vehicles_config">
+            <field name="name">Vehicles</field>
+            <field name="res_model">fleet.vehicle</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!--Action Vehicle Models Menu-->
+        <record model="ir.actions.act_window" id="action_car_vmodels_config">
+            <field name="name">Vehicle Models</field>
+            <field name="res_model">fleet.vehicle</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
         </record>
 
         <!--Main Menu-->
         <menuitem id="main_car_workshop_menu" name="Car Workshop"
-                  sequence="1" action="action_car_workshop_config"/>
+                  sequence="1"/>
 
         <!--Repairs Menu-->
         <menuitem id="car_repairs_menu" name="Repairs"
                   parent="main_car_workshop_menu"
                   sequence="1" action="action_car_repairs_config"/>
 
+        <!--Orders Menu-->
+        <menuitem id="car_orders_menu" name="Orders"
+                  parent="main_car_workshop_menu"
+                  sequence="2" action="action_car_orders_config"/>
+
+        <!--FALTAN FACTURAS-->
+
+        <!--Customers Menus-->
+        <menuitem id="car_customers_menus" name="Customers"
+                  parent="main_car_workshop_menu"
+                  sequence="3"/>
+
+        <!--Customer Menu-->
+        <menuitem id="car_customers_menu" name="Customers"
+                  parent="car_customers_menus"
+                  sequence="1" action="action_car_customers_config"/>
+
+        <!--Vehicles Menu-->
+        <menuitem id="car_vehicles_menu" name="Vehicles"
+                  parent="car_customers_menus"
+                  sequence="2" action="action_car_vehicles_config"/>
+
+        <!--Vehicle Configuration Menus-->
+        <menuitem id="car_vconfig_menus" name="Configuration"
+                  parent="main_car_workshop_menu"
+                  sequence="3"/>
+
+        <!--Vehicle Models Menu-->
+        <menuitem id="car_vmodels_menus" name="Models"
+                  parent="car_vconfig_menus"
+                  sequence="1" action="action_car_vmodels_config"/>
     </data>
 </odoo>
