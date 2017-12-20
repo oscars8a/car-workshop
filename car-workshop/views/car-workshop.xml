@@ -2,21 +2,30 @@
 <odoo>
     <data>
 
-        <record model="ir.actions.act_window" id="action_workshop_config">
+        <!-- Action Main Menu -->
+        <record model="ir.actions.act_window" id="action_car_workshop_config">
             <field name="name">workshop action</field>
             <field name="res_model">project.project</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!--Action Repairs Menu-->
+        <record model="ir.actions.act_window" id="action_car_repairs_config">
+            <field name="name">workshop action</field>
+            <field name="res_model">project.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
         </record>
 
         <!--Main Menu-->
-        <menuitem id="main_workshop_menu" name="Workshop"
-                  sequence="1" action="action_workshop_config"/>
+        <menuitem id="main_car_workshop_menu" name="Car Workshop"
+                  sequence="1" action="action_car_workshop_config"/>
 
-        <!--Repairs Menus-->
-        <menuitem id="repairs_menu" name="Repairs"
-                  parent="main_workshop_menu"
-                  sequence="1"/>
+        <!--Repairs Menu-->
+        <menuitem id="car_repairs_menu" name="Repairs"
+                  parent="main_car_workshop_menu"
+                  sequence="1" action="action_car_repairs_config"/>
 
     </data>
 </odoo>
