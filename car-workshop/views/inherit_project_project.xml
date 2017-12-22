@@ -2,17 +2,37 @@
 <odoo>
     <data>
 
-        <!--Inherit Form View Project Project-->
+        <!--NEW Form View Project Project-->
         <record id="edit_project" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
-            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="priority">1</field>
+            <field name="mode">primary</field>
             <field name="arch" type="xml">
-                <field name="user_id" position="before">
-                    <field name="car_work"/>
-                </field>
+                <form>
+                    <group>
+                        <field name="car_work"/>
+                        <field name="user_id" string="Project Manager"/>
+                        <field name="subtask_project_id" />
+                        <field name="privacy_visibility" widget="radio"/>
+                        <field name="partner_id" string="Customer"/>
+                    </group>
+                </form>
             </field>
         </record>
+
+        <!--Action Repairs Menu-->
+        <record model="ir.actions.act_window" id="action_car_repairs_config">
+            <field name="name">Repairs</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!--Repairs Menu-->
+        <menuitem id="car_repairs_menu" name="Repairs"
+                  parent="main_car_workshop_menu"
+                  sequence="1" action="action_car_repairs_config"/>
 
     </data>
 </odoo>

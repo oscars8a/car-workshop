@@ -14,6 +14,7 @@
         'project',
         'fleet',
         'hr_timesheet',
+        'account_invoicing',
     ],
     'data': [
         'views/car-workshop.xml',
