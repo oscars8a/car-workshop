@@ -3,20 +3,33 @@
     <data>
 
         <!--NEW Form View Project Project-->
-        <record id="edit_project" model="ir.ui.view">
+        <record id="car-workshop_project_form_view" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
             <field name="priority">1</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="car_work"/>
-                        <field name="user_id" string="Project Manager"/>
-                        <field name="subtask_project_id" />
-                        <field name="privacy_visibility" widget="radio"/>
-                        <field name="partner_id" string="Customer"/>
-                    </group>
+                   <sheet>
+                        <group>
+                            <group>
+
+                                <field name="car_work"/>
+                                <field name="name" class="o_project_name oe_inline" string="Project Name" placeholder="e.g. Office Party"/>
+
+                                <label for="alias_name" string="Choose a Project Email" attrs="{'invisible': [('alias_domain', '=', False)]}"/>
+                                <div name="alias_def" attrs="{'invisible': [('alias_domain', '=', False)]}">
+                                    <field name="alias_name" class="oe_inline"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                                </div>
+                                <field name="user_id" invisible="1"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button string="Create" name="close_dialog" type="object" class="btn-primary"/>
+                            <button string="Create &amp; Edit" name="edit_dialog" type="object" class="btn-primary"/>
+                            <button string="Discard" class="btn-default" special="cancel"/>
+                        </footer>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -25,8 +38,10 @@
         <record model="ir.actions.act_window" id="action_car_repairs_config">
             <field name="name">Repairs</field>
             <field name="res_model">project.project</field>
+            <field name="form_view_id">car-workshop_project_form_view</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
+            <field name="domain">[("car_work","=",True)]</field>
         </record>
 
         <!--Repairs Menu-->

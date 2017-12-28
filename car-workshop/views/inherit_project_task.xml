@@ -3,7 +3,7 @@
     <data>
 
         <!--NEW Form View Project Project-->
-        <record id="view_task_form2" model="ir.ui.view">
+        <record id="car-workshop_task_form_view" model="ir.ui.view">
             <field name="name">project.task.form</field>
             <field name="model">project.task</field>
             <field name="priority">1</field>
@@ -22,8 +22,7 @@
                             <group>
                                 <field name="project_id" domain="[('active', '=', True)]"/>
                                 <field name="user_id" class="o_task_user_field" options="{&quot;no_open&quot;: True}"/>
-                                <!--car-workshop field-->
-                                <field name="vehicle_id"/>
+                                <field name="vehicle_id" required="True"/> <!--car-workshop field-->
                                 <field name="legend_blocked" invisible="1"/>
                                 <field name="legend_normal" invisible="1"/>
                                 <field name="legend_done" invisible="1"/>
@@ -116,8 +115,10 @@
         <record model="ir.actions.act_window" id="action_car_orders_config">
             <field name="name">Orders</field>
             <field name="res_model">project.task</field>
+            <field name="form_view_id">car-workshop_task_form_view</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
+            <field name="domain">[("vehicle_id","!=",False)]</field>
 
         </record>
 
