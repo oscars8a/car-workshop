@@ -15,12 +15,17 @@
         'fleet',
         'hr_timesheet',
         'account_invoicing',
+        'product',
     ],
     'data': [
         'views/car-workshop.xml',
         'views/inherit_fleet_vehicle.xml',
         'views/inherit_project_project.xml',
         'views/inherit_project_task.xml',
+        'data/delete_fleet_data.xml',
+        'data/delete_fleet_cars_data.xml',
+        'data/branches.xml',
+        'data/models.xml',
     ],
     'installable': True,
 }
