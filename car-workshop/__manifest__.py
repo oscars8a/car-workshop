@@ -16,6 +16,7 @@
         'hr_timesheet',
         'account_invoicing',
         'product',
+        'stock',
     ],
     'data': [
         'views/car-workshop.xml',
