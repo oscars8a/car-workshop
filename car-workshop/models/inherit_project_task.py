@@ -4,6 +4,7 @@ from odoo.addons import decimal_precision as dp
 from odoo.exceptions import UserError
 from odoo.tools import float_is_zero, float_compare, float_round
 
+
 class Task(models.Model):
     _inherit = 'project.task'
 
@@ -26,10 +27,7 @@ class Task(models.Model):
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
     product_line_ids = fields.One2many('project.task.product.line', 'product_line_id', string='ProductLines')
     amount_total = fields.Float(string='Total', store=True, readonly=True, compute='_amount_all')
-    warehouse_id = fields.Many2one(
-        'stock.warehouse', string='Warehouse',
-        required=True, readonly=True,
-        default=_default_warehouse_id)
+    warehouse_id = fields.Many2one('stock.warehouse', string='Warehouse',required=True, readonly=True,default=_default_warehouse_id)
 
 class ProductLine(models.Model):
     _name = 'project.task.product.line'
