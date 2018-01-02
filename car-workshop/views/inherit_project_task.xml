@@ -27,6 +27,7 @@
                                 <field name="legend_normal" invisible="1"/>
                                 <field name="legend_done" invisible="1"/>
                                 <field name="warehouse_id" invisible="1"/>
+                                <field name="date_start"/>
                             </group>
                             <group>
                                 <field name="date_deadline"/>
@@ -125,13 +126,26 @@
             </field>
         </record>
 
+        <record id="car-workshop_task_view_calendar" model="ir.ui.view">
+            <field name="name">project.task.calendar</field>
+            <field name="model">project.task</field>
+            <field name="priority">1</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <calendar string="Tasks" date_start="date_start" date_delay="planned_hours" color="partner_id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+
         <!--Action Orders Menu-->
         <record model="ir.actions.act_window" id="action_car_orders_config">
             <field name="name">Orders</field>
             <field name="res_model">project.task</field>
             <field name="form_view_id">car-workshop_task_form_view</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,calendar,form</field>
             <field name="domain">[("vehicle_id","!=",False)]</field>
 
         </record>
