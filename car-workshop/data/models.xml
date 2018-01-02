@@ -2,1925 +2,1939 @@
 <odoo>
     <record id = "model_elantra" model = "fleet.vehicle.model" >
         <field name = "name" >Elantra</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_genesis" model = "fleet.vehicle.model" >
         <field name = "name" >Genesis</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_grandsantafe" model = "fleet.vehicle.model" >
         <field name = "name" >Grandsantafe</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_h1" model = "fleet.vehicle.model" >
         <field name = "name" >H1</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_ioniq" model = "fleet.vehicle.model" >
         <field name = "name" >Ioniq</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_kona" model = "fleet.vehicle.model" >
         <field name = "name" >Kona</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_santafe" model = "fleet.vehicle.model" >
         <field name = "name" >Santafe</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_tucson" model = "fleet.vehicle.model" >
         <field name = "name" >Tucson</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_veloster" model = "fleet.vehicle.model" >
         <field name = "name" >Veloster</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_i10" model = "fleet.vehicle.model" >
         <field name = "name" >I10</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_i20" model = "fleet.vehicle.model" >
         <field name = "name" >I20</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_i20active" model = "fleet.vehicle.model" >
         <field name = "name" >I20active</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_i30" model = "fleet.vehicle.model" >
         <field name = "name" >I30</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_i40" model = "fleet.vehicle.model" >
         <field name = "name" >I40</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_ix20" model = "fleet.vehicle.model" >
         <field name = "name" >Ix20</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
     <record id = "model_ix35" model = "fleet.vehicle.model" >
         <field name = "name" >Ix35</field>
-        <field name = "brand_id" ref = "fleet.brand_hyundai"/>
+        <field name = "brand_id" ref = "car-workshop.brand_hyundai"/>
     </record >
 
     <record id = "model_bmax" model = "fleet.vehicle.model" >
         <field name = "name" >Bmax</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_cmax" model = "fleet.vehicle.model" >
         <field name = "name" >Cmax</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_ecosport" model = "fleet.vehicle.model" >
         <field name = "name" >Ecosport</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_edge" model = "fleet.vehicle.model" >
         <field name = "name" >Edge</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_fiesta" model = "fleet.vehicle.model" >
         <field name = "name" >Fiesta</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_focus" model = "fleet.vehicle.model" >
         <field name = "name" >Focus</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_galaxy" model = "fleet.vehicle.model" >
         <field name = "name" >Galaxy</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_grandcmax" model = "fleet.vehicle.model" >
         <field name = "name" >Grandcmax</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_grandtourneoconnect" model = "fleet.vehicle.model" >
         <field name = "name" >Grandtourneoconnect</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_ka" model = "fleet.vehicle.model" >
         <field name = "name" >Ka</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_ka+" model = "fleet.vehicle.model" >
         <field name = "name" >Ka+</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_kuga" model = "fleet.vehicle.model" >
         <field name = "name" >Kuga</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_mondeo" model = "fleet.vehicle.model" >
         <field name = "name" >Mondeo</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_mustang" model = "fleet.vehicle.model" >
         <field name = "name" >Mustang</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_smax" model = "fleet.vehicle.model" >
         <field name = "name" >Smax</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_tourneoconnect" model = "fleet.vehicle.model" >
         <field name = "name" >Tourneoconnect</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_tourneocourier" model = "fleet.vehicle.model" >
         <field name = "name" >Tourneocourier</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_tourneocustom" model = "fleet.vehicle.model" >
         <field name = "name" >Tourneocustom</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
     <record id = "model_transitconnect" model = "fleet.vehicle.model" >
         <field name = "name" >Transitconnect</field>
-        <field name = "brand_id" ref = "fleet.brand_ford"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ford"/>
     </record >
 
     <record id = "model_bentayga" model = "fleet.vehicle.model" >
         <field name = "name" >Bentayga</field>
-        <field name = "brand_id" ref = "fleet.brand_bentley"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bentley"/>
     </record >
     <record id = "model_continentalgt" model = "fleet.vehicle.model" >
         <field name = "name" >Continentalgt</field>
-        <field name = "brand_id" ref = "fleet.brand_bentley"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bentley"/>
     </record >
     <record id = "model_flyingspur" model = "fleet.vehicle.model" >
         <field name = "name" >Flyingspur</field>
-        <field name = "brand_id" ref = "fleet.brand_bentley"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bentley"/>
     </record >
     <record id = "model_mulsanne" model = "fleet.vehicle.model" >
         <field name = "name" >Mulsanne</field>
-        <field name = "brand_id" ref = "fleet.brand_bentley"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bentley"/>
     </record >
 
     <record id = "model_dmax" model = "fleet.vehicle.model" >
         <field name = "name" >Dmax</field>
-        <field name = "brand_id" ref = "fleet.brand_isuzu"/>
+        <field name = "brand_id" ref = "car-workshop.brand_isuzu"/>
     </record >
     <record id = "model_delta" model = "fleet.vehicle.model" >
         <field name = "name" >Delta</field>
-        <field name = "brand_id" ref = "fleet.brand_lancia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lancia"/>
     </record >
     <record id = "model_thema" model = "fleet.vehicle.model" >
         <field name = "name" >Thema</field>
-        <field name = "brand_id" ref = "fleet.brand_lancia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lancia"/>
     </record >
 
     <record id = "model_cx3" model = "fleet.vehicle.model" >
         <field name = "name" >Cx3</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_cx5" model = "fleet.vehicle.model" >
         <field name = "name" >Cx5</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_cx9" model = "fleet.vehicle.model" >
         <field name = "name" >Cx9</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_mx5" model = "fleet.vehicle.model" >
         <field name = "name" >Mx5</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_mazda2" model = "fleet.vehicle.model" >
         <field name = "name" >Mazda2</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_mazda3" model = "fleet.vehicle.model" >
         <field name = "name" >Mazda3</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_mazda5" model = "fleet.vehicle.model" >
         <field name = "name" >Mazda5</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
     <record id = "model_mazda6" model = "fleet.vehicle.model" >
         <field name = "name" >Mazda6</field>
-        <field name = "brand_id" ref = "fleet.brand_mazda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mazda"/>
     </record >
 
     <record id = "model_models" model = "fleet.vehicle.model" >
         <field name = "name" >Models</field>
-        <field name = "brand_id" ref = "fleet.brand_tesla"/>
+        <field name = "brand_id" ref = "car-workshop.brand_tesla"/>
     </record >
     <record id = "model_modelx" model = "fleet.vehicle.model" >
         <field name = "name" >Modelx</field>
-        <field name = "brand_id" ref = "fleet.brand_tesla"/>
+        <field name = "brand_id" ref = "car-workshop.brand_tesla"/>
     </record >
 
     <record id = "model_aventador" model = "fleet.vehicle.model" >
         <field name = "name" >Aventador</field>
-        <field name = "brand_id" ref = "fleet.brand_lamborghini"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lamborghini"/>
     </record >
     <record id = "model_huracan" model = "fleet.vehicle.model" >
         <field name = "name" >Huracan</field>
-        <field name = "brand_id" ref = "fleet.brand_lamborghini"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lamborghini"/>
     </record >
 
     <record id = "model_124spider" model = "fleet.vehicle.model" >
         <field name = "name" >124spider</field>
-        <field name = "brand_id" ref = "fleet.brand_abarth"/>
+        <field name = "brand_id" ref = "car-workshop.brand_abarth"/>
     </record >
     <record id = "model_500" model = "fleet.vehicle.model" >
         <field name = "name" >500</field>
-        <field name = "brand_id" ref = "fleet.brand_abarth"/>
+        <field name = "brand_id" ref = "car-workshop.brand_abarth"/>
     </record >
 
     <record id = "model_q30" model = "fleet.vehicle.model" >
         <field name = "name" >Q30</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_q50" model = "fleet.vehicle.model" >
         <field name = "name" >Q50</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_q60" model = "fleet.vehicle.model" >
         <field name = "name" >Q60</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_q70" model = "fleet.vehicle.model" >
         <field name = "name" >Q70</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_qx30" model = "fleet.vehicle.model" >
         <field name = "name" >Qx30</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_qx50" model = "fleet.vehicle.model" >
         <field name = "name" >Qx50</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_qx70" model = "fleet.vehicle.model" >
         <field name = "name" >Qx70</field>
-        <field name = "brand_id" ref = "fleet.brand_infiniti"/>
+        <field name = "brand_id" ref = "car-workshop.brand_infiniti"/>
     </record >
     <record id = "model_458" model = "fleet.vehicle.model" >
         <field name = "name" >458</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_488" model = "fleet.vehicle.model" >
         <field name = "name" >488</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_california" model = "fleet.vehicle.model" >
         <field name = "name" >California</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_f12" model = "fleet.vehicle.model" >
         <field name = "name" >F12</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_ff" model = "fleet.vehicle.model" >
         <field name = "name" >Ff</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
 
     <record id = "model_asx" model = "fleet.vehicle.model" >
         <field name = "name" >Asx</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
     <record id = "model_eclipsecross" model = "fleet.vehicle.model" >
         <field name = "name" >Eclipsecross</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
     <record id = "model_l200" model = "fleet.vehicle.model" >
         <field name = "name" >L200</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
     <record id = "model_montero" model = "fleet.vehicle.model" >
         <field name = "name" >Montero</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
     <record id = "model_outlander" model = "fleet.vehicle.model" >
         <field name = "name" >Outlander</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
     <record id = "model_spacestar" model = "fleet.vehicle.model" >
         <field name = "name" >Spacestar</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
     <record id = "model_imiev" model = "fleet.vehicle.model" >
         <field name = "name" >Imiev</field>
-        <field name = "brand_id" ref = "fleet.brand_mitsubishi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mitsubishi"/>
     </record >
 
     <record id = "model_108" model = "fleet.vehicle.model" >
         <field name = "name" >108</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_2008" model = "fleet.vehicle.model" >
         <field name = "name" >2008</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_207" model = "fleet.vehicle.model" >
         <field name = "name" >207</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_208" model = "fleet.vehicle.model" >
         <field name = "name" >208</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_3008" model = "fleet.vehicle.model" >
         <field name = "name" >3008</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_308" model = "fleet.vehicle.model" >
         <field name = "name" >308</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_4008" model = "fleet.vehicle.model" >
         <field name = "name" >4008</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_5008" model = "fleet.vehicle.model" >
         <field name = "name" >5008</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_508" model = "fleet.vehicle.model" >
         <field name = "name" >508</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_807" model = "fleet.vehicle.model" >
         <field name = "name" >807</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_bipper" model = "fleet.vehicle.model" >
         <field name = "name" >Bipper</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_partner" model = "fleet.vehicle.model" >
         <field name = "name" >Partner</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_rcz" model = "fleet.vehicle.model" >
         <field name = "name" >Rcz</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_traveller" model = "fleet.vehicle.model" >
         <field name = "name" >Traveller</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
     <record id = "model_ion" model = "fleet.vehicle.model" >
         <field name = "name" >Ion</field>
-        <field name = "brand_id" ref = "fleet.brand_peugeot"/>
+        <field name = "brand_id" ref = "car-workshop.brand_peugeot"/>
     </record >
 
     <record id = "model_alhambra" model = "fleet.vehicle.model" >
         <field name = "name" >Alhambra</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_altea" model = "fleet.vehicle.model" >
         <field name = "name" >Altea</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_alteaxl" model = "fleet.vehicle.model" >
         <field name = "name" >Alteaxl</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_arona" model = "fleet.vehicle.model" >
         <field name = "name" >Arona</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_ateca" model = "fleet.vehicle.model" >
         <field name = "name" >Ateca</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_ibiza" model = "fleet.vehicle.model" >
         <field name = "name" >Ibiza</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_leon" model = "fleet.vehicle.model" >
         <field name = "name" >Leon</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_mii" model = "fleet.vehicle.model" >
         <field name = "name" >Mii</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_nuevoibiza" model = "fleet.vehicle.model" >
         <field name = "name" >Nuevoibiza</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_nuevoleon" model = "fleet.vehicle.model" >
         <field name = "name" >Nuevoleon</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_toledo" model = "fleet.vehicle.model" >
         <field name = "name" >Toledo</field>
-        <field name = "brand_id" ref = "fleet.brand_seat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_seat"/>
     </record >
     <record id = "model_ghibli" model = "fleet.vehicle.model" >
         <field name = "name" >Ghibli</field>
-        <field name = "brand_id" ref = "fleet.brand_maserati"/>
+        <field name = "brand_id" ref = "car-workshop.brand_maserati"/>
     </record >
     <record id = "model_grancabrio" model = "fleet.vehicle.model" >
         <field name = "name" >Grancabrio</field>
-        <field name = "brand_id" ref = "fleet.brand_maserati"/>
+        <field name = "brand_id" ref = "car-workshop.brand_maserati"/>
     </record >
     <record id = "model_granturismo" model = "fleet.vehicle.model" >
         <field name = "name" >Granturismo</field>
-        <field name = "brand_id" ref = "fleet.brand_maserati"/>
+        <field name = "brand_id" ref = "car-workshop.brand_maserati"/>
     </record >
     <record id = "model_levante" model = "fleet.vehicle.model" >
         <field name = "name" >Levante</field>
-        <field name = "brand_id" ref = "fleet.brand_maserati"/>
+        <field name = "brand_id" ref = "car-workshop.brand_maserati"/>
     </record >
     <record id = "model_quattroporte" model = "fleet.vehicle.model" >
         <field name = "name" >Quattroporte</field>
-        <field name = "brand_id" ref = "fleet.brand_maserati"/>
+        <field name = "brand_id" ref = "car-workshop.brand_maserati"/>
     </record >
     <record id = "model_bravo" model = "fleet.vehicle.model" >
         <field name = "name" >Bravo</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_fiorino" model = "fleet.vehicle.model" >
         <field name = "name" >Fiorino</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
 
     <record id = "model_forfour" model = "fleet.vehicle.model" >
         <field name = "name" >Forfour</field>
-        <field name = "brand_id" ref = "fleet.brand_smart"/>
+        <field name = "brand_id" ref = "car-workshop.brand_smart"/>
     </record >
     <record id = "model_fortwo" model = "fleet.vehicle.model" >
         <field name = "name" >Fortwo</field>
-        <field name = "brand_id" ref = "fleet.brand_smart"/>
+        <field name = "brand_id" ref = "car-workshop.brand_smart"/>
     </record >
 
     <record id = "model_amarok" model = "fleet.vehicle.model" >
         <field name = "name" >Amarok</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_arteon" model = "fleet.vehicle.model" >
         <field name = "name" >Arteon</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_beetle" model = "fleet.vehicle.model" >
         <field name = "name" >Beetle</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_cc" model = "fleet.vehicle.model" >
         <field name = "name" >Cc</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_caddy" model = "fleet.vehicle.model" >
         <field name = "name" >Caddy</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_california" model = "fleet.vehicle.model" >
         <field name = "name" >California</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_caravelle" model = "fleet.vehicle.model" >
         <field name = "name" >Caravelle</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_eos" model = "fleet.vehicle.model" >
         <field name = "name" >Eos</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_golf" model = "fleet.vehicle.model" >
         <field name = "name" >Golf</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_golfsportsvan" model = "fleet.vehicle.model" >
         <field name = "name" >Golfsportsvan</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_jetta" model = "fleet.vehicle.model" >
         <field name = "name" >Jetta</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_multivan" model = "fleet.vehicle.model" >
         <field name = "name" >Multivan</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_passat" model = "fleet.vehicle.model" >
         <field name = "name" >Passat</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_phaeton" model = "fleet.vehicle.model" >
         <field name = "name" >Phaeton</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_polo" model = "fleet.vehicle.model" >
         <field name = "name" >Polo</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_scirocco" model = "fleet.vehicle.model" >
         <field name = "name" >Scirocco</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_sharan" model = "fleet.vehicle.model" >
         <field name = "name" >Sharan</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_troc" model = "fleet.vehicle.model" >
         <field name = "name" >Troc</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_tiguan" model = "fleet.vehicle.model" >
         <field name = "name" >Tiguan</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_tiguanallspace" model = "fleet.vehicle.model" >
         <field name = "name" >Tiguanallspace</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_touareg" model = "fleet.vehicle.model" >
         <field name = "name" >Touareg</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_touran" model = "fleet.vehicle.model" >
         <field name = "name" >Touran</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_transporter" model = "fleet.vehicle.model" >
         <field name = "name" >Transporter</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
     <record id = "model_up" model = "fleet.vehicle.model" >
         <field name = "name" >Up</field>
-        <field name = "brand_id" ref = "fleet.brand_volkswagen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volkswagen"/>
     </record >
 
     <record id = "model_epace" model = "fleet.vehicle.model" >
         <field name = "name" >Epace</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
     <record id = "model_fpace" model = "fleet.vehicle.model" >
         <field name = "name" >Fpace</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
     <record id = "model_ftype" model = "fleet.vehicle.model" >
         <field name = "name" >Ftype</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
     <record id = "model_xkseries" model = "fleet.vehicle.model" >
         <field name = "name" >Xkseries</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
     <record id = "model_xe" model = "fleet.vehicle.model" >
         <field name = "name" >Xe</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
     <record id = "model_xf" model = "fleet.vehicle.model" >
         <field name = "name" >Xf</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
     <record id = "model_xj" model = "fleet.vehicle.model" >
         <field name = "name" >Xj</field>
-        <field name = "brand_id" ref = "fleet.brand_jaguar"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jaguar"/>
     </record >
 
     <record id = "model_370z" model = "fleet.vehicle.model" >
         <field name = "name" >370z</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_evalia" model = "fleet.vehicle.model" >
         <field name = "name" >Evalia</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_gtr" model = "fleet.vehicle.model" >
         <field name = "name" >Gtr</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_juke" model = "fleet.vehicle.model" >
         <field name = "name" >Juke</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_leaf" model = "fleet.vehicle.model" >
         <field name = "name" >Leaf</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_micra" model = "fleet.vehicle.model" >
         <field name = "name" >Micra</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_murano" model = "fleet.vehicle.model" >
         <field name = "name" >Murano</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_note" model = "fleet.vehicle.model" >
         <field name = "name" >Note</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_nv200" model = "fleet.vehicle.model" >
         <field name = "name" >Nv200</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_nv200evalia" model = "fleet.vehicle.model" >
         <field name = "name" >Nv200evalia</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_navara" model = "fleet.vehicle.model" >
         <field name = "name" >Navara</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_pulsar" model = "fleet.vehicle.model" >
         <field name = "name" >Pulsar</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_pathfinder" model = "fleet.vehicle.model" >
         <field name = "name" >Pathfinder</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_qashqai" model = "fleet.vehicle.model" >
         <field name = "name" >Qashqai</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_xtrail" model = "fleet.vehicle.model" >
         <field name = "name" >Xtrail</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
     <record id = "model_env200evalia" model = "fleet.vehicle.model" >
         <field name = "name" >Env200evalia</field>
-        <field name = "brand_id" ref = "fleet.brand_nissan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_nissan"/>
     </record >
 
     <record id = "model_auris" model = "fleet.vehicle.model" >
         <field name = "name" >Auris</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_avensis" model = "fleet.vehicle.model" >
         <field name = "name" >Avensis</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_aygo" model = "fleet.vehicle.model" >
         <field name = "name" >Aygo</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_chr" model = "fleet.vehicle.model" >
         <field name = "name" >Chr</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_gt86" model = "fleet.vehicle.model" >
         <field name = "name" >Gt86</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_hilux" model = "fleet.vehicle.model" >
         <field name = "name" >Hilux</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_landcruiser" model = "fleet.vehicle.model" >
         <field name = "name" >Landcruiser</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_landcruiser200" model = "fleet.vehicle.model" >
         <field name = "name" >Landcruiser200</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_prius" model = "fleet.vehicle.model" >
         <field name = "name" >Prius</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_proaceverso" model = "fleet.vehicle.model" >
         <field name = "name" >Proaceverso</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_rav4" model = "fleet.vehicle.model" >
         <field name = "name" >Rav4</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_verso" model = "fleet.vehicle.model" >
         <field name = "name" >Verso</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
     <record id = "model_yaris" model = "fleet.vehicle.model" >
         <field name = "name" >Yaris</field>
-        <field name = "brand_id" ref = "fleet.brand_toyota"/>
+        <field name = "brand_id" ref = "car-workshop.brand_toyota"/>
     </record >
 
     <record id = "model_s60" model = "fleet.vehicle.model" >
         <field name = "name" >S60</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_s60crosscountry" model = "fleet.vehicle.model" >
         <field name = "name" >S60crosscountry</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_s80" model = "fleet.vehicle.model" >
         <field name = "name" >S80</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_s90" model = "fleet.vehicle.model" >
         <field name = "name" >S90</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v40" model = "fleet.vehicle.model" >
         <field name = "name" >V40</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v40crosscountry" model = "fleet.vehicle.model" >
         <field name = "name" >V40crosscountry</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v60" model = "fleet.vehicle.model" >
         <field name = "name" >V60</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v60crosscountry" model = "fleet.vehicle.model" >
         <field name = "name" >V60crosscountry</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v70" model = "fleet.vehicle.model" >
         <field name = "name" >V70</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v90" model = "fleet.vehicle.model" >
         <field name = "name" >V90</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_v90crosscountry" model = "fleet.vehicle.model" >
         <field name = "name" >V90crosscountry</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_xc40" model = "fleet.vehicle.model" >
         <field name = "name" >Xc40</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_xc60" model = "fleet.vehicle.model" >
         <field name = "name" >Xc60</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_xc70" model = "fleet.vehicle.model" >
         <field name = "name" >Xc70</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
     <record id = "model_xc90" model = "fleet.vehicle.model" >
         <field name = "name" >Xc90</field>
-        <field name = "brand_id" ref = "fleet.brand_volvo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_volvo"/>
     </record >
 
     <record id = "model_488" model = "fleet.vehicle.model" >
         <field name = "name" >488</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_california" model = "fleet.vehicle.model" >
         <field name = "name" >California</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_f12" model = "fleet.vehicle.model" >
         <field name = "name" >F12</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
     <record id = "model_gtc4" model = "fleet.vehicle.model" >
         <field name = "name" >Gtc4</field>
-        <field name = "brand_id" ref = "fleet.brand_ferrari"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ferrari"/>
     </record >
-
+    <record id = "model_clasea" model = "fleet.vehicle.model" >
+        <field name = "name" >Clasea</field>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
+    </record >
     <record id = "model_amggt" model = "fleet.vehicle.model" >
         <field name = "name" >Amggt</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_citan" model = "fleet.vehicle.model" >
         <field name = "name" >Citan</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_claseb" model = "fleet.vehicle.model" >
         <field name = "name" >Claseb</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_cclass" model = "fleet.vehicle.model" >
         <field name = "name" >Cclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clclass" model = "fleet.vehicle.model" >
         <field name = "name" >Clclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasecla" model = "fleet.vehicle.model" >
         <field name = "name" >Clasecla</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasecls" model = "fleet.vehicle.model" >
         <field name = "name" >Clasecls</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasee" model = "fleet.vehicle.model" >
         <field name = "name" >Clasee</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_gclass" model = "fleet.vehicle.model" >
         <field name = "name" >Gclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasegl" model = "fleet.vehicle.model" >
         <field name = "name" >Clasegl</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasegla" model = "fleet.vehicle.model" >
         <field name = "name" >Clasegla</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_claseglc" model = "fleet.vehicle.model" >
         <field name = "name" >Claseglc</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasegle" model = "fleet.vehicle.model" >
         <field name = "name" >Clasegle</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_claseglecoupe" model = "fleet.vehicle.model" >
         <field name = "name" >Claseglecoupe</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_glkclass" model = "fleet.vehicle.model" >
         <field name = "name" >Glkclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_claseglk" model = "fleet.vehicle.model" >
         <field name = "name" >Claseglk</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clasegls" model = "fleet.vehicle.model" >
         <field name = "name" >Clasegls</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_mclass" model = "fleet.vehicle.model" >
         <field name = "name" >Mclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_clases" model = "fleet.vehicle.model" >
         <field name = "name" >Clases</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_slclass" model = "fleet.vehicle.model" >
         <field name = "name" >Slclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_claseslc" model = "fleet.vehicle.model" >
         <field name = "name" >Claseslc</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_slkclass" model = "fleet.vehicle.model" >
         <field name = "name" >Slkclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_vclass" model = "fleet.vehicle.model" >
         <field name = "name" >Vclass</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_glccoupe" model = "fleet.vehicle.model" >
         <field name = "name" >Glccoupe</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_mercedesamggt" model = "fleet.vehicle.model" >
         <field name = "name" >Mercedesamggt</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_slsamg" model = "fleet.vehicle.model" >
         <field name = "name" >Slsamg</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
     <record id = "model_vito" model = "fleet.vehicle.model" >
         <field name = "name" >Vito</field>
-        <field name = "brand_id" ref = "fleet.brand_mercedes"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mercedes"/>
     </record >
 
     <record id = "model_aveo" model = "fleet.vehicle.model" >
         <field name = "name" >Aveo</field>
-        <field name = "brand_id" ref = "fleet.brand_chevrolet"/>
+        <field name = "brand_id" ref = "car-workshop.brand_chevrolet"/>
     </record >
     <record id = "model_camaro" model = "fleet.vehicle.model" >
         <field name = "name" >Camaro</field>
-        <field name = "brand_id" ref = "fleet.brand_chevrolet"/>
+        <field name = "brand_id" ref = "car-workshop.brand_chevrolet"/>
     </record >
     <record id = "model_cruze" model = "fleet.vehicle.model" >
         <field name = "name" >Cruze</field>
-        <field name = "brand_id" ref = "fleet.brand_chevrolet"/>
+        <field name = "brand_id" ref = "car-workshop.brand_chevrolet"/>
     </record >
     <record id = "model_orlando" model = "fleet.vehicle.model" >
         <field name = "name" >Orlando</field>
-        <field name = "brand_id" ref = "fleet.brand_chevrolet"/>
+        <field name = "brand_id" ref = "car-workshop.brand_chevrolet"/>
     </record >
     <record id = "model_spark" model = "fleet.vehicle.model" >
         <field name = "name" >Spark</field>
-        <field name = "brand_id" ref = "fleet.brand_chevrolet"/>
+        <field name = "brand_id" ref = "car-workshop.brand_chevrolet"/>
     </record >
     <record id = "model_trax" model = "fleet.vehicle.model" >
         <field name = "name" >Trax</field>
-        <field name = "brand_id" ref = "fleet.brand_chevrolet"/>
+        <field name = "brand_id" ref = "car-workshop.brand_chevrolet"/>
     </record >
-
+    <record id = "model_astra" model = "fleet.vehicle.model" >
+        <field name = "name" >Astra</field>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
+    </record >
+    <record id = "model_corsa" model = "fleet.vehicle.model" >
+        <field name = "name" >Corsa</field>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
+    </record >
     <record id = "model_adam" model = "fleet.vehicle.model" >
         <field name = "name" >Adam</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_ampera" model = "fleet.vehicle.model" >
         <field name = "name" >Ampera</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_antara" model = "fleet.vehicle.model" >
         <field name = "name" >Antara</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_cabrio" model = "fleet.vehicle.model" >
         <field name = "name" >Cabrio</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_combotour" model = "fleet.vehicle.model" >
         <field name = "name" >Combotour</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_crosslandx" model = "fleet.vehicle.model" >
         <field name = "name" >Crosslandx</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_gtc" model = "fleet.vehicle.model" >
         <field name = "name" >Gtc</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_grandlandx" model = "fleet.vehicle.model" >
         <field name = "name" >Grandlandx</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_insignia" model = "fleet.vehicle.model" >
         <field name = "name" >Insignia</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_karl" model = "fleet.vehicle.model" >
         <field name = "name" >Karl</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_meriva" model = "fleet.vehicle.model" >
         <field name = "name" >Meriva</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_mokka" model = "fleet.vehicle.model" >
         <field name = "name" >Mokka</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_mokka" model = "fleet.vehicle.model" >
         <field name = "name" >Mokka</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_mokkax" model = "fleet.vehicle.model" >
         <field name = "name" >Mokkax</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_vivaro" model = "fleet.vehicle.model" >
         <field name = "name" >Vivaro</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_zafira" model = "fleet.vehicle.model" >
         <field name = "name" >Zafira</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_zafira" model = "fleet.vehicle.model" >
         <field name = "name" >Zafira</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
     <record id = "model_zafiratourer" model = "fleet.vehicle.model" >
         <field name = "name" >Zafiratourer</field>
-        <field name = "brand_id" ref = "fleet.brand_opel"/>
+        <field name = "brand_id" ref = "car-workshop.brand_opel"/>
     </record >
 
     <record id = "model_berlingo" model = "fleet.vehicle.model" >
         <field name = "name" >Berlingo</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_celysee" model = "fleet.vehicle.model" >
         <field name = "name" >Celysee</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_celysee" model = "fleet.vehicle.model" >
         <field name = "name" >Celysee</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_czero" model = "fleet.vehicle.model" >
         <field name = "name" >Czero</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c1" model = "fleet.vehicle.model" >
         <field name = "name" >C1</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c3" model = "fleet.vehicle.model" >
         <field name = "name" >C3</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c3aircross" model = "fleet.vehicle.model" >
         <field name = "name" >C3aircross</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c3picasso" model = "fleet.vehicle.model" >
         <field name = "name" >C3picasso</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c4" model = "fleet.vehicle.model" >
         <field name = "name" >C4</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c4aircross" model = "fleet.vehicle.model" >
         <field name = "name" >C4aircross</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c4cactus" model = "fleet.vehicle.model" >
         <field name = "name" >C4cactus</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c4picasso" model = "fleet.vehicle.model" >
         <field name = "name" >C4picasso</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_c5" model = "fleet.vehicle.model" >
         <field name = "name" >C5</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_emehari" model = "fleet.vehicle.model" >
         <field name = "name" >Emehari</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_grandc4picasso" model = "fleet.vehicle.model" >
         <field name = "name" >Grandc4picasso</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_nemo" model = "fleet.vehicle.model" >
         <field name = "name" >Nemo</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_spacetourer" model = "fleet.vehicle.model" >
         <field name = "name" >Spacetourer</field>
-        <field name = "brand_id" ref = "fleet.brand_citroen"/>
+        <field name = "brand_id" ref = "car-workshop.brand_citroen"/>
     </record >
     <record id = "model_4c" model = "fleet.vehicle.model" >
         <field name = "name" >4c</field>
-        <field name = "brand_id" ref = "fleet.brand_alfa_romeo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_alfa_romeo"/>
+    </record >
+    <record id = "model_serie1" model = "fleet.vehicle.model" >
+        <field name = "name" >Serie1</field>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_serie2" model = "fleet.vehicle.model" >
         <field name = "name" >Serie2</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_serie2activetourer" model = "fleet.vehicle.model" >
         <field name = "name" >Serie2activetourer</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_serie2grantourer" model = "fleet.vehicle.model" >
         <field name = "name" >Serie2grantourer</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_series3" model = "fleet.vehicle.model" >
         <field name = "name" >Series3</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_serie4" model = "fleet.vehicle.model" >
         <field name = "name" >Serie4</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_series5" model = "fleet.vehicle.model" >
         <field name = "name" >Series5</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_serie6" model = "fleet.vehicle.model" >
         <field name = "name" >Serie6</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_series7" model = "fleet.vehicle.model" >
         <field name = "name" >Series7</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_x1" model = "fleet.vehicle.model" >
         <field name = "name" >X1</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_x2" model = "fleet.vehicle.model" >
         <field name = "name" >X2</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_x3" model = "fleet.vehicle.model" >
         <field name = "name" >X3</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_x4" model = "fleet.vehicle.model" >
         <field name = "name" >X4</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_x5" model = "fleet.vehicle.model" >
         <field name = "name" >X5</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_x6" model = "fleet.vehicle.model" >
         <field name = "name" >X6</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_z4" model = "fleet.vehicle.model" >
         <field name = "name" >Z4</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_i3" model = "fleet.vehicle.model" >
         <field name = "name" >I3</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
     <record id = "model_i8" model = "fleet.vehicle.model" >
         <field name = "name" >I8</field>
-        <field name = "brand_id" ref = "fleet.brand_bmw"/>
+        <field name = "brand_id" ref = "car-workshop.brand_bmw"/>
     </record >
 
     <record id = "model_actyonsports" model = "fleet.vehicle.model" >
         <field name = "name" >Actyonsports</field>
-        <field name = "brand_id" ref = "fleet.brand_ssangyong"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ssangyong"/>
     </record >
     <record id = "model_korando" model = "fleet.vehicle.model" >
         <field name = "name" >Korando</field>
-        <field name = "brand_id" ref = "fleet.brand_ssangyong"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ssangyong"/>
     </record >
     <record id = "model_rexton" model = "fleet.vehicle.model" >
         <field name = "name" >Rexton</field>
-        <field name = "brand_id" ref = "fleet.brand_ssangyong"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ssangyong"/>
     </record >
     <record id = "model_rodius" model = "fleet.vehicle.model" >
         <field name = "name" >Rodius</field>
-        <field name = "brand_id" ref = "fleet.brand_ssangyong"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ssangyong"/>
     </record >
     <record id = "model_tivoli" model = "fleet.vehicle.model" >
         <field name = "name" >Tivoli</field>
-        <field name = "brand_id" ref = "fleet.brand_ssangyong"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ssangyong"/>
     </record >
     <record id = "model_xlv" model = "fleet.vehicle.model" >
         <field name = "name" >Xlv</field>
-        <field name = "brand_id" ref = "fleet.brand_ssangyong"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ssangyong"/>
     </record >
 
     <record id = "model_defender" model = "fleet.vehicle.model" >
         <field name = "name" >Defender</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_discovery" model = "fleet.vehicle.model" >
         <field name = "name" >Discovery</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_discovery" model = "fleet.vehicle.model" >
         <field name = "name" >Discovery</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_discoverysport" model = "fleet.vehicle.model" >
         <field name = "name" >Discoverysport</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_freelander" model = "fleet.vehicle.model" >
         <field name = "name" >Freelander</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_rangerover" model = "fleet.vehicle.model" >
         <field name = "name" >Rangerover</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_rangeroverevoque" model = "fleet.vehicle.model" >
         <field name = "name" >Rangeroverevoque</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_rangeroversport" model = "fleet.vehicle.model" >
         <field name = "name" >Rangeroversport</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
     <record id = "model_rangerovervelar" model = "fleet.vehicle.model" >
         <field name = "name" >Rangerovervelar</field>
-        <field name = "brand_id" ref = "fleet.brand_land_rover"/>
+        <field name = "brand_id" ref = "car-workshop.brand_land_rover"/>
     </record >
 
     <record id = "model_e6" model = "fleet.vehicle.model" >
         <field name = "name" >E6</field>
-        <field name = "brand_id" ref = "fleet.brand_byd"/>
+        <field name = "brand_id" ref = "car-workshop.brand_byd"/>
     </record >
 
     <record id = "model_ct" model = "fleet.vehicle.model" >
         <field name = "name" >Ct</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_gs" model = "fleet.vehicle.model" >
         <field name = "name" >Gs</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_is" model = "fleet.vehicle.model" >
         <field name = "name" >Is</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_lc" model = "fleet.vehicle.model" >
         <field name = "name" >Lc</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_ls" model = "fleet.vehicle.model" >
         <field name = "name" >Ls</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_nx" model = "fleet.vehicle.model" >
         <field name = "name" >Nx</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_rc" model = "fleet.vehicle.model" >
         <field name = "name" >Rc</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
     <record id = "model_rx" model = "fleet.vehicle.model" >
         <field name = "name" >Rx</field>
-        <field name = "brand_id" ref = "fleet.brand_lexus"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lexus"/>
     </record >
 
     <record id = "model_xuv500" model = "fleet.vehicle.model" >
         <field name = "name" >Xuv500</field>
-        <field name = "brand_id" ref = "fleet.brand_mahindra"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mahindra"/>
     </record >
 
     <record id = "model_124spider" model = "fleet.vehicle.model" >
         <field name = "name" >124spider</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_500" model = "fleet.vehicle.model" >
         <field name = "name" >500</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_500c" model = "fleet.vehicle.model" >
         <field name = "name" >500c</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_500l" model = "fleet.vehicle.model" >
         <field name = "name" >500l</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_500lliving" model = "fleet.vehicle.model" >
         <field name = "name" >500lliving</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_500x" model = "fleet.vehicle.model" >
         <field name = "name" >500x</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_bravo" model = "fleet.vehicle.model" >
         <field name = "name" >Bravo</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_doblo" model = "fleet.vehicle.model" >
         <field name = "name" >Doblo</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_fiorino" model = "fleet.vehicle.model" >
         <field name = "name" >Fiorino</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_freemont" model = "fleet.vehicle.model" >
         <field name = "name" >Freemont</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_panda" model = "fleet.vehicle.model" >
         <field name = "name" >Panda</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_punto" model = "fleet.vehicle.model" >
         <field name = "name" >Punto</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_qubo" model = "fleet.vehicle.model" >
         <field name = "name" >Qubo</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_tipo" model = "fleet.vehicle.model" >
         <field name = "name" >Tipo</field>
-        <field name = "brand_id" ref = "fleet.brand_fiat"/>
+        <field name = "brand_id" ref = "car-workshop.brand_fiat"/>
     </record >
     <record id = "model_cherokee" model = "fleet.vehicle.model" >
         <field name = "name" >Cherokee</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
     <record id = "model_wrangler" model = "fleet.vehicle.model" >
         <field name = "name" >Wrangler</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
 
     <record id = "model_4x4" model = "fleet.vehicle.model" >
         <field name = "name" >4x4</field>
-        <field name = "brand_id" ref = "fleet.brand_lada"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lada"/>
     </record >
     <record id = "model_priora" model = "fleet.vehicle.model" >
         <field name = "name" >Priora</field>
-        <field name = "brand_id" ref = "fleet.brand_lada"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lada"/>
     </record >
 
     <record id = "model_cherokee" model = "fleet.vehicle.model" >
         <field name = "name" >Cherokee</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
     <record id = "model_compass" model = "fleet.vehicle.model" >
         <field name = "name" >Compass</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
     <record id = "model_grandcherokee" model = "fleet.vehicle.model" >
         <field name = "name" >Grandcherokee</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
     <record id = "model_renegade" model = "fleet.vehicle.model" >
         <field name = "name" >Renegade</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
     <record id = "model_wrangler" model = "fleet.vehicle.model" >
         <field name = "name" >Wrangler</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
     <record id = "model_wranglerunlimited" model = "fleet.vehicle.model" >
         <field name = "name" >Wranglerunlimited</field>
-        <field name = "brand_id" ref = "fleet.brand_jeep"/>
+        <field name = "brand_id" ref = "car-workshop.brand_jeep"/>
     </record >
 
     <record id = "model_citigo" model = "fleet.vehicle.model" >
         <field name = "name" >Citigo</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_fabia" model = "fleet.vehicle.model" >
         <field name = "name" >Fabia</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_karoq" model = "fleet.vehicle.model" >
         <field name = "name" >Karoq</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_kodiaq" model = "fleet.vehicle.model" >
         <field name = "name" >Kodiaq</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_octavia" model = "fleet.vehicle.model" >
         <field name = "name" >Octavia</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_rapid" model = "fleet.vehicle.model" >
         <field name = "name" >Rapid</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_roomster" model = "fleet.vehicle.model" >
         <field name = "name" >Roomster</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_spaceback" model = "fleet.vehicle.model" >
         <field name = "name" >Spaceback</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_superb" model = "fleet.vehicle.model" >
         <field name = "name" >Superb</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
     <record id = "model_yeti" model = "fleet.vehicle.model" >
         <field name = "name" >Yeti</field>
-        <field name = "brand_id" ref = "fleet.brand_skoda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_skoda"/>
     </record >
 
     <record id = "model_aria" model = "fleet.vehicle.model" >
         <field name = "name" >Aria</field>
-        <field name = "brand_id" ref = "fleet.brand_tata"/>
+        <field name = "brand_id" ref = "car-workshop.brand_tata"/>
     </record >
     <record id = "model_indica" model = "fleet.vehicle.model" >
         <field name = "name" >Indica</field>
-        <field name = "brand_id" ref = "fleet.brand_tata"/>
+        <field name = "brand_id" ref = "car-workshop.brand_tata"/>
     </record >
     <record id = "model_xenon" model = "fleet.vehicle.model" >
         <field name = "name" >Xenon</field>
-        <field name = "brand_id" ref = "fleet.brand_tata"/>
+        <field name = "brand_id" ref = "car-workshop.brand_tata"/>
     </record >
 
     <record id = "model_seriesk" model = "fleet.vehicle.model" >
         <field name = "name" >Seriesk</field>
-        <field name = "brand_id" ref = "fleet.brand_dfsk"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dfsk"/>
     </record >
     <record id = "model_seriesv" model = "fleet.vehicle.model" >
         <field name = "name" >Seriesv</field>
-        <field name = "brand_id" ref = "fleet.brand_dfsk"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dfsk"/>
     </record >
 
     <record id = "model_delta" model = "fleet.vehicle.model" >
         <field name = "name" >Delta</field>
-        <field name = "brand_id" ref = "fleet.brand_lancia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lancia"/>
     </record >
     <record id = "model_voyager" model = "fleet.vehicle.model" >
         <field name = "name" >Voyager</field>
-        <field name = "brand_id" ref = "fleet.brand_lancia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lancia"/>
     </record >
     <record id = "model_ypsilon" model = "fleet.vehicle.model" >
         <field name = "name" >Ypsilon</field>
-        <field name = "brand_id" ref = "fleet.brand_lancia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_lancia"/>
     </record >
 
     <record id = "model_ds3" model = "fleet.vehicle.model" >
         <field name = "name" >Ds3</field>
-        <field name = "brand_id" ref = "fleet.brand_ds"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ds"/>
     </record >
     <record id = "model_ds4" model = "fleet.vehicle.model" >
         <field name = "name" >Ds4</field>
-        <field name = "brand_id" ref = "fleet.brand_ds"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ds"/>
     </record >
     <record id = "model_ds4crossback" model = "fleet.vehicle.model" >
         <field name = "name" >Ds4crossback</field>
-        <field name = "brand_id" ref = "fleet.brand_ds"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ds"/>
     </record >
     <record id = "model_ds5" model = "fleet.vehicle.model" >
         <field name = "name" >Ds5</field>
-        <field name = "brand_id" ref = "fleet.brand_ds"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ds"/>
     </record >
     <record id = "model_ds7crossback" model = "fleet.vehicle.model" >
         <field name = "name" >Ds7crossback</field>
-        <field name = "brand_id" ref = "fleet.brand_ds"/>
+        <field name = "brand_id" ref = "car-workshop.brand_ds"/>
     </record >
     <record id = "model_a3" model = "fleet.vehicle.model" >
         <field name = "name" >A3</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a4" model = "fleet.vehicle.model" >
         <field name = "name" >A4</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a4allroadquattro" model = "fleet.vehicle.model" >
         <field name = "name" >A4allroadquattro</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a5" model = "fleet.vehicle.model" >
         <field name = "name" >A5</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a6" model = "fleet.vehicle.model" >
         <field name = "name" >A6</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a6allroadquattro" model = "fleet.vehicle.model" >
         <field name = "name" >A6allroadquattro</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a7" model = "fleet.vehicle.model" >
         <field name = "name" >A7</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_a8" model = "fleet.vehicle.model" >
         <field name = "name" >A8</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_q2" model = "fleet.vehicle.model" >
         <field name = "name" >Q2</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_q3" model = "fleet.vehicle.model" >
         <field name = "name" >Q3</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_q5" model = "fleet.vehicle.model" >
         <field name = "name" >Q5</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_q7" model = "fleet.vehicle.model" >
         <field name = "name" >Q7</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_r8" model = "fleet.vehicle.model" >
         <field name = "name" >R8</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_rsq3" model = "fleet.vehicle.model" >
         <field name = "name" >Rsq3</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_rs3" model = "fleet.vehicle.model" >
         <field name = "name" >Rs3</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_rs4" model = "fleet.vehicle.model" >
         <field name = "name" >Rs4</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_rs5" model = "fleet.vehicle.model" >
         <field name = "name" >Rs5</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_rs6" model = "fleet.vehicle.model" >
         <field name = "name" >Rs6</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_rs7" model = "fleet.vehicle.model" >
         <field name = "name" >Rs7</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s1" model = "fleet.vehicle.model" >
         <field name = "name" >S1</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s3" model = "fleet.vehicle.model" >
         <field name = "name" >S3</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s4" model = "fleet.vehicle.model" >
         <field name = "name" >S4</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s5" model = "fleet.vehicle.model" >
         <field name = "name" >S5</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s6" model = "fleet.vehicle.model" >
         <field name = "name" >S6</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s7" model = "fleet.vehicle.model" >
         <field name = "name" >S7</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_s8" model = "fleet.vehicle.model" >
         <field name = "name" >S8</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_sq5" model = "fleet.vehicle.model" >
         <field name = "name" >Sq5</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_sq7" model = "fleet.vehicle.model" >
         <field name = "name" >Sq7</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_tt" model = "fleet.vehicle.model" >
         <field name = "name" >Tt</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
     <record id = "model_tts" model = "fleet.vehicle.model" >
         <field name = "name" >Tts</field>
-        <field name = "brand_id" ref = "fleet.brand_audi"/>
+        <field name = "brand_id" ref = "car-workshop.brand_audi"/>
     </record >
 
     <record id = "model_db9" model = "fleet.vehicle.model" >
         <field name = "name" >Db9</field>
-        <field name = "brand_id" ref = "fleet.brand_aston_martin"/>
+        <field name = "brand_id" ref = "car-workshop.brand_aston_martin"/>
     </record >
     <record id = "model_rapide" model = "fleet.vehicle.model" >
         <field name = "name" >Rapide</field>
-        <field name = "brand_id" ref = "fleet.brand_aston_martin"/>
+        <field name = "brand_id" ref = "car-workshop.brand_aston_martin"/>
     </record >
     <record id = "model_vanquish" model = "fleet.vehicle.model" >
         <field name = "name" >Vanquish</field>
-        <field name = "brand_id" ref = "fleet.brand_aston_martin"/>
+        <field name = "brand_id" ref = "car-workshop.brand_aston_martin"/>
     </record >
     <record id = "model_vantagev12" model = "fleet.vehicle.model" >
         <field name = "name" >Vantagev12</field>
-        <field name = "brand_id" ref = "fleet.brand_aston_martin"/>
+        <field name = "brand_id" ref = "car-workshop.brand_aston_martin"/>
     </record >
     <record id = "model_vantagev8" model = "fleet.vehicle.model" >
         <field name = "name" >Vantagev8</field>
-        <field name = "brand_id" ref = "fleet.brand_aston_martin"/>
+        <field name = "brand_id" ref = "car-workshop.brand_aston_martin"/>
     </record >
 
     <record id = "model_4c" model = "fleet.vehicle.model" >
         <field name = "name" >4c</field>
-        <field name = "brand_id" ref = "fleet.brand_alfa_romeo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_alfa_romeo"/>
     </record >
     <record id = "model_giulia" model = "fleet.vehicle.model" >
         <field name = "name" >Giulia</field>
-        <field name = "brand_id" ref = "fleet.brand_alfa_romeo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_alfa_romeo"/>
     </record >
     <record id = "model_giulietta" model = "fleet.vehicle.model" >
         <field name = "name" >Giulietta</field>
-        <field name = "brand_id" ref = "fleet.brand_alfa_romeo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_alfa_romeo"/>
     </record >
     <record id = "model_mito" model = "fleet.vehicle.model" >
         <field name = "name" >Mito</field>
-        <field name = "brand_id" ref = "fleet.brand_alfa_romeo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_alfa_romeo"/>
     </record >
     <record id = "model_stelvio" model = "fleet.vehicle.model" >
         <field name = "name" >Stelvio</field>
-        <field name = "brand_id" ref = "fleet.brand_alfa_romeo"/>
+        <field name = "brand_id" ref = "car-workshop.brand_alfa_romeo"/>
     </record >
 
     <record id = "model_dokker" model = "fleet.vehicle.model" >
         <field name = "name" >Dokker</field>
-        <field name = "brand_id" ref = "fleet.brand_dacia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dacia"/>
     </record >
     <record id = "model_duster" model = "fleet.vehicle.model" >
         <field name = "name" >Duster</field>
-        <field name = "brand_id" ref = "fleet.brand_dacia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dacia"/>
     </record >
     <record id = "model_lodgy" model = "fleet.vehicle.model" >
         <field name = "name" >Lodgy</field>
-        <field name = "brand_id" ref = "fleet.brand_dacia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dacia"/>
     </record >
     <record id = "model_logan" model = "fleet.vehicle.model" >
         <field name = "name" >Logan</field>
-        <field name = "brand_id" ref = "fleet.brand_dacia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dacia"/>
     </record >
     <record id = "model_sandero" model = "fleet.vehicle.model" >
         <field name = "name" >Sandero</field>
-        <field name = "brand_id" ref = "fleet.brand_dacia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_dacia"/>
     </record >
 
     <record id = "model_clubman" model = "fleet.vehicle.model" >
         <field name = "name" >Clubman</field>
-        <field name = "brand_id" ref = "fleet.brand_mini"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mini"/>
     </record >
     <record id = "model_countryman" model = "fleet.vehicle.model" >
         <field name = "name" >Countryman</field>
-        <field name = "brand_id" ref = "fleet.brand_mini"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mini"/>
     </record >
     <record id = "model_mini" model = "fleet.vehicle.model" >
         <field name = "name" >Mini</field>
-        <field name = "brand_id" ref = "fleet.brand_mini"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mini"/>
     </record >
     <record id = "model_paceman" model = "fleet.vehicle.model" >
         <field name = "name" >Paceman</field>
-        <field name = "brand_id" ref = "fleet.brand_mini"/>
+        <field name = "brand_id" ref = "car-workshop.brand_mini"/>
     </record >
 
     <record id = "model_44" model = "fleet.vehicle.model" >
         <field name = "name" >44</field>
-        <field name = "brand_id" ref = "fleet.brand_morgan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_morgan"/>
     </record >
     <record id = "model_plus4" model = "fleet.vehicle.model" >
         <field name = "name" >Plus4</field>
-        <field name = "brand_id" ref = "fleet.brand_morgan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_morgan"/>
     </record >
     <record id = "model_plus8" model = "fleet.vehicle.model" >
         <field name = "name" >Plus8</field>
-        <field name = "brand_id" ref = "fleet.brand_morgan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_morgan"/>
     </record >
     <record id = "model_roadster" model = "fleet.vehicle.model" >
         <field name = "name" >Roadster</field>
-        <field name = "brand_id" ref = "fleet.brand_morgan"/>
+        <field name = "brand_id" ref = "car-workshop.brand_morgan"/>
     </record >
 
     <record id = "model_accord" model = "fleet.vehicle.model" >
         <field name = "name" >Accord</field>
-        <field name = "brand_id" ref = "fleet.brand_honda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_honda"/>
     </record >
     <record id = "model_crv" model = "fleet.vehicle.model" >
         <field name = "name" >Crv</field>
-        <field name = "brand_id" ref = "fleet.brand_honda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_honda"/>
     </record >
     <record id = "model_civic" model = "fleet.vehicle.model" >
         <field name = "name" >Civic</field>
-        <field name = "brand_id" ref = "fleet.brand_honda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_honda"/>
     </record >
     <record id = "model_hrv" model = "fleet.vehicle.model" >
         <field name = "name" >Hrv</field>
-        <field name = "brand_id" ref = "fleet.brand_honda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_honda"/>
     </record >
     <record id = "model_jazz" model = "fleet.vehicle.model" >
         <field name = "name" >Jazz</field>
-        <field name = "brand_id" ref = "fleet.brand_honda"/>
+        <field name = "brand_id" ref = "car-workshop.brand_honda"/>
     </record >
 
     <record id = "model_baleno" model = "fleet.vehicle.model" >
         <field name = "name" >Baleno</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_celerio" model = "fleet.vehicle.model" >
         <field name = "name" >Celerio</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_grandvitara" model = "fleet.vehicle.model" >
         <field name = "name" >Grandvitara</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_ignis" model = "fleet.vehicle.model" >
         <field name = "name" >Ignis</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_jimny" model = "fleet.vehicle.model" >
         <field name = "name" >Jimny</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_kizashi" model = "fleet.vehicle.model" >
         <field name = "name" >Kizashi</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_sx4" model = "fleet.vehicle.model" >
         <field name = "name" >Sx4</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_sx4scross" model = "fleet.vehicle.model" >
         <field name = "name" >Sx4scross</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_swift" model = "fleet.vehicle.model" >
         <field name = "name" >Swift</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
     <record id = "model_vitara" model = "fleet.vehicle.model" >
         <field name = "name" >Vitara</field>
-        <field name = "brand_id" ref = "fleet.brand_suzuki"/>
+        <field name = "brand_id" ref = "car-workshop.brand_suzuki"/>
     </record >
 
     <record id = "model_carens" model = "fleet.vehicle.model" >
         <field name = "name" >Carens</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_niro" model = "fleet.vehicle.model" >
         <field name = "name" >Niro</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_nirohã¯bridoenchufable" model = "fleet.vehicle.model" >
         <field name = "name" >Nirohã¯bridoenchufable</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optima" model = "fleet.vehicle.model" >
         <field name = "name" >Optima</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optimagt" model = "fleet.vehicle.model" >
         <field name = "name" >Optimagt</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optimahã¯bridoenchufable" model = "fleet.vehicle.model" >
         <field name = "name" >Optimahã¯bridoenchufable</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optimaphev" model = "fleet.vehicle.model" >
         <field name = "name" >Optimaphev</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optimasw" model = "fleet.vehicle.model" >
         <field name = "name" >Optimasw</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optimaswgt" model = "fleet.vehicle.model" >
         <field name = "name" >Optimaswgt</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_optimaswhã¯bridoenchufable" model = "fleet.vehicle.model" >
         <field name = "name" >Optimaswhã¯bridoenchufable</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_picanto" model = "fleet.vehicle.model" >
         <field name = "name" >Picanto</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_rio" model = "fleet.vehicle.model" >
         <field name = "name" >Rio</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_sorento" model = "fleet.vehicle.model" >
         <field name = "name" >Sorento</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_soul" model = "fleet.vehicle.model" >
         <field name = "name" >Soul</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_soulev" model = "fleet.vehicle.model" >
         <field name = "name" >Soulev</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_sportage" model = "fleet.vehicle.model" >
         <field name = "name" >Sportage</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_stinger" model = "fleet.vehicle.model" >
         <field name = "name" >Stinger</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_stonic" model = "fleet.vehicle.model" >
         <field name = "name" >Stonic</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_venga" model = "fleet.vehicle.model" >
         <field name = "name" >Venga</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_ceed" model = "fleet.vehicle.model" >
         <field name = "name" >Ceed</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_ceedsportswagon" model = "fleet.vehicle.model" >
         <field name = "name" >Ceedsportswagon</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_proceed" model = "fleet.vehicle.model" >
         <field name = "name" >Proceed</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
     <record id = "model_proceedgt" model = "fleet.vehicle.model" >
         <field name = "name" >Proceedgt</field>
-        <field name = "brand_id" ref = "fleet.brand_kia"/>
+        <field name = "brand_id" ref = "car-workshop.brand_kia"/>
     </record >
 
     <record id = "model_brz" model = "fleet.vehicle.model" >
         <field name = "name" >Brz</field>
-        <field name = "brand_id" ref = "fleet.brand_subaru"/>
+        <field name = "brand_id" ref = "car-workshop.brand_subaru"/>
     </record >
     <record id = "model_forester" model = "fleet.vehicle.model" >
         <field name = "name" >Forester</field>
-        <field name = "brand_id" ref = "fleet.brand_subaru"/>
+        <field name = "brand_id" ref = "car-workshop.brand_subaru"/>
     </record >
     <record id = "model_levorg" model = "fleet.vehicle.model" >
         <field name = "name" >Levorg</field>
-        <field name = "brand_id" ref = "fleet.brand_subaru"/>
+        <field name = "brand_id" ref = "car-workshop.brand_subaru"/>
     </record >
     <record id = "model_outback" model = "fleet.vehicle.model" >
         <field name = "name" >Outback</field>
-        <field name = "brand_id" ref = "fleet.brand_subaru"/>
+        <field name = "brand_id" ref = "car-workshop.brand_subaru"/>
     </record >
     <record id = "model_wrxsti" model = "fleet.vehicle.model" >
         <field name = "name" >Wrxsti</field>
-        <field name = "brand_id" ref = "fleet.brand_subaru"/>
+        <field name = "brand_id" ref = "car-workshop.brand_subaru"/>
     </record >
     <record id = "model_xv" model = "fleet.vehicle.model" >
         <field name = "name" >Xv</field>
-        <field name = "brand_id" ref = "fleet.brand_subaru"/>
+        <field name = "brand_id" ref = "car-workshop.brand_subaru"/>
     </record >
 
     <record id = "model_captur" model = "fleet.vehicle.model" >
         <field name = "name" >Captur</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_clio" model = "fleet.vehicle.model" >
         <field name = "name" >Clio</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_espace" model = "fleet.vehicle.model" >
         <field name = "name" >Espace</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_fluence" model = "fleet.vehicle.model" >
         <field name = "name" >Fluence</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_grandkangoo" model = "fleet.vehicle.model" >
         <field name = "name" >Grandkangoo</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_grandscenic" model = "fleet.vehicle.model" >
         <field name = "name" >Grandscenic</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_kadjar" model = "fleet.vehicle.model" >
         <field name = "name" >Kadjar</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_kangoo" model = "fleet.vehicle.model" >
         <field name = "name" >Kangoo</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_koleos" model = "fleet.vehicle.model" >
         <field name = "name" >Koleos</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_laguna" model = "fleet.vehicle.model" >
         <field name = "name" >Laguna</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_latitude" model = "fleet.vehicle.model" >
         <field name = "name" >Latitude</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_megane" model = "fleet.vehicle.model" >
         <field name = "name" >Megane</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_scenic" model = "fleet.vehicle.model" >
         <field name = "name" >Scenic</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_talisman" model = "fleet.vehicle.model" >
         <field name = "name" >Talisman</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_twingo" model = "fleet.vehicle.model" >
         <field name = "name" >Twingo</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
     <record id = "model_zoe" model = "fleet.vehicle.model" >
         <field name = "name" >Zoe</field>
-        <field name = "brand_id" ref = "fleet.brand_renault"/>
+        <field name = "brand_id" ref = "car-workshop.brand_renault"/>
     </record >
 
     <record id = "model_718" model = "fleet.vehicle.model" >
         <field name = "name" >718</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_911" model = "fleet.vehicle.model" >
         <field name = "name" >911</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_918" model = "fleet.vehicle.model" >
         <field name = "name" >918</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_boxster" model = "fleet.vehicle.model" >
         <field name = "name" >Boxster</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_cayenne" model = "fleet.vehicle.model" >
         <field name = "name" >Cayenne</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_cayman" model = "fleet.vehicle.model" >
         <field name = "name" >Cayman</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_macan" model = "fleet.vehicle.model" >
         <field name = "name" >Macan</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
     <record id = "model_panamera" model = "fleet.vehicle.model" >
         <field name = "name" >Panamera</field>
-        <field name = "brand_id" ref = "fleet.brand_porsche"/>
+        <field name = "brand_id" ref = "car-workshop.brand_porsche"/>
     </record >
 
     <record id = "model_phantom" model = "fleet.vehicle.model" >
         <field name = "name" >Phantom</field>
-        <field name = "brand_id" ref = "fleet.brand_rolls-royce"/>
+        <field name = "brand_id" ref = "car-workshop.brand_rolls-royce"/>
     </record >
 </odoo>
