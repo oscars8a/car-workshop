@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+
+    <!--Group for CarWorkShop Accountable -->
+    <record id="group_car-workshop_accountable" model="res.groups">
+        <field name="name">Car Workshop Management / Accountable</field>
+    </record>
+
+    <!--Group for CarworkShop Mechanic -->
+    <record id="group_car-workshop_mechanic" model="res.groups">
+        <field name="name">Car Workshop Management / Mechanic</field>
+    </record>
+</data>
+</openerp>
