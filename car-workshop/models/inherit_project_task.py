@@ -25,7 +25,7 @@ class Task(models.Model):
             })
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
-    product_line_ids = fields.One2many('project.task.product.line', 'product_line_id', string='ProductLines')
+    product_line_ids = fields.One2many('project.task.product.line', 'product_line_id', string='ProductLines', copy=True, auto_join=True)
     amount_total = fields.Float(string='Total', store=True, readonly=True, compute='_amount_all')
     warehouse_id = fields.Many2one('stock.warehouse', string='Warehouse',required=True, readonly=True,default=_default_warehouse_id)
 
@@ -43,7 +43,7 @@ class ProductLine(models.Model):
     product_id = fields.Many2one('product.template', string='Products')
     product_uom_qty = fields.Integer(string='Quantity')
     price_unit = fields.Float(string='Unit Price')
-    product_line_id = fields.Many2one('project.task', string="Task Reference", ondelete='cascade')
+    product_line_id = fields.Many2one('project.task', string="Task Reference", required=True, ondelete='cascade', index=True, copy=False)
     price_total = fields.Float(compute='_compute_amount', string='Total Amount', store=True)
 
     @api.onchange('product_id')
