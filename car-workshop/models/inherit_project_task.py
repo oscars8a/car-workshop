@@ -34,6 +34,7 @@ class Task(models.Model):
         ('workshop_create_invoices', 'Invoiced'),
         ('cancel', 'Invoice Canceled'),
     ], string='Status', readonly=True, default='waiting', track_visibility='onchange', select=True)
+    image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle')
 
     @api.multi
     def workshop_create_invoices(self):

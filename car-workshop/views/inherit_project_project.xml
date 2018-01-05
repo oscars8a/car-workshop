@@ -3,7 +3,7 @@
     <data>
 
         <!--NEW Form View Project Project-->
-        <record id="car-workshop_project_form_view" model="ir.ui.view">
+        <record id="car-workshop_project_view_form" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
             <field name="priority">1</field>
@@ -38,7 +38,7 @@
         <record model="ir.actions.act_window" id="action_car_repairs_config">
             <field name="name">Repairs</field>
             <field name="res_model">project.project</field>
-            <field name="form_view_id">car-workshop_project_form_view</field>
+            <field name="form_view_id">car-workshop_project_view_form</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
             <field name="domain">[("car_work","=",True)]</field>
