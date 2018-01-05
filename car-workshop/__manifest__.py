@@ -27,7 +27,6 @@
         'data/delete_fleet_cars_data.xml',
         'data/branches.xml',
         'data/models.xml',
-        'views/inherit_assets.xml',
     ],
     'installable': True,
 }
