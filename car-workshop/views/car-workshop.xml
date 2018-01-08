@@ -57,6 +57,7 @@
 
         <!--Main Menu-->
         <menuitem id="main_car_workshop_menu" name="Car Workshop"
+                  web_icon="car-workshop,static/description/icon.png"
                   sequence="1"/>
 
         <!--Account Invoice Menu-->
