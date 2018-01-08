@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_car-workshop_1" model="project.project">
+            <field name="date_start" eval="time.strftime('%Y-%m-01 10:00:00')"/>
+            <field name="name">Car-Workshop Project</field>
+            <field name="color">3</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="type_ids" eval="[(4, ref('project.project_stage_0')), (4, ref('project.project_stage_1')), (4, ref('project.project_stage_2')), (4, ref('project.project_stage_3'))]"/>
+            <field name="partner_id" ref="base.partner_root"/>
+            <field name="privacy_visibility">portal</field>
+    </record>
+</odoo>

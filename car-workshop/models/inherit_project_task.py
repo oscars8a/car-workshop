@@ -36,6 +36,15 @@ class Task(models.Model):
     ], string='Status', readonly=True, default='waiting', track_visibility='onchange', select=True)
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle')
 
+    @api.model
+    def create(self, vals):
+        task = super(Task, self).create(vals)
+        try:
+            task['project_id'] = self.env['ir.model.data'].get_object_reference('car-workshop', 'project_car-workshop_1')[1]
+        except ValueError:
+            task['project_id'] = False
+        return task
+
     @api.multi
     def workshop_create_invoices(self):
 

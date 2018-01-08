@@ -27,6 +27,7 @@
         'data/delete_fleet_cars_data.xml',
         'data/branches.xml',
         'data/models.xml',
+        'data/project_initial.xml',
     ],
     'installable': True,
 }
