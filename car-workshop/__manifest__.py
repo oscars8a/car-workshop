@@ -9,7 +9,7 @@
         'Óscar Soto, '
         'SDI Soluciones Informáticas',
     'website': 'https://github.com/oscars8a/car-workshop.git',
-    'license': 'GPL-3',
+    'license': 'AGPL-3',
     'depends': [
         'project',
         'fleet',
