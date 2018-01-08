@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <record forcecreate="False" id="project_car-workshop_stage_new" model="project.task.type">
+            <field name="sequence">1</field>
+            <field name="name">New</field>
+    </record>
+
+    <record forcecreate="False" id="project_car-workshop_stage_todo" model="project.task.type">
+            <field name="sequence">2</field>
+            <field name="name">To Do</field>
+    </record>
+
+    <record forcecreate="False" id="project_car-workshop_stage_in_progress" model="project.task.type">
+            <field name="sequence">3</field>
+            <field name="name">In Progress</field>
+    </record>
+
+    <record forcecreate="False" id="project_car-workshop_stage_finish" model="project.task.type">
+            <field name="sequence">4</field>
+            <field name="name">Finish</field>
+    </record>
+
     <record id="project_car-workshop_1" model="project.project">
             <field name="date_start" eval="time.strftime('%Y-%m-01 10:00:00')"/>
             <field name="name">Car-Workshop Project</field>
             <field name="color">3</field>
             <field name="user_id" ref="base.user_root"/>
-            <field name="type_ids" eval="[(4, ref('project.project_stage_0')), (4, ref('project.project_stage_1')), (4, ref('project.project_stage_2')), (4, ref('project.project_stage_3'))]"/>
+            <field name="type_ids" eval="[(4, ref('car-workshop.project_car-workshop_stage_new')), (4, ref('car-workshop.project_car-workshop_stage_todo')), (4, ref('car-workshop.project_car-workshop_stage_in_progress')), (4, ref('car-workshop.project_car-workshop_stage_finish'))]"/>
             <field name="partner_id" ref="base.partner_root"/>
             <field name="privacy_visibility">portal</field>
     </record>
