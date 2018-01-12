@@ -4,8 +4,8 @@
 
         <!-- Project Task Form View -->
         <record id="car-workshop_task_view_form" model="ir.ui.view">
-            <field name="name">project.task.form</field>
-            <field name="model">project.task</field>
+            <field name="name">car-workshop.repair.form</field>
+            <field name="model">project.repair</field>
             <field name="priority">30</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
@@ -151,8 +151,8 @@
 
         <!-- Project Task Kanban View -->
         <record model="ir.ui.view" id="car-workshop_task_view_kanban">
-            <field name="name">project.task.kanban</field>
-            <field name="model">project.task</field>
+            <field name="name">car-workshop.repair.kanban</field>
+            <field name="model">project.repair</field>
             <field name="priority">30</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
@@ -212,7 +212,7 @@
                                     <div t-if="record.displayed_image_id.value">
                                         <field name="displayed_image_id" widget="attachment_image"/>
                                     </div>
-                                    <img t-att-src="kanban_image('project.task', 'image_client_vehicle', record.id)" t-att-title="record.name" width="140"/>
+                                    <img t-att-src="kanban_image('project.repair', 'image_client_vehicle', record.id)" t-att-title="record.name" width="140"/>
                                 </div>
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
@@ -239,8 +239,8 @@
 
         <!-- Project Task Calendar View -->
         <record id="car-workshop_task_view_calendar" model="ir.ui.view">
-            <field name="name">project.task.calendar</field>
-            <field name="model">project.task</field>
+            <field name="name">car-workshop.task.calendar</field>
+            <field name="model">project.repair</field>
             <field name="priority">30</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
@@ -253,7 +253,7 @@
 
         <!-- Product Line Kanban View -->
         <record id="car-workshop_product_line_view_kanban" model="ir.ui.view">
-            <field name="name">project.task.product.line.kanban</field>
+            <field name="name">car-workshop.task.product.line.kanban</field>
             <field name="model">project.task.product.line</field>
             <field name="arch" type="xml">
                 <kanban class="o_kanban_mobile">
@@ -284,7 +284,7 @@
         <!--Action Task Menu-->
         <record model="ir.actions.act_window" id="action_car_orders_config">
             <field name="name">Repairs</field>
-            <field name="res_model">project.task</field>
+            <field name="res_model">project.repair</field>
             <field name="form_view_id">car-workshop_task_view_form</field>
             <field name="kanban_view_id">car-workshop_task_view_kanban</field>
             <field name="view_type">form</field>

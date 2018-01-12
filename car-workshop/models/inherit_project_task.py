@@ -7,7 +7,11 @@ from odoo.osv import osv
 from datetime import date
 
 class Task(models.Model):
-    _inherit = 'project.task'
+    _name = 'project.repair'
+    _inherits = {
+        'project.task': 'project_task_id',
+        'sale.order': 'sale_order_id',
+    }
 
     @api.model
     def _default_warehouse_id(self):
@@ -35,6 +39,20 @@ class Task(models.Model):
         ('cancel', 'Invoice Canceled'),
     ], string='Status', readonly=True, default='waiting', track_visibility='onchange', select=True)
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle')
+
+    @api.model
+    def _default_task_id(self):
+        kanban_state = self.state
+        task_id = self.env['project.task'].search([('kanban_state', '=', kanban_state)], limit=1)
+        return task_id
+    project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade', default=_default_task_id)
+    @api.model
+    def _default_order_id(self):
+        order_id = self.env['project.task'].search([('kanban_state', '=', kanban_state)], limit=1)
+        return order_id
+    sale_order_id = fields.Many2one('sale.order', required=True, ondelete='cascade', default=_default_order_id)
+
+
 
     @api.model
     def create(self, vals):
