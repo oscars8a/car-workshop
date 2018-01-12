@@ -2,11 +2,11 @@
 <odoo>
     <data>
 
-        <!--NEW Form View Project Project-->
+        <!-- Project Task Form View -->
         <record id="car-workshop_task_view_form" model="ir.ui.view">
             <field name="name">project.task.form</field>
             <field name="model">project.task</field>
-            <field name="priority">1</field>
+            <field name="priority">30</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <form>
@@ -153,7 +153,7 @@
         <record model="ir.ui.view" id="car-workshop_task_view_kanban">
             <field name="name">project.task.kanban</field>
             <field name="model">project.task</field>
-            <field name="priority">1</field>
+            <field name="priority">30</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="stage_id" class="o_kanban_small_column o_kanban_project_tasks" on_create="quick_create">
@@ -237,10 +237,11 @@
             </field>
          </record>
 
+        <!-- Project Task Calendar View -->
         <record id="car-workshop_task_view_calendar" model="ir.ui.view">
             <field name="name">project.task.calendar</field>
             <field name="model">project.task</field>
-            <field name="priority">1</field>
+            <field name="priority">30</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <calendar string="Tasks" date_start="date_start" date_delay="planned_hours" color="partner_id">
@@ -250,6 +251,7 @@
         </record>
 
 
+        <!-- Product Line Kanban View -->
         <record id="car-workshop_product_line_view_kanban" model="ir.ui.view">
             <field name="name">project.task.product.line.kanban</field>
             <field name="model">project.task.product.line</field>
@@ -279,19 +281,19 @@
 
 
 
-        <!--Action Orders Menu-->
+        <!--Action Task Menu-->
         <record model="ir.actions.act_window" id="action_car_orders_config">
-            <field name="name">Orders</field>
+            <field name="name">Repairs</field>
             <field name="res_model">project.task</field>
             <field name="form_view_id">car-workshop_task_view_form</field>
+            <field name="kanban_view_id">car-workshop_task_view_kanban</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,calendar,form</field>
-            <field name="domain">[("vehicle_id","!=",False)]</field>
-
+            <!--<field name="domain">[("vehicle_id","!=",False)]</field>-->
         </record>
 
-        <!--Orders Menu-->
-        <menuitem id="car_orders_menu" name="Orders"
+        <!--Task Menu-->
+        <menuitem id="car_orders_menu" name="Reapirs"
                   parent="main_car_workshop_menu"
                   sequence="2" action="action_car_orders_config"/>
 
