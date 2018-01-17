@@ -55,8 +55,8 @@
                             <h1 class="o_row">
                                 <field name="priority" widget="priority"/>
                                 <field name="name" placeholder="Task Title..."/>
-                                <field name="project_task_id.name" ref="project_task.name"/>
-                                <field name="sale_order_id.name" ref="sale_order.name"/>
+                                <field name="project_task_id_name"/>
+                                <field name="sale_order_id_name"/>
                             </h1>
                         </div>
                         <group>

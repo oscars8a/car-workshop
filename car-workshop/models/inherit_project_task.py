@@ -20,7 +20,9 @@ class Task(models.Model):
     project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade')
     sale_order_id = fields.Many2one('sale.order', required=True, ondelete='cascade')
 
-    
+    project_task_id_name = fields.Char(string="", required=False, related='project_task_id.name')
+    sale_order_id_name = fields.Char(string="", required=False, related='sale_order_id.name')
+
     # Cuando se haga invoice Crear un registro Sale_order_id y darle valores.
     # Y borrar cuando se borre
 
