@@ -6,7 +6,7 @@
         <record id="car-workshop_project_view_form" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
-            <field name="priority">99</field>
+            <field name="priority">1</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <form>
@@ -32,11 +32,78 @@
             </field>
         </record>
 
+        <!--<record model="ir.ui.view" id="car-workshop_dashboard_project_view_kanban">-->
+            <!--<field name="name">project.project.kanban</field>-->
+            <!--<field name="model">project.project</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" on_create="project.open_create_project">-->
+                    <!--<field name="name"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="color"/>-->
+                    <!--<field name="task_count"/>-->
+                    <!--<field name="task_needaction_count"/>-->
+                    <!--<field name="label_tasks"/>-->
+                    <!--<field name="alias_id"/>-->
+                    <!--<field name="alias_name"/>-->
+                    <!--<field name="alias_domain"/>-->
+                    <!--<templates>-->
+                        <!--<t t-name="kanban-box">-->
+                            <!--<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_has_icon">-->
+                                <!--<div class="o_project_kanban_main">-->
+                                    <!--<div class="o_kanban_card_content">-->
+                                        <!--<div class="o_kanban_primary_left">-->
+                                            <!--<div class="o_primary">-->
+                                                <!--<span><t t-esc="record.name.value"/></span>-->
+                                                <!--<span t-if="record.partner_id.value">-->
+                                                    <!--<strong><t t-esc="record.partner_id.value"/></strong>-->
+                                                <!--</span>-->
+                                            <!--</div>-->
+                                            <!--<div t-if="record.alias_name.value and record.alias_domain.value">-->
+                                                <!--<span><i class="fa fa-envelope"></i> <t t-esc="record.alias_id.value"/></span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="o_kanban_card_manage_pane" groups="project.group_project_manager">-->
+                                        <!--<div class="o_kanban_card_manage_section o_kanban_manage_reports">-->
+                                            <!--<div>-->
+                                                <!--<a type="edit">Settings</a>-->
+                                            <!--</div>-->
+                                            <!--<div>-->
+                                                <!--<a name="%(project.action_project_task_user_tree_filtered)d" type="action">Tasks</a>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="o_project_kanban_colorpicker">-->
+                                            <!--<ul class="oe_kanban_colorpicker" data-field="color"/>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<a class="o_kanban_manage_toggle_button o_left" href="#" groups="project.group_project_manager"><i class="fa fa-ellipsis-v" /></a>-->
+                                    <!--<span class="o_right"><field name="is_favorite" widget="boolean_favorite" nolabel="1" /></span>-->
+                                <!--</div>-->
+
+                                <!--<div class="o_project_kanban_boxes">-->
+                                    <!--<a class="o_project_kanban_box" name="%(act_project_project_2_project_task_all)d" type="action">-->
+                                        <!--<div>-->
+                                            <!--<span class="o_value"><t t-esc="record.task_count.value"/></span>-->
+                                            <!--<span class="o_label"><t t-esc="record.label_tasks.value"/></span>-->
+                                            <!--<a t-if="record.task_needaction_count.raw_value" class="o_needaction" name="%(act_project_project_2_project_task_all)d" type="action" context="{'search_default_message_needaction': 1}">-->
+                                                <!--<t t-esc="record.task_needaction_count.raw_value"/>-->
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</t>-->
+                    <!--</templates>-->
+                <!--</kanban>-->
+            <!--</field>-->
+        <!--</record>-->
+
         <!--Action Project Menu-->
         <record model="ir.actions.act_window" id="action_car_repairs_config">
             <field name="name">Areas</field>
             <field name="res_model">project.project</field>
             <field name="form_view_id">car-workshop_project_view_form</field>
+            <field name="kanban_view_id">car-workshop_dashboard_project_view_kanban</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
             <field name="domain">[("car_work","=",True)]</field>
