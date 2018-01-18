@@ -55,12 +55,13 @@
                             <h1 class="o_row">
                                 <field name="priority" widget="priority"/>
                                 <field name="name" placeholder="Task Title..."/>
-                                <field name="project_task_id_name"/>
-                                <field name="sale_order_id_name"/>
+
                             </h1>
                         </div>
                         <group>
                             <group>
+                                <field name="project_task_id"/>
+                                <field name="sale_order_id"/>
                                 <field name="project_id" domain="[('active', '=', True)]" required="True"/>
                                 <field name="user_id" class="o_task_user_field" options="{&quot;no_open&quot;: True}"/>
                                 <field name="vehicle_id" required="True"/><!--nuevo-->
@@ -72,16 +73,15 @@
                                 <field name="date_deadline"/>
                                 <field name="tag_ids" widget="many2many_tags"
                                        options="{'color_field': 'color', 'no_create_edit': True}"/>
-                                <field name="partner_id"/><!-- mirar algo -->
                             </group>
                             <group>
                                 <field name="partner_id" domain="[('customer','=',True)]"
                                        context="{'search_default_customer':1, 'show_address': 1}"
                                        options="{&quot;always_reload&quot;: True}"/>
-                                <field name="partner_invoice_id"
-                                       context="{'default_type':'invoice'}"
+                                <field name="partner_invoice_id" context="{'default_type':'invoice'}"
                                        options="{&quot;always_reload&quot;: True}"/>
-                                <field name="partner_shipping_id"/>
+                                <field name="partner_shipping_id" context="{'default_type':'delivery'}"
+                                       options="{&quot;always_reload&quot;: True}"/>
                             </group>
                             <group>
                                 <field name="validity_date" attrs="{'invisible': [('state', 'in', ['sale', 'done'])]}"/>
@@ -331,6 +331,13 @@
                             </page>
                             <page string="Other Information">
                                 <group>
+                                    <!--<group string="Shipping Information" name="sale_shipping">-->
+                                        <!--<field name="warehouse_id" options="{'no_create': True}"-->
+                                               <!--groups="stock.group_stock_multi_locations"/>-->
+                                        <!--&lt;!&ndash;<field name="incoterm" widget="selection"&ndash;&gt;-->
+                                               <!--&lt;!&ndash;groups="sale_stock.group_display_incoterm"/>&ndash;&gt;-->
+                                        <!--<field name="picking_policy" required="True"/>-->
+                                    <!--</group>-->
                                     <group string="Sales Information" name="sales_person">
                                         <field name="user_id"/>
                                         <field name="team_id" options="{'no_create': True}"/>
