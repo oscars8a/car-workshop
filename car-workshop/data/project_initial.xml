@@ -23,7 +23,7 @@
 
     <record id="project_car-workshop_1" model="project.project">
             <field name="date_start" eval="time.strftime('%Y-%m-01 10:00:00')"/>
-            <field name="name">Car-Workshop Project</field>
+            <field name="name">Repair and Revisions</field>
             <field name="color">3</field>
             <field name="car_work">True</field>
             <field name="user_id" ref="base.user_root"/>
