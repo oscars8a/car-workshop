@@ -59,7 +59,7 @@
                                                 <!--</span>-->
                                             <!--</div>-->
                                             <!--<div t-if="record.alias_name.value and record.alias_domain.value">-->
-                                                <!--<span><i class="fa fa-envelope"></i> <t t-esc="record.alias_id.value"/></span>-->
+                                                <!--<span><i class="fa fa-envelope"/> <t t-esc="record.alias_id.value"/></span>-->
                                             <!--</div>-->
                                         <!--</div>-->
                                     <!--</div>-->
@@ -69,23 +69,23 @@
                                                 <!--<a type="edit">Settings</a>-->
                                             <!--</div>-->
                                             <!--<div>-->
-                                                <!--<a name="%(project.action_project_task_user_tree_filtered)d" type="action">Tasks</a>-->
+                                                <!--<a name="263" type="action">Tasks</a>-->
                                             <!--</div>-->
                                         <!--</div>-->
                                         <!--<div class="o_project_kanban_colorpicker">-->
                                             <!--<ul class="oe_kanban_colorpicker" data-field="color"/>-->
                                         <!--</div>-->
                                     <!--</div>-->
-                                    <!--<a class="o_kanban_manage_toggle_button o_left" href="#" groups="project.group_project_manager"><i class="fa fa-ellipsis-v" /></a>-->
-                                    <!--<span class="o_right"><field name="is_favorite" widget="boolean_favorite" nolabel="1" /></span>-->
+                                    <!--<a class="o_kanban_manage_toggle_button o_left" href="#" groups="project.group_project_manager"><i class="fa fa-ellipsis-v"/></a>-->
+                                    <!--<span class="o_right"><field name="is_favorite" widget="boolean_favorite" nolabel="1"/></span>-->
                                 <!--</div>-->
 
                                 <!--<div class="o_project_kanban_boxes">-->
-                                    <!--<a class="o_project_kanban_box" name="%(act_project_project_2_project_task_all)d" type="action">-->
+                                    <!--<a class="o_project_kanban_box" name="264" type="action">-->
                                         <!--<div>-->
                                             <!--<span class="o_value"><t t-esc="record.task_count.value"/></span>-->
                                             <!--<span class="o_label"><t t-esc="record.label_tasks.value"/></span>-->
-                                            <!--<a t-if="record.task_needaction_count.raw_value" class="o_needaction" name="%(act_project_project_2_project_task_all)d" type="action" context="{'search_default_message_needaction': 1}">-->
+                                            <!--<a t-if="record.task_needaction_count.raw_value" class="o_needaction" name="264" type="action" context="{'search_default_message_needaction': 1}">-->
                                                 <!--<t t-esc="record.task_needaction_count.raw_value"/>-->
                                             <!--</a>-->
                                         <!--</div>-->
@@ -98,21 +98,38 @@
             <!--</field>-->
         <!--</record>-->
 
-        <!--Action Project Menu-->
-        <record model="ir.actions.act_window" id="action_car_repairs_config">
-            <field name="name">Areas</field>
+        <!--&lt;!&ndash;Action Project Menu&ndash;&gt;-->
+        <!--<record model="ir.actions.act_window" id="action_car_repairs_config">-->
+            <!--<field name="name">Areas</field>-->
+            <!--<field name="res_model">project.project</field>-->
+            <!--<field name="form_view_id">car-workshop_project_view_form</field>-->
+            <!--&lt;!&ndash;<field name="kanban_view_id">car-workshop_dashboard_project_view_kanban</field>&ndash;&gt;-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">kanban,form</field>-->
+            <!--<field name="domain">[("car_work","=",True)]</field>-->
+        <!--</record>-->
+
+        <record id="action_car_areas_menu" model="ir.actions.act_window">
+            <field name="name">Projects</field>
             <field name="res_model">project.project</field>
-            <field name="form_view_id">car-workshop_project_view_form</field>
-            <field name="kanban_view_id">car-workshop_dashboard_project_view_kanban</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
             <field name="domain">[("car_work","=",True)]</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="project.view_project_kanban"/>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="target">main</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new project.<br/>
+                    <i>Or <a type="action" name="%(project.ir_actions_server_project_sample)d">activate a sample project</a> to play with.</i>
+                </p>
+            </field>
         </record>
 
         <!--Project Menu-->
         <menuitem id="car_repairs_menu" name="Areas"
                   parent="main_car_workshop_menu"
-                  sequence="1" action="action_car_repairs_config"/>
+                  sequence="1" action="action_car_areas_menu"/>
 
     </data>
 </odoo>

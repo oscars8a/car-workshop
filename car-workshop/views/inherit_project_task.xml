@@ -60,8 +60,8 @@
                         </div>
                         <group>
                             <group>
-                                <field name="project_task_id"/>
-                                <field name="sale_order_id"/>
+                                <!--<field name="project_task_id"/>-->
+                                <!--<field name="sale_order_id"/>-->
                                 <field name="project_id" domain="[('active', '=', True)]" required="True"/>
                                 <field name="user_id" class="o_task_user_field" options="{&quot;no_open&quot;: True}"/>
                                 <field name="vehicle_id" required="True"/><!--nuevo-->
@@ -87,8 +87,8 @@
                                 <field name="validity_date" attrs="{'invisible': [('state', 'in', ['sale', 'done'])]}"/>
                                 <field name="confirmation_date"
                                        attrs="{'invisible': [('state', 'in', ['draft', 'sent', 'cancel'])]}"/>
-                                <field name="pricelist_id" groups="product.group_sale_pricelist"/>
-                                <field name="currency_id" invisible="1"/>
+                                <!--<field name="pricelist_id" groups="product.group_sale_pricelist"/>-->
+                                <!--<field name="currency_id" invisible="1"/>-->
                                 <field name="payment_term_id" options="{'no_create': True}"/>
                             </group>
                         </group>
