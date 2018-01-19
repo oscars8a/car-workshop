@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
-import logging
-_logger = logging.getLogger(__name__)
+
 
 class Task(models.Model):
     _name = 'car_workshop.repair'
-
 
     _inherits = {
         'project.task': 'project_task_id',
@@ -15,7 +13,31 @@ class Task(models.Model):
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle')
 
-    project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade')
+    def _compute_task_id(self):
+        vals = {'sequence': 10,
+                'tag_ids': [[6, False, []]],
+                'planned_hours': 0,
+                'company_id': 1,
+                'stage_id': 8,
+                'displayed_image_id': False,
+                'user_id': 1,
+                'email_from': 'admin@yourcompany.example.com',
+                'partner_id': 3,
+                'date_deadline': False,
+                'active': True,
+                'project_id': 7,
+                'kanban_state': 'normal',
+                'parent_id': False,
+                'sale_line_id': False,
+                'description': False,
+                'email_cc': False,
+                'name': 'PRUEBAS HOLA',
+                'priority': '0'}
+        rec = self.env['project.task'].create(vals)
+        print(rec)
+        return rec
+
+    project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade', compute=_compute_task_id())
     sale_order_id = fields.Many2one('sale.order', required=True, ondelete='cascade')
 
     # project_task_id_name = fields.Char(string="", required=False, related='project_task_id.name')
@@ -24,17 +46,5 @@ class Task(models.Model):
 
     @api.model
     def create(self, vals):
-        _logger.debug("HI ODOO DEVELOPER!!!")
-        _logger.debug(str(vals))
-        # self.project_task_id.create(vals)
-        # params = dict(vals)
-        # if 'name' in params:
-        #     params['name'] = ''
-        # self.sale_order_id.create(params)
         rec = super(Task, self).create(vals)
         return rec
-
-    # @api.multi
-    # @api.onchange('partner_shipping_id', 'partner_id')
-    # def onchange_partner_shipping_id_repair(self):
-    #     self.sale_order_id.convert_to_onchange()
