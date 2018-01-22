@@ -20,6 +20,7 @@
         'sale',
     ],
     'data': [
+        'wizard/wheels_wizard_view.xml',
         'views/car-workshop.xml',
         'views/inherit_fleet_vehicle.xml',
         'views/inherit_project_project.xml',
@@ -27,6 +28,7 @@
         'data/models.xml',
         'data/branches.xml',
         'data/project_initial.xml',
+
     ],
     'installable': True,
 }

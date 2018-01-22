@@ -32,6 +32,8 @@
             </field>
         </record>
 
+        <!--Project Project Kanban View-->
+
 
         <record id="action_car_areas_menu" model="ir.actions.act_window">
             <field name="name">Projects</field>
