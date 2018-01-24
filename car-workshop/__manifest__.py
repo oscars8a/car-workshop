@@ -17,17 +17,23 @@
         'account_invoicing',
         'product',
         'stock',
+        'sale',
     ],
     'data': [
+        'wizard/wheels_wizard_view.xml',
         'views/car-workshop.xml',
         'views/inherit_fleet_vehicle.xml',
         'views/inherit_project_project.xml',
         'views/inherit_project_task.xml',
-        'data/delete_fleet_data.xml',
-        'data/delete_fleet_cars_data.xml',
-        'data/branches.xml',
+        'views/inherit_product_product.xml',
+        'views/inherit_fleet_vehicle_model_brand.xml',
         'data/models.xml',
+        'data/branches.xml',
         'data/project_initial.xml',
+
+    ],
+    'demo': [
+        'demo/wheels_branches.xml',
     ],
     'installable': True,
 }

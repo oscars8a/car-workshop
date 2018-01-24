@@ -6,7 +6,7 @@
         <record id='car-workshop_fleet_vehicle_view_form' model='ir.ui.view'>
             <field name="name">fleet.vehicle.form</field>
             <field name="model">fleet.vehicle</field>
-            <field name="priority">99</field>
+            <field name="priority">1</field>
             <field name="arch" type="xml">
                 <form string="Vehicle">
                 <sheet>
@@ -149,5 +149,31 @@
         <menuitem id="car_vehicles_menu" name="Vehicles"
                   parent="car_customers_menus"
                   sequence="2" action="action_car_vehicles_config"/>
+
+        <!--Action Vehicle Models Menu-->
+        <record model="ir.actions.act_window" id="action_car_vmodels_config">
+            <field name="name">Vehicle Models</field>
+            <field name="res_model">fleet.vehicle.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Action Vehicle Brand Menu-->
+        <record model="ir.actions.act_window" id="action_car_vbrands_config">
+            <field name="name">Vehicle Brands</field>
+            <field name="res_model">fleet.vehicle.model.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!--Vehicle Models Menu-->
+        <menuitem id="car_vmodels_menu" name="Models"
+                  parent="car_vconfig_menus"
+                  sequence="1" action="action_car_vmodels_config"/>
+
+        <!--Vehicle Brand Menu-->
+        <menuitem id="car_vbrands_menu" name="Brands"
+                  parent="car_vconfig_menus"
+                  sequence="2" action="action_car_vbrands_config"/>
     </data>
 </odoo>

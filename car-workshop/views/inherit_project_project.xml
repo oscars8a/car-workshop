@@ -6,7 +6,7 @@
         <record id="car-workshop_project_view_form" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
-            <field name="priority">99</field>
+            <field name="priority">33</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <form>
@@ -32,20 +32,25 @@
             </field>
         </record>
 
-        <!--Action Project Menu-->
-        <record model="ir.actions.act_window" id="action_car_repairs_config">
-            <field name="name">Areas</field>
+        <!--Project Project Kanban View-->
+
+
+        <record id="action_car_areas_menu" model="ir.actions.act_window">
+            <field name="name">Projects</field>
             <field name="res_model">project.project</field>
-            <field name="form_view_id">car-workshop_project_view_form</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
             <field name="domain">[("car_work","=",True)]</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="project.view_project_kanban"/>
+            <field name="form_view_id" ref="car-workshop_project_view_form"/>
+            <!--<field name="search_view_id" ref="project.view_project_project_filter"/>-->
+            <field name="target">main</field>
         </record>
 
         <!--Project Menu-->
         <menuitem id="car_repairs_menu" name="Areas"
                   parent="main_car_workshop_menu"
-                  sequence="1" action="action_car_repairs_config"/>
+                  sequence="1" action="action_car_areas_menu"/>
 
     </data>
 </odoo>

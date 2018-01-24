@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="wheels_brand_firestone" model="car_workshop.wheels_brands">
+            <field name="name">Firestone</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_firestone-image.png"/>
+        </record>
+
+        <record id="wheels_brand_continental" model="car_workshop.wheels_brands">
+            <field name="name">Continental</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_continental-image.png"/>
+        </record>
+
+        <record id="wheels_brand_michelin" model="car_workshop.wheels_brands">
+            <field name="name">Michelin</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_michelin-image.png"/>
+        </record>
+
+        <record id="wheels_brand_feuvert" model="car_workshop.wheels_brands">
+            <field name="name">FeuVert</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_feuvert-image.png"/>
+        </record>
+
+    </data>
+</odoo>
