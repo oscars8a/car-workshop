@@ -21,8 +21,7 @@ class Task(models.Model):
     @api.model
     def create(self, vals):
         print('HI ODOO DEVELOPER !!!!!')
-        print('HI ODOO 222222222')
         rec = super(Task, self).create(vals)
         print(rec)
-        print('HI ODOO 333333333')
+        print('HI ODOO 2222222222')
         return rec

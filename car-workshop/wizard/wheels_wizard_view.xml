@@ -14,7 +14,7 @@
                             <field name="diameter"/>
                         </group>
                         <group>
-                            <field name="brands"/>
+                            <field name="brand_id"/>
                             <field name="season"/>
                         </group>
                     </group>
@@ -31,16 +31,5 @@
                 </form>
             </field>
         </record>
-
-        <record id="action_wheels_view_wizard" model="ir.actions.act_window">
-            <field name="name">Wheel Wizard</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">car_workshop.wheels_wizard</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="car-workshop_wheels_wizard_view_form"/>
-            <field name="target">new</field>
-        </record>
-
     </data>
 </odoo>
