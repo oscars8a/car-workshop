@@ -15,7 +15,7 @@ class Task(models.Model):
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle')
 
     project_task_id = fields.Many2one('project.task', delegate=True, required=True, ondelete='cascade')
-    sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='cascade')
+    # sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='cascade')
 
 
     @api.model
