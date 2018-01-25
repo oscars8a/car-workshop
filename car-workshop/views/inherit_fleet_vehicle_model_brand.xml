@@ -54,7 +54,7 @@
         <record model="ir.actions.act_window" id="action_car_wbrands_config">
             <field name="name">Wheels Brands</field>
             <field name="res_model">car_workshop.wheels_brands</field>
-            <field name="form_view_id">car-workshop_fleet_wheels_brand_view_form</field>
+            <field name="form_view_id" ref="car-workshop_fleet_wheels_brand_view_form"/>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
         </record>

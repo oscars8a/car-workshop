@@ -24,11 +24,11 @@
         'views/car-workshop.xml',
         'views/inherit_fleet_vehicle.xml',
         'views/inherit_project_project.xml',
-        'views/inherit_project_task.xml',
+        'views/car-workshop_repair.xml',
         'views/inherit_product_product.xml',
         'views/inherit_fleet_vehicle_model_brand.xml',
-        'data/models.xml',
         'data/branches.xml',
+        'data/models.xml',
         'data/project_initial.xml',
 
     ],

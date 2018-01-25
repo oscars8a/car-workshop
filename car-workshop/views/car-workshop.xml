@@ -27,22 +27,6 @@
             <field name="view_mode">kanban,form</field>
         </record>
 
-
-        <!--PRUEBAS-->
-
-        <!--<record model="ir.actions.act_window" id="action_car_pruebas_config">-->
-            <!--<field name="name">PRUEBAS</field>-->
-            <!--<field name="res_model">project.task</field>-->
-            <!--<field name="view_type">form</field>-->
-            <!--<field name="view_mode">tree,form</field>-->
-        <!--</record>-->
-
-        <!--<menuitem id="car_pruebas_menu" name="Pruebas"-->
-                  <!--parent="main_car_workshop_menu"-->
-                  <!--sequence="3" action="action_car_pruebas_config"/>-->
-        <!--FIN PRUEBAS-->
-
-
         <!--Main Menu-->
         <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"/>
 
@@ -71,7 +55,6 @@
         <menuitem id="car_vproducts_menu" name="Products"
                   parent="car_products_menus"
                   sequence="4" action="action_car_vproducts_config"/>
-
 
         <!--Vehicle Configuration Menus-->
         <menuitem id="car_vconfig_menus" name="Configuration"
