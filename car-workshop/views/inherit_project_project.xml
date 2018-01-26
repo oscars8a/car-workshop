@@ -6,20 +6,21 @@
         <record id="car-workshop_project_view_form" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
-            <field name="priority">33</field>
-            <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <form>
-                   <sheet>
+                    <sheet>
                         <group>
                             <group>
 
                                 <field name="car_work"/>
-                                <field name="name" class="o_project_name oe_inline" string="Project Name" placeholder="e.g. Office Party"/>
+                                <field name="name" class="o_project_name oe_inline" string="Project Name"
+                                       placeholder="e.g. Office Party"/>
 
-                                <label for="alias_name" string="Choose a Project Email" attrs="{'invisible': [('alias_domain', '=', False)]}"/>
+                                <label for="alias_name" string="Choose a Project Email"
+                                       attrs="{'invisible': [('alias_domain', '=', False)]}"/>
                                 <div name="alias_def" attrs="{'invisible': [('alias_domain', '=', False)]}">
-                                    <field name="alias_name" class="oe_inline"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                                    <field name="alias_name" class="oe_inline"/>@
+                                    <field name="alias_domain" class="oe_inline" readonly="1"/>
                                 </div>
                                 <field name="user_id" invisible="1"/>
                             </group>
@@ -33,22 +34,67 @@
         </record>
 
         <!--Project Project Kanban View-->
+        <record id="car-workshop_project_view_kanban" model="ir.ui.view">
+            <field name="name">project.project.kanban</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors"
+                        on_create="project.open_create_project">
+                    <!--<field name="name"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <field name="color"/>
+                    <field name="task_count"/>
+                    <field name="task_needaction_count"/>
+                    <field name="label_tasks"/>
+                    <!--<field name="alias_id"/>-->
+                    <!--<field name="alias_name"/>-->
+                    <!--<field name="alias_domain"/>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} project.oe_kanban_global_click o_has_icon">
+                                <field name="name"/>
+                                <!--Aquí va la acción para ir a la vista project.act_project_project_2_project_task_all-->
+                                <div class="o_project_kanban_boxes">
+                                    <a class="o_project_kanban_box"
+                                       name="%(project.act_project_project_2_project_task_all)d"
+                                       type="action">
+                                        <div>
+                                            <span class="o_value">
+                                                <t t-esc="record.task_count.value"/>
+                                            </span>
+                                            <span class="o_label">
+                                                <t t-esc="record.label_tasks.value"/>
+                                            </span>
+                                            <a t-if="record.task_needaction_count.raw_value" class="o_needaction"
+                                               name="%(project.act_project_project_2_project_task_all)d" type="action"
+                                               context="{'search_default_message_needaction': 1}">
+                                                <t t-esc="record.task_needaction_count.raw_value"/>
+                                            </a>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
-
+        <!--Action Areas Menu-->
         <record id="action_car_areas_menu" model="ir.actions.act_window">
-            <field name="name">Projects</field>
+            <field name="name">Areas</field>
             <field name="res_model">project.project</field>
             <field name="view_type">form</field>
             <field name="domain">[("car_work","=",True)]</field>
             <field name="view_mode">kanban,form</field>
-            <field name="view_id" ref="project.view_project_kanban"/>
-            <field name="form_view_id" ref="car-workshop_project_view_form"/>
+            <field name="view_id" ref="car-workshop_project_view_kanban"/>
+            <field name="res_id" ref="car-workshop_project_view_form"/>
             <!--<field name="search_view_id" ref="project.view_project_project_filter"/>-->
             <field name="target">main</field>
         </record>
 
         <!--Project Menu-->
-        <menuitem id="car_repairs_menu" name="Areas"
+        <menuitem id="car_areas_menu" name="Areas"
                   parent="main_car_workshop_menu"
                   sequence="1" action="action_car_areas_menu"/>
 

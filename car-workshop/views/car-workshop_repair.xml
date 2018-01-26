@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
         <!-- Project Repair Form View -->
         <record id="car-workshop_repair_view_form" model="ir.ui.view">
             <field name="name">car-workshop.repair.form</field>
@@ -54,18 +53,17 @@
                                        context="{'search_default_customer':1, 'show_address': 1}"
                                        options="{&quot;always_reload&quot;: True}"/>
                                 <!--<field name="partner_invoice_id" groups="sale.group_delivery_invoice_address"-->
-                                       <!--context="{'default_type':'invoice'}"-->
-                                       <!--options="{&quot;always_reload&quot;: True}"/>-->
+                                <!--context="{'default_type':'invoice'}"-->
+                                <!--options="{&quot;always_reload&quot;: True}"/>-->
                                 <!--<field name="partner_shipping_id" groups="sale.group_delivery_invoice_address"-->
-                                       <!--context="{'default_type':'delivery'}"-->
-                                       <!--options="{&quot;always_reload&quot;: True}"/>-->
+                                <!--context="{'default_type':'delivery'}"-->
+                                <!--options="{&quot;always_reload&quot;: True}"/>-->
                                 <!--<field name="project_task_id"/>-->
                                 <field name="project_id"/>
                                 <field name="stage_id"/>
                                 <field name="user_id"/>
                                 <field name="kanban_state"/>
                                 <field name="date_start"/>
-                                <field name="planned_hours"/>
                                 <field name="date_deadline"/>
                             </group>
                             <group>
@@ -246,6 +244,38 @@
                                        placeholder="Setup default terms and conditions in your sales settings ..."/>
                                 <div class="oe_clear"/>
                             </page>
+                            <page string="Timesheets" attrs="{'invisible': [('project_id', '=', False)]}">
+                                <group>
+                                    <group>
+                                        <field name="planned_hours" widget="float_time"/>
+                                    </group>
+                                    <group>
+                                        <field name="progress" widget="progressbar"/>
+                                    </group>
+                                </group>
+                                <field name="timesheet_ids" context="{'default_project_id': project_id}">
+                                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
+                                        <field name="date"/>
+                                        <field name="user_id" invisible="1"/>
+                                        <field name="employee_id" required="1"/>
+                                        <field name="name"/>
+                                        <field name="unit_amount" string="Duration" widget="float_time"/>
+                                        <field name="project_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                                <group>
+                                    <group class="oe_subtotal_footer oe_right" name="project_hours">
+                                        <field name="effective_hours" widget="float_time"/>
+                                        <field name="children_hours" widget="float_time"
+                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
+                                        <field name="total_hours_spent" widget="float_time"
+                                               class="oe_subtotal_footer_separator"
+                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
+                                        <field name="remaining_hours" widget="float_time"
+                                               class="oe_subtotal_footer_separator" readonly="1"/>
+                                    </group>
+                                </group>
+                            </page>
                             <page string="Other Information">
                                 <group>
                                     <group string="Sales Information" name="sales_person">
@@ -294,30 +324,12 @@
             </field>
         </record>
 
-        <!--Car-workshop Repair Tree View-->
-        <!--<record id="car-workshop_repair_view_tree" model="ir.ui.view">-->
-            <!--<field name="name">car-workshop.repair.calendar</field>-->
-            <!--<field name="model">car_workshop.repair</field>-->
-            <!--<field name="arch" type="xml">-->
 
-                <!--<tree string="Sales Orders" decoration-bf="message_needaction==True" decoration-muted="state=='cancel'">-->
-                    <!--<field name="message_needaction" invisible="1"/>-->
-                    <!--<field name="name" string="Order Number"/>-->
-                    <!--<field name="confirmation_date" string="Order Date"/>-->
-                    <!--<field name="partner_id"/>-->
-                    <!--<field name="user_id" invisible="0"/>-->
-                    <!--<field name="amount_total" sum="Total Tax Included" widget="monetary"/>-->
-                    <!--<field name="currency_id" invisible="1"/>-->
-                    <!--<field name="invoice_status" invisible="1"/>-->
-                    <!--<field name="state" invisible="1"/>-->
-                <!--</tree>-->
-            <!--</field>-->
-        <!--</record>-->
         <!--###############################-->
 
 
         <!--Action Repair Menu-->
-        <record model="ir.actions.act_window" id="action_car_orders_config">
+        <record model="ir.actions.act_window" id="action_car_repairs_config">
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
             <field name="form_view_id" ref="car-workshop_repair_view_form"/>
@@ -327,9 +339,9 @@
         </record>
 
         <!--Repair Menu-->
-        <menuitem id="car_orders_menu" name="Reapirs"
+        <menuitem id="car_repairs_menu" name="Reapirs"
                   parent="main_car_workshop_menu"
-                  sequence="2" action="action_car_orders_config"/>
+                  sequence="2" action="action_car_repairs_config"/>
 
     </data>
 </odoo>
