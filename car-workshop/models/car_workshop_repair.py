@@ -20,6 +20,7 @@ class Repair(models.Model):
     date_deadline = fields.Date(related="project_task_id.date_deadline")
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
 
+
     timesheet_ids = fields.One2many(related="project_task_id.timesheet_ids")
     planned_hours = fields.Float(related="project_task_id.planned_hours")
     total_hours_spent = fields.Float(related="project_task_id.total_hours_spent")
@@ -31,19 +32,21 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-        # Queremos que el nombre de nuestra tarea y de nuestro sale.order sean al mismo?
-        # si o no?
-        # Si no hace falta podemos asignar otros valores al "name" después de crear el registro.
 
-        if 'company_id' in vals:
-            vals['name'] = self.env['ir.sequence'].with_context(force_company=vals['company_id']).next_by_code(
-                'sale.order') or _('New')
-        else:
-            vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
+
+        # vals['name'] = 'prueba'
+        if vals.get('name', _('New')) == _('New'):
+            if 'company_id' in vals:
+                vals['name'] = self.env['ir.sequence'].with_context(force_company=vals['company_id']).next_by_code(
+                    'sale.order') or _('New')
+            else:
+                vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
+
 
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
 
+        # IMPORTANTE: las sale.order DEBEN tener un nombre único y calculado?
         rec = super(Repair, self).create(vals)
         return rec
 
@@ -52,3 +55,9 @@ class Repair(models.Model):
     # @api.model
     # def delete(self, vals):
     #
+
+    # Pasa algo muy raro cuando queremos intalar la app por primera vez, nos da problemas porque no encuentra el form del
+    # wizard, ya que se carga despues. Se soluciona cambiando el orden en el manifes.
+    # Pero, y no estoy seguro que sea por eso, una vez instalado y creamos un repair nos sale el famoso error follow twice
+    # Parece que se arregla volviendo a dejar la vista wizard donde estaba en el manifest
+    # Todo esto sin tener el Sales Management instalado.
