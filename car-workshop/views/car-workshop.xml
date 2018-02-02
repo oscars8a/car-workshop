@@ -45,8 +45,8 @@
                   parent="car_customers_menus"
                   sequence="1" action="action_car_customers_config"/>
 
-        <!--Vehicle Configuration Menus-->
-        <menuitem id="car_products_menus" name="Products"
+        <!--Catalogue Menus-->
+        <menuitem id="car_products_menus" name="Catalogue"
                   parent="main_car_workshop_menu"
                   sequence="5"/>
 

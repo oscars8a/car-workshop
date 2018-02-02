@@ -28,6 +28,7 @@ class WheelsWizard(models.TransientModel):
     @api.multi
     def create_request(self):
         print("You click finish")
+        # Probar a ponerlo como contexto para que el usuario pueda cambiarlo
         domain = [("is_wheel","=",True)]
         if self.width:
             domain.append(("width","=",str(self.width)))

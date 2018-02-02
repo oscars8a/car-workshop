@@ -20,14 +20,13 @@
         'sale',
     ],
     'data': [
-        'wizard/wheels_wizard_view.xml',
         'views/car-workshop.xml',
-        'views/inherit_fleet_vehicle.xml',
         'views/inherit_project_project.xml',
         'views/car-workshop_repair.xml',
-        'views/inherit_product_product.xml',
         'views/inherit_fleet_vehicle_model_brand.xml',
-
+        'views/inherit_fleet_vehicle.xml',
+        'wizard/wheels_wizard_view.xml',
+        'views/inherit_product_product.xml',
         'data/branches.xml',
         'data/models.xml',
         'data/project_initial.xml',

@@ -42,6 +42,7 @@
                                 <field name="invoice_count" widget="statinfo" string="Invoices"/>
                             </button>
                         </div>
+                        <field name="image_client_vehicle" widget="image" class="oe_avatar"/>
                         <div class="oe_title">
                             <h1>
                                 <field name="name" readonly="1"/>
@@ -53,8 +54,8 @@
                                        context="{'search_default_customer':1, 'show_address': 1}"
                                        options="{&quot;always_reload&quot;: True}"/>
                                 <field name="partner_invoice_id"
-                                context="{'default_type':'invoice'}"
-                                options="{&quot;always_reload&quot;: True}"/>
+                                       context="{'default_type':'invoice'}"
+                                       options="{&quot;always_reload&quot;: True}"/>
                                 <!--groups="sale.group_delivery_invoice_address"-->
 
                                 <!--<field name="partner_shipping_id" groups="sale.group_delivery_invoice_address"-->
@@ -67,6 +68,9 @@
                                 <field name="kanban_state"/>
                                 <field name="date_start"/>
                                 <field name="date_deadline"/>
+                                <field name="vehicle_id"/>
+                                <field name="tag_ids" widget="many2many_tags"
+                                       options="{'color_field': 'color', 'no_create_edit': True}"/>
                             </group>
                             <group>
                                 <field name="validity_date" attrs="{'invisible': [('state', 'in', ['sale', 'done'])]}"/>
@@ -74,7 +78,7 @@
                                        attrs="{'invisible': [('state', 'in', ['draft', 'sent', 'cancel'])]}"/>
 
                                 <field name="pricelist_id"/>
-                                 <!--groups="product.group_sale_pricelist"-->
+                                <!--groups="product.group_sale_pricelist"-->
                                 <!--<field name="currency_id" invisible="1"/>-->
                                 <field name="payment_term_id" options="{'no_create': True}"/>
                             </group>
@@ -316,7 +320,24 @@
         </record>
 
 
-        <!--###############################-->
+        <!--Car-Workshop Repair Kanban View -->
+        <record id="car-workshop_repair_view_kanban" model="ir.ui.view">
+            <field name="name">car-workshop.repair.kanban</field>
+            <field name="model">car_workshop.repair</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <field name="name"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
         <!--Car-Workshop Repair Calendar View -->
         <record id="car-workshop_repair_view_calendar" model="ir.ui.view">
             <field name="name">car-workshop.repair.calendar</field>
@@ -329,18 +350,17 @@
         </record>
 
 
-        <!--###############################-->
-
-
         <!--Action Repair Menu-->
         <record model="ir.actions.act_window" id="action_car_repairs_config">
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
             <field name="form_view_id" ref="car-workshop_repair_view_form"/>
+            <field name="kanban_view_id" ref="car-workshop_repair_view_kanban"/>
             <field name="calendar_view_id" ref="car-workshop_repair_view_calendar"/>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,calendar,tree,form</field>
         </record>
+
 
         <!--Repair Menu-->
         <menuitem id="car_repairs_menu" name="Reapirs"
