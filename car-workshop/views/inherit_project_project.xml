@@ -36,44 +36,44 @@
 
         <record id="view_task_search_form" model="ir.ui.view">
             <field name="name">project.task.search.form</field>
-            <field name="model">project.task</field>
+            <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                <search string="Tasks">
-                    <field name="name" string="Tasks"/>
-                    <field name="tag_ids"/>
-                    <field name="partner_id"/>
-                    <field name="project_id"/>
-                    <field name="user_id"/>
-                    <field name="stage_id"/>
-                    <filter string="My Tasks" name="my_tasks" domain="[('user_id','=',uid)]"/>
-                    <filter string="My Followed Tasks" domain="[('message_is_follower', '=', True)]" />
-                    <filter string="Unassigned" name="unassigned" domain="[('user_id', '=', False)]"/>
-                    <separator/>
-                    <filter string="Starred" name="starred" domain="[('priority','in',[1, 2])]"/>
-                    <separator/>
-                    <filter string="Unread Messages" name="message_needaction" domain="[('message_needaction','=',True)]"/>
-                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
-                    <separator/>
-                    <filter string="My Activities" name="activities_my"
-                        domain="[('activity_ids.user_id', '=', uid)]"/>
-                    <separator/>
-                    <filter string="Late Activities" name="activities_overdue"
-                        domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
-                        help="Show all records which has next action date is before today"/>
-                    <filter string="Today Activities" name="activities_today"
-                        domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
-                    <filter string="Future Activities" name="activities_upcoming_all"
-                        domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
-                        ]"/>
-                    <group expand="0" string="Group By">
-                        <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
-                        <filter string="Task" context="{'group_by':'name'}"/>
-                        <filter string="Assigned to" name="User" context="{'group_by':'user_id'}"/>
-                        <filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>
-                        <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
-                        <separator/>
-                        <filter string="Last Message" name="group_message_last_post" context="{'group_by':'message_last_post:week'}"/>
-                    </group>
+                    <!--<field name="name" string="Repairs"/>-->
+                    <!--<field name="tag_ids"/>-->
+                    <!--<field name="partner_id"/>-->
+                    <!--<field name="project_id"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="stage_id"/>-->
+                    <!--<filter string="My Tasks" name="my_tasks" domain="[('user_id','=',uid)]"/>-->
+                    <!--<filter string="My Followed Tasks" domain="[('message_is_follower', '=', True)]" />-->
+                    <!--<filter string="Unassigned" name="unassigned" domain="[('user_id', '=', False)]"/>-->
+                    <!--<separator/>-->
+                    <!--<filter string="Starred" name="starred" domain="[('priority','in',[1, 2])]"/>-->
+                    <!--<separator/>-->
+                    <!--<filter string="Unread Messages" name="message_needaction" domain="[('message_needaction','=',True)]"/>-->
+                    <!--<filter string="Archived" name="inactive" domain="[('active','=',False)]"/>-->
+                    <!--<separator/>-->
+                    <!--<filter string="My Activities" name="activities_my"-->
+                        <!--domain="[('activity_ids.user_id', '=', uid)]"/>-->
+                    <!--<separator/>-->
+                    <!--<filter string="Late Activities" name="activities_overdue"-->
+                        <!--domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"-->
+                        <!--help="Show all records which has next action date is before today"/>-->
+                    <!--<filter string="Today Activities" name="activities_today"-->
+                        <!--domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>-->
+                    <!--<filter string="Future Activities" name="activities_upcoming_all"-->
+                        <!--domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))-->
+                        <!--]"/>-->
+                    <!--<group expand="0" string="Group By">-->
+                        <!--<filter string="Project" name="project" context="{'group_by':'project_id'}"/>-->
+                        <!--<filter string="Task" context="{'group_by':'name'}"/>-->
+                        <!--<filter string="Assigned to" name="User" context="{'group_by':'user_id'}"/>-->
+                        <!--<filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>-->
+                        <!--<filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>-->
+                        <!--<separator/>-->
+                        <!--<filter string="Last Message" name="group_message_last_post" context="{'group_by':'message_last_post:week'}"/>-->
+                    <!--</group>-->
                 </search>
             </field>
         </record>
@@ -89,7 +89,7 @@
                 'search_default_project_id': [active_id],
                 'default_project_id': active_id,
             }</field>
-             <!--<field name="search_view_id" ref="view_task_search_form"/>-->
+             <field name="search_view_id" ref="view_task_search_form"/>
         </record>
 
         <!--Project Project Kanban View-->

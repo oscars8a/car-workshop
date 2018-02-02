@@ -12,13 +12,13 @@ class Repair(models.Model):
 
     project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade')
     stage_id = fields.Many2one(related="project_task_id.stage_id", store=True)
-    project_id = fields.Many2one(related="project_task_id.project_id")
+    project_id = fields.Many2one(related="project_task_id.project_id", store=True)
     user_id = fields.Many2one(related="project_task_id.user_id")
     kanban_state = fields.Selection(related="project_task_id.kanban_state")
     date_start = fields.Datetime(related="project_task_id.date_start")
     date_deadline = fields.Date(related="project_task_id.date_deadline")
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
-
+    color = fields.Integer(related="project_task_id.color")
     timesheet_ids = fields.One2many(related="project_task_id.timesheet_ids")
     planned_hours = fields.Float(related="project_task_id.planned_hours")
     total_hours_spent = fields.Float(related="project_task_id.total_hours_spent")
