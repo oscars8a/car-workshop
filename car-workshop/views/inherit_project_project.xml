@@ -19,7 +19,7 @@
                                 <label for="alias_name" string="Choose a Project Email"
                                        attrs="{'invisible': [('alias_domain', '=', False)]}"/>
                                 <div name="alias_def" attrs="{'invisible': [('alias_domain', '=', False)]}">
-                                    <field name="alias_name" class="oe_inline"/>@
+                                    <field name="alias_name" class="oe_inline"/>
                                     <field name="alias_domain" class="oe_inline" readonly="1"/>
                                 </div>
                                 <field name="user_id" invisible="1"/>
@@ -33,52 +33,7 @@
             </field>
         </record>
 
-
-        <record id="view_task_search_form" model="ir.ui.view">
-            <field name="name">project.task.search.form</field>
-            <field name="model">car_workshop.repair</field>
-            <field name="arch" type="xml">
-               <search string="Tasks">
-                    <!--<field name="name" string="Repairs"/>-->
-                    <!--<field name="tag_ids"/>-->
-                    <!--<field name="partner_id"/>-->
-                    <!--<field name="project_id"/>-->
-                    <!--<field name="user_id"/>-->
-                    <!--<field name="stage_id"/>-->
-                    <!--<filter string="My Tasks" name="my_tasks" domain="[('user_id','=',uid)]"/>-->
-                    <!--<filter string="My Followed Tasks" domain="[('message_is_follower', '=', True)]" />-->
-                    <!--<filter string="Unassigned" name="unassigned" domain="[('user_id', '=', False)]"/>-->
-                    <!--<separator/>-->
-                    <!--<filter string="Starred" name="starred" domain="[('priority','in',[1, 2])]"/>-->
-                    <!--<separator/>-->
-                    <!--<filter string="Unread Messages" name="message_needaction" domain="[('message_needaction','=',True)]"/>-->
-                    <!--<filter string="Archived" name="inactive" domain="[('active','=',False)]"/>-->
-                    <!--<separator/>-->
-                    <!--<filter string="My Activities" name="activities_my"-->
-                        <!--domain="[('activity_ids.user_id', '=', uid)]"/>-->
-                    <!--<separator/>-->
-                    <!--<filter string="Late Activities" name="activities_overdue"-->
-                        <!--domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"-->
-                        <!--help="Show all records which has next action date is before today"/>-->
-                    <!--<filter string="Today Activities" name="activities_today"-->
-                        <!--domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>-->
-                    <!--<filter string="Future Activities" name="activities_upcoming_all"-->
-                        <!--domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))-->
-                        <!--]"/>-->
-                    <!--<group expand="0" string="Group By">-->
-                        <!--<filter string="Project" name="project" context="{'group_by':'project_id'}"/>-->
-                        <!--<filter string="Task" context="{'group_by':'name'}"/>-->
-                        <!--<filter string="Assigned to" name="User" context="{'group_by':'user_id'}"/>-->
-                        <!--<filter string="Stage" name="Stage" context="{'group_by':'stage_id'}"/>-->
-                        <!--<filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>-->
-                        <!--<separator/>-->
-                        <!--<filter string="Last Message" name="group_message_last_post" context="{'group_by':'message_last_post:week'}"/>-->
-                    <!--</group>-->
-                </search>
-            </field>
-        </record>
-
-        <!--Project Action for Kanban View-->
+        <!--Action for Kanban View-->
          <record id="action_car_project_kanban_to_repair_kanban" model="ir.actions.act_window">
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
@@ -89,7 +44,6 @@
                 'search_default_project_id': [active_id],
                 'default_project_id': active_id,
             }</field>
-             <field name="search_view_id" ref="view_task_search_form"/>
         </record>
 
         <!--Project Project Kanban View-->
@@ -97,31 +51,58 @@
             <field name="name">project.project.kanban</field>
             <field name="model">project.project</field>
             <field name="arch" type="xml">
-                <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors"
-                        on_create="project.open_create_project">
-
+                <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" on_create="project.open_create_project">
+                    <field name="name"/>
+                    <field name="partner_id"/>
                     <field name="color"/>
                     <field name="task_count"/>
                     <field name="task_needaction_count"/>
                     <field name="label_tasks"/>
-
+                    <field name="alias_id"/>
+                    <field name="alias_name"/>
+                    <field name="alias_domain"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="#{kanban_color(record.color.raw_value)} project.oe_kanban_global_click o_has_icon">
-                                <field name="name"/>
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_has_icon">
+                                <div class="o_project_kanban_main">
+                                    <div class="o_kanban_card_content">
+                                        <div class="o_kanban_primary_left">
+                                            <div class="o_primary">
+                                                <span><t t-esc="record.name.value"/></span>
+                                                <span t-if="record.partner_id.value">
+                                                    <strong><t t-esc="record.partner_id.value"/></strong>
+                                                </span>
+                                            </div>
+                                            <div t-if="record.alias_name.value and record.alias_domain.value">
+                                                <span><i class="fa fa-envelope"/> <t t-esc="record.alias_id.value"/></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_card_manage_pane" groups="project.group_project_manager">
+                                        <div class="o_kanban_card_manage_section o_kanban_manage_reports">
+                                            <div>
+                                                <a type="edit">Settings</a>
+                                            </div>
+                                            <div>
+                                                <a name="133" type="action">Tasks</a>
+                                            </div>
+                                        </div>
+                                        <div class="o_project_kanban_colorpicker">
+                                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        </div>
+                                    </div>
+                                    <a class="o_kanban_manage_toggle_button o_left" href="#" groups="project.group_project_manager"><i class="fa fa-ellipsis-v"/></a>
+                                    <span class="o_right"><field name="is_favorite" widget="boolean_favorite" nolabel="1"/></span>
+                                </div>
+
                                 <div class="o_project_kanban_boxes">
-                                    <a class="o_project_kanban_box"
-                                       name="%(action_car_project_kanban_to_repair_kanban)d" type="action">
-                                        <!--La linea interior hace que vayamos a la ACCION project.project_2_..-->
+                                    <a class="o_project_kanban_box" name="%(action_car_project_kanban_to_repair_kanban)d" type="action">
                                         <div>
-                                            <span class="o_value">
-                                                <t t-esc="record.task_count.value"/>
-                                            </span>
-                                            <span class="o_label">
-
-                                                <t t-esc="record.label_tasks.value"/>
-                                            </span>
-
+                                            <span class="o_value"><t t-esc="record.task_count.value"/></span>
+                                            <span class="o_label"><t t-esc="record.label_tasks.value"/></span>
+                                            <a t-if="record.task_needaction_count.raw_value" class="o_needaction" name="134" type="action" context="{'search_default_message_needaction': 1}">
+                                                <t t-esc="record.task_needaction_count.raw_value"/>
+                                            </a>
                                         </div>
                                     </a>
                                 </div>
@@ -131,6 +112,8 @@
                 </kanban>
             </field>
         </record>
+
+
 
         <!--Action Areas Menu-->
         <record id="action_car_areas_menu" model="ir.actions.act_window">

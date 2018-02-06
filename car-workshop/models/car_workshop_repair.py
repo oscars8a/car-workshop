@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
+from odoo import api, fields, models, SUPERUSER_ID, _
 
 
 class Repair(models.Model):
     _name = 'car_workshop.repair'
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
-    image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle')
+    image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True)
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='cascade')
 
     project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade')
-    stage_id = fields.Many2one(related="project_task_id.stage_id", store=True)
+    stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
     project_id = fields.Many2one(related="project_task_id.project_id", store=True)
     user_id = fields.Many2one(related="project_task_id.user_id")
     kanban_state = fields.Selection(related="project_task_id.kanban_state")
@@ -26,6 +26,17 @@ class Repair(models.Model):
     effective_hours = fields.Float(related="project_task_id.effective_hours")
     children_hours = fields.Float(related="project_task_id.children_hours")
     remaining_hours = fields.Float(related="project_task_id.remaining_hours")
+
+    @api.model
+    def _read_group_stage_ids(self, stages, domain, order):
+        search_domain = [('id', 'in', stages.ids)]
+        if 'default_project_id' in self.env.context:
+            search_domain = ['|', ('project_ids', '=', self.env.context['default_project_id'])] + search_domain
+
+        stage_ids = stages._search(search_domain, order=order, access_rights_uid=SUPERUSER_ID)
+        return stages.browse(stage_ids)
+
+
 
 
     @api.model
@@ -44,6 +55,7 @@ class Repair(models.Model):
         vals['project_task_id'] = rec_task
 
         # IMPORTANTE: las sale.order DEBEN tener un nombre único y calculado?
+        # O pueden tener un nombre descriptivo. O usar un campo, "descripción"
         rec = super(Repair, self).create(vals)
         return rec
 

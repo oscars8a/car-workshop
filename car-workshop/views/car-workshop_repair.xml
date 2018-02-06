@@ -325,11 +325,11 @@
             <field name="name">car-workshop.repair.kanban</field>
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
-                <kanban default_group_by="stage_id" class="o_kanban_small_column o_kanban_project_tasks" on_create="quick_create">
+                <kanban default_group_by="stage_id" class="o_kanban_small_column o_kanban_project_tasks" quick_create="false">
                     <field name="color"/>
                     <!--<field name="priority"/>-->
-                    <field name="stage_id" />
-                    <!--options="{&quot;group_by_tooltip&quot;: {&quot;description&quot;: &quot;Stage Description&quot;, &quot;legend_priority&quot;: &quot;Use of stars&quot;}}"-->
+                    <field name="stage_id" options="{&quot;group_by_tooltip&quot;: {&quot;description&quot;: &quot;Stage Description&quot;, &quot;legend_priority&quot;: &quot;Use of stars&quot;}}"/>
+
                     <field name="user_id"/>
                     <!--<field name="user_email"/>-->
                     <!--<field name="description"/>-->
@@ -343,6 +343,7 @@
                     <!--<field name="legend_blocked"/>-->
                     <!--<field name="legend_normal"/>-->
                     <!--<field name="legend_done"/>-->
+                    <!--<field name="image_client_vehicle"/>-->
                     <field name="activity_ids"/>
                     <field name="activity_state"/>
                     <progressbar field="kanban_state" colors="{&quot;done&quot;: &quot;success&quot;, &quot;blocked&quot;: &quot;danger&quot;}"/>
@@ -350,7 +351,11 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
                             <div class="oe_kanban_content">
+
                                 <div class="o_kanban_record_top">
+                                    <div class="o_kanban_image">
+                                     <img t-att-src="kanban_image('car_workshop.repair', 'vehicle_id.image_client_vehicle', record.id.raw_value)"/>
+                                    </div>
                                     <div class="o_kanban_record_headings">
                                         <strong class="o_kanban_record_title"><field name="name"/></strong><br/>
                                         <small class="o_kanban_record_subtitle text-muted">
@@ -385,7 +390,7 @@
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
                                         <!--<field name="priority" widget="priority"/>-->
-                                        <field name="activity_ids" widget="kanban_activity"/>
+                                        <!--<field name="activity_ids" widget="kanban_activity"/>-->
                                         <!--<t t-if="record.message_needaction_counter.raw_value">-->
                                             <!--<span class="oe_kanban_mail_new" title="Unread Messages"><i class="fa fa-comments"/><t t-raw="record.message_needaction_counter.raw_value"/></span>-->
                                         <!--</t>-->
