@@ -343,7 +343,8 @@
                     <!--<field name="legend_blocked"/>-->
                     <!--<field name="legend_normal"/>-->
                     <!--<field name="legend_done"/>-->
-                    <!--<field name="image_client_vehicle"/>-->
+                    <field name="vehicle_id"/>
+                    <field name="image_client_vehicle"/>
                     <field name="activity_ids"/>
                     <field name="activity_state"/>
                     <progressbar field="kanban_state" colors="{&quot;done&quot;: &quot;success&quot;, &quot;blocked&quot;: &quot;danger&quot;}"/>
@@ -351,11 +352,7 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
                             <div class="oe_kanban_content">
-
                                 <div class="o_kanban_record_top">
-                                    <div class="o_kanban_image">
-                                     <img t-att-src="kanban_image('car_workshop.repair', 'vehicle_id.image_client_vehicle', record.id.raw_value)"/>
-                                    </div>
                                     <div class="o_kanban_record_headings">
                                         <strong class="o_kanban_record_title"><field name="name"/></strong><br/>
                                         <small class="o_kanban_record_subtitle text-muted">
@@ -382,6 +379,9 @@
                                     </div>
                                 </div>
                                 <div class="o_kanban_record_body">
+                                    <div class="o_kanban_image">
+                                        <img t-att-src="kanban_image('fleet.vehicle', 'image_client_vehicle', record.vehicle_id.raw_value)"/>
+                                    </div>
                                     <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                                     <!--<div t-if="record.displayed_image_id.value">-->
                                         <!--<field name="displayed_image_id" widget="attachment_image"/>-->
