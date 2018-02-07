@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, SUPERUSER_ID, _
+from odoo.exceptions import UserError, AccessError
+from wdb import set_trace as depurador
 
 
 class Repair(models.Model):
@@ -9,12 +11,12 @@ class Repair(models.Model):
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True)
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='cascade')
-
     project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
+    description = fields.Html(related="project_task_id.description", store=True)
     project_id = fields.Many2one(related="project_task_id.project_id", store=True)
-    user_id = fields.Many2one(related="project_task_id.user_id")
-    kanban_state = fields.Selection(related="project_task_id.kanban_state")
+    user_id = fields.Many2one(related="project_task_id.user_id", store=True)
+    kanban_state = fields.Selection(related="project_task_id.kanban_state", default='normal', store=True)
     date_start = fields.Datetime(related="project_task_id.date_start")
     date_deadline = fields.Date(related="project_task_id.date_deadline")
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
@@ -59,14 +61,57 @@ class Repair(models.Model):
         rec = super(Repair, self).create(vals)
         return rec
 
+    @api.multi
+    def unlink(self):
+        print('paso1')
+        for repair in self:
+            if repair.state not in ('draft', 'cancel'):
+                raise UserError(_('You can not delete a sent quotation or a sales order! Try to cancel it before.'))
+        # depurador()
+        print('paso2')
+        self.env["sale.order"].search([('id', '=', self.sale_order_id.id)]).unlink()
+        self.env["project.task"].search([('id', '=', self.project_task_id.id)]).unlink()
+        return super(Repair, self).unlin
 
-    # Hace falta sobreescribir el metodo delete?
-    # @api.model
-    # def delete(self, vals):
-    #
 
-    # Pasa algo muy raro cuando queremos intalar la app por primera vez, nos da problemas porque no encuentra el form del
-    # wizard, ya que se carga despues. Se soluciona cambiando el orden en el manifes.
-    # Pero, y no estoy seguro que sea por eso, una vez instalado y creamos un repair nos sale el famoso error follow twice
-    # Parece que se arregla volviendo a dejar la vista wizard donde estaba en el manifest
-    # Todo esto sin tener el Sales Management instalado.
+    @api.multi
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        if not self.partner_id:
+            self.update({
+                'partner_invoice_id': False,
+                'partner_shipping_id': False,
+                'payment_term_id': False,
+                'fiscal_position_id': False,
+            })
+            return
+
+        addr = self.partner_id.address_get(['delivery', 'invoice'])
+        values = {
+            'pricelist_id': self.partner_id.property_product_pricelist and self.partner_id.property_product_pricelist.id or False,
+            'payment_term_id': self.partner_id.property_payment_term_id and self.partner_id.property_payment_term_id.id or False,
+            'partner_invoice_id': addr['invoice'],
+            'partner_shipping_id': addr['delivery'],
+            'user_id': self.partner_id.user_id.id or self.env.uid
+        }
+        if self.env['ir.config_parameter'].sudo().get_param(
+                'sale.use_sale_note') and self.env.user.company_id.sale_note:
+            values['note'] = self.with_context(lang=self.partner_id.lang).env.user.company_id.sale_note
+
+        if self.partner_id.team_id:
+            values['team_id'] = self.partner_id.team_id.id
+        self.update(values)
+
+    @api.onchange('project_id')
+    def _onchange_project(self):
+        default_partner_id = self.env.context.get('default_partner_id')
+        default_partner = self.env['res.partner'].browse(default_partner_id) if default_partner_id else self.env[
+            'res.partner']
+        if self.project_id:
+            self.partner_id = self.project_id.partner_id or default_partner
+            if self.project_id not in self.stage_id.project_ids:
+                self.stage_id = self.project_task_id.stage_find(self.project_id.id, [('fold', '=', False)])
+        else:
+            self.partner_id = default_partner
+            self.stage_id = False
+
