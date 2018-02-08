@@ -10,8 +10,8 @@ class Repair(models.Model):
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True)
 
-    sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='cascade')
-    project_task_id = fields.Many2one('project.task', required=True, ondelete='cascade')
+    sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
+    project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
     description = fields.Html(related="project_task_id.description", store=True)
     project_id = fields.Many2one(related="project_task_id.project_id", store=True)
@@ -63,15 +63,18 @@ class Repair(models.Model):
 
     @api.multi
     def unlink(self):
-        print('paso1')
+        # Solo se pueden borrar task y sale asociados si primero se borra el repair con el que están asociados.
         for repair in self:
             if repair.state not in ('draft', 'cancel'):
                 raise UserError(_('You can not delete a sent quotation or a sales order! Try to cancel it before.'))
-        # depurador()
-        print('paso2')
-        self.env["sale.order"].search([('id', '=', self.sale_order_id.id)]).unlink()
-        self.env["project.task"].search([('id', '=', self.project_task_id.id)]).unlink()
-        return super(Repair, self).unlin
+        task_records = self.env["project.task"].search([('id', '=', self.project_task_id.id)])
+        sale_records = self.env["sale.order"].search([('id', '=', self.sale_order_id.id)])
+        super(Repair, self).unlink()
+        for record in task_records:
+            record.unlink()
+        for record in sale_records:
+            record.unlink()
+        return True
 
 
     @api.multi

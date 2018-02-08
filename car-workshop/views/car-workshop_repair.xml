@@ -458,7 +458,7 @@
 
 
         <!--Repair Menu-->
-        <menuitem id="car_repairs_menu" name="Reapirs"
+        <menuitem id="car_repairs_menu" name="Repairs"
                   parent="main_car_workshop_menu"
                   sequence="2" action="action_car_repairs_config"/>
 
