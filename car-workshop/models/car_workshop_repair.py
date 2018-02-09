@@ -107,14 +107,9 @@ class Repair(models.Model):
 
     @api.onchange('project_id')
     def _onchange_project(self):
-        default_partner_id = self.env.context.get('default_partner_id')
-        default_partner = self.env['res.partner'].browse(default_partner_id) if default_partner_id else self.env[
-            'res.partner']
         if self.project_id:
-            self.partner_id = self.project_id.partner_id or default_partner
             if self.project_id not in self.stage_id.project_ids:
                 self.stage_id = self.project_task_id.stage_find(self.project_id.id, [('fold', '=', False)])
         else:
-            self.partner_id = default_partner
             self.stage_id = False
 
