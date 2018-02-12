@@ -85,8 +85,6 @@ class Repair(models.Model):
     @api.multi
     def print_quotation(self):
         return self.sale_order_id.print_quotation()
-        # self.filtered(lambda s: s.state == 'draft').write({'state': 'sent'})
-        # return self.env.ref('sale.action_report_saleorder').report_action(self)
 
     @api.multi
     def action_cancel(self):
@@ -103,8 +101,6 @@ class Repair(models.Model):
     @api.multi
     def action_unlock(self):
         self.sale_order_id.action_unlock()
-
-
 
     @api.multi
     @api.onchange('partner_id')
