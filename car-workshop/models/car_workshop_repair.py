@@ -34,12 +34,8 @@ class Repair(models.Model):
         search_domain = [('id', 'in', stages.ids)]
         if 'default_project_id' in self.env.context:
             search_domain = ['|', ('project_ids', '=', self.env.context['default_project_id'])] + search_domain
-
         stage_ids = stages._search(search_domain, order=order, access_rights_uid=SUPERUSER_ID)
         return stages.browse(stage_ids)
-
-
-
 
     @api.model
     def create(self, vals):
@@ -75,6 +71,37 @@ class Repair(models.Model):
         for record in sale_records:
             record.unlink()
         return True
+
+    @api.multi
+    def action_quotation_send(self):
+        return self.sale_order_id.action_quotation_send()
+
+    @api.multi
+    def action_confirm(self):
+        return self.sale_order_id.action_confirm()
+
+    @api.multi
+    def print_quotation(self):
+        return self.sale_order_id.print_quotation()
+        # self.filtered(lambda s: s.state == 'draft').write({'state': 'sent'})
+        # return self.env.ref('sale.action_report_saleorder').report_action(self)
+
+    @api.multi
+    def action_cancel(self):
+        return self.sale_order_id.action_cancel()
+
+    @api.multi
+    def action_draft(self):
+        return self.sale_order_id.action_draft()
+
+    @api.multi
+    def action_done(self):
+        return self.sale_order_id.action_done()
+
+    @api.multi
+    def action_unlock(self):
+        self.sale_order_id.action_unlock()
+
 
 
     @api.multi
