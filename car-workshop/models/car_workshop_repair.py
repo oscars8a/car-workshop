@@ -6,6 +6,7 @@ from wdb import set_trace as depurador
 
 class Repair(models.Model):
     _name = 'car_workshop.repair'
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True)
@@ -52,6 +53,7 @@ class Repair(models.Model):
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
 
+        print(vals)
         # IMPORTANTE: las sale.order DEBEN tener un nombre único y calculado?
         # O pueden tener un nombre descriptivo. O usar un campo, "descripción"
         rec = super(Repair, self).create(vals)
