@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, SUPERUSER_ID, _
-from odoo.exceptions import UserError, AccessError
+from odoo.exceptions import UserError
 from wdb import set_trace as depurador
 
 
@@ -11,8 +11,8 @@ class Repair(models.Model):
     # track_visibility=True Si quiero hacer seguimiendo de quien hace los cambios
     # incluirlo en los campos que se quiere el seguimiento
 
-    vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
-    image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True)
+    vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
+    image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
@@ -53,10 +53,19 @@ class Repair(models.Model):
                 vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
 
 
+        print('paso 1')
+        print(vals)
+        print('paso 2')
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
-
+        if 'message_follower_ids' in vals:
+            vals.pop('message_follower_ids')
+        print('paso 3')
         print(vals)
+        print('paso 4')
+
+        # vals['message_follower_ids'][0][2]['res_model'] = 'car_workshop.repair'
+        # depurador()
         # IMPORTANTE: las sale.order DEBEN tener un nombre único y calculado?
         # O pueden tener un nombre descriptivo. O usar un campo, "descripción"
         rec = super(Repair, self).create(vals)
