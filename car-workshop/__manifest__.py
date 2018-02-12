@@ -21,8 +21,8 @@
     ],
     'data': [
         'views/car-workshop.xml',
-        'views/inherit_project_project.xml',
         'views/car-workshop_repair.xml',
+        'views/inherit_project_project.xml',
         'views/inherit_fleet_vehicle_model_brand.xml',
         'views/inherit_fleet_vehicle.xml',
         'wizard/wheels_wizard_view.xml',

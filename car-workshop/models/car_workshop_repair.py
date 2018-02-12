@@ -8,6 +8,9 @@ class Repair(models.Model):
     _name = 'car_workshop.repair'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
 
+    # track_visibility=True Si quiero hacer seguimiendo de quien hace los cambios
+    # incluirlo en los campos que se quiere el seguimiento
+
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True)
 
