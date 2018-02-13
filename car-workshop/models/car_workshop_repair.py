@@ -52,20 +52,11 @@ class Repair(models.Model):
             else:
                 vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
 
-
-        print('paso 1')
-        print(vals)
-        print('paso 2')
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
-        print('paso 3')
-        print(vals)
-        print('paso 4')
 
-        # vals['message_follower_ids'][0][2]['res_model'] = 'car_workshop.repair'
-        # depurador()
         # IMPORTANTE: las sale.order DEBEN tener un nombre único y calculado?
         # O pueden tener un nombre descriptivo. O usar un campo, "descripción"
         rec = super(Repair, self).create(vals)

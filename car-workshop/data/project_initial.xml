@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record forcecreate="False" id="project_car-workshop_stage_new" model="project.task.type">
+    <record forcecreate="False" id="project_car-workshop_stage_on_hold" model="project.task.type">
             <field name="sequence">1</field>
-            <field name="name">New</field>
+            <field name="name">On Hold</field>
     </record>
 
-    <record forcecreate="False" id="project_car-workshop_stage_todo" model="project.task.type">
+    <record forcecreate="False" id="project_car-workshop_stage_diagnosis" model="project.task.type">
             <field name="sequence">2</field>
-            <field name="name">To Do</field>
+            <field name="name">Diagnosis</field>
     </record>
 
     <record forcecreate="False" id="project_car-workshop_stage_in_progress" model="project.task.type">
@@ -16,18 +16,27 @@
             <field name="name">In Progress</field>
     </record>
 
-    <record forcecreate="False" id="project_car-workshop_stage_finish" model="project.task.type">
+    <record forcecreate="False" id="project_car-workshop_stage_collection_customer" model="project.task.type">
             <field name="sequence">4</field>
-            <field name="name">Finish</field>
+            <field name="name">Collection Customer</field>
+    </record>
+
+    <record forcecreate="False" id="project_car-workshop_stage_finished" model="project.task.type">
+            <field name="sequence">5</field>
+            <field name="name">Finished</field>
     </record>
 
     <record id="project_car-workshop_1" model="project.project">
             <field name="date_start" eval="time.strftime('%Y-%m-01 10:00:00')"/>
-            <field name="name">Repair and Revisions</field>
+            <field name="name">Repair &amp; Revisions</field>
             <field name="color">3</field>
             <field name="car_work">True</field>
             <field name="user_id" ref="base.user_root"/>
-            <field name="type_ids" eval="[(4, ref('car-workshop.project_car-workshop_stage_new')), (4, ref('car-workshop.project_car-workshop_stage_todo')), (4, ref('car-workshop.project_car-workshop_stage_in_progress')), (4, ref('car-workshop.project_car-workshop_stage_finish'))]"/>
+            <field name="type_ids" eval="[(4, ref('car-workshop.project_car-workshop_stage_on_hold')),
+            (4, ref('car-workshop.project_car-workshop_stage_diagnosis')),
+            (4, ref('car-workshop.project_car-workshop_stage_in_progress')),
+            (4, ref('car-workshop.project_car-workshop_stage_collection_customer')),
+            (4, ref('car-workshop.project_car-workshop_stage_finished'))]"/>
             <field name="partner_id" ref="base.partner_root"/>
             <field name="privacy_visibility">portal</field>
     </record>
