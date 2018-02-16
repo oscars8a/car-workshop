@@ -381,9 +381,6 @@
                                             </a>
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                                 <li t-if="widget.editable">
-                                                    <a type="set_cover">Set Cover Image</a>
-                                                </li>
-                                                <li t-if="widget.editable">
                                                     <a type="edit">Edit Task</a>
                                                 </li>
                                                 <li t-if="widget.deletable">

@@ -6,6 +6,7 @@
         <record id="car-workshop_project_view_form" model="ir.ui.view">
             <field name="name">Repair</field>
             <field name="model">project.project</field>
+            <field name="priority">35</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
