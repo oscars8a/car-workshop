@@ -15,18 +15,35 @@
                     </div>
                 </xpath>
                 <xpath expr="//page[@name='general_information']" position="after">
-                     <page string="Wheel Attributes" attrs="{'invisible':[('is_wheel','=',False)]}" name="wheel_attributes">
+                    <page string="Wheel Attributes" attrs="{'invisible':[('is_wheel','=',False)]}"
+                          name="wheel_attributes">
                         <group>
                             <field name="width"/>
                             <field name="height"/>
                             <field name="diameter"/>
                         </group>
-                         <group>
-                             <field name="brand_id"/>
-                             <field name="season"/>
-                         </group>
-                     </page>
+                        <group>
+                            <field name="brand_id"/>
+                            <field name="season"/>
+                        </group>
+                    </page>
                 </xpath>
+            </field>
+        </record>
+
+
+        <!-- Inherit Search View Products -->
+        <record id="car-workshop_fleet_wheels_view_search" model="ir.ui.view">
+            <field name="name">car-workshop_fleet_wheels_view_search</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="width"/>
+                    <field name="height"/>
+                    <field name="diameter"/>
+                    <field name="brand_id"/>
+                    <field name="season"/>
+                </search>
             </field>
         </record>
 
@@ -38,6 +55,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="view_id" ref="car-workshop_wheels_wizard_view_form"/>
+            <field name="search_view_id" ref="car-workshop_fleet_wheels_view_search"/>
             <field name="target">new</field>
         </record>
 

@@ -6,7 +6,7 @@
         <record id='car-workshop_fleet_vehicle_view_form' model='ir.ui.view'>
             <field name="name">fleet.vehicle.form</field>
             <field name="model">fleet.vehicle</field>
-            <field name="priority">40</field>
+            <field name="priority">35</field>
             <field name="arch" type="xml">
                 <form string="Vehicle">
                 <sheet>
@@ -76,7 +76,7 @@
         <record id='car-workshop_fleet_vehicle_view_kanban' model='ir.ui.view'>
         <field name="name">fleet.vehicle.kanban</field>
         <field name="model">fleet.vehicle</field>
-        <field name="priority">1</field>
+        <field name="priority">35</field>
             <field name="arch" type="xml">
             <kanban>
                 <field name="license_plate" />
@@ -140,10 +140,14 @@
         <record model="ir.actions.act_window" id="action_car_vehicles_config">
             <field name="name">Vehicles</field>
             <field name="res_model">fleet.vehicle</field>
-            <field name="form_view_id" ref="car-workshop_fleet_vehicle_view_form"/>
-            <field name="kanban_view_id" ref="car-workshop_fleet_vehicle_view_kanban"/>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('car-workshop_fleet_vehicle_view_kanban')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('car-workshop_fleet_vehicle_view_form')})]"/>
+            <!--<field name="view_id" ref="car-workshop_fleet_vehicle_view_kanban"/>-->
+            <!--<field name="form_view_id" ref="car-workshop_fleet_vehicle_view_form"/>-->
         </record>
 
         <!--Vehicles Menu-->
@@ -170,7 +174,7 @@
         <!--Vehicle Models Menu-->
         <menuitem id="car_vmodels_menu" name="Models"
                   parent="car_vconfig_menus"
-                  sequence="1" action="action_car_vmodels_config"/>
+                  sequence="2" action="action_car_vmodels_config"/>
 
         <!--Vehicle Brand Menu-->
         <menuitem id="car_vbrands_menu" name="Brands"
