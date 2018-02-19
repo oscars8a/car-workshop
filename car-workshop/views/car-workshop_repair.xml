@@ -326,6 +326,8 @@
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="stage_id" class="o_kanban_small_column o_kanban_project_tasks" on_create="quick_create">
+
+
                     <field name="color"/>
                     <!--<field name="priority"/>-->
                     <field name="stage_id" />
@@ -345,10 +347,15 @@
                     <!--<field name="legend_done"/>-->
                     <field name="activity_ids"/>
                     <field name="activity_state"/>
+
+
                     <progressbar field="kanban_state" colors="{&quot;done&quot;: &quot;success&quot;, &quot;blocked&quot;: &quot;danger&quot;}"/>
+
                     <templates>
                     <t t-name="kanban-box">
+
                         <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+
                             <div class="oe_kanban_content">
                                 <div class="o_kanban_record_top">
                                     <div class="o_kanban_record_headings">

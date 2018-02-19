@@ -58,3 +58,8 @@ class Repair(models.Model):
     # Pero, y no estoy seguro que sea por eso, una vez instalado y creamos un repair nos sale el famoso error follow twice
     # Parece que se arregla volviendo a dejar la vista wizard donde estaba en el manifest
     # Todo esto sin tener el Sales Management instalado.
+
+
+    def _pruebas_(self):
+        print("HOLA MUNDOOOOOOOOO")
+        print(self.stage_id)
