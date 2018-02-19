@@ -13,6 +13,7 @@ class Repair(models.Model):
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
+    repair_title = fields.Char()
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
@@ -32,6 +33,9 @@ class Repair(models.Model):
     effective_hours = fields.Float(related="project_task_id.effective_hours")
     children_hours = fields.Float(related="project_task_id.children_hours")
     remaining_hours = fields.Float(related="project_task_id.remaining_hours")
+    priority = fields.Selection(related="project_task_id.priority")
+    activity_ids = fields.One2many(related="project_task_id.activity_ids")
+
 
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):
@@ -43,9 +47,10 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-
-        # vals['name'] = 'prueba'
-        if vals.get('name', _('New')) == _('New'):
+        depurador()
+        print(vals['name'])
+        if vals.get('name'):
+            vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
                 vals['name'] = self.env['ir.sequence'].with_context(force_company=vals['company_id']).next_by_code(
                     'sale.order') or _('New')
@@ -56,9 +61,6 @@ class Repair(models.Model):
         vals['project_task_id'] = rec_task
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
-
-        # IMPORTANTE: las sale.order DEBEN tener un nombre único y calculado?
-        # O pueden tener un nombre descriptivo. O usar un campo, "descripción"
         rec = super(Repair, self).create(vals)
         return rec
 
@@ -78,8 +80,29 @@ class Repair(models.Model):
         return True
 
     @api.multi
-    def action_quotation_send(self):
-        return self.sale_order_id.action_quotation_send()
+    def _action_confirm(self):
+        for order in self.filtered(lambda order: order.partner_id not in order.message_partner_ids):
+            order.message_subscribe([order.partner_id.id])
+        self.write({
+            'state': 'sale',
+            'confirmation_date': fields.Datetime.now()
+        })
+        if self.env.context.get('send_email'):
+            self.force_quotation_send()
+
+        # create an analytic account if at least an expense product
+        if any([expense_policy != 'no' for expense_policy in self.order_line.mapped('product_id.expense_policy')]):
+            if not self.analytic_account_id:
+                self._create_analytic_account()
+
+        return True
+
+    @api.multi
+    def action_confirm(self):
+        self._action_confirm()
+        if self.env['ir.config_parameter'].sudo().get_param('sale.auto_done_setting'):
+            self.action_done()
+        return True
 
     @api.multi
     def action_confirm(self):
@@ -135,6 +158,24 @@ class Repair(models.Model):
             values['team_id'] = self.partner_id.team_id.id
         self.update(values)
 
+    @api.multi
+    @api.onchange('partner_shipping_id', 'partner_id')
+    def onchange_partner_shipping_id(self):
+        """
+        Trigger the change of fiscal position when the shipping address is modified.
+        """
+        self.fiscal_position_id = self.env['account.fiscal.position'].get_fiscal_position(self.partner_id.id,
+                                                                                          self.partner_shipping_id.id)
+        return {}
+
+    @api.onchange('fiscal_position_id')
+    def _compute_tax_id(self):
+        """
+        Trigger the recompute of the taxes if the fiscal position is changed on the SO.
+        """
+        for order in self:
+            order.order_line._compute_tax_id()
+
     @api.onchange('project_id')
     def _onchange_project(self):
         if self.project_id:
@@ -143,3 +184,24 @@ class Repair(models.Model):
         else:
             self.stage_id = False
 
+    @api.multi
+    def pruebas_pruebas(self):
+
+        print('PRUEBAS!!')
+
+        group_salesman_id = self.env.ref("sales_team.group_sale_salesman")
+        binding_id = self.env.ref("sale.model_sale_order")
+        form_id = self.env.ref("sale.view_sale_advance_payment_inv")
+        depurador()
+        return {
+            "id": "car_workshop_action_view_sale_advance_payment_inv",
+            "name": "Invoice Order",
+            "type": "ir.actions.act_window",
+            "res_model": "sale.advance.payment.inv",
+            "view_type": "form",
+            "view_mode": "form",
+            "target": "new",
+            "groups_id": group_salesman_id.id,
+            "binding_model_id": binding_id.id,
+            "views": [[form_id.id,'form']],
+        }

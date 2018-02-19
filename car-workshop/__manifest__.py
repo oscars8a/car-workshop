@@ -17,7 +17,7 @@
         'account_invoicing',
         'product',
         'stock',
-        'sale',
+        'sale_management',
     ],
     'data': [
         'views/car-workshop.xml',
