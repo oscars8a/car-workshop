@@ -17,7 +17,7 @@ class Repair(models.Model):
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
     car_order_line = fields.One2many(related="sale_order_id.order_line")
-    pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
+    # pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
 
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
@@ -37,11 +37,6 @@ class Repair(models.Model):
     children_hours = fields.Float(related="project_task_id.children_hours")
     remaining_hours = fields.Float(related="project_task_id.remaining_hours")
     priority = fields.Selection(related="project_task_id.priority")
-    activity_ids = fields.One2many(related="project_task_id.activity_ids")
-
-
-
-
 
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):
@@ -53,7 +48,9 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
+        print('ESTO ES HORRIBLE')
         print(vals['name'])
+        print(vals)
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
@@ -154,7 +151,7 @@ class Repair(models.Model):
             'pricelist_id': self.partner_id.property_product_pricelist
                             and self.partner_id.property_product_pricelist.id or False,
             'payment_term_id': self.partner_id.property_payment_term_id
-                            and self.partner_id.property_payment_term_id.id or False,
+                               and self.partner_id.property_payment_term_id.id or False,
             'partner_invoice_id': addr['invoice'],
             'partner_shipping_id': addr['delivery'],
             'user_id': self.partner_id.user_id.id or self.env.uid
@@ -193,14 +190,13 @@ class Repair(models.Model):
         else:
             self.stage_id = False
 
-
     @api.multi
-    def action_invoice_create(self,grouped=False, states=False):
+    def action_invoice_create(self, grouped=False, states=False):
         # depurador()
         if states is None:
             states = ['confirmed', 'done']
         order_ids = [record.sale_order_id.id for record in self]
         sale_obj = self.env['sale.order'].browse(order_ids)
 
-        invoice_id = (sale_obj.action_invoice_create(grouped=False,final=False))
+        invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
