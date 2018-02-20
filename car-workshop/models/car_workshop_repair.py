@@ -115,6 +115,10 @@ class Repair(models.Model):
         return self.sale_order_id.print_quotation()
 
     @api.multi
+    def action_quotation_send(self):
+        return self.sale_order_id.action_quotation_send()
+
+    @api.multi
     def action_cancel(self):
         return self.sale_order_id.action_cancel()
 
