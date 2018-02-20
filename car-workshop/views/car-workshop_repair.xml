@@ -121,7 +121,7 @@
                             </page>
                             <page string="Order Lines">
                                 <!--PRUEBAs car_order_line-->
-                                <field name="car_order_line" mode="tree,kanban"
+                                <field name="order_line" mode="tree,kanban"
                                        attrs="{'readonly': [('state', 'in', ('done','cancel'))]}">
                                     <form string="Sales Order Lines">
                                         <group>

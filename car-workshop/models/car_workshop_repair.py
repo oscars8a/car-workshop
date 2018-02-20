@@ -16,7 +16,7 @@ class Repair(models.Model):
     repair_title = fields.Char()
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
-    car_order_line = fields.One2many(related="sale_order_id.order_line")
+    # car_order_line = fields.One2many(related="sale_order_id.order_line")
     # pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
 
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
