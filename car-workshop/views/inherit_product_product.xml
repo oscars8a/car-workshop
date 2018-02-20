@@ -32,20 +32,20 @@
         </record>
 
 
-        <!-- Inherit Search View Products -->
-        <record id="car-workshop_fleet_wheels_view_search" model="ir.ui.view">
-            <field name="name">car-workshop_fleet_wheels_view_search</field>
-            <field name="model">product.product</field>
-            <field name="arch" type="xml">
-                <search>
-                    <field name="width"/>
-                    <field name="height"/>
-                    <field name="diameter"/>
-                    <field name="brand_id"/>
-                    <field name="season"/>
-                </search>
-            </field>
-        </record>
+        <!--&lt;!&ndash; Inherit Search View Products &ndash;&gt;-->
+        <!--<record id="car-workshop_fleet_wheels_view_search" model="ir.ui.view">-->
+            <!--<field name="name">car-workshop_fleet_wheels_view_search</field>-->
+            <!--<field name="model">product.product</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<search>-->
+                    <!--<field name="width"/>-->
+                    <!--<field name="height"/>-->
+                    <!--<field name="diameter"/>-->
+                    <!--<field name="brand_id"/>-->
+                    <!--<field name="season"/>-->
+                <!--</search>-->
+            <!--</field>-->
+        <!--</record>-->
 
         <!--Action Wheels Menu-->
         <record id="action_wheels_view_wizard" model="ir.actions.act_window">
@@ -55,7 +55,7 @@
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="view_id" ref="car-workshop_wheels_wizard_view_form"/>
-            <field name="search_view_id" ref="car-workshop_fleet_wheels_view_search"/>
+            <!--<field name="search_view_id" ref="car-workshop_fleet_wheels_view_search"/>-->
             <field name="target">new</field>
         </record>
 

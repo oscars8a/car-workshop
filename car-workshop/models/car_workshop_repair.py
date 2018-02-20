@@ -196,7 +196,7 @@ class Repair(models.Model):
 
     @api.multi
     def action_invoice_create(self,grouped=False, states=False):
-        depurador()
+        # depurador()
         if states is None:
             states = ['confirmed', 'done']
         order_ids = [record.sale_order_id.id for record in self]
