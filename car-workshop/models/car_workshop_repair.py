@@ -16,6 +16,9 @@ class Repair(models.Model):
     repair_title = fields.Char()
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
+    car_order_line = fields.One2many(related="sale_order_id.order_line")
+    pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
+
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
     description = fields.Html(related="project_task_id.description", store=True)
@@ -35,6 +38,9 @@ class Repair(models.Model):
     remaining_hours = fields.Float(related="project_task_id.remaining_hours")
     priority = fields.Selection(related="project_task_id.priority")
     activity_ids = fields.One2many(related="project_task_id.activity_ids")
+
+
+
 
 
     @api.model
@@ -128,6 +134,10 @@ class Repair(models.Model):
         self.sale_order_id.action_unlock()
 
     @api.multi
+    def action_view_invoice(self):
+        return self.sale_order_id.action_view_invoice()
+
+    @api.multi
     @api.onchange('partner_id')
     def onchange_partner_id(self):
         if not self.partner_id:
@@ -183,23 +193,14 @@ class Repair(models.Model):
         else:
             self.stage_id = False
 
-    @api.multi
-    def pruebas_pruebas(self):
 
-        print('PRUEBAS!!')
-        group_salesman_id = self.env.ref("sales_team.group_sale_salesman")
-        binding_id = self.env.ref("sale.model_sale_order")
-        form_id = self.env.ref("sale.view_sale_advance_payment_inv")
-        # depurador()
-        return {
-            "id": "car_workshop_action_view_sale_advance_payment_inv",
-            "name": "Invoice Order",
-            "type": "ir.actions.act_window",
-            "res_model": "sale.advance.payment.inv",
-            "view_type": "form",
-            "view_mode": "form",
-            "target": "new",
-            "groups_id": group_salesman_id.id,
-            "binding_model_id": binding_id.id,
-            "views": [[form_id.id,'form']],
-        }
+    @api.multi
+    def action_invoice_create(self,grouped=False, states=False):
+        depurador()
+        if states is None:
+            states = ['confirmed', 'done']
+        order_ids = [record.sale_order_id.id for record in self]
+        sale_obj = self.env['sale.order'].browse(order_ids)
+
+        invoice_id = (sale_obj.action_invoice_create(grouped=False,final=False))
+        return invoice_id
