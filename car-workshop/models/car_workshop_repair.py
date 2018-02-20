@@ -48,9 +48,9 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-        print('ESTO ES HORRIBLE')
-        print(vals['name'])
-        print(vals)
+        # print('ESTO ES HORRIBLE')
+        # print(vals['name'])
+        # print(vals)
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:

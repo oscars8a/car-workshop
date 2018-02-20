@@ -47,7 +47,7 @@ class WheelsWizard(models.TransientModel):
             # domain.append(("season","=",str(self.season)))
             context["search_default_season"] = self.season
 
-        search_id = self.env.ref("car-workshop.car-workshop_fleet_wheels_view_search")
+        # search_id = self.env.ref("car-workshop.car-workshop_fleet_wheels_view_search")
 
         return {
 
@@ -57,7 +57,8 @@ class WheelsWizard(models.TransientModel):
             "views": [[False,"kanban"],[False, "form"],[False, "search"]],
             "context": context,
             "domain": domain,
-            "search_view_id": (search_id.id, "car-workshop.fleet.wheels.view.search"),
+            # Modificarlo cuando este solucionado el problema de los filtros.
+            # "search_view_id": (search_id.id, "car-workshop.fleet.wheels.view.search"),
             "target": "main",
         }
 
