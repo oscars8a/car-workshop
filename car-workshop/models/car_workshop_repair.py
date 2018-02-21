@@ -18,6 +18,8 @@ class Repair(models.Model):
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
     # car_order_line = fields.One2many(related="sale_order_id.order_line")
     # pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
+    # Porque no hereda este campo? y sí el resto?
+    # picking_ids = fields.One2many(related="sale_order_id.picking_ids")
 
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)

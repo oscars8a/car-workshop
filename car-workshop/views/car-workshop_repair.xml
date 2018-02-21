@@ -2,15 +2,15 @@
 <odoo>
     <data>
         <!--<record id="car_workshop_action_view_sale_advance_payment_inv" model="ir.actions.act_window">-->
-            <!--<field name="name">Invoice Order 2</field>-->
-            <!--<field name="type">ir.actions.act_window</field>-->
-            <!--<field name="res_model">sale.advance.payment.inv</field>-->
-            <!--<field name="view_type">form</field>-->
-            <!--<field name="view_mode">form</field>-->
-            <!--<field name="target">new</field>-->
-            <!--&lt;!&ndash;<field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>&ndash;&gt;-->
-            <!--&lt;!&ndash; TODO: check if we need this &ndash;&gt;-->
-            <!--&lt;!&ndash;<field name="binding_model_id" ref="sale.model_sale_order" />&ndash;&gt;-->
+        <!--<field name="name">Invoice Order 2</field>-->
+        <!--<field name="type">ir.actions.act_window</field>-->
+        <!--<field name="res_model">sale.advance.payment.inv</field>-->
+        <!--<field name="view_type">form</field>-->
+        <!--<field name="view_mode">form</field>-->
+        <!--<field name="target">new</field>-->
+        <!--&lt;!&ndash;<field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>&ndash;&gt;-->
+        <!--&lt;!&ndash; TODO: check if we need this &ndash;&gt;-->
+        <!--&lt;!&ndash;<field name="binding_model_id" ref="sale.model_sale_order" />&ndash;&gt;-->
         <!--</record>-->
 
         <!-- Project Repair Form View -->
@@ -23,9 +23,9 @@
                         <button name="action_invoice_create" string="Create Invoice"
                                 type="object" class="btn-primary"
                                 attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>
-                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice2"
-                                type="action" context="{'default_advance_payment_method': 'percentage'}"
-                                attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}"/>
+                        <!--<button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice2"-->
+                        <!--type="action" context="{'default_advance_payment_method': 'percentage'}"-->
+                        <!--attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}"/>-->
 
 
                         <button name="action_quotation_send" string="Send by Email" type="object" states="draft"
@@ -63,6 +63,12 @@
                                     icon="fa-pencil-square-o" attrs="{'invisible': [('invoice_count', '=', 0)]}">
                                 <field name="invoice_count" widget="statinfo" string="Invoices"/>
                             </button>
+                            <!--<field name="picking_ids" invisible="1"/>-->
+                            <!-- Probar -->
+                            <!--<button type="object" name="action_view_delivery" class="oe_stat_button" icon="fa-truck"-->
+                                    <!--attrs="{'invisible': [('delivery_count', '=', 0)]}" groups="base.group_user">-->
+                                <!--<field name="delivery_count" widget="statinfo" string="Delivery"/>-->
+                            <!--</button>-->
                         </div>
                         <field name="kanban_state" widget="state_selection"/>
                         <br/>
