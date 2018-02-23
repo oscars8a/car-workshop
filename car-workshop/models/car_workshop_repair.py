@@ -16,11 +16,8 @@ class Repair(models.Model):
     repair_title = fields.Char()
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
-    # car_order_line = fields.One2many(related="sale_order_id.order_line")
-    # pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
-    # Porque no hereda este campo? y sí el resto?
-    # picking_ids = fields.One2many(related="sale_order_id.picking_ids")
     repair_line = fields.One2many('sale.order.line', 'repair_id', string='Order Lines', states={'cancel': [('readonly', True)], 'done': [('readonly', True)]}, copy=True, auto_join=True)
+
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
     description = fields.Html(related="project_task_id.description", store=True)
@@ -50,9 +47,6 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-        # print('ESTO ES HORRIBLE')
-        # print(vals['name'])
-        # print(vals)
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
@@ -83,7 +77,6 @@ class Repair(models.Model):
             record.unlink()
         return True
 
-    # Echar un ojo estos metodos action_confirm.
     @api.multi
     def _action_confirm(self):
         for order in self.filtered(lambda order: order.partner_id not in order.message_partner_ids):
@@ -111,6 +104,7 @@ class Repair(models.Model):
             if auto_done:
                 sale.sale_order_id.action_done()
         return self.sale_order_id.action_confirm()
+
     @api.multi
     def print_quotation(self):
         return self.sale_order_id.print_quotation()
@@ -212,3 +206,9 @@ class Repair(models.Model):
         sale_obj = self.env['sale.order'].browse(order_ids)
         invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
+
+    # Para generar la Hoja de Admision. Falta.
+    @api.multi
+    def admission_sheet(self):
+        # return self.env.ref('car_worshop.admission_sheet_report').admission_sheet(self)
+        pass

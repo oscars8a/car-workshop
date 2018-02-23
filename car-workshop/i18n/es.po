@@ -1,0 +1,1061 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* car-workshop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-21 13:02+0000\n"
+"PO-Revision-Date: 2018-02-21 14:29+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_invoice_count
+msgid "# of Invoices"
+msgstr "# de Facturas"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,diameter:0
+#: selection:product.product,diameter:0
+msgid "13"
+msgstr "13"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,diameter:0
+#: selection:product.product,diameter:0
+msgid "14"
+msgstr "14"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "145"
+msgstr "145"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,diameter:0
+#: selection:product.product,diameter:0
+msgid "15"
+msgstr "15"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "155"
+msgstr "155"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,diameter:0
+#: selection:product.product,diameter:0
+msgid "16"
+msgstr "16"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "165"
+msgstr "165"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,diameter:0
+#: selection:product.product,diameter:0
+msgid "17"
+msgstr "17"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "175"
+msgstr "175"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "185"
+msgstr "185"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "195"
+msgstr "195"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "205"
+msgstr "205"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "215"
+msgstr "215"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "225"
+msgstr "225"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "235"
+msgstr "235"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,width:0
+#: selection:product.product,width:0
+msgid "245"
+msgstr "245"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "40"
+msgstr "40"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "45"
+msgstr "45"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "50"
+msgstr "50"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "55"
+msgstr "55"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "60"
+msgstr "60"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "65"
+msgstr "65"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "70"
+msgstr "70"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,height:0
+#: selection:product.product,height:0
+msgid "75"
+msgstr "75"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_kanban
+msgid "<span class=\"o_label\">Repairs</span>"
+msgstr "<span class=\"o_label\">Repairs</span>"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "<span>g/km</span>"
+msgstr "<span>g/km</span>"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "<span>kW</span>"
+msgstr "<span>kW</span>"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_kanban_state
+msgid ""
+"A task's kanban state indicates special situations affecting it:\n"
+" * Grey is the default situation\n"
+" * Red indicates something is preventing the progress of this task\n"
+" * Green indicates the task is ready to be pulled to the next stage"
+msgstr ""
+"A task's kanban state indicates special situations affecting it:\n"
+" * Grey is the default situation\n"
+" * Red indicates something is preventing the progress of this task\n"
+" * Green indicates the task is ready to be pulled to the next stage"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_account_invoice_config
+#: model:ir.ui.menu,name:car-workshop.car_account_invoice_menu
+msgid "Account Invoice"
+msgstr "Factura de venta"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "Additional Properties"
+msgstr "Propiedades adicionales"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,season:0
+#: selection:product.product,season:0
+msgid "All season"
+msgstr "Toda la temporada"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_areas_menu
+#: model:ir.ui.menu,name:car-workshop.car_areas_menu
+msgid "Areas"
+msgstr "Áreas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_user_id
+msgid "Assigned to"
+msgstr "Asignada a"
+
+#. module: car-workshop
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_diagnosis
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_finished
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_on_hold
+msgid "Blocked"
+msgstr "Bloqueada"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_brand_id
+#: model:ir.model.fields,field_description:car-workshop.field_product_product_brand_id
+msgid "Brand"
+msgstr "Marca"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_vbrands_menu
+msgid "Brands"
+msgstr "Marcas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_wheels_wizard_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.main_car_workshop_menu
+msgid "Car Workshop"
+msgstr "Taller de reparación"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_image_client_vehicle
+#: model:ir.model.fields,field_description:car-workshop.field_fleet_vehicle_image_client_vehicle
+msgid "Car image"
+msgstr "Imagen del coche"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_products_menus
+msgid "Catalogue"
+msgstr "Catálogo"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_form
+msgid "Choose a Project Email"
+msgstr "Escoja un correo electrónico de proyecto"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,help:car-workshop.action_car_vehicles_config
+msgid "Click here to add new document"
+msgstr "Haga click aquí para añadir un nuevo documento"
+
+#. module: car-workshop
+#: model:project.task.type,name:car-workshop.project_car-workshop_stage_collection_customer
+msgid "Collection Customer"
+msgstr "Collection Customer"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_color
+msgid "Color Index"
+msgstr "Índice de color"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_total_hours_spent
+msgid "Computed as: Time Spent + Sub-tasks Hours."
+msgstr "Calculado como: Tiempo empleado + Horas de la sub-tarea"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_effective_hours
+msgid "Computed using the sum of the task work done."
+msgstr "Calculado usando la suma de las tareas realizadas."
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_vconfig_menus
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Confirm Sale"
+msgstr "Confirmar venta"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_confirmation_date
+msgid "Confirmation Date"
+msgstr "Fecha confirmación"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_kanban
+msgid "Contract(s)"
+msgstr "Contrato(s)"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_form
+msgid "Create & Edit"
+msgstr "Crear y editar"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Create Invoice"
+msgstr "Crear Factura"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_uid
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_create_uid
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_date
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_create_date
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_id
+#: model:ir.model.fields,field_description:car-workshop.field_fleet_vehicle_customer_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_client_order_ref
+msgid "Customer Reference"
+msgstr "Referencia cliente"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_customers_config
+#: model:ir.ui.menu,name:car-workshop.car_customers_menu
+#: model:ir.ui.menu,name:car-workshop.car_customers_menus
+msgid "Customers"
+msgstr "Clientes"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_confirmation_date
+msgid "Date on which the sales order is confirmed."
+msgstr "Fecha en que se confirma el pedido de venta."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_deadline
+msgid "Deadline"
+msgstr "Fecha límite"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_kanban
+msgid "Delete"
+msgstr "Suprimir"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Delivered Quantity"
+msgstr "Cantidad Entregada"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_shipping_id
+msgid "Delivery Address"
+msgstr "Dirección de entrega"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_partner_shipping_id
+msgid "Delivery address for current sales order."
+msgstr "Dirección de envío para el pedido de ventas actual."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_description
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: car-workshop
+#: model:project.task.type,name:car-workshop.project_car-workshop_stage_diagnosis
+msgid "Diagnosis"
+msgstr "Diagnosis"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_diameter
+#: model:ir.model.fields,field_description:car-workshop.field_product_product_diameter
+msgid "Diameter"
+msgstr "Diameter"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_display_name
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_display_name
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Duration"
+msgstr "Duración"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_kanban
+msgid "Edit Task"
+msgstr "Editar Tarea"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "Engine Options"
+msgstr "Opciones del motor"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_planned_hours
+msgid "Estimated time to do the task, usually set by the project manager when the task is in draft state."
+msgstr "Tiempo estimado para realizar la tarea, normalmente fijado por el responsable del proyecto cuando la tarea está en estado borrador."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_validity_date
+msgid "Expiration Date"
+msgstr "Fecha de caducidad"
+
+#. module: car-workshop
+#: model:project.task.type,name:car-workshop.project_car-workshop_stage_finished
+msgid "Finished"
+msgstr "Terminado"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Posición fiscal"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "General Properties"
+msgstr "Propiedades generales"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_height
+#: model:ir.model.fields,field_description:car-workshop.field_product_product_height
+msgid "Height"
+msgstr "Altura"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_effective_hours
+msgid "Hours Spent"
+msgstr "Horas dedicadas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_id
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_id
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "If the sale is locked, you can not modify it anymore. However, you will still be able to invoice or deliver."
+msgstr "Si la venta está bloqueada, no puede modificarla. Sin embargo, todavía podrá facturarla o entregarla."
+
+#. module: car-workshop
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_diagnosis
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_finished
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_on_hold
+#: model:project.task.type,name:car-workshop.project_car-workshop_stage_in_progress
+msgid "In Progress"
+msgstr "En proceso"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_fleet_vehicle
+msgid "Information on a vehicle"
+msgstr "Información sobre un vehículo"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_planned_hours
+msgid "Initially Planned Hours"
+msgstr "Horas iniciales planificadas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_invoice_id
+msgid "Invoice Address"
+msgstr "Dirección de Factura"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_invoice_status
+msgid "Invoice Status"
+msgstr "Estado factura"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_partner_invoice_id
+msgid "Invoice address for current sales order."
+msgstr "Dirección de facturación para el pedido de venta actual."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Invoiced Quantity"
+msgstr "Cantidad Facturada"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_invoice_ids
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Invoicing"
+msgstr "Facturación"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_is_expired
+msgid "Is expired"
+msgstr "Esta expirado"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_product_product_is_wheel
+msgid "It's a wheel?"
+msgstr "¿Es una rueda?"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_project_project_car_work
+msgid "It's car's work?"
+msgstr "It's car's work?"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_kanban_state
+msgid "Kanban State"
+msgstr "Estado de kanban"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair___last_update
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands___last_update
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_uid
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_write_uid
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_date
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_write_date
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Lock"
+msgstr "Bloquear"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_image
+msgid "Logo"
+msgstr "Logo"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_name
+msgid "Make"
+msgstr "Marca"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_validity_date
+msgid "Manually set the expiration date of your quotation (offer), or it will set the date automatically based on the template if online quotation is installed."
+msgstr "Indique manualmente la fecha de caducidad de su presupuesto (oferta), o se cargará la fecha automáticamente en función de la plantilla."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_image_medium
+msgid "Medium-sized image"
+msgstr "Imagen de tamaño mediano"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_wheels_brands_image_medium
+msgid "Medium-sized logo of the brand. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr "Logo de tamaño medio de la marca. Se redimensiona automáticamente a 128x128px, con el ratio de aspecto preservado. Use este campo en las vistas de formulario o en algunas vistas kanban."
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_vmodels_menu
+msgid "Models"
+msgstr "Modelos"
+
+#. module: car-workshop
+#: code:addons/car-workshop/models/car_workshop_repair.py:60
+#: code:addons/car-workshop/models/car_workshop_repair.py:62
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: car-workshop
+#: model:project.task.type,name:car-workshop.project_car-workshop_stage_on_hold
+msgid "On Hold"
+msgstr "En espera"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_order
+msgid "Order Date"
+msgstr "Fecha de pedido"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_order_line
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Order Lines"
+msgstr "Líneas del pedido"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_name
+msgid "Order Reference"
+msgstr "Referencia del pedido"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Ordered Qty"
+msgstr "Ctdad pedida"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Ordered Quantity"
+msgstr "Cantidad pedida"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Other Information"
+msgstr "Otra información"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_term_id
+msgid "Payment Terms"
+msgstr "Plazos de pago"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_pricelist_id
+msgid "Pricelist"
+msgstr "Tarifa"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_pricelist_id
+msgid "Pricelist for current sales order."
+msgstr "Tarifa para el pedido de venta actual."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_priority
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_product_product
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_vproducts_config
+#: model:ir.ui.menu,name:car-workshop.car_vproducts_menu
+msgid "Products"
+msgstr "Productos"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_progress
+msgid "Progress"
+msgstr "En proceso"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_project_project
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_form
+msgid "Project Name"
+msgstr "Nombre del proyecto"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_project_task_id
+msgid "Project Task"
+msgstr "Tarea de proyecto"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Quantity:"
+msgstr "Cantidad:"
+
+#. module: car-workshop
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_diagnosis
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_finished
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_on_hold
+msgid "Ready for Next Stage"
+msgstr "Preparado para la siguiente fase"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_kanban
+msgid "Record's Colour"
+msgstr "Color del registro"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_origin
+msgid "Reference of the document that generated this sales order request."
+msgstr "Referencia del documento que ha generado esta solicitud de pedido de venta."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_remaining_hours
+msgid "Remaining Hours"
+msgstr "Horas restantes"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_repair_title
+msgid "Repair Title"
+msgstr "Título de la reparación"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_project_kanban_to_repair_kanban
+#: model:ir.actions.act_window,name:car-workshop.action_car_repairs_config
+#: model:ir.model.fields,field_description:car-workshop.field_project_project_repair_count
+#: model:ir.ui.menu,name:car-workshop.car_repairs_menu
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_calendar
+msgid "Repairs"
+msgstr "Reparaciones"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Reporting"
+msgstr "Informes"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_sale_order_id
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_team_id
+msgid "Sales Channel"
+msgstr "Canal de ventas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Sales Information"
+msgstr "Información de ventas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Sales Order Lines"
+msgstr "Líneas pedido de ventas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_wheels_wizard_view_form
+msgid "Search"
+msgstr "Búsqueda"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_season
+#: model:ir.model.fields,field_description:car-workshop.field_product_product_season
+msgid "Season"
+msgstr "Temporada"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Send PRO-FORMA Invoice"
+msgstr "Enviar Factura PROFORMA"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Send by Email"
+msgstr "Enviar por correo electrónico"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Set to Quotation"
+msgstr "Convertir a presupuesto"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.car-workshop_config_settings_action
+#: model:ir.ui.menu,name:car-workshop.car_settings_menu
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_kanban
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Setup default terms and conditions in your sales settings ..."
+msgstr "Configure los términos y condiciones predeterminados en su configuración de ventas ..."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_brands_image_small
+msgid "Small-sized image"
+msgstr "Imagen de tamaño pequeño"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_wheels_brands_image_small
+msgid "Small-sized logo of the brand. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Tamaño pequeño de la marca. Se cambia de tamaño automáticamente como una imagen de 64x64px con relación al aspecto conservado. Utilice este campo en cualquier parte se requiere una imagen pequeña."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_origin
+msgid "Source Document"
+msgstr "Documento origen"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_stage_id
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_start
+msgid "Starting Date"
+msgstr "Fecha de inicio"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_children_hours
+msgid "Sub-tasks Hours"
+msgstr "Horas de la sub-tarea"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_children_hours
+msgid "Sum of the planned hours of all sub-tasks (when a sub-task is closed or its spent hours exceed its planned hours, spent hours are counted instead)"
+msgstr "Suma de las horas planificadas en todas las sub-tareas (cuando una sub-tarea es cerrada o excede de las horas planificadas, las horas de la sub-tarea es sumada en lugar de las planificadas)"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,season:0
+#: selection:product.product,season:0
+msgid "Summer"
+msgstr "Verano"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_tag_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_kanban
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_amount_tax
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_note
+msgid "Terms and conditions"
+msgstr "Términos y condiciones"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_analytic_account_id
+msgid "The analytic account related to a sales order."
+msgstr "La cuenta analítica relacionada con un pedido de venta."
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_wheels_brands_image
+msgid "This field holds the image used as logo for the brand, limited to 1024x1024px."
+msgstr "Este campo contiene la imagen usado como logo para la marca, limitada a 1024x1024px."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Timesheet Activities"
+msgstr "Actividades del parte de horas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_timesheet_ids
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Timesheets"
+msgstr "Partes de horas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_amount_total
+msgid "Total"
+msgstr "Total"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_total_hours_spent
+msgid "Total Hours"
+msgstr "Total horas"
+
+#. module: car-workshop
+#: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_remaining_hours
+msgid "Total remaining time, can be re-estimated periodically by the assignee of the task."
+msgstr "Total tiempo restante, puede ser reestimado periódicamente por quien se le ha asignado la tarea."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Unit Price:"
+msgstr "Precio unitario:"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Unlock"
+msgstr "Desbloquear"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Base imponible"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_vehicle_id
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_vbrands_config
+msgid "Vehicle Brands"
+msgstr "Marcas de vehículo"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_vmodels_config
+msgid "Vehicle Models"
+msgstr "Modelos de vehículo"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_vehicles_config
+#: model:ir.ui.menu,name:car-workshop.car_vehicles_menu
+msgid "Vehicles"
+msgstr "Vehículos"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.product_template_form_view
+msgid "Wheel Attributes"
+msgstr "Atributos ruedas"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_wheels_view_wizard
+msgid "Wheel Wizard"
+msgstr "Asistente ruedas"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_wheels_menu
+msgid "Wheels"
+msgstr "Ruedas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_wheels_brand_view_form
+msgid "Wheels Brand"
+msgstr "Marca ruedas"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_wbrands_config
+#: model:ir.ui.menu,name:car-workshop.car_wbrands_menu
+msgid "Wheels Brands"
+msgstr "Marca ruedas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_wheels_wizard_view_form
+msgid "Wheels Wizard"
+msgstr "Asistente ruedas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_wheels_wizard_width
+#: model:ir.model.fields,field_description:car-workshop.field_product_product_width
+msgid "Width"
+msgstr "Altura"
+
+#. module: car-workshop
+#: selection:car_workshop.wheels_wizard,season:0
+#: selection:product.product,season:0
+msgid "Winter"
+msgstr "Verano"
+
+#. module: car-workshop
+#: code:addons/car-workshop/models/car_workshop_repair.py:76
+#, python-format
+msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
+msgstr "No se puede borrar un presupuesto o un pedido de venta. Pruebe cancelándolo antes"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_car_workshop_repair
+msgid "car_workshop.repair"
+msgstr "car_workshop.repair"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_car_workshop_wheels_brands
+msgid "car_workshop.wheels_brands"
+msgstr "car_workshop.wheels_brands"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_car_workshop_wheels_wizard
+msgid "car_workshop.wheels_wizard"
+msgstr "car_workshop.wheels_wizard"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "days"
+msgstr "días"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "e.g. Model S"
+msgstr "ej. Modelo S"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_form
+msgid "e.g. Office Party"
+msgstr "e.g. Parte de oficina"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+msgid "e.g. PAE 326"
+msgstr "ej. PAE 326"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_kanban
+msgid "oe_kanban_text_red"
+msgstr "oe_kanban_text_red"
