@@ -83,6 +83,7 @@ class Repair(models.Model):
             record.unlink()
         return True
 
+    # Echar un ojo estos metodos action_confirm.
     @api.multi
     def _action_confirm(self):
         for order in self.filtered(lambda order: order.partner_id not in order.message_partner_ids):
