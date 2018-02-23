@@ -10,6 +10,17 @@
             <field name="arch" type="xml">
                 <form string="Vehicle">
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="return_action_to_open" type="object" class="oe_stat_button" icon="fa-wrench" context="{'xml_id':'fleet_vehicle_log_services_action'}" help="show the services logs for this vehicle">
+                            <field name="service_count" widget="statinfo" string="Services"/>
+                        </button>
+                        <button name="return_action_to_open" type="object" class="oe_stat_button" icon="fa-tachometer" context="{'xml_id':'fleet_vehicle_odometer_action'}" help="show the odometer logs for this vehicle">
+                            <field name="odometer_count" widget="statinfo" string="Odometer"/>
+                        </button>
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                    </div>
                     <field name="image_client_vehicle" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <label for="model_id" class="oe_edit_only"/>
@@ -25,11 +36,11 @@
                     </div>
                     <group col="2" string="General Properties">
                         <group>
+                            <field name="customer_id"/>
                             <field name="driver_id"/>
                             <field name="location"/>
                             <field name="vin_sn"/>
-                            <field name="model_year"/>
-                            <field name="customer_id"/>
+                            <field name="model_year"/>                            
                             <field name="company_id" groups="base.group_multi_company"/>
                         </group>
                         <group>
@@ -87,11 +98,6 @@
                 <field name="id" />
                 <field name="image_client_vehicle" />
                 <field name="tag_ids" />
-                <field name="contract_renewal_due_soon" />
-                <field name="contract_renewal_overdue" />
-                <field name="contract_renewal_name" />
-                <field name="contract_renewal_total" />
-                <field name="contract_count" />
 
                 <templates>
                     <t t-name="kanban-box">
@@ -108,26 +114,9 @@
                                 </div>
                                 <ul>
                                     <li>
-                                        <t t-if="record.driver_id.raw_value"><field name="driver_id"/></t>
-                                    </li>
-                                    <li>
-                                        <t t-if="record.location.raw_value"><field name="location"/></t>
+                                        <t t-if="record.customer_id.raw_value"><field name="customer_id"/></t>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="o_kanban_button">
-                                <a t-if="record.contract_count.raw_value>0" data-type="object"
-                                   data-name="return_action_to_open" href="#" class="oe_kanban_action oe_kanban_action_a"
-                                   data-context='{"xml_id":"fleet_vehicle_log_contract_action","search_default_open": 1}'>
-                                    <field name="contract_count"/>
-                                    Contract(s)
-                                    <span t-if="record.contract_renewal_due_soon.raw_value and !record.contract_renewal_overdue.raw_value"
-                                        class="fa fa-exclamation-triangle" t-att-style="'color:orange'">
-                                    </span>
-                                     <span t-if="record.contract_renewal_overdue.raw_value"
-                                        class="fa fa-exclamation-triangle" t-att-style="'color:red;'">
-                                    </span>
-                                </a>
                             </div>
                         </div>
                     </t>
