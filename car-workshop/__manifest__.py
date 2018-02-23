@@ -17,6 +17,7 @@
         'account_invoicing',
         'product',
         'stock',
+        'sale_stock',
         'sale_management',
     ],
     'data': [
@@ -30,6 +31,7 @@
         'data/branches.xml',
         'data/models.xml',
         'data/project_initial.xml',
+        'views/inherit_res_partner.xml',
     ],
     'demo': [
         'demo/wheels_branches.xml',

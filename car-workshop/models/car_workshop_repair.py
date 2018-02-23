@@ -20,7 +20,7 @@ class Repair(models.Model):
     # pricelist_id = fields.Many2one(related="sale_order_id.pricelist_id", store=True)
     # Porque no hereda este campo? y sí el resto?
     # picking_ids = fields.One2many(related="sale_order_id.picking_ids")
-
+    repair_line = fields.One2many('sale.order.line', 'repair_id', string='Order Lines', states={'cancel': [('readonly', True)], 'done': [('readonly', True)]}, copy=True, auto_join=True)
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
     description = fields.Html(related="project_task_id.description", store=True)
@@ -57,9 +57,9 @@ class Repair(models.Model):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
                 vals['name'] = self.env['ir.sequence'].with_context(force_company=vals['company_id']).next_by_code(
-                    'sale.order') or _('New')
+                    'sale.order') or _('')
             else:
-                vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
+                vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
 
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
@@ -92,6 +92,7 @@ class Repair(models.Model):
             'state': 'sale',
             'confirmation_date': fields.Datetime.now()
         })
+        
         if self.env.context.get('send_email'):
             self.force_quotation_send()
 
@@ -99,20 +100,17 @@ class Repair(models.Model):
         if any([expense_policy != 'no' for expense_policy in self.order_line.mapped('product_id.expense_policy')]):
             if not self.analytic_account_id:
                 self._create_analytic_account()
-
-        return True
-
-    @api.multi
-    def action_confirm(self):
-        self._action_confirm()
-        if self.env['ir.config_parameter'].sudo().get_param('sale.auto_done_setting'):
-            self.action_done()
-        return True
+        return self.sale_order_id._action_confirm()
 
     @api.multi
     def action_confirm(self):
+        auto_done = self.env['ir.config_parameter'].sudo().get_param('sale.auto_done_setting')
+        for sale in self:
+            for order in sale.sale_order_id:
+                order.state = 'sale'
+            if auto_done:
+                sale.sale_order_id.action_done()
         return self.sale_order_id.action_confirm()
-
     @api.multi
     def print_quotation(self):
         return self.sale_order_id.print_quotation()
@@ -141,6 +139,17 @@ class Repair(models.Model):
     def action_view_invoice(self):
         return self.sale_order_id.action_view_invoice()
 
+    @api.multi
+    def action_view_delivery(self):
+        return self.sale_order_id.action_view_delivery()
+
+    @api.multi
+    @api.onchange('vehicle_id')
+    def onchange_vehicle_id(self):
+        if self.vehicle_id and self.vehicle_id.customer_id:
+            self.partner_id = self.vehicle_id.customer_id
+                
+        
     @api.multi
     @api.onchange('partner_id')
     def onchange_partner_id(self):
@@ -198,12 +207,8 @@ class Repair(models.Model):
             self.stage_id = False
 
     @api.multi
-    def action_invoice_create(self, grouped=False, states=False):
-        # depurador()
-        if states is None:
-            states = ['confirmed', 'done']
+    def action_invoice_create(self, grouped=False, final=False):
         order_ids = [record.sale_order_id.id for record in self]
         sale_obj = self.env['sale.order'].browse(order_ids)
-
         invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
