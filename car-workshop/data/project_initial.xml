@@ -6,11 +6,6 @@
             <field name="name">On Hold</field>
     </record>
 
-    <record forcecreate="False" id="project_car-workshop_stage_diagnosis" model="project.task.type">
-            <field name="sequence">2</field>
-            <field name="name">Diagnosis</field>
-    </record>
-
     <record forcecreate="False" id="project_car-workshop_stage_in_progress" model="project.task.type">
             <field name="sequence">3</field>
             <field name="name">In Progress</field>
