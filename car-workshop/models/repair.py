@@ -140,12 +140,12 @@ class Repair(models.Model):
 
     @api.multi
     @api.onchange('vehicle_id')
-    def onchange_vehicle_id(self):
-        if self.vehicle_id and self.vehicle_id.customer_id:
-            self.partner_id = self.vehicle_id.customer_id
-                
-        
-    @api.multi
+    def _onchange_vehicle_id(self):
+        if self.vehicle_id:
+            if self.vehicle_id.customer_id:
+                self.partner_id = self.vehicle_id.customer_id
+
+
     @api.onchange('partner_id')
     def onchange_partner_id(self):
         if not self.partner_id:
@@ -156,7 +156,6 @@ class Repair(models.Model):
                 'fiscal_position_id': False,
             })
             return
-
         addr = self.partner_id.address_get(['delivery', 'invoice'])
         values = {
             'pricelist_id': self.partner_id.property_product_pricelist
@@ -169,10 +168,17 @@ class Repair(models.Model):
         if self.env['ir.config_parameter'].sudo().get_param(
                 'sale.use_sale_note') and self.env.user.company_id.sale_note:
             values['note'] = self.with_context(lang=self.partner_id.lang).env.user.company_id.sale_note
-
         if self.partner_id.team_id:
             values['team_id'] = self.partner_id.team_id.id
         self.update(values)
+
+        vehicles_list = self.env['fleet.vehicle'].search([('customer_id.id', '=', self.partner_id.id)])
+        vehicles_count = len(vehicles_list)
+        if vehicles_count == 1:
+            self.vehicle_id = vehicles_list[0]
+        elif vehicles_count > 1:
+            print('PRUEBA 2')
+            
 
     @api.multi
     @api.onchange('partner_shipping_id', 'partner_id')
@@ -206,9 +212,3 @@ class Repair(models.Model):
         sale_obj = self.env['sale.order'].browse(order_ids)
         invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
-
-    @api.onchange('vehicle_id')
-    def _onchange_vehicle_id(self):
-        if self.vehicle_id:
-            if self.vehicle_id.customer_id:
-                self.partner_id = self.vehicle_id.customer_id
