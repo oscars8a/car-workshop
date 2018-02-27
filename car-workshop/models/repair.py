@@ -47,6 +47,7 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
+
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
@@ -54,6 +55,10 @@ class Repair(models.Model):
                     'sale.order') or _('')
             else:
                 vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
+
+        if not vals.get('date_start'):
+            vals['date_start'] = fields.Date.context_today(self)
+
 
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
@@ -207,8 +212,8 @@ class Repair(models.Model):
         invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
 
-    # Para generar la Hoja de Admision. Falta.
-    @api.multi
-    def admission_sheet(self):
-        # return self.env.ref('car_worshop.admission_sheet_report').admission_sheet(self)
-        pass
+    # Para generar la Hoja de Admision. PRUEBAS.
+    # @api.multi
+    # def admission_sheet(self):
+    #     # return self.env.ref('car_worshop.admission_sheet_report').admission_sheet(self)
+    #     pass
