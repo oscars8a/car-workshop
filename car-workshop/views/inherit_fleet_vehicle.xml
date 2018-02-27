@@ -37,11 +37,11 @@
                     <group col="2" string="General Properties">
                         <group>
                             <field name="customer_id"/>
-                            <field name="driver_id"/>
                             <field name="location"/>
                             <field name="vin_sn"/>
                             <field name="model_year"/>                            
                             <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="driver_id"/>
                         </group>
                         <group>
                             <label for="odometer"/>
