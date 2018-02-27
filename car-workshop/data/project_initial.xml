@@ -28,7 +28,6 @@
             <field name="car_work">True</field>
             <field name="user_id" ref="base.user_root"/>
             <field name="type_ids" eval="[(4, ref('car-workshop.project_car-workshop_stage_on_hold')),
-            (4, ref('car-workshop.project_car-workshop_stage_diagnosis')),
             (4, ref('car-workshop.project_car-workshop_stage_in_progress')),
             (4, ref('car-workshop.project_car-workshop_stage_collection_customer')),
             (4, ref('car-workshop.project_car-workshop_stage_finished'))]"/>
