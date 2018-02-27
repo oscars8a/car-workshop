@@ -207,8 +207,8 @@ class Repair(models.Model):
         invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
 
-    # Para generar la Hoja de Admision. PRUEBAS.
-    # @api.multi
-    # def admission_sheet(self):
-    #     # return self.env.ref('car_worshop.admission_sheet_report').admission_sheet(self)
-    #     pass
+    @api.onchange('vehicle_id')
+    def _onchange_vehicle_id(self):
+        if self.vehicle_id:
+            if self.vehicle_id.customer_id:
+                self.partner_id = self.vehicle_id.customer_id
