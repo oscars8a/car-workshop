@@ -80,7 +80,8 @@
                             <h1 class="o_row">
 
                                 <field name="priority" widget="priority"/>
-                                <field name="repair_title" attrs="{'invisible':[('repair_title','=',False)]}"/>
+                                <field name="repair_title" default_focus="1"
+                                            attrs="{'invisible':[('repair_title','=',False)]}"/>
                                 <field name="name" attrs="{'invisible':[('repair_title','!=',False)]}"/>
 
                             </h1>
@@ -113,7 +114,7 @@
                             </group>
                         </group>
                         <group>
-                            <field name="description" type="html" nolabel="1"/>
+                            <div><field name="description" default_focus="0"/></div>
                         </group>
                         <notebook>
                             <page string="Quotation">

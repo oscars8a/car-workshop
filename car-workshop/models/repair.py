@@ -47,7 +47,6 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
@@ -55,11 +54,8 @@ class Repair(models.Model):
                     'sale.order') or _('')
             else:
                 vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
-
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
-
-
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
         if 'message_follower_ids' in vals:
@@ -169,7 +165,6 @@ class Repair(models.Model):
                                and self.partner_id.property_payment_term_id.id or False,
             'partner_invoice_id': addr['invoice'],
             'partner_shipping_id': addr['delivery'],
-            'user_id': self.partner_id.user_id.id or self.env.uid
         }
         if self.env['ir.config_parameter'].sudo().get_param(
                 'sale.use_sale_note') and self.env.user.company_id.sale_note:
