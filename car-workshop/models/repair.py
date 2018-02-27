@@ -178,7 +178,7 @@ class Repair(models.Model):
             self.vehicle_id = vehicles_list[0]
         elif vehicles_count > 1:
             print('PRUEBA 2')
-            
+
 
     @api.multi
     @api.onchange('partner_shipping_id', 'partner_id')
