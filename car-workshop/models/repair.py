@@ -177,7 +177,7 @@ class Repair(models.Model):
         if vehicles_count == 1:
             self.vehicle_id = vehicles_list[0]
         elif vehicles_count > 1:
-            print('PRUEBA 2')
+            print('PASO 2')
 
 
     @api.multi
