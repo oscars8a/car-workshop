@@ -24,17 +24,13 @@
         'views/car-workshop.xml',
         'views/repair.xml',
         'views/inherit_project_project.xml',
-        'views/inherit_fleet_vehicle_model_brand.xml',
         'views/inherit_fleet_vehicle.xml',
-        'wizard/wheels_wizard_view.xml',
-        'views/inherit_product_product.xml',
         'data/branches.xml',
         'data/models.xml',
         'data/project_initial.xml',
         'views/inherit_res_partner.xml',
     ],
     'demo': [
-        'demo/wheels_branches.xml',
     ],
     'installable': True,
 }

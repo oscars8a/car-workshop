@@ -2,11 +2,11 @@
 <odoo>
     <data>
 
-        <record id="car-workshop_wheels_wizard_view_form" model="ir.ui.view">
-            <field name="name">Wheels Wizard</field>
-            <field name="model">car_workshop.wheels_wizard</field>
+        <record id="tire_wizard_view_form" model="ir.ui.view">
+            <field name="name">Tire Wizard</field>
+            <field name="model">tire_catalog.tire_wizard</field>
             <field name="arch" type="xml">
-                <form string="Wheels Wizard">
+                <form string="Tire Wizard">
                     <group col="2">
                         <group>
                             <field name="width"/>

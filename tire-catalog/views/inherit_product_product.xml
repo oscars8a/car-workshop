@@ -10,13 +10,13 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='options']" position="inside">
                     <div>
-                        <field name="is_wheel"/>
-                        <label for="is_wheel"/>
+                        <field name="is_a_tire"/>
+                        <label for="is_a_tire"/>
                     </div>
                 </xpath>
                 <xpath expr="//page[@name='general_information']" position="after">
-                    <page string="Wheel Attributes" attrs="{'invisible':[('is_wheel','=',False)]}"
-                          name="wheel_attributes">
+                    <page string="Tire Attributes" attrs="{'invisible':[('is_a_tire','=',False)]}"
+                          name="tire_attributes">
                         <group>
                             <field name="width"/>
                             <field name="height"/>
@@ -32,8 +32,9 @@
         </record>
 
 
+        <!-- TENERLA SOLO COMO REFERENCIA -->
         <!--&lt;!&ndash; Inherit Search View Products &ndash;&gt;-->
-        <!--<record id="car-workshop_fleet_wheels_view_search" model="ir.ui.view">-->
+        <!--<record id="wheels_view_search" model="ir.ui.view">-->
             <!--<field name="name">car-workshop_fleet_wheels_view_search</field>-->
             <!--<field name="model">product.product</field>-->
             <!--<field name="arch" type="xml">-->
@@ -47,22 +48,44 @@
             <!--</field>-->
         <!--</record>-->
 
-        <!--Action Wheels Menu-->
-        <record id="action_wheels_view_wizard" model="ir.actions.act_window">
-            <field name="name">Wheel Wizard</field>
+        <!--Action Tire Menu-->
+        <record id="action_tire_view_wizard" model="ir.actions.act_window">
+            <field name="name">Tire Wizard</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">car_workshop.wheels_wizard</field>
+            <field name="res_model">tire_catalog.tire_wizard</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="car-workshop_wheels_wizard_view_form"/>
+            <field name="view_id" ref="tire_wizard_view_form"/>
             <!--<field name="search_view_id" ref="car-workshop_fleet_wheels_view_search"/>-->
             <field name="target">new</field>
         </record>
 
-        <!--Wheels Menu-->
-        <menuitem id="car_wheels_menu" name="Wheels"
-                  parent="car_products_menus"
-                  sequence="3" action="action_wheels_view_wizard"/>
+        <!--Action Products Menu-->
+        <record model="ir.actions.act_window" id="action_car_vproducts_config">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <!-- Si se no se quiere depender de Car-Workshop tenemos que hacer el siguiente menú "Catalogue Menu"-->
+        <!-- como padre y que se posicione en el menú horizontal.-->
+
+         <!--Catalogue Menu-->
+        <menuitem id="tire_catalogue_menus" name="Catalogue"
+                  parent="car-workshop.main_car_workshop_menu"
+                  sequence="5"/>
+
+
+        <!--Products Menu-->
+        <menuitem id="car_vproducts_menu" name="Products"
+                  parent="tire_catalogue_menus"
+                  sequence="1" action="action_car_vproducts_config"/>
+
+        <!--Tires Menu-->
+        <menuitem id="car_tire_menu" name="Tires"
+                  parent="tire_catalogue_menus"
+                  sequence="2" action="action_tire_view_wizard"/>
 
     </data>
 </odoo>

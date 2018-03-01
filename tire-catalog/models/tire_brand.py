@@ -1,8 +1,8 @@
 from odoo import api, fields, models, tools, _
 
 
-class WheelsBrands(models.Model):
-    _name = 'car_workshop.wheels_brands'
+class TireBrand(models.Model):
+    _name = 'tire_catalog.tire_brand'
 
     name = fields.Char('Make', required=True)
     image = fields.Binary("Logo", attachment=True,
@@ -19,9 +19,9 @@ class WheelsBrands(models.Model):
     @api.model
     def create(self, vals):
         tools.image_resize_images(vals)
-        return super(WheelsBrands, self).create(vals)
+        return super(TireBrand, self).create(vals)
 
     @api.multi
     def write(self, vals):
         tools.image_resize_images(vals)
-        return super(WheelsBrands, self).write(vals)
+        return super(TireBrand, self).write(vals)

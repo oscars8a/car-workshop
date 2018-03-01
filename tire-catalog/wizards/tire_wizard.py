@@ -2,8 +2,8 @@
 from odoo import api, fields, models, _
 
 
-class WheelsWizard(models.TransientModel):
-    _name = 'car_workshop.wheels_wizard'
+class TireWizard(models.TransientModel):
+    _name = 'tire_catalog.tire_wizard'
 
     widthSelection = []
     for x in range(145, 255, 10):
@@ -20,7 +20,7 @@ class WheelsWizard(models.TransientModel):
     width = fields.Selection(string="Width", selection=widthSelection, required=False, )
     height = fields.Selection(string="Height", selection=heightSelection, required=False, )
     diameter = fields.Selection(string="Diameter", selection=diameterSelection, required=False, )
-    brand_id = fields.Many2one(comodel_name="car_workshop.wheels_brands", string="Brand", required=False, )
+    brand_id = fields.Many2one(comodel_name="tire_catalog.tire_brand", string="Brand", required=False, )
     season = fields.Selection(string="Season",
                               selection=[('summer', 'Summer'), ('winter', 'Winter'), ('allseason', 'All season')],
                               required=False, )
@@ -29,7 +29,7 @@ class WheelsWizard(models.TransientModel):
     def create_request(self):
 
         # Probar a ponerlo como contexto para que el usuario pueda cambiarlo
-        domain = [("is_wheel","=",True)]
+        domain = [("is_a_tire","=",True)]
         context = {}
         if self.width:
             # domain.append(("width","=",str(self.width)))
@@ -51,13 +51,14 @@ class WheelsWizard(models.TransientModel):
 
         return {
 
-            "name": "Wheels",
+            "name": "Tires",
             "type": "ir.actions.act_window",
             "res_model": "product.product",
             "views": [[False,"kanban"],[False, "form"],[False, "search"]],
             "context": context,
             "domain": domain,
             # Modificarlo cuando este solucionado el problema de los filtros.
+            # Tener el nombre de la vista search como referencia.
             # "search_view_id": (search_id.id, "car-workshop.fleet.wheels.view.search"),
             "target": "main",
         }

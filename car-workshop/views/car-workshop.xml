@@ -19,13 +19,6 @@
             <field name="context">{"search_default_customer":1}</field>
         </record>
 
-        <!--Action Products Menu-->
-        <record model="ir.actions.act_window" id="action_car_vproducts_config">
-            <field name="name">Products</field>
-            <field name="res_model">product.product</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
-        </record>
 
         <!--Main Menu-->
         <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"/>
@@ -45,16 +38,6 @@
                   parent="car_customers_menus"
                   sequence="1" action="action_car_customers_config"/>
 
-        <!--Catalogue Menus-->
-        <menuitem id="car_products_menus" name="Catalogue"
-                  parent="main_car_workshop_menu"
-                  sequence="5"/>
-
-
-        <!--Products Menu-->
-        <menuitem id="car_vproducts_menu" name="Products"
-                  parent="car_products_menus"
-                  sequence="4" action="action_car_vproducts_config"/>
 
         <!--Vehicle Configuration Menus-->
         <menuitem id="car_vconfig_menus" name="Configuration"

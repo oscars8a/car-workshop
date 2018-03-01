@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--Wheels Brands View Form-->
-        <record id="car-workshop_fleet_wheels_brand_view_form" model="ir.ui.view">
-            <field name="name">Wheels Brand</field>
-            <field name="model">car_workshop.wheels_brands</field>
+        <!--Tire Brands View Form-->
+        <record id="tire_brand_view_form" model="ir.ui.view">
+            <field name="name">Tire Brand</field>
+            <field name="model">tire_catalog.tire_brand</field>
             <field name="arch" type="xml">
-                <form string="Wheels Brand">
+                <form string="Tire Brand">
                     <sheet>
                         <group>
                             <div>
@@ -22,9 +22,9 @@
             </field>
         </record>
 
-        <record id="car-workshop_fleet_wheels_brand_view_kanban" model="ir.ui.view">
-            <field name="name">Wheels Brand</field>
-            <field name="model">car_workshop.wheels_brands</field>
+        <record id="tire_brand_view_kanban" model="ir.ui.view">
+            <field name="name">Tire Brand</field>
+            <field name="model">tire_catalog.tire_brand</field>
             <field name="arch" type="xml">
                 <kanban>
                 <field name="id"/>
@@ -34,7 +34,7 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_vignette oe_semantic_html_override">
                             <a type="open" href="#" class="o_kanban_image oe_kanban_action">
-                                <img t-att-src="kanban_image('car_workshop.wheels_brands', 'image_small', record.id.raw_value)" class="img-responsive" style="width:100px;"/>
+                                <img t-att-src="kanban_image('tire_catalog.tire_brand', 'image_small', record.id.raw_value)" class="img-responsive" style="width:100px;"/>
                             </a>
                             <div class="oe_kanban_details">
                                 <h4 class="oe_partner_heading">
@@ -50,18 +50,19 @@
             </field>
         </record>
 
-        <!--Wheels Brands Action-->
-        <record model="ir.actions.act_window" id="action_car_wbrands_config">
-            <field name="name">Wheels Brands</field>
-            <field name="res_model">car_workshop.wheels_brands</field>
-            <field name="form_view_id" ref="car-workshop_fleet_wheels_brand_view_form"/>
+        <!-- Tire Brand Action-->
+        <record model="ir.actions.act_window" id="action_car_tbrands_config">
+            <field name="name">Tire Brands</field>
+            <field name="res_model">tire_catalog.tire_brand</field>
+            <field name="form_view_id" ref="tire_brand_view_form"/>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form</field>
         </record>
 
-        <!--Wheels Brands Menu-->
-        <menuitem id="car_wbrands_menu" name="Wheels Brands"
-                  parent="car_vconfig_menus"
-                  sequence="3" action="action_car_wbrands_config"/>
+
+        <!--Tire Brands Menu-->
+        <menuitem id="car_tbrands_menu" name="Tire Brands"
+                  parent="tire_catalogue_menus"
+                  sequence="3" action="action_car_tbrands_config"/>
     </data>
 </odoo>
