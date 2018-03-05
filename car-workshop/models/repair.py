@@ -15,7 +15,7 @@ class Repair(models.Model):
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
     repair_title = fields.Char()
 
-    sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
+    sale_order_id = fields.Many2one('sale.order', delegate=True, required=False, ondelete='restrict')
     repair_line = fields.One2many('sale.order.line', 'repair_id', string='Order Lines', states={'cancel': [('readonly', True)], 'done': [('readonly', True)]}, copy=True, auto_join=True)
 
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
@@ -206,6 +206,7 @@ class Repair(models.Model):
         else:
             self.stage_id = False
 
+    # DEF de Dario para la DEMO
     @api.multi
     def action_invoice_create(self, grouped=False, final=False):
         order_ids = [record.sale_order_id.id for record in self]

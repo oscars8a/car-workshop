@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--<record id="car_workshop_action_view_sale_advance_payment_inv" model="ir.actions.act_window">-->
-        <!--<field name="name">Invoice Order 2</field>-->
-        <!--<field name="type">ir.actions.act_window</field>-->
-        <!--<field name="res_model">sale.advance.payment.inv</field>-->
-        <!--<field name="view_type">form</field>-->
-        <!--<field name="view_mode">form</field>-->
-        <!--<field name="target">new</field>-->
-        <!--&lt;!&ndash;<field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>&ndash;&gt;-->
-        <!--&lt;!&ndash; TODO: check if we need this &ndash;&gt;-->
-        <!--&lt;!&ndash;<field name="binding_model_id" ref="sale.model_sale_order" />&ndash;&gt;-->
-        <!--</record>-->
-
         <!-- Project Repair Form View -->
         <record id="car-workshop_repair_view_form" model="ir.ui.view">
             <field name="name">car-workshop.repair.form</field>
@@ -20,10 +8,14 @@
             <field name="arch" type="xml">
                 <form string="Sales Order" class="o_sale_order">
                     <header>
-                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
-                                type="action" class="btn-primary" context="{'default_advance_payment_method': 'all'}"
+
+
+
+                        <button name="%(action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                                type="action" class="btn-primary"
+                                context="{'default_advance_payment_method': 'all'}"
                                 attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>
-                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                        <button name="%(action_view_sale_advance_payment_inv)d" string="Create Invoice"
                                 type="action" context="{'default_advance_payment_method': 'percentage'}"
                                 attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}"/>
 
@@ -127,9 +119,44 @@
                             </page>
                             <page string="Materials">
 
+                            </page>
+                            <page string="Binnacle">
+                                <group>
+                                    <group>
+                                        <field name="planned_hours" widget="float_time"/>
+                                    </group>
+                                    <group>
+                                        <field name="progress" widget="progressbar"/>
+                                    </group>
+                                </group>
+                                <field name="timesheet_ids" context="{'default_project_id': project_id}">
+                                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
+                                        <field name="date"/>
+                                        <field name="user_id" invisible="1"/>
+                                        <field name="employee_id" required="1"/>
+                                        <field name="name"/>
+                                        <field name="unit_amount" string="Duration" widget="float_time"/>
+                                        <field name="project_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                                <group>
+                                    <group class="oe_subtotal_footer oe_right" name="project_hours">
+                                        <field name="effective_hours" widget="float_time"/>
+                                        <field name="children_hours" widget="float_time"
+                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
+                                        <field name="total_hours_spent" widget="float_time"
+                                               class="oe_subtotal_footer_separator"
+                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
+                                        <field name="remaining_hours" widget="float_time"
+                                               class="oe_subtotal_footer_separator" readonly="1"/>
+                                    </group>
+                                </group>
+
+                            </page>
+                            <page string="Budget">
                                 <field name="order_line" mode="tree,kanban"
                                        attrs="{'readonly': [('state', 'in', ('done','cancel'))]}"
-                                       context="{'pricelist_id': pricelist_id, 'partner_id': partner_id}">
+                                       context="{'order_id':sale_order_id,'pricelist_id': pricelist_id, 'partner_id': partner_id}">
                                     <form string="Sales Order Lines">
                                         <group>
                                             <group>
@@ -302,43 +329,6 @@
                                 <field name="note" class="oe_inline"
                                        placeholder="Setup default terms and conditions in your sales settings ..."/>
                                 <div class="oe_clear"/>
-
-                            </page>
-                            <page string="Binnacle">
-                                <group>
-                                    <group>
-                                        <field name="planned_hours" widget="float_time"/>
-                                    </group>
-                                    <group>
-                                        <field name="progress" widget="progressbar"/>
-                                    </group>
-                                </group>
-                                <field name="timesheet_ids" context="{'default_project_id': project_id}">
-                                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
-                                        <field name="date"/>
-                                        <field name="user_id" invisible="1"/>
-                                        <field name="employee_id" required="1"/>
-                                        <field name="name"/>
-                                        <field name="unit_amount" string="Duration" widget="float_time"/>
-                                        <field name="project_id" invisible="1"/>
-                                    </tree>
-                                </field>
-                                <group>
-                                    <group class="oe_subtotal_footer oe_right" name="project_hours">
-                                        <field name="effective_hours" widget="float_time"/>
-                                        <field name="children_hours" widget="float_time"
-                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
-                                        <field name="total_hours_spent" widget="float_time"
-                                               class="oe_subtotal_footer_separator"
-                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
-                                        <field name="remaining_hours" widget="float_time"
-                                               class="oe_subtotal_footer_separator" readonly="1"/>
-                                    </group>
-                                </group>
-
-                            </page>
-                            <page string="Order Lines">
-
                             </page>
                             <page string="Other Information">
                                 <group>
@@ -354,7 +344,7 @@
                                                attrs="{'readonly': ['|',('analytic_account_id','!=',False),('invoice_count','!=',0),('state','=','sale')]}"
                                                groups="analytic.group_analytic_accounting"/>
                                         <field groups="base.group_no_one" name="origin"/>
-                                        <field name="name"/>
+                                        <field name="sale_order_id" required="False"/>
                                     </group>
                                     <group name="sale_pay" string="Invoicing">
                                         <field name="date_order"

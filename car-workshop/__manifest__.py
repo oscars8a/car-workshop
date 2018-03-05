@@ -22,6 +22,7 @@
     ],
     'data': [
         'views/car-workshop.xml',
+        'wizards/inherit_sale_make_invoice_advance_views.xml',
         'views/repair.xml',
         'views/inherit_project_project.xml',
         'views/inherit_fleet_vehicle.xml',
