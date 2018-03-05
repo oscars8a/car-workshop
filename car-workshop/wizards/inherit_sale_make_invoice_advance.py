@@ -6,10 +6,8 @@ from odoo import api, fields, models, _
 from odoo.addons import decimal_precision as dp
 from odoo.exceptions import UserError
 
-from wdb import set_trace as depurador
 
-
-class SaleAdvancePaymentInv(models.TransientModel):
+class CarSaleAdvancePaymentInv(models.TransientModel):
     _name = 'car_workshop.advance.payment.inv'
     _inherit = 'sale.advance.payment.inv'
 
