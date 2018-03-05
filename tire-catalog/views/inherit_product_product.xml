@@ -31,22 +31,23 @@
             </field>
         </record>
 
+        <!-- Inherit Search View -->
+        <record id="product_search_form_view" model="ir.ui.view">
+            <field name="name">Tire Catalog Search</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view"/>
+            <field name="arch" type="xml">
 
-        <!-- TENERLA SOLO COMO REFERENCIA -->
-        <!--&lt;!&ndash; Inherit Search View Products &ndash;&gt;-->
-        <!--<record id="wheels_view_search" model="ir.ui.view">-->
-            <!--<field name="name">car-workshop_fleet_wheels_view_search</field>-->
-            <!--<field name="model">product.product</field>-->
-            <!--<field name="arch" type="xml">-->
-                <!--<search>-->
-                    <!--<field name="width"/>-->
-                    <!--<field name="height"/>-->
-                    <!--<field name="diameter"/>-->
-                    <!--<field name="brand_id"/>-->
-                    <!--<field name="season"/>-->
-                <!--</search>-->
-            <!--</field>-->
-        <!--</record>-->
+                <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                    <field name="width"/>
+                    <field name="height"/>
+                    <field name="diameter"/>
+                    <field name="brand_id"/>
+                    <field name="season"/>
+                </xpath>
+
+            </field>
+        </record>
 
         <!--Action Tire Menu-->
         <record id="action_tire_view_wizard" model="ir.actions.act_window">
