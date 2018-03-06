@@ -41,11 +41,13 @@
             <field name="view_mode">kanban,form,calendar</field>
             <field name="kanban_view_id" ref="car-workshop_repair_view_kanban"/>
             <field name="context">{
-                'group_by': 'stage_id',
-                'search_default_project_id': [active_id],
-                'default_project_id': active_id,
-            }</field>
-             <field name="search_view_id" ref="project.view_task_search_form"/>
+                    'search_default_in_work': 1,
+                    'group_by': 'stage_id',
+                    'search_default_project_id': [active_id],
+                    'default_project_id': active_id,
+                }
+            </field>
+             <field name="search_view_id" ref="car-workshop_repair_view_search"/>
         </record>
 
         <!--Project Project Kanban View-->

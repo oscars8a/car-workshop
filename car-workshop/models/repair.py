@@ -14,6 +14,7 @@ class Repair(models.Model):
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
     repair_title = fields.Char()
+    finished_stage = fields.Boolean("Finished")
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=False, ondelete='restrict')
     repair_line = fields.One2many('sale.order.line', 'repair_id', string='Order Lines', states={'cancel': [('readonly', True)], 'done': [('readonly', True)]}, copy=True, auto_join=True)
@@ -213,3 +214,6 @@ class Repair(models.Model):
         sale_obj = self.env['sale.order'].browse(order_ids)
         invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
         return invoice_id
+    @api.multi
+    def action_finised(self):
+        self.finished_stage = not self.finished_stage

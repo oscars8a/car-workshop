@@ -9,8 +9,6 @@
                 <form string="Sales Order" class="o_sale_order">
                     <header>
 
-
-
                         <button name="%(action_view_sale_advance_payment_inv)d" string="Create Invoice"
                                 type="action" class="btn-primary"
                                 context="{'default_advance_payment_method': 'all'}"
@@ -62,6 +60,9 @@
                             </button>
                             <button name="admission_sheet" type="object" class="oe_stat_button"
                                     icon="fa-info-circle" string="Admission Sheet">
+                            </button>
+                            <button name="action_finised" type="object" class="oe_stat_button" icon="fa-archive">
+                                <field name="finished_stage" widget="statinfo" string="Finished"/>
                             </button>
                         </div>
 
@@ -416,6 +417,7 @@
                                 <div class="oe_kanban_details">
                                     <strong class="o_kanban_record_title">
                                         <field name="repair_title"/>
+                                        <br/>
                                         <field name="partner_id"/>
                                         <br/>
                                         <field name="vehicle_id"/>
@@ -475,23 +477,39 @@
             </field>
         </record>
 
+        <record id="car-workshop_repair_view_search" model="ir.ui.view">
+           <field name="name">car-workshop.repair.calendar</field>
+           <field name="model">car_workshop.repair</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="repair_title"/>
+                    <field name="partner_id"/>
+                    <field name="vehicle_id"/>
+                    <field name="user_id"/>
+                    <field name="project_id"/>
+                    <field name="finished_stage"/>
+                    <filter string="Repairs in Work" name="in_work" domain="[['finished_stage','=',1]]"/>
+                    <filter string="Repairs Completed" name="out_work" domain="[['finished_stage','=',0]]"/>
+                </search>
+           </field>
+        </record>
 
         <!--Action Repair Menu-->
-        <record model="ir.actions.act_window" id="action_car_repairs_config">
-            <field name="name">Repairs</field>
-            <field name="res_model">car_workshop.repair</field>
-            <field name="form_view_id" ref="car-workshop_repair_view_form"/>
-            <field name="kanban_view_id" ref="car-workshop_repair_view_kanban"/>
-            <field name="calendar_view_id" ref="car-workshop_repair_view_calendar"/>
-            <field name="view_type">form</field>
-            <field name="view_mode">kanban,calendar,tree,form</field>
-        </record>
+        <!--<record model="ir.actions.act_window" id="action_car_repairs_config">-->
+            <!--<field name="name">Repairs</field>-->
+            <!--<field name="res_model">car_workshop.repair</field>-->
+            <!--<field name="form_view_id" ref="car-workshop_repair_view_form"/>-->
+            <!--<field name="kanban_view_id" ref="car-workshop_repair_view_kanban"/>-->
+            <!--<field name="calendar_view_id" ref="car-workshop_repair_view_calendar"/>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">kanban,calendar,tree,form</field>-->
+        <!--</record>-->
 
 
         <!--Repair Menu-->
-        <menuitem id="car_repairs_menu" name="Repairs"
-                  parent="main_car_workshop_menu"
-                  sequence="2" action="action_car_repairs_config"/>
+        <!--<menuitem id="car_repairs_menu" name="Repairs"-->
+                  <!--parent="main_car_workshop_menu"-->
+                  <!--sequence="2" action="action_car_repairs_config"/>-->
 
     </data>
 </odoo>
