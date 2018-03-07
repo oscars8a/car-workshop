@@ -12,5 +12,5 @@ class Project(models.Model):
         for project in self:
             project.repair_count = result.get(project.id, 0)
 
-    car_work = fields.Boolean(string="It's car's work?")
+    car_work = fields.Boolean(string="It's Car's work Area?", default=True)
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")

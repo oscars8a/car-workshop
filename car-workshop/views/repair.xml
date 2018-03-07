@@ -472,7 +472,7 @@
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <calendar string="Repairs" date_start="date_start" date_delay="planned_hours" color="partner_id">
-                    <field name="name"/>
+                    <field name="name" />
                 </calendar>
             </field>
         </record>

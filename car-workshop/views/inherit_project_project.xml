@@ -3,34 +3,27 @@
     <data>
 
         <!-- Project Project Form View -->
-        <record id="car-workshop_project_view_form" model="ir.ui.view">
-            <field name="name">Repair</field>
+       <record id="project_project_view_form_simplified" model="ir.ui.view">
+           <field name="name">project.project.view.form.simplified</field>
+           <field name="model">project.project</field>
+           <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+           <field name="arch" type="xml">
+               <xpath expr="//field[@name='name']" position="before">
+                   <field name="car_work"/>
+               </xpath>
+           </field>
+       </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_project" model="ir.ui.view">
+            <field name="name">project.project.form</field>
             <field name="model">project.project</field>
-            <field name="priority">35</field>
+            <field name="inherit_id" ref="project.edit_project"/>
             <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>
-                            <group>
-
-                                <field name="car_work"/>
-                                <field name="name" class="o_project_name oe_inline" string="Project Name"
-                                       placeholder="e.g. Office Party"/>
-
-                                <label for="alias_name" string="Choose a Project Email"
-                                       attrs="{'invisible': [('alias_domain', '=', False)]}"/>
-                                <div name="alias_def" attrs="{'invisible': [('alias_domain', '=', False)]}">
-                                    <field name="alias_name" class="oe_inline"/>
-                                    <field name="alias_domain" class="oe_inline" readonly="1"/>
-                                </div>
-                                <field name="user_id" invisible="1"/>
-                            </group>
-                        </group>
-                        <footer>
-                            <button string="Create &amp; Edit" name="edit_dialog" type="object" class="btn-primary"/>
-                        </footer>
-                    </sheet>
-                </form>
+                <xpath expr="//field[@name='label_tasks']" position="after">
+                        <label for="car_work" class="oe_inline" string="It's a Car's work Area?"/>
+                        <field name="car_work"/>
+                </xpath>
             </field>
         </record>
 
@@ -40,7 +33,6 @@
             <field name="res_model">car_workshop.repair</field>
             <field name="view_mode">kanban,form,calendar,tree</field>
             <field name="kanban_view_id" ref="car-workshop_repair_view_kanban"/>
-
             <field name="context">{
                     'group_by': 'stage_id',
                     'search_default_project_id': [active_id],
@@ -89,9 +81,6 @@
                                             <div>
                                                 <a type="edit">Settings</a>
                                             </div>
-                                            <div>
-                                                <a name="133" type="action">Tasks</a>
-                                            </div>
                                         </div>
                                         <div class="o_project_kanban_colorpicker">
                                             <ul class="oe_kanban_colorpicker" data-field="color"/>
@@ -100,7 +89,6 @@
                                     <a class="o_kanban_manage_toggle_button o_left" href="#" groups="project.group_project_manager"><i class="fa fa-ellipsis-v"/></a>
                                     <span class="o_right"><field name="is_favorite" widget="boolean_favorite" nolabel="1"/></span>
                                 </div>
-
                                 <div class="o_project_kanban_boxes">
                                     <a class="o_project_kanban_box" name="%(action_car_project_kanban_to_repair_kanban)d" type="action">
                                         <div>
@@ -119,8 +107,6 @@
             </field>
         </record>
 
-
-
         <!--Action Areas Menu-->
         <record id="action_car_areas_menu" model="ir.actions.act_window">
             <field name="name">Areas</field>
@@ -129,7 +115,7 @@
             <field name="domain">[("car_work","=",True)]</field>
             <field name="view_mode">kanban,form</field>
             <field name="view_id" ref="car-workshop_project_view_kanban"/>
-            <field name="res_id" ref="car-workshop_project_view_form"/>
+            <!--<field name="res_id" ref="car-workshop_project_view_form"/>-->
             <!--<field name="search_view_id" ref="project.view_project_project_filter"/>-->
             <field name="target">main</field>
         </record>
