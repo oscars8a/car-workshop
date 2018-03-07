@@ -488,8 +488,8 @@
                     <field name="user_id"/>
                     <field name="project_id"/>
                     <field name="finished_stage"/>
-                    <filter string="Repairs in Work" name="in_work" domain="[['finished_stage','=',1]]"/>
-                    <filter string="Repairs Completed" name="out_work" domain="[['finished_stage','=',0]]"/>
+                    <filter string="Repairs in Work" name="in_work" domain="[['finished_stage','=',0]]"/>
+                    <filter string="Repairs Completed" name="out_work" domain="[['finished_stage','=',1]]"/>
                 </search>
            </field>
         </record>

@@ -65,6 +65,20 @@ class Repair(models.Model):
         return rec
 
     @api.multi
+    def copy(self, default=None):
+        default = dict(default or {})
+        copied_count = self.search_count(
+            [('name', '=like', u"Copy of {}%".format(self.repair_title))])
+        if not copied_count:
+            new_name = u"Copy of {}".format(self.repair_title)
+        else:
+            new_name = u"Copy of {} ({})".format(self.repair_title, copied_count)
+        default['name'] = new_name
+        rec = super(Repair, self).copy(default)
+        rec.user_id = None
+        return rec
+
+    @api.multi
     def unlink(self):
         # Solo se pueden borrar task y sale asociados si primero se borra el repair con el que están asociados.
         for repair in self:
@@ -178,7 +192,7 @@ class Repair(models.Model):
         if vehicles_count == 1:
             self.vehicle_id = vehicles_list[0]
         elif vehicles_count > 1:
-            print('PASO 2')
+            pass
 
 
     @api.multi
