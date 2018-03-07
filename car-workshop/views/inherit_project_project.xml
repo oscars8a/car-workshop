@@ -38,15 +38,17 @@
          <record id="action_car_project_kanban_to_repair_kanban" model="ir.actions.act_window">
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
-            <field name="view_mode">kanban,form,calendar</field>
+            <field name="view_mode">kanban,form,calendar,tree</field>
             <field name="kanban_view_id" ref="car-workshop_repair_view_kanban"/>
+
             <field name="context">{
-                    'search_default_in_work': 1,
                     'group_by': 'stage_id',
                     'search_default_project_id': [active_id],
                     'default_project_id': active_id,
+                    'search_default_in_work': 1,
                 }
             </field>
+             <field name="tree_view_id" ref="car-workshop_repair_view_tree"/>
              <field name="search_view_id" ref="car-workshop_repair_view_search"/>
         </record>
 

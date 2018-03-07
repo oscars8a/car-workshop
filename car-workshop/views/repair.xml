@@ -477,6 +477,7 @@
             </field>
         </record>
 
+        <!--Car-Workshop Repair Search View -->
         <record id="car-workshop_repair_view_search" model="ir.ui.view">
            <field name="name">car-workshop.repair.calendar</field>
            <field name="model">car_workshop.repair</field>
@@ -492,6 +493,23 @@
                     <filter string="Repairs Completed" name="out_work" domain="[['finished_stage','=',1]]"/>
                 </search>
            </field>
+        </record>
+
+        <!--Car-Workshop Repair Tree View -->
+        <record id="car-workshop_repair_view_tree" model="ir.ui.view">
+            <field name="name">car-workshop.repair.tree</field>
+            <field name="model">car_workshop.repair</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="repair_title"/>
+                    <field name="vehicle_id"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="state" string="Sale State"/>
+                    <field name="finished_stage"/>
+
+                </tree>
+            </field>
         </record>
 
         <!--Action Repair Menu-->
