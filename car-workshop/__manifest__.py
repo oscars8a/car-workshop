@@ -23,6 +23,8 @@
     'data': [
         'views/car-workshop.xml',
         'wizards/inherit_sale_make_invoice_advance_views.xml',
+        'report/car-workshop_report_templates.xml',
+        'report/car-workshop_report.xml',
         'views/repair.xml',
         'views/inherit_project_project.xml',
         'views/inherit_fleet_vehicle.xml',
@@ -30,7 +32,7 @@
         'data/models.xml',
         'data/project_initial.xml',
         'views/inherit_res_partner.xml',
-        'views/inherit_res_config_settings.xml',
+        'views/inherit_res_config_settings.xml'
     ],
     'demo': [
     ],

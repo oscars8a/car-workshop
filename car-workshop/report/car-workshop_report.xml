@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="action_report_admission_sheet"
+            string="Admission Sheet"
+            model="car_workshop.repair"
+            report_type="qweb-pdf"
+            file="car-workshop.report_admission_sheet"
+            name="car-workshop.report_admission_sheet"
+            print_report_name="'Admission Sheet Report PRUEBAS'"
+        />
+    </data>
+</odoo>
