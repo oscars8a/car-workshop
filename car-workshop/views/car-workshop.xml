@@ -44,31 +44,5 @@
                   parent="main_car_workshop_menu"
                   sequence="6"/>
 
-
-        <record id="car-workshop_res_config_settings_view_form" model="ir.ui.view">
-        <field name="name">res.config.settings.view.form.inherit.car-workshop</field>
-        <field name="model">res.config.settings</field>
-        <field name="priority" eval="5"/>
-        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('settings')]" position="inside">
-                <!--La magia-->
-            </xpath>
-        </field>
-    </record>
-
-        <record id="car-workshop_config_settings_action" model="ir.actions.act_window">
-            <field name="name">Settings</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">res.config.settings</field>
-            <field name="view_id" ref="car-workshop_res_config_settings_view_form"/>
-            <field name="view_mode">form</field>
-            <field name="target">inline</field>
-            <field name="context">{'module' : 'car_workshop'}</field>
-        </record>
-        <!--Settings Menu-->
-        <menuitem id="car_settings_menu" name="Settings"
-                  parent="car_vconfig_menus"
-                  sequence="1" action="car-workshop_config_settings_action"/>
     </data>
 </odoo>
