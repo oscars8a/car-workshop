@@ -85,9 +85,8 @@
                         </div>
                         <group>
                             <group>
-                                <field name="vehicle_id" domain="[
-                                    ('customer_id','=?',partner_id),
-                                    ]"
+                                <field name="vehicle_id" domain="[('customer_id','=?',partner_id),]"
+                                       context="{'form_view_ref': 'car-workshop.car-workshop_fleet_vehicle_view_form'}"
                                 />
                                 <field name="partner_id" domain="[('customer','=',True)]"
                                        context="{'show_address': 1}"
@@ -510,7 +509,6 @@
                     <field name="user_id"/>
                     <field name="state" string="Sale State"/>
                     <field name="finished_stage"/>
-
                 </tree>
             </field>
         </record>
@@ -531,6 +529,5 @@
         <!--<menuitem id="car_repairs_menu" name="Repairs"-->
                   <!--parent="main_car_workshop_menu"-->
                   <!--sequence="2" action="action_car_repairs_config"/>-->
-
     </data>
 </odoo>

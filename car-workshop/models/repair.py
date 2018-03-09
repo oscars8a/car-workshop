@@ -223,7 +223,6 @@ class Repair(models.Model):
 
     @api.multi
     def action_admission_sheet(self):
-        depurador()
         return self.env.ref('car-workshop.action_report_admission_sheet').report_action(self, data=None)
 
     # DEF de Dario para la DEMO
@@ -236,5 +235,7 @@ class Repair(models.Model):
     @api.multi
     def action_finised(self):
         self.finished_stage = not self.finished_stage
+
+
 
 

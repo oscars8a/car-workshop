@@ -42,6 +42,7 @@
             </field>
              <field name="tree_view_id" ref="car-workshop_repair_view_tree"/>
              <field name="search_view_id" ref="car-workshop_repair_view_search"/>
+
         </record>
 
         <!--Project Project Kanban View-->
