@@ -11,6 +11,7 @@ class Repair(models.Model):
     # track_visibility=True Si quiero hacer seguimiendo de quien hace los cambios
     # incluirlo en los campos que se quiere el seguimiento
 
+
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
     repair_title = fields.Char()
@@ -48,6 +49,7 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
+        # Mirar 'New'
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
