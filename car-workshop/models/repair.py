@@ -49,7 +49,8 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-        # Mirar 'New'
+        print('HI ODOO DEVELOPER')
+        print(vals)
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:

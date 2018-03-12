@@ -21,7 +21,8 @@
 
 
         <!--Main Menu-->
-        <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"/>
+        <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"
+                  web_icon="car-workshop,static/description/icon.png"/>
 
         <!--Account Invoice Menu-->
         <menuitem id="car_account_invoice_menu" name="Account Invoice"

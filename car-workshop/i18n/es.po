@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 10:02+0000\n"
-"PO-Revision-Date: 2018-03-09 11:58+0100\n"
+"POT-Creation-Date: 2018-03-12 09:38+0000\n"
+"PO-Revision-Date: 2018-03-12 12:19+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -45,10 +45,10 @@ msgid ""
 " * Red indicates something is preventing the progress of this task\n"
 " * Green indicates the task is ready to be pulled to the next stage"
 msgstr ""
-"El estado kanban de una tarea indica situaciones especiales que lo afectan:\n"
-"* Gris es la situación predeterminada\n"
-"* Roja indica que algo está impidiendo el progreso de esta tarea\n"
-"* Verde indica que la tarea está lista para pasar a la siguiente etapa"
+"El estado Kanban en una tarea indica que existen situaciones especiales:\n"
+"* El gris es la situación por defecto\n"
+"* El rojo indica que hay algo que impide que la tarea progrese\n"
+"* El verde indica que la tarea puede pasar a la siguiente etapa"
 
 #. module: car-workshop
 #: model:ir.actions.act_window,name:car-workshop.action_car_account_invoice_config
@@ -141,6 +141,11 @@ msgid "Collection Customer"
 msgstr "Recogida cliente"
 
 #. module: car-workshop
+#: model:project.project,name:car-workshop.project_car-workshop_1
+msgid "Repair and Revision"
+msgstr "Reparaciones y Revisiones"
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_color
 msgid "Color Index"
 msgstr "Índice de color"
@@ -153,7 +158,7 @@ msgstr "Compañía"
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_total_hours_spent
 msgid "Computed as: Time Spent + Sub-tasks Hours."
-msgstr "Calculado como: Tiempo empleado + Horas de la sub-tarea"
+msgstr "Calculado como: Tiempo dedicado + Horas de las sub-tareas."
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_effective_hours
@@ -173,7 +178,7 @@ msgstr "Confirmar venta"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_confirmation_date
 msgid "Confirmation Date"
-msgstr "Fecha confirmación"
+msgstr "Fecha de confirmación"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_res_partner
@@ -409,7 +414,7 @@ msgstr "Facturación"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_is_expired
 msgid "Is expired"
-msgstr "Esta expirado"
+msgstr "Está expirado"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_project_project_car_work
@@ -493,7 +498,7 @@ msgstr "Referencia del pedido"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Ordered Qty"
-msgstr "Cantidad pedida"
+msgstr "Ctdad pedida"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -548,7 +553,7 @@ msgstr "Producto"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_progress
 msgid "Progress"
-msgstr "En proceso"
+msgstr "Progreso"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_project_project
@@ -602,7 +607,7 @@ msgstr "Referencia del documento que ha generado esta solicitud de pedido de ven
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_remaining_hours
 msgid "Remaining Hours"
-msgstr "Horas restantes"
+msgstr "Horas Restantes"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_sale_order_line_repair_id
@@ -682,12 +687,12 @@ msgstr "Pedido de venta"
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Línea de pedido de venta"
+msgstr "Línea de orden de ventas"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Sales Order Lines"
-msgstr "Líneas pedido de ventas"
+msgstr "Líneas de pedidos de venta"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_access_token
@@ -728,7 +733,7 @@ msgstr "Ajustes"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Setup default terms and conditions in your sales settings ..."
-msgstr "Configure los términos y condiciones predeterminados en su configuración de ventas ..."
+msgstr "Configure los términos y condiciones predeterminados en su configuración de ventas..."
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_picking_policy
@@ -758,12 +763,12 @@ msgstr "Estado"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_children_hours
 msgid "Sub-tasks Hours"
-msgstr "Horas de la sub-tarea"
+msgstr "Horas de las sub-tareas"
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_children_hours
 msgid "Sum of the planned hours of all sub-tasks (when a sub-task is closed or its spent hours exceed its planned hours, spent hours are counted instead)"
-msgstr "Suma de las horas planificadas en todas las sub-tareas (cuando una sub-tarea es cerrada o excede de las horas planificadas, las horas de la sub-tarea es sumada en lugar de las planificadas)"
+msgstr "Suma de las horas planificadas en todas las sub-tareas (cuando una sub-tarea es cerrada o excede de las horas planificadas, las horas de la sub-tarea son sumadas en lugar de las planificadas)"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_tag_ids
@@ -799,13 +804,13 @@ msgstr "La cuenta analítica relacionada con un pedido de venta."
 #: code:addons/car-workshop/wizards/inherit_sale_make_invoice_advance.py:42
 #, python-format
 msgid "The product used to invoice a down payment should be of type 'Service'. Please use another product or update this product."
-msgstr "The product used to invoice a down payment should be of type 'Service'. Please use another product or update this product."
+msgstr "El producto utilizado para facturar un anticipo debe ser del tipo 'Servicio'. Por favor use otro producto o actualice este producto."
 
 #. module: car-workshop
 #: code:addons/car-workshop/wizards/inherit_sale_make_invoice_advance.py:39
 #, python-format
 msgid "The product used to invoice a down payment should have an invoice policy set to \"Ordered quantities\". Please update your deposit product to be able to create a deposit invoice."
-msgstr "The product used to invoice a down payment should have an invoice policy set to \"Ordered quantities\". Please update your deposit product to be able to create a deposit invoice."
+msgstr "El producto utilizado para facturar un anticipo debe tener una política de facturación establecida en \"Cantidades pedidas\". Actualice su producto de depósito para poder crear una factura de depósito."
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
@@ -835,12 +840,12 @@ msgstr "Total"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_total_hours_spent
 msgid "Total Hours"
-msgstr "Total horas"
+msgstr "Total de horas"
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_remaining_hours
 msgid "Total remaining time, can be re-estimated periodically by the assignee of the task."
-msgstr "Total tiempo restante, puede ser reestimado periódicamente por quien se le ha asignado la tarea."
+msgstr "Total de tiempo restante, puede ser reestimado periódicamente por quien se le haya asignado la tarea."
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_unique_area
@@ -850,7 +855,7 @@ msgstr "Única área: 'Área de Reparaciones & Revisiones'"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Unit Price:"
-msgstr "Precio unitario:"
+msgstr "Precio de Unidad:"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -899,7 +904,7 @@ msgid "Warehouse"
 msgstr "Almacén"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:86
+#: code:addons/car-workshop/models/repair.py:88
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
@@ -927,7 +932,7 @@ msgstr "días"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
 msgid "e.g. Model S"
-msgstr "ej. Modelo S"
+msgstr "ej. Model S"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
