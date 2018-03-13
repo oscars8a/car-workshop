@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-12 09:38+0000\n"
-"PO-Revision-Date: 2018-03-12 12:19+0100\n"
+"POT-Creation-Date: 2018-03-12 11:22+0000\n"
+"PO-Revision-Date: 2018-03-12 12:27+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -139,11 +139,6 @@ msgstr "Imagen del coche"
 #: model:project.task.type,name:car-workshop.project_car-workshop_stage_collection_customer
 msgid "Collection Customer"
 msgstr "Recogida cliente"
-
-#. module: car-workshop
-#: model:project.project,name:car-workshop.project_car-workshop_1
-msgid "Repair and Revision"
-msgstr "Reparaciones y Revisiones"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_color
@@ -904,7 +899,7 @@ msgid "Warehouse"
 msgstr "Almacén"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:88
+#: code:addons/car-workshop/models/repair.py:89
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
@@ -953,3 +948,8 @@ msgstr "res.config.settings"
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
 msgid "show the odometer logs for this vehicle"
 msgstr "mostrar los registros de odómetro para este vehículo"
+
+#. module: car-workshop
+#: model:project.project,name:car-workshop.project_car-workshop_1
+msgid "Repair and Revision"
+msgstr "Reparaciones y Revisiones"

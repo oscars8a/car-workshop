@@ -118,46 +118,6 @@
                         </group>
                         <notebook>
                             <page string="Quotation">
-
-                            </page>
-                            <page string="Materials">
-
-                            </page>
-                            <page string="Binnacle">
-                                <group>
-                                    <group>
-                                        <field name="planned_hours" widget="float_time"/>
-                                    </group>
-                                    <group>
-                                        <field name="progress" widget="progressbar"/>
-                                    </group>
-                                </group>
-                                <field name="timesheet_ids" context="{'default_project_id': project_id}">
-                                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
-
-                                        <field name="name"/>
-                                        <field name="user_id" invisible="1"/>
-                                        <field name="employee_id" required="1"/>
-                                        <field name="date"/>
-                                        <field name="unit_amount" string="Duration" widget="float_time"/>
-                                        <field name="project_id" invisible="1"/>
-                                    </tree>
-                                </field>
-                                <group>
-                                    <group class="oe_subtotal_footer oe_right" name="project_hours">
-                                        <field name="effective_hours" widget="float_time"/>
-                                        <field name="children_hours" widget="float_time"
-                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
-                                        <field name="total_hours_spent" widget="float_time"
-                                               class="oe_subtotal_footer_separator"
-                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
-                                        <field name="remaining_hours" widget="float_time"
-                                               class="oe_subtotal_footer_separator" readonly="1"/>
-                                    </group>
-                                </group>
-
-                            </page>
-                            <page string="Budget">
                                 <field name="order_line" mode="tree,kanban"
                                        attrs="{'readonly': [('state', 'in', ('done','cancel'))]}"
                                        context="{'order_id':sale_order_id,'pricelist_id': pricelist_id, 'partner_id': partner_id}">
@@ -333,6 +293,53 @@
                                 <field name="note" class="oe_inline"
                                        placeholder="Setup default terms and conditions in your sales settings ..."/>
                                 <div class="oe_clear"/>
+                            </page>
+                            <page string="Materials">
+                                <field name="material_line" mode="tree" context="{'repair_id':active_id}">
+                                    <tree string="Material Lines" editable="bottom">
+                                        <field name="product_uom_qty"/>
+                                        <field name="product_id"/>
+                                        <field name="name"/>
+                                        <field name="location_id"/>
+                                        <field name="location_dest_id"/>
+                                        <field name="move_id"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Binnacle">
+                                <group>
+                                    <group>
+                                        <field name="planned_hours" widget="float_time"/>
+                                    </group>
+                                    <group>
+                                        <field name="progress" widget="progressbar"/>
+                                    </group>
+                                </group>
+                                <field name="timesheet_ids" context="{'default_project_id': project_id}">
+                                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
+
+                                        <field name="name"/>
+                                        <field name="user_id" invisible="1"/>
+                                        <field name="employee_id" required="1"/>
+                                        <field name="date"/>
+                                        <field name="unit_amount" string="Duration" widget="float_time"/>
+                                        <field name="project_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                                <group>
+                                    <group class="oe_subtotal_footer oe_right" name="project_hours">
+                                        <field name="effective_hours" widget="float_time"/>
+                                        <field name="children_hours" widget="float_time"
+                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
+                                        <field name="total_hours_spent" widget="float_time"
+                                               class="oe_subtotal_footer_separator"
+                                               attrs="{'invisible' : [('children_hours', '=', 0.0)]}"/>
+                                        <field name="remaining_hours" widget="float_time"
+                                               class="oe_subtotal_footer_separator" readonly="1"/>
+                                    </group>
+                                </group>
+
                             </page>
                             <page string="Other Information">
                                 <group>
