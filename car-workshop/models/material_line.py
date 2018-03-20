@@ -25,10 +25,12 @@ class MaterialLine(models.Model):
     product_uom_qty = fields.Float('Quantity', default=1.0, digits=dp.get_precision('  '),
                                    required=True)
     product_uom = fields.Many2one('product.uom', 'Product Unit of Measure', required=True)
+    consumed = fields.Boolean(default=False)
 
 
     @api.multi
     def consume_done(self):
+        depurador()
         Move = self.env['stock.move']
         for record in self:
             vals = {
@@ -54,6 +56,8 @@ class MaterialLine(models.Model):
             move = Move.create(vals)
             record.write({'move_id': move.id})
             move._action_done()
+            record.consumed = True
+            print(record.consumed)
 
 
     @api.onchange('repair_id', 'product_id', 'product_uom_qty')

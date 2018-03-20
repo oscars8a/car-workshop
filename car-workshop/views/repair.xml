@@ -65,7 +65,13 @@
                                     icon="fa-info-circle" string="Admission Sheet">
                             </button>
                             <button name="action_finised" type="object" class="oe_stat_button" icon="fa-archive">
-                                <field name="finished_stage" widget="statinfo" string="Finished"/>
+                                <field name="finished_stage" widget="boolean_button" string="Finished"
+                                        options='{"terminology": {
+                                    "string_true": "Finished",
+                                    "hover_true": "Activate again?",
+                                    "string_false": "Active",
+                                    "hover_false": "End up?"
+                                }}'/>
                             </button>
                         </div>
 
@@ -298,15 +304,18 @@
 
                                 <field name="material_line_ids" mode="tree" >
                                     <tree string="Material Lines" editable="bottom">
-                                        <field name="product_id"/>
+                                        <field name="product_id" domain="[['type','=','consu']]"/>
                                         <field name="product_uom_qty"/>
                                         <field name="product_uom"/>
                                         <field name="name"/>
                                         <field name="location_id"/>
                                         <field name="location_dest_id"/>
                                         <field name="move_id"/>
-                                        <button name="consume_done" type="object" string="Confirm"
-                                                class="oe_highlight"/>
+                                        <button name="consume_done" type="object" string="Consume"
+                                                class="oe_highlight" attrs="{'invisible': [('consumed','=',True)]}"
+                                                    icon="fa-glass">
+                                            <field name="consumed"/>
+                                        </button>
 
                                     </tree>
                                 </field>
