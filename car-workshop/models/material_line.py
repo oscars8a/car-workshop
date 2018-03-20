@@ -16,23 +16,14 @@ class MaterialLine(models.Model):
 
     repair_id = fields.Many2one(comodel_name="car_workshop.repair", string="repair_id", required=True, ondelete="cascade",
                                index=True, copy=False)
-
-
     location_id = fields.Many2one('stock.location', 'Source Location', index=True, required=True)
     location_dest_id = fields.Many2one('stock.location', 'Dest. Location', index=True, required=True)
     move_id = fields.Many2one('stock.move', 'Inventory Move', copy=False, readonly=True)
-
     product_id = fields.Many2one('product.product', 'Product', required=True)
     name = fields.Text(string='Description', required=True)
-
-    product_uom_qty = fields.Float('Quantity', default=1.0, digits=dp.get_precision('Product Unit of Measure'),
+    product_uom_qty = fields.Float('Quantity', default=1.0, digits=dp.get_precision('  '),
                                    required=True)
     product_uom = fields.Many2one('product.uom', 'Product Unit of Measure', required=True)
-
-    # @api.onchange('repair_id')
-    # def onchange_operation_repair_id(self):
-    #
-    #     # self.onchange_product_id()
 
 
     @api.multi
@@ -53,7 +44,6 @@ class MaterialLine(models.Model):
             else:
                 self.name = self.product_id.display_name
             self.product_uom = self.product_id.uom_id.id
-
         args = self.repair_id.company_id and [('company_id', '=', self.repair_id.company_id.id)] or []
         warehouse = self.env['stock.warehouse'].search(args, limit=1)
         self.location_id = warehouse.lot_stock_id
