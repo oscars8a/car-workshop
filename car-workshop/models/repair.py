@@ -16,8 +16,8 @@ class Repair(models.Model):
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
     repair_title = fields.Char()
     finished_stage = fields.Boolean("Finished")
-    material_line = fields.One2many(comodel_name='car_workshop.material_line', inverse_name='repair_id', string='Material Lines',
-                                    copy=True, auto_join=True)
+    material_line_ids = fields.One2many(comodel_name="car_workshop.material_line", inverse_name="repair_id",
+                                    string="Material Lines", auto_join=True)
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
     repair_line = fields.One2many('sale.order.line', 'repair_id', string='Order Lines',

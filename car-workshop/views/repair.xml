@@ -296,7 +296,7 @@
                             </page>
                             <page string="Materials">
 
-                                <field name="material_line" mode="tree" >
+                                <field name="material_line_ids" mode="tree" >
                                     <tree string="Material Lines" editable="bottom">
                                         <!--<field name="repair_id" attrs="{'invisible':0}"/>-->
                                         <field name="product_id"/>

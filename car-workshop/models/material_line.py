@@ -14,8 +14,9 @@ class StockMove(models.Model):
 class MaterialLine(models.Model):
     _name = "car_workshop.material_line"
 
-    repair_id = fields.Many2one('car_workshop.repair', string='repair_id', required=True,
-                                ondelete='cascade', index=True, copy=False)
+    repair_id = fields.Many2one(comodel_name="car_workshop.repair", string="repair_id", required=True, ondelete="cascade",
+                               index=True, copy=False)
+
 
     location_id = fields.Many2one('stock.location', 'Source Location', index=True, required=True)
     location_dest_id = fields.Many2one('stock.location', 'Dest. Location', index=True, required=True)
