@@ -2,6 +2,14 @@
 <odoo>
     <data>
 
+        <!--Action Stock Move Menu-->
+        <record model="ir.actions.act_window" id="action_car_stock_move_config">
+            <field name="name">Stock Move</field>
+            <field name="res_model">stock.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <!--Action Account Invoice Menu-->
         <record model="ir.actions.act_window" id="action_car_account_invoice_config">
             <field name="name">Account Invoice</field>
@@ -24,10 +32,20 @@
         <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"
                   web_icon="car-workshop,static/description/icon.png"/>
 
+        <!--Management Menus-->
+        <menuitem id="car_vmanagement_menus" name="Management"
+                  parent="main_car_workshop_menu"
+                  sequence="3"/>
+
+        <!--Stock Move Menu-->
+        <menuitem id="car_stock_move_menu" name="Stock Move"
+                  parent="car_vmanagement_menus"
+                  sequence="1" action="action_car_stock_move_config"/>
+
         <!--Account Invoice Menu-->
         <menuitem id="car_account_invoice_menu" name="Account Invoice"
-                  parent="main_car_workshop_menu"
-                  sequence="3" action="action_car_account_invoice_config"/>
+                  parent="car_vmanagement_menus"
+                  sequence="2" action="action_car_account_invoice_config"/>
 
         <!--Customers Menus-->
         <menuitem id="car_customers_menus" name="Customers"

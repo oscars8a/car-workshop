@@ -45,7 +45,7 @@ class MaterialLine(models.Model):
                                           'lot_id': False,
                                           'product_uom_qty': record.product_uom_qty,
                                           'product_uom_id': record.product_uom.id,
-                                          'qty_done': record.product_uom_qty,
+                                          'qty_done': False,
                                           'package_id': False,
                                           'result_package_id': False,
                                           'location_id': record.location_id.id,
