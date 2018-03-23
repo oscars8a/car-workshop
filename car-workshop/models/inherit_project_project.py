@@ -17,7 +17,7 @@ class Project(models.Model):
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
 
 
-
+    # CAMBIARLO POR module_INSTALARMod en el settings.
     def _action_redirect_area(self):
         ICPSudo = self.env['ir.config_parameter'].sudo()
         unique_area_value = ICPSudo.get_param('CarWorkshop.unique_area_setting')
