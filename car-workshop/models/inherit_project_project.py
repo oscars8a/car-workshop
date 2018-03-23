@@ -34,11 +34,12 @@ class Project(models.Model):
         }
         if unique_area_value and area_count == 1:
             area_id = area_ids[0].id
+            repair_tree_ref = self.env.ref('car-workshop.car-workshop_project_view_kanban').id
             action={
                 "name": "Repairs",
                 "type": "ir.actions.act_window",
                 "res_model": "car_workshop.repair",
-                "views": [[False, "kanban"], [False, "form"], [False, "search"]],
+                "views": [[False, "kanban"], [False,"tree"], [False,"calendar"], [False, "form"], [False, "search"]],
                 "context":{
                     'group_by': 'stage_id',
                     'search_default_project_id': [area_id],
