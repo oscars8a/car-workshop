@@ -17,20 +17,34 @@ class Project(models.Model):
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
 
 
-    @api.model
+
     def _action_redirect_area(self):
-        obj_settings = self.env['res.config.settings']
-        kanban_ref = self.env.ref('car-workshop.car-workshop_project_view_kanban').id
+        ICPSudo = self.env['ir.config_parameter'].sudo()
+        unique_area_value = ICPSudo.get_param('CarWorkshop.unique_area_setting')
+        area_ids = self.env['project.project'].search([('car_work','=',True)])
+        area_count = len(area_ids)
+        areas_kanban_ref = self.env.ref('car-workshop.car-workshop_project_view_kanban').id
         action = {
             "name": "Area",
             "type": "ir.actions.act_window",
             "res_model": "project.project",
-            "views": [[kanban_ref, "kanban"], [False, "form"], [False, "search"]],
+            "views": [[areas_kanban_ref, "kanban"], [False, "form"], [False, "search"]],
             "domain": [("car_work","=",True)],
             "target": "main",
         }
-        print('HI ODOO DEVELOPER')
-        print(obj_settings.unique_area_setting)
-        if obj_settings.unique_area_setting:
-            pass
+        if unique_area_value and area_count == 1:
+            area_id = area_ids[0].id
+            action={
+                "name": "Repairs",
+                "type": "ir.actions.act_window",
+                "res_model": "car_workshop.repair",
+                "views": [[False, "kanban"], [False, "form"], [False, "search"]],
+                "context":{
+                    'group_by': 'stage_id',
+                    'search_default_project_id': [area_id],
+                    'default_project_id': area_id,
+                    'search_default_in_work': 1,
+                },
+                "target": "current",
+            }
         return action
