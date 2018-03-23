@@ -1,9 +1,18 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models, _
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-class CarWorkConfiguration(models.TransientModel):
+from odoo import api, fields, models
+
+
+class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    unique_area = fields.Boolean(string="Unique 'Area Repair & Revision'")
+    unique_area_setting = fields.Boolean(string="Unique Area Repair and Revision")
 
-    areas_count = fields.Integer()
+    #Es necesario indicar la forma que vamos a realizar la persistencia.
+
+    # @api.multi
+    # def set_values(self):
+    #     super(ResConfigSettings, self).set_values()
+    #     ICPSudo = self.env['ir.config_parameter'].sudo()
+    #     ICPSudo.set_param("CarWorkshop.unique_area_setting", self.unique_area_setting)

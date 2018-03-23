@@ -304,7 +304,7 @@
 
                                 <field name="material_line_ids" mode="tree" >
                                     <tree string="Material Lines" editable="bottom">
-                                        <field name="product_id" domain="[['type','!=','product']]"/>
+                                        <field name="product_id" domain="[['type','=','consu']]"/>
                                         <field name="product_uom_qty"/>
                                         <field name="product_uom"/>
                                         <field name="name"/>
