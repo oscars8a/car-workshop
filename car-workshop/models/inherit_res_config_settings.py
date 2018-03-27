@@ -7,20 +7,17 @@ from wdb import set_trace as depurador
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    # @api.depends('areas_count')
-    # def _compute_areas_count(self):
-    #     depurador()
-    #     for record in self:
-    #         record.areas_count = 1
-
     unique_area_setting = fields.Boolean(string="Unique Area 'Repair and Revision'")
     areas_count = fields.Integer(compute='_compute_areas_count', string="Pruebas")
+    module_sdi_unique_area = fields.Boolean(string="PRUEBAS Instalar SDi Unique Area")
 
     @api.multi
     @api.onchange('unique_area_setting')
     def _compute_areas_count(self):
         for record in self:
             record.areas_count = self.env['project.project'].search_count([('car_work','=',True)])
+            if record.areas_count > 1:
+                record.unique_area_setting = False
 
     @api.model
     def get_values(self):
