@@ -1,21 +1,19 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* car-workshop
+#	* car-workshop
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-12 11:22+0000\n"
-"PO-Revision-Date: 2018-03-12 12:27+0100\n"
+"POT-Creation-Date: 2018-04-10 08:30+0000\n"
+"PO-Revision-Date: 2018-04-10 08:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: es\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_invoice_count
@@ -39,13 +37,11 @@ msgstr "<span>kW</span>"
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_kanban_state
-msgid ""
-"A task's kanban state indicates special situations affecting it:\n"
+msgid "A task's kanban state indicates special situations affecting it:\n"
 " * Grey is the default situation\n"
 " * Red indicates something is preventing the progress of this task\n"
 " * Green indicates the task is ready to be pulled to the next stage"
-msgstr ""
-"El estado Kanban en una tarea indica que existen situaciones especiales:\n"
+msgstr "El estado Kanban en una tarea indica que existen situaciones especiales:\n"
 "* El gris es la situación por defecto\n"
 "* El rojo indica que hay algo que impide que la tarea progrese\n"
 "* El verde indica que la tarea puede pasar a la siguiente etapa"
@@ -81,14 +77,9 @@ msgstr "Cuenta analítica"
 #. module: car-workshop
 #: model:ir.actions.act_window,name:car-workshop.action_car_areas_menu
 #: model:ir.ui.menu,name:car-workshop.car_areas_menu
-#: model:ir.ui.view,arch_db:car-workshop.car-workshop_res_config_settings_view_form
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
 msgid "Areas"
 msgstr "Áreas"
-
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_areas_count
-msgid "Areas Count"
-msgstr "Número de Áreas"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_user_id
@@ -114,18 +105,18 @@ msgstr "Marcas"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
-msgid "Budget"
-msgstr "Factura"
-
-#. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 #: model:ir.ui.view,arch_db:car-workshop.view_sale_advance_payment_inv_for_carworkshop
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_stock_move_car_work_repair_id
+msgid "Car Work Repair"
+msgstr "Car Work Repair"
+
+#. module: car-workshop
 #: model:ir.ui.menu,name:car-workshop.main_car_workshop_menu
-#: model:ir.ui.view,arch_db:car-workshop.car-workshop_res_config_settings_view_form
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
 msgid "Car Workshop"
 msgstr "Taller de reparación"
 
@@ -176,6 +167,16 @@ msgid "Confirmation Date"
 msgstr "Fecha de confirmación"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Consume"
+msgstr "Consume"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_consumed
+msgid "Consumed"
+msgstr "Consumed"
+
+#. module: car-workshop
 #: model:ir.model,name:car-workshop.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
@@ -197,15 +198,17 @@ msgstr "Crear y ver facturas"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_create_uid
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_create_date
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Creado el"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_currency_id
@@ -266,12 +269,19 @@ msgid "Delivery address for current sales order."
 msgstr "Dirección de envío para el pedido de ventas actual."
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_name
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_description
 msgid "Description"
 msgstr "Descripción"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_location_dest_id
+msgid "Dest. Location"
+msgstr "Ubicación destino"
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_display_name
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_display_name
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
@@ -319,6 +329,7 @@ msgstr "Horas dedicadas"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_id
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_id
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_id
 msgid "ID"
 msgstr "ID (identificación)"
@@ -355,6 +366,11 @@ msgstr "Horas iniciales planificadas"
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_incoterm
 msgid "International Commercial Terms are a series of predefined commercial terms used in international transactions."
 msgstr "Los términos de comercio internacional son una serie de condiciones comerciales usadas en las transacciones internacionales."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_move_id
+msgid "Inventory Move"
+msgstr "Movimiento de inventario"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_invoice_id
@@ -394,11 +410,9 @@ msgstr "Facturas"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.view_sale_advance_payment_inv_for_carworkshop
-msgid ""
-"Invoices will be created in draft so that you can review\n"
+msgid "Invoices will be created in draft so that you can review\n"
 "                        them before validation."
-msgstr ""
-"Las facturas se crearán en borrador para que puedan ser revisadas\n"
+msgstr "Las facturas se crearán en borrador para que puedan ser revisadas\n"
 "                        antes de su validación."
 
 #. module: car-workshop
@@ -428,21 +442,24 @@ msgstr "Estado de kanban"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv___last_update
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line___last_update
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair___last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_uid
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_date
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Última Actualización el"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -450,9 +467,20 @@ msgid "Lock"
 msgstr "Bloquear"
 
 #. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_vmanagement_menus
+msgid "Management"
+msgstr "Administración"
+
+#. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_validity_date
 msgid "Manually set the expiration date of your quotation (offer), or it will set the date automatically based on the template if online quotation is installed."
 msgstr "Indique manualmente la fecha de caducidad de su presupuesto (oferta), o se cargará la fecha automáticamente en función de la plantilla."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_material_line_ids
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Material Lines"
+msgstr "Material Lines"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -506,6 +534,11 @@ msgid "Other Information"
 msgstr "Otra información"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_module_sdi_unique_area
+msgid "PRUEBAS Instalar SDi Unique Area"
+msgstr "PRUEBAS Instalar SDi Unique Area"
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_term_id
 msgid "Payment Terms"
 msgstr "Plazos de pago"
@@ -541,9 +574,15 @@ msgid "Procurement Group"
 msgstr "Grupo de abastecimiento"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_product_id
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_product_id
 msgid "Product"
 msgstr "Producto"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_product_uom
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida del producto"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_progress
@@ -577,6 +616,21 @@ msgid "Projects used in this sales order."
 msgstr "Proyectos empleados en este pedido de venta."
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_areas_count
+msgid "Pruebas"
+msgstr "Pruebas"
+
+#. module: car-workshop
+#: model:ir.actions.server,name:car-workshop.action_prueba_unique_area
+msgid "Pruebas, Redirect"
+msgstr "Pruebas, Redirect"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_product_uom_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Quantity:"
 msgstr "Cantidad:"
@@ -607,7 +661,7 @@ msgstr "Horas Restantes"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_sale_order_line_repair_id
 msgid "Repair"
-msgstr "Reparación"
+msgstr "Reparar"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_repair_title
@@ -705,12 +759,10 @@ msgid "Send by Email"
 msgstr "Enviar por correo electrónico"
 
 #. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.car-workshop_res_config_settings_view_form
-msgid ""
-"Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
+msgid "Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
 "                                    of that area."
-msgstr ""
-"Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
+msgstr "Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
 "                                    of that area."
 
 #. module: car-workshop
@@ -741,6 +793,11 @@ msgid "Source Document"
 msgstr "Documento origen"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_location_id
+msgid "Source Location"
+msgstr "Ubicación de origen"
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_stage_id
 msgid "Stage"
 msgstr "Etapa"
@@ -754,6 +811,13 @@ msgstr "Fecha de inicio"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_state
 msgid "Status"
 msgstr "Estado"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_stock_move_config
+#: model:ir.model,name:car-workshop.model_stock_move
+#: model:ir.ui.menu,name:car-workshop.car_stock_move_menu
+msgid "Stock Move"
+msgstr "Movimiento de Stock"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_children_hours
@@ -789,6 +853,11 @@ msgstr "Impuestos"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_note
 msgid "Terms and conditions"
 msgstr "Términos y condiciones"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
+msgid "Texto PRUEBAS."
+msgstr "Texto PRUEBAS."
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_analytic_account_id
@@ -843,9 +912,9 @@ msgid "Total remaining time, can be re-estimated periodically by the assignee of
 msgstr "Total de tiempo restante, puede ser reestimado periódicamente por quien se le haya asignado la tarea."
 
 #. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_unique_area
-msgid "Unique 'Area Repair & Revision'"
-msgstr "Única área: 'Área de Reparaciones & Revisiones'"
+#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_unique_area_setting
+msgid "Unique Area 'Repair and Revision'"
+msgstr "Unique Area 'Repair and Revision'"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -899,7 +968,7 @@ msgid "Warehouse"
 msgstr "Almacén"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:89
+#: code:addons/car-workshop/models/repair.py:93
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
@@ -908,6 +977,11 @@ msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Inte
 #: model:ir.model,name:car-workshop.model_car_workshop_advance_payment_inv
 msgid "car_workshop.advance.payment.inv"
 msgstr "car_workshop.advance.payment.inv"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_car_workshop_material_line
+msgid "car_workshop.material_line"
+msgstr "car_workshop.material_line"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_car_workshop_repair
@@ -940,6 +1014,11 @@ msgid "oe_kanban_text_red"
 msgstr "oe_kanban_text_red"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_repair_id
+msgid "repair_id"
+msgstr "repair_id"
+
+#. module: car-workshop
 #: model:ir.model,name:car-workshop.model_res_config_settings
 msgid "res.config.settings"
 msgstr "res.config.settings"
@@ -949,7 +1028,3 @@ msgstr "res.config.settings"
 msgid "show the odometer logs for this vehicle"
 msgstr "mostrar los registros de odómetro para este vehículo"
 
-#. module: car-workshop
-#: model:project.project,name:car-workshop.project_car-workshop_1
-msgid "Repair and Revision"
-msgstr "Reparaciones y Revisiones"
