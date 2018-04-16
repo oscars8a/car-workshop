@@ -30,7 +30,6 @@ class MaterialLine(models.Model):
 
     @api.multi
     def consume_done(self):
-        depurador()
         Move = self.env['stock.move']
         for record in self:
             vals = {

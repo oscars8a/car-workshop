@@ -65,6 +65,7 @@ class Repair(models.Model):
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
         rec_task = self.project_task_id.create(vals).id
+        self.env['modulo.modelo'].create(vals)
         vals['project_task_id'] = rec_task
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
