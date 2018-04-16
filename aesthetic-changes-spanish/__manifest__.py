@@ -14,6 +14,7 @@
     'license': 'AGPL-3',
     'depends': [
         'fleet',
+        'car-workshop',
     ],
     'data': [
         'views/inherit_fleet_vehicle_model.xml',
