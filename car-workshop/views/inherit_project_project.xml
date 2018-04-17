@@ -135,11 +135,10 @@
             <field name="domain">[("car_work","=",True)]</field>
             <field name="view_mode">kanban,form</field>
             <field name="view_id" ref="car-workshop_project_view_kanban"/>
-            <!--<field name="res_id" ref="car-workshop_project_view_form"/>-->
-            <!--<field name="search_view_id" ref="project.view_project_project_filter"/>-->
             <field name="target">main</field>
         </record>
 
+        <!--Hacer que se pueda elegir si va a redirigir a la vista kanban-->
         <record id="action_prueba_unique_area" model="ir.actions.server">
             <field name="name">Pruebas, Redirect</field>
             <field name="model_id" ref="model_project_project"/>

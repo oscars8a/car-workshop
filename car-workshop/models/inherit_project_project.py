@@ -17,7 +17,7 @@ class Project(models.Model):
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
 
 
-    # CAMBIARLO POR module_INSTALARMod en el settings.
+    # CAMBIARLO POR module_INSTALARMod en el settings, cuando sea estable.
     def _action_redirect_area(self):
         ICPSudo = self.env['ir.config_parameter'].sudo()
         unique_area_value = ICPSudo.get_param('CarWorkshop.unique_area_setting')
@@ -28,7 +28,7 @@ class Project(models.Model):
             "name": "Area",
             "type": "ir.actions.act_window",
             "res_model": "project.project",
-            "views": [[areas_kanban_ref, "kanban"], [False, "form"], [False, "search"]],
+            "views": [[areas_kanban_ref, "kanban"], [False,"tree"], [False, "form"], [False, "search"]],
             "domain": [("car_work","=",True)],
             "target": "main",
         }
