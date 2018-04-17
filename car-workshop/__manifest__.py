@@ -33,7 +33,7 @@
         'data/project_initial.xml',
         'views/inherit_res_partner.xml',
         'views/inherit_res_config_settings.xml',
-        'security/car-workshop_security.xml',
+        'security/car-worshop_security.xml',
         'security/ir.model.access.csv',
     ],
     'demo': [
