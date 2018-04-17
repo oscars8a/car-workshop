@@ -2,14 +2,14 @@
 <openerp>
 <data noupdate="1">
 
-    <!--Group for CarWorkShop Accountable -->
-    <record id="group_car-workshop_accountable" model="res.groups">
-        <field name="name">Car Workshop Management / Accountable</field>
+    <!--Group for CarWorkShop Manager -->
+    <record id="group_car-workshop_manager" model="res.groups">
+        <field name="name">Car Workshop Manager</field>
     </record>
 
-    <!--Group for CarworkShop Mechanic -->
-    <record id="group_car-workshop_mechanic" model="res.groups">
-        <field name="name">Car Workshop Management / Mechanic</field>
+    <!--Group for CarworkShop Operator -->
+    <record id="group_car-workshop_operator" model="res.groups">
+        <field name="name">Car Workshop Operator</field>
     </record>
 </data>
 </openerp>
