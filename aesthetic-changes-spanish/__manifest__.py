@@ -18,5 +18,4 @@
         'views/inherit_fleet_vehicle_model.xml',
     ],
     'installable': True,
-    'post_init_hook':'_change_default_language',
 }
