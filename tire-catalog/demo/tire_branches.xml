@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="tire_brand_firestone" model="tire_catalog.tire_brand">
+            <field name="name">Firestone</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_firestone-image.png"/>
+        </record>
+
+        <record id="tire_brand_continental" model="tire_catalog.tire_brand">
+            <field name="name">Continental</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_continental-image.png"/>
+        </record>
+
+        <record id="tire_brand_michelin" model="tire_catalog.tire_brand">
+            <field name="name">Michelin</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_michelin-image.png"/>
+        </record>
+
+        <record id="tire_brand_feuvert" model="tire_catalog.tire_brand">
+            <field name="name">FeuVert</field>
+            <field name="image" type="base64" file="car-workshop/static/img/brand_feuvert-image.png"/>
+        </record>
+
+    </data>
+</odoo>
