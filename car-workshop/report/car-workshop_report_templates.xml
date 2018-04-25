@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <!--Translatable Admission Sheet Template-->
     <template id="report_admission_sheet_document">
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
@@ -8,22 +7,42 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>Report title</h2>
-                        <p>This object's name is <span t-field="o.name"/>
+                        <h2>Admission Sheet</h2>
+                        <p>                        
+                            Reoair Order <span t-field="o.name"/>
+                            Date <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>  
                         </p>
+                        <div id="customer data">
+                            Customer <span t-field="o.partner_id.name"/>
+                            VAT <span t-field="o.partner_id.vat"/>
+                            Address <span t-field="o.partner_id.street"/>
+                            Phone <span t-field="o.partner_id.phone"/>
+                            Mobile <span t-field="o.partner_id.mobile"/>
+                        </div>
+                        <div id="vehicle_data">
+                            Vehicle <span t-field="o.vehicle_id.name"/>
+                            License Plate <span t-field="o.vehicle_id.license_plate"/>
+                            Chassis Number <span t-field="o.vehicle_id.vin_sn"/>
+                        </div>
+                        <div id="repair data">
+                            <div>
+                                <!--FOTO-->
+                                
+                            </div>
+                            <div>
+                                <span t-field="o.description"/>
+                            </div>
+                        </div>
                     </div>
                 </t>
             </t>
         </t>
     </template>
-
     <!--Admission Sheet Main Template-->
     <template id="report_admission_sheet">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="car-workshop.report_admission_sheet_document" t-lang="doc.partner_id.lang"/>
-            </t>
+                <t t-call="car-workshop.report_admission_sheet_document" t-lang="doc.partner_id.lang"/></t>
         </t>
     </template>
-
 </odoo>
