@@ -62,5 +62,25 @@
                   parent="main_car_workshop_menu"
                   sequence="6"/>
 
+        <!--Action Products Menu-->
+        <record model="ir.actions.act_window" id="action_car_vproducts_config">
+            <field name="name">Products</field>
+            <field name="res_model">product.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree</field>
+        </record>
+        <!--Catalogue Menu-->
+        <menuitem id="tire_catalogue_menus" name="Catalogue"
+                  parent="main_car_workshop_menu"
+                  sequence="5"/>
+
+
+
+        <!--Products Menu-->
+        <menuitem id="car_vproducts_menu" name="Products"
+                  parent="tire_catalogue_menus"
+                  sequence="1" action="action_car_vproducts_config"/>
+
+
     </data>
 </odoo>
