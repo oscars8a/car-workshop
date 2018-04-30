@@ -1,24 +1,89 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* car-workshop
+# 	* car-workshop
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-10 08:30+0000\n"
-"PO-Revision-Date: 2018-04-10 08:30+0000\n"
+"POT-Creation-Date: 2018-04-27 11:16+0000\n"
+"PO-Revision-Date: 2018-04-27 13:18+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_invoice_count
 msgid "# of Invoices"
 msgstr "# de Facturas"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            Address"
+msgstr ""
+"<br/>\n"
+"                            Address"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            Chassis Number"
+msgstr ""
+"<br/>\n"
+"                            Chassis Number"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            Date"
+msgstr ""
+"<br/>\n"
+"                            Date"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            License Plate"
+msgstr ""
+"<br/>\n"
+"                            License Plate"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            Mobile"
+msgstr ""
+"<br/>\n"
+"                            Mobile"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            Phone"
+msgstr ""
+"<br/>\n"
+"                            Phone"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"<br/>\n"
+"                            VAT"
+msgstr ""
+"<br/>\n"
+"                            VAT"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_kanban
@@ -37,11 +102,13 @@ msgstr "<span>kW</span>"
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_kanban_state
-msgid "A task's kanban state indicates special situations affecting it:\n"
+msgid ""
+"A task's kanban state indicates special situations affecting it:\n"
 " * Grey is the default situation\n"
 " * Red indicates something is preventing the progress of this task\n"
 " * Green indicates the task is ready to be pulled to the next stage"
-msgstr "El estado Kanban en una tarea indica que existen situaciones especiales:\n"
+msgstr ""
+"El estado Kanban en una tarea indica que existen situaciones especiales:\n"
 "* El gris es la situación por defecto\n"
 "* El rojo indica que hay algo que impide que la tarea progrese\n"
 "* El verde indica que la tarea puede pasar a la siguiente etapa"
@@ -60,6 +127,7 @@ msgstr "Propiedades adicionales"
 #. module: car-workshop
 #: model:ir.actions.report,name:car-workshop.action_report_admission_sheet
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Admission Sheet"
 msgstr "Hoja de Admisión"
 
@@ -85,11 +153,6 @@ msgstr "Áreas"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_user_id
 msgid "Assigned to"
 msgstr "Asignada a"
-
-#. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
-msgid "Binnacle"
-msgstr "Bitácora"
 
 #. module: car-workshop
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_collection_customer
@@ -119,6 +182,16 @@ msgstr "Car Work Repair"
 #: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
 msgid "Car Workshop"
 msgstr "Taller de reparación"
+
+#. module: car-workshop
+#: model:res.groups,name:car-workshop.group_car-workshop_manager
+msgid "Car Workshop Manager"
+msgstr "Car Workshop Manager"
+
+#. module: car-workshop
+#: model:res.groups,name:car-workshop.group_car-workshop_operator
+msgid "Car Workshop Operator"
+msgstr "Car Workshop Operator"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_image_client_vehicle
@@ -208,7 +281,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado en"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_currency_id
@@ -218,6 +291,7 @@ msgstr "Moneda"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_id
 #: model:ir.model.fields,field_description:car-workshop.field_fleet_vehicle_customer_id
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Customer"
 msgstr "Cliente"
 
@@ -240,8 +314,8 @@ msgstr "Fecha en que se confirma el pedido de venta."
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_deadline
-msgid "Deadline"
-msgstr "Fecha límite"
+msgid "Deadline Date"
+msgstr "Fecha de Entrega"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -297,6 +371,11 @@ msgid "Engine Options"
 msgstr "Opciones del motor"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_start
+msgid "Entry Date"
+msgstr "Fecha de Entrada"
+
+#. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_planned_hours
 msgid "Estimated time to do the task, usually set by the project manager when the task is in draft state."
 msgstr "Tiempo estimado para realizar la tarea, normalmente fijado por el responsable del proyecto cuando la tarea está en estado borrador."
@@ -305,6 +384,11 @@ msgstr "Tiempo estimado para realizar la tarea, normalmente fijado por el respon
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_validity_date
 msgid "Expiration Date"
 msgstr "Fecha de caducidad"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "FOTO"
+msgstr "FOTO"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_finished_stage
@@ -316,6 +400,21 @@ msgstr "Terminada"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_fiscal_position_id
 msgid "Fiscal Position"
 msgstr "Posición fiscal"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
+msgid ""
+"Funcionalidad en TEST.<br/>\n"
+"                                    Utilize la funcionalidad \"Unique Area 'Repair and Revision'\".<br/>\n"
+"                                    Te instala el modulo 'sdi_unique_area'. Este modulo añade un menú\n"
+"                                    'Unique Area' que puedes ver en el archivo unque_area.xml y que llama al action que hay definido\n"
+"                                    encima."
+msgstr ""
+"Funcionalidad en TEST.<br/>\n"
+"                                    Utilize la funcionalidad \"Unique Area 'Repair and Revision'\".<br/>\n"
+"                                    Te instala el modulo 'sdi_unique_area'. Este modulo añade un menú\n"
+"                                    'Unique Area' que puedes ver en el archivo unque_area.xml y que llama al action que hay definido\n"
+"                                    encima."
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
@@ -410,9 +509,11 @@ msgstr "Facturas"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.view_sale_advance_payment_inv_for_carworkshop
-msgid "Invoices will be created in draft so that you can review\n"
+msgid ""
+"Invoices will be created in draft so that you can review\n"
 "                        them before validation."
-msgstr "Las facturas se crearán en borrador para que puedan ser revisadas\n"
+msgstr ""
+"Las facturas se crearán en borrador para que puedan ser revisadas\n"
 "                        antes de su validación."
 
 #. module: car-workshop
@@ -459,7 +560,7 @@ msgstr "Última actualización de"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_date
 msgid "Last Updated on"
-msgstr "Última Actualización el"
+msgstr "Última actualización en"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -659,6 +760,11 @@ msgid "Remaining Hours"
 msgstr "Horas Restantes"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "Reoair Order"
+msgstr "Reoair Order"
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_sale_order_line_repair_id
 msgid "Repair"
 msgstr "Reparar"
@@ -699,11 +805,6 @@ msgid "Repairs related with this contact"
 msgstr "Reparaciones de este cliente"
 
 #. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
-msgid "Report title"
-msgstr "Título del Informe"
-
-#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_sale_order_id
 msgid "Sale Order"
 msgstr "Pedido de venta"
@@ -731,7 +832,7 @@ msgstr "Información de ventas"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Sales Order"
-msgstr "Pedido de venta"
+msgstr "Pedido de ventas"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_sale_order_line
@@ -760,9 +861,11 @@ msgstr "Enviar por correo electrónico"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
-msgid "Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
+msgid ""
+"Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
 "                                    of that area."
-msgstr "Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
+msgstr ""
+"Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs\n"
 "                                    of that area."
 
 #. module: car-workshop
@@ -801,11 +904,6 @@ msgstr "Ubicación de origen"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_stage_id
 msgid "Stage"
 msgstr "Etapa"
-
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_start
-msgid "Starting Date"
-msgstr "Fecha de inicio"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_state
@@ -855,11 +953,6 @@ msgid "Terms and conditions"
 msgstr "Términos y condiciones"
 
 #. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
-msgid "Texto PRUEBAS."
-msgstr "Texto PRUEBAS."
-
-#. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_analytic_account_id
 msgid "The analytic account related to a sales order."
 msgstr "La cuenta analítica relacionada con un pedido de venta."
@@ -875,11 +968,6 @@ msgstr "El producto utilizado para facturar un anticipo debe ser del tipo 'Servi
 #, python-format
 msgid "The product used to invoice a down payment should have an invoice policy set to \"Ordered quantities\". Please update your deposit product to be able to create a deposit invoice."
 msgstr "El producto utilizado para facturar un anticipo debe tener una política de facturación establecida en \"Cantidades pedidas\". Actualice su producto de depósito para poder crear una factura de depósito."
-
-#. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
-msgid "This object's name is"
-msgstr "This object's name is"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -934,6 +1022,7 @@ msgstr "Base imponible"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_vehicle_id
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Vehicle"
 msgstr "Vehículo"
 
@@ -968,7 +1057,12 @@ msgid "Warehouse"
 msgstr "Almacén"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:93
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Work"
+msgstr "Trabajos"
+
+#. module: car-workshop
+#: code:addons/car-workshop/models/repair.py:92
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
@@ -1027,4 +1121,3 @@ msgstr "res.config.settings"
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
 msgid "show the odometer logs for this vehicle"
 msgstr "mostrar los registros de odómetro para este vehículo"
-

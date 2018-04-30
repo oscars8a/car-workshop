@@ -8,28 +8,29 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2>Admission Sheet</h2>
-                        <p>                        
-                            Reoair Order <span t-field="o.name"/>
+                        <group>                        
+                            Reoair Order <span t-field="o.name"/><br/>
                             Date <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>  
-                        </p>
-                        <div id="customer data">
-                            Customer <span t-field="o.partner_id.name"/>
-                            VAT <span t-field="o.partner_id.vat"/>
-                            Address <span t-field="o.partner_id.street"/>
-                            Phone <span t-field="o.partner_id.phone"/>
-                            Mobile <span t-field="o.partner_id.mobile"/>
-                        </div>
-                        <div id="vehicle_data">
-                            Vehicle <span t-field="o.vehicle_id.name"/>
-                            License Plate <span t-field="o.vehicle_id.license_plate"/>
-                            Chassis Number <span t-field="o.vehicle_id.vin_sn"/>
-                        </div>
-                        <div id="repair data">
+                        </group>
+                        <group id="customer data">
+                            Customer <span t-field="o.partner_id.name"/><br/>
+                            VAT <span t-field="o.partner_id.vat"/><br/>
+                            Address <span t-field="o.partner_id.street"/><br/>
+                            Phone <span t-field="o.partner_id.phone"/><br/>
+                            Mobile <span t-field="o.partner_id.mobile"/><br/>
+                        </group>
+                        <group id="vehicle_data">
+                            Vehicle <span t-field="o.vehicle_id.name"/><br/>
+                            License Plate <span t-field="o.vehicle_id.license_plate"/><br/>
+                            Chassis Number <span t-field="o.vehicle_id.vin_sn"/><br/>
+                        </group>
+                        <div id="repair data" colspan="2">
                             <div>
-                                <!--FOTO-->
-                                
+                                <img class="img img-responsive" src="/car-workshop/static/src/img/car_repair.jpg" style="width: 25%;"/>
+                                FOTO
                             </div>
                             <div>
+                                
                                 <span t-field="o.description"/>
                             </div>
                         </div>

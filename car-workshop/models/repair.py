@@ -14,6 +14,7 @@ class Repair(models.Model):
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
+    name = fields.Char(default="")
     repair_title = fields.Char()
     finished_stage = fields.Boolean("Finished")
     material_line_ids = fields.One2many(comodel_name="car_workshop.material_line", inverse_name="repair_id",
@@ -30,8 +31,8 @@ class Repair(models.Model):
     project_id = fields.Many2one(related="project_task_id.project_id", store=True)
     user_id = fields.Many2one(related="project_task_id.user_id", store=True)
     kanban_state = fields.Selection(related="project_task_id.kanban_state", default='normal', store=True)
-    date_start = fields.Datetime(related="project_task_id.date_start")
-    date_deadline = fields.Date(related="project_task_id.date_deadline")
+    date_start = fields.Datetime(related="project_task_id.date_start", string="Entry Date", store=True)
+    date_deadline = fields.Date(related="project_task_id.date_deadline", string="Deadline Date", store=True)
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
     color = fields.Integer(related="project_task_id.color")
     timesheet_ids = fields.One2many(related="project_task_id.timesheet_ids")
@@ -53,8 +54,6 @@ class Repair(models.Model):
 
     @api.model
     def create(self, vals):
-        print('HI ODOO DEVELOPER')
-        print(vals)
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             if 'company_id' in vals:
@@ -233,12 +232,12 @@ class Repair(models.Model):
         return self.env.ref('car-workshop.action_report_admission_sheet').report_action(self, data=None)
 
     # DEF de Dario para la DEMO
-    @api.multi
-    def action_invoice_create(self, grouped=False, final=False):
-        order_ids = [record.sale_order_id.id for record in self]
-        sale_obj = self.env['sale.order'].browse(order_ids)
-        invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
-        return invoice_id
+    # @api.multi
+    # def action_invoice_create(self, grouped=False, final=False):
+    #     order_ids = [record.sale_order_id.id for record in self]
+    #     sale_obj = self.env['sale.order'].browse(order_ids)
+    #     invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
+    #     return invoice_id
     @api.multi
     def action_finised(self):
         self.finished_stage = not self.finished_stage

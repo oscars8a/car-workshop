@@ -66,7 +66,7 @@
             <field name="name">Products</field>
             <field name="res_model">product.product</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
         </record>
 
         <!-- Si se no se quiere depender de Car-Workshop tenemos que hacer el siguiente menú "Catalogue Menu"-->

@@ -6,7 +6,7 @@
             <field name="name">Vehicles</field>
             <field name="res_model">fleet.vehicle</field>
             <field name="domain">[('customer_id', '=', active_id)]</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
             <field name="view_type">form</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
@@ -20,7 +20,7 @@
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
             <field name="domain">[('partner_id', '=', active_id)]</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
             <field name="view_type">form</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),

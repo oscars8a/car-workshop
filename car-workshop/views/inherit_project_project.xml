@@ -133,7 +133,7 @@
             <field name="res_model">project.project</field>
             <field name="view_type">form</field>
             <field name="domain">[("car_work","=",True)]</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
             <field name="view_id" ref="car-workshop_project_view_kanban"/>
             <field name="target">main</field>
         </record>

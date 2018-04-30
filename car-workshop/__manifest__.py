@@ -35,6 +35,7 @@
         'views/inherit_res_config_settings.xml',
         'security/car-workshop_security.xml',
         'security/ir.model.access.csv',
+        'views/inherit_account_invoice.xml',
     ],
     'demo': [
     ],

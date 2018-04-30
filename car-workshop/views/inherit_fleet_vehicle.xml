@@ -6,7 +6,7 @@
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
             <field name="domain">[('vehicle_id', '=', active_id)]</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
             <field name="view_type">form</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
@@ -156,7 +156,7 @@
             <field name="name">Vehicles</field>
             <field name="res_model">fleet.vehicle</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
                           (0, 0, {'view_mode': 'kanban', 'view_id': ref('car-workshop_fleet_vehicle_view_kanban')}),
@@ -183,7 +183,7 @@
             <field name="name">Vehicle Brands</field>
             <field name="res_model">fleet.vehicle.model.brand</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,form,tree</field>
         </record>
 
         <!--Vehicle Models Menu-->

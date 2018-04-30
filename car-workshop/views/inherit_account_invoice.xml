@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+
+                <field name="sent" position="after">
+
+                    <div>
+                        <p t-if="self.description.text == false">
+                            <field name="description" attrs="{'invisible': [('this.text', '=', False)]}"/>
+                        </p>
+                        <p t-else="">
+                            <field name="description"/>
+                        </p>
+                    </div>
+                </field>
+
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
