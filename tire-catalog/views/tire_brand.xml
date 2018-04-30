@@ -50,6 +50,7 @@
             </field>
         </record>
 
+
         <!-- Tire Brand Action-->
         <record model="ir.actions.act_window" id="action_car_tbrands_config">
             <field name="name">Tire Brands</field>
@@ -60,9 +61,10 @@
         </record>
 
 
+
         <!--Tire Brands Menu-->
         <menuitem id="car_tbrands_menu" name="Tire Brands"
-                  parent="tire_catalogue_menus"
+                  parent="car-workshop.tire_catalogue_menus"
                   sequence="3" action="action_car_tbrands_config"/>
     </data>
 </odoo>

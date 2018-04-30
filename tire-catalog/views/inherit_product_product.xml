@@ -61,31 +61,9 @@
             <field name="target">new</field>
         </record>
 
-        <!--Action Products Menu-->
-        <record model="ir.actions.act_window" id="action_car_vproducts_config">
-            <field name="name">Products</field>
-            <field name="res_model">product.product</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">kanban,form,tree</field>
-        </record>
-
-        <!-- Si se no se quiere depender de Car-Workshop tenemos que hacer el siguiente menú "Catalogue Menu"-->
-        <!-- como padre y que se posicione en el menú horizontal.-->
-
-         <!--Catalogue Menu-->
-        <menuitem id="tire_catalogue_menus" name="Catalogue"
-                  parent="car-workshop.main_car_workshop_menu"
-                  sequence="5"/>
-
-
-        <!--Products Menu-->
-        <menuitem id="car_vproducts_menu" name="Products"
-                  parent="tire_catalogue_menus"
-                  sequence="1" action="action_car_vproducts_config"/>
-
         <!--Tires Menu-->
         <menuitem id="car_tire_menu" name="Tires"
-                  parent="tire_catalogue_menus"
+                  parent="car-workshop.tire_catalogue_menus"
                   sequence="2" action="action_tire_view_wizard"/>
 
     </data>
