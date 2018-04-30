@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-27 11:16+0000\n"
-"PO-Revision-Date: 2018-04-27 13:18+0200\n"
+"POT-Creation-Date: 2018-04-30 11:54+0000\n"
+"PO-Revision-Date: 2018-04-30 13:57+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,64 +26,55 @@ msgstr "# de Facturas"
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid ""
 "<br/>\n"
-"                            Address"
+"                            Bastidor"
 msgstr ""
 "<br/>\n"
-"                            Address"
+"                            Bastidor"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid ""
 "<br/>\n"
-"                            Chassis Number"
+"                            DNI"
 msgstr ""
 "<br/>\n"
-"                            Chassis Number"
+"                            DNI"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid ""
 "<br/>\n"
-"                            Date"
+"                            Dirección"
 msgstr ""
 "<br/>\n"
-"                            Date"
+"                            Dirección"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid ""
 "<br/>\n"
-"                            License Plate"
+"                            Fecha"
 msgstr ""
 "<br/>\n"
-"                            License Plate"
+"                            Fecha"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid ""
 "<br/>\n"
-"                            Mobile"
+"                            Matricula"
 msgstr ""
 "<br/>\n"
-"                            Mobile"
+"                            Matricula"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid ""
 "<br/>\n"
-"                            Phone"
+"                            Telefono"
 msgstr ""
 "<br/>\n"
-"                            Phone"
-
-#. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
-msgid ""
-"<br/>\n"
-"                            VAT"
-msgstr ""
-"<br/>\n"
-"                            VAT"
+"                            Telefono"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_kanban
@@ -114,6 +105,25 @@ msgstr ""
 "* El verde indica que la tarea puede pasar a la siguiente etapa"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERASPARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>\n"
+"                            TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTESEGÚN TARIFA VIGENTE POR DÍA.<br/>\n"
+"                            RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL VEHÍCULO.<br/>\n"
+"                            RENUNCIO A LA CONFECCION DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.<br/>\n"
+"                            EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA FACTURA  A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOSINDISTRIALES) CUYO PLAZO SERA DE 15 DÍAS.<br/>\n"
+"                            EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL V EHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>\n"
+"                            LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍCOMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN."
+msgstr ""
+"AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERASPARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>\n"
+"                            TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTESEGÚN TARIFA VIGENTE POR DÍA.<br/>\n"
+"                            RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL VEHÍCULO.<br/>\n"
+"                            RENUNCIO A LA CONFECCION DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.<br/>\n"
+"                            EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA FACTURA  A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOSINDISTRIALES) CUYO PLAZO SERA DE 15 DÍAS.<br/>\n"
+"                            EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL V EHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>\n"
+"                            LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍCOMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN."
+
+#. module: car-workshop
 #: model:ir.actions.act_window,name:car-workshop.action_car_account_invoice_config
 #: model:ir.ui.menu,name:car-workshop.car_account_invoice_menu
 msgid "Account Invoice"
@@ -127,7 +137,6 @@ msgstr "Propiedades adicionales"
 #. module: car-workshop
 #: model:ir.actions.report,name:car-workshop.action_report_admission_sheet
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
-#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Admission Sheet"
 msgstr "Hoja de Admisión"
 
@@ -155,6 +164,11 @@ msgid "Assigned to"
 msgstr "Asignada a"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_account_invoice_aux_descrip
+msgid "Aux Descrip"
+msgstr "Aux Descrip"
+
+#. module: car-workshop
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_collection_customer
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_in_progress
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_on_hold
@@ -165,6 +179,11 @@ msgstr "Bloqueada"
 #: model:ir.ui.menu,name:car-workshop.car_vbrands_menu
 msgid "Brands"
 msgstr "Marcas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_budget_resignation
+msgid "Budged Resignation"
+msgstr "Renuncia Presupuesto"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -198,6 +217,21 @@ msgstr "Car Workshop Operator"
 #: model:ir.model.fields,field_description:car-workshop.field_fleet_vehicle_image_client_vehicle
 msgid "Car image"
 msgstr "Imagen del coche"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.tire_catalogue_menus
+msgid "Catalogue"
+msgstr "Catálogo"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_collect_pieces
+msgid "Collect Pieces"
+msgstr "Recoger Piezas"
 
 #. module: car-workshop
 #: model:project.task.type,name:car-workshop.project_car-workshop_stage_collection_customer
@@ -291,7 +325,6 @@ msgstr "Moneda"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_id
 #: model:ir.model.fields,field_description:car-workshop.field_fleet_vehicle_customer_id
-#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Customer"
 msgstr "Cliente"
 
@@ -314,6 +347,7 @@ msgstr "Fecha en que se confirma el pedido de venta."
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_deadline
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_search
 msgid "Deadline Date"
 msgstr "Fecha de Entrega"
 
@@ -343,6 +377,7 @@ msgid "Delivery address for current sales order."
 msgstr "Dirección de envío para el pedido de ventas actual."
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_account_invoice_description
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_name
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_description
 msgid "Description"
@@ -372,6 +407,7 @@ msgstr "Opciones del motor"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_start
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_search
 msgid "Entry Date"
 msgstr "Fecha de Entrada"
 
@@ -384,6 +420,25 @@ msgstr "Tiempo estimado para realizar la tarea, normalmente fijado por el respon
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_validity_date
 msgid "Expiration Date"
 msgstr "Fecha de caducidad"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "FECHA PREVISTA DE ENTREGA DE VEHÍCULO:"
+msgstr "FECHA PREVISTA DE ENTREGA DE VEHÍCULO:"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid ""
+"FIRMA DEL CLIENTE<br/>\n"
+"                                (LEIDO Y CONFORME)"
+msgstr ""
+"FIRMA DEL CLIENTE<br/>\n"
+"                                (LEIDO Y CONFORME)"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "FIRMA DEL TALLER<br/>"
+msgstr "FIRMA DEL TALLER<br/>"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
@@ -420,6 +475,16 @@ msgstr ""
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
 msgid "General Properties"
 msgstr "Propiedades generales"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "HOJA DE ADMISIÓN"
+msgstr "HOJA DE ADMISIÓN"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_effective_hours
@@ -470,6 +535,11 @@ msgstr "Los términos de comercio internacional son una serie de condiciones com
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_move_id
 msgid "Inventory Move"
 msgstr "Movimiento de inventario"
+
+#. module: car-workshop
+#: model:ir.model,name:car-workshop.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_partner_invoice_id
@@ -594,6 +664,16 @@ msgid "Models"
 msgstr "Modelos"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "Móvil"
+msgstr "Móvil"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
 msgid "Odometer"
 msgstr "Odómetro"
@@ -602,6 +682,11 @@ msgstr "Odómetro"
 #: model:project.task.type,name:car-workshop.project_car-workshop_stage_on_hold
 msgid "On Hold"
 msgstr "En espera"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "Orden de Reparación"
+msgstr "Orden de Reparación"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_date_order
@@ -613,11 +698,6 @@ msgstr "Fecha de pedido"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_repair_line
 msgid "Order Lines"
 msgstr "Líneas del pedido"
-
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_name
-msgid "Order Reference"
-msgstr "Referencia del pedido"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -633,6 +713,11 @@ msgstr "Cantidad pedida"
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Other Information"
 msgstr "Otra información"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.invoice_form
+msgid "PRUEBAS (Borrar)"
+msgstr "PRUEBAS (Borrar)"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_module_sdi_unique_area
@@ -684,6 +769,12 @@ msgstr "Producto"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_product_uom
 msgid "Product Unit of Measure"
 msgstr "Unidad de medida del producto"
+
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_vproducts_config
+#: model:ir.ui.menu,name:car-workshop.car_vproducts_menu
+msgid "Products"
+msgstr "Productos"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_progress
@@ -750,6 +841,11 @@ msgid "Ready for Next Stage"
 msgstr "Listo para la siguiente etapa"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "Recoge Piezas"
+msgstr "Recoge Piezas"
+
+#. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_origin
 msgid "Reference of the document that generated this sales order request."
 msgstr "Referencia del documento que ha generado esta solicitud de pedido de venta."
@@ -761,8 +857,8 @@ msgstr "Horas Restantes"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
-msgid "Reoair Order"
-msgstr "Reoair Order"
+msgid "Renuncia presupuesto"
+msgstr "Renuncia presupuesto"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_sale_order_line_repair_id
@@ -832,12 +928,12 @@ msgstr "Información de ventas"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Sales Order"
-msgstr "Pedido de ventas"
+msgstr "Pedido de venta"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Línea de orden de ventas"
+msgstr "Línea de pedido de venta"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -1022,7 +1118,6 @@ msgstr "Base imponible"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_vehicle_id
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
-#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Vehicle"
 msgstr "Vehículo"
 
@@ -1052,6 +1147,11 @@ msgid "Vehicles related with this contact"
 msgstr "Vehículos de este Cliente"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
+msgid "Vehiculo"
+msgstr "Vehiculo"
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_warehouse_id
 msgid "Warehouse"
 msgstr "Almacén"
@@ -1062,7 +1162,7 @@ msgid "Work"
 msgstr "Trabajos"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:92
+#: code:addons/car-workshop/models/repair.py:94
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."

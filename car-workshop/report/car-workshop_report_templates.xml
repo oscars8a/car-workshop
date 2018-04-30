@@ -7,33 +7,59 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>Admission Sheet</h2>
+                        <h2>HOJA DE ADMISIÓN (Esta en Español, pasarlo a Inglés)</h2>
                         <group>                        
-                            Reoair Order <span t-field="o.name"/><br/>
-                            Date <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>  
+                            Orden de Reparación <span t-field="o.sale_order_id.id"/><br/>
+                            Fecha <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
                         </group>
                         <group id="customer data">
-                            Customer <span t-field="o.partner_id.name"/><br/>
-                            VAT <span t-field="o.partner_id.vat"/><br/>
-                            Address <span t-field="o.partner_id.street"/><br/>
-                            Phone <span t-field="o.partner_id.phone"/><br/>
-                            Mobile <span t-field="o.partner_id.mobile"/><br/>
+                            Cliente <span t-field="o.partner_id.name"/><br/>
+                            DNI <span t-field="o.partner_id.vat"/><br/>
+                            Dirección <span t-field="o.partner_id.street"/><br/>
+                            Telefono <span t-field="o.partner_id.phone"/>
+                            Móvil <span t-field="o.partner_id.mobile"/><br/>
                         </group>
                         <group id="vehicle_data">
-                            Vehicle <span t-field="o.vehicle_id.name"/><br/>
-                            License Plate <span t-field="o.vehicle_id.license_plate"/><br/>
-                            Chassis Number <span t-field="o.vehicle_id.vin_sn"/><br/>
+                            Vehiculo <span t-field="o.vehicle_id.name"/><br/>
+                            Matricula <span t-field="o.vehicle_id.license_plate"/><br/>
+                            Bastidor <span t-field="o.vehicle_id.vin_sn"/><br/>
                         </group>
                         <div id="repair data" colspan="2">
                             <div>
-                                <img class="img img-responsive" src="/car-workshop/static/src/img/car_repair.jpg" style="width: 25%;"/>
+                                <!--<img class="img img-responsive" src="/car-workshop/static/src/img/car_repair.jpg" style="width: 25%;"/>-->
                                 FOTO
                             </div>
                             <div>
-                                
                                 <span t-field="o.description"/>
                             </div>
                         </div>
+                        <div>
+                            Renuncia presupuesto
+                            <input type="checkbox" style="font-size:60px;"/> Sí
+                            <input type="checkbox" style="font-size:60px;"/> No
+                            Recoge Piezas
+                            <input type="checkbox" style="font-size:60px;"/> Sí
+                            <input type="checkbox" style="font-size:60px;"/> No
+                        </div>
+                        <div id="Clauses">
+                            AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERASPARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>
+                            TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTESEGÚN TARIFA VIGENTE POR DÍA.<br/>
+                            RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL VEHÍCULO.<br/>
+                            RENUNCIO A LA CONFECCION DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.<br/>
+                            EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA FACTURA  A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOSINDISTRIALES) CUYO PLAZO SERA DE 15 DÍAS.<br/>
+                            EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL V EHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>
+                            LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍCOMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
+                        </div>
+                        <group id="sign" colspan="2">
+                            <div>
+                                FIRMA DEL CLIENTE<br/>
+                                (LEIDO Y CONFORME)
+                            </div>
+                            <div>
+                                FIRMA DEL TALLER<br/>
+                            </div>
+                        </group>
+                        FECHA PREVISTA DE ENTREGA DE VEHÍCULO: <span t-field="o.date_deadline"/>
                     </div>
                 </t>
             </t>
