@@ -10,14 +10,10 @@
             <field name="arch" type="xml">
 
                 <field name="sent" position="after">
-                    <field name="description"/> PRUEBAS (Borrar)
-                    <field name="aux_descrip" invisible="1"/>
-                    <!--Para que no aparezca en el form si esta vacio-->
-                    <!--<field name="description" attrs="{'invisible': [('aux_descrip', '=', True)]}"/>-->
+                    <field name="description"/>
                 </field>
 
             </field>
         </record>
-
     </data>
 </odoo>

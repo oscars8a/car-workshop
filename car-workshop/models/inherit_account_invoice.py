@@ -5,11 +5,7 @@ class AccountInvoice(models.Model):
     _name = "account.invoice"
     _inherit = "account.invoice"
 
-    def _compu_aux_descrip(self):
-        return self.description != ''
-
     description = fields.Html(string="Description")
-    aux_descrip = fields.Boolean(string="", compute=_compu_aux_descrip)
 
 class SaleOrder(models.Model):
     _name = "sale.order"
