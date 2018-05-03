@@ -5,11 +5,27 @@ import time
 from odoo import api, fields, models, _
 from odoo.addons import decimal_precision as dp
 from odoo.exceptions import UserError
+from wdb import set_trace as depurador
 
 
 class CarSaleAdvancePaymentInv(models.TransientModel):
     _name = 'car_workshop.advance.payment.inv'
     _inherit = 'sale.advance.payment.inv'
+
+    @api.multi
+    def _create_invoice(self, order, so_line, amount):
+        """
+        Este método sirve para para meter el campo descripción de la orden de reparación asociado en la factura.
+        Solo funciona para los cobros en porcentaje o un monto fijo.
+        :param order:
+        :param so_line:
+        :param amount:
+        :return:
+        """
+        invoice = super(CarSaleAdvancePaymentInv, self)._create_invoice(order, so_line, amount)
+        repair_obj = self.env["car_workshop.repair"].search([('sale_order_id','=',order.id)])[0]
+        invoice.description = repair_obj.description
+        return invoice
 
     @api.multi
     def create_invoices_for_carworkshop(self):
