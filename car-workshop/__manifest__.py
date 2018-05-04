@@ -23,8 +23,9 @@
     'data': [
         'views/car-workshop.xml',
         'wizards/inherit_sale_make_invoice_advance_views.xml',
-        'report/car-workshop_report_templates.xml',
-        'report/car-workshop_report.xml',
+        'report/cw_head_templates.xml',
+        'report/cw_admission_sheet_templates.xml',
+        'report/cw_reports.xml',
         'views/repair.xml',
         'views/inherit_project_project.xml',
         'views/inherit_fleet_vehicle.xml',

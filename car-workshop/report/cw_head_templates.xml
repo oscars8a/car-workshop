@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--Translatable Head Vechicle and Customer Template-->
+        <template id="report_head_vehicle_customer">
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})">
+                <group>
+                    Orden de Reparación
+                    <span t-field="o.sale_order_id.id"/>
+                    <br/>
+                    Fecha
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+                </group>
+                <group>
+                    Orden de Reparación
+                    <span t-field="o.sale_order_id.id"/>
+                    <br/>
+                    Fecha
+                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+                </group>
+                <group>
+                    <group id="customer data">
+                        Cliente
+                        <span t-field="o.partner_id.name"/>
+                        <br/>
+                        DNI
+                        <span t-field="o.partner_id.vat"/>
+                        <br/>
+                        Dirección
+                        <span t-field="o.partner_id.street"/>
+                        <br/>
+                        Telefono
+                        <span t-field="o.partner_id.phone"/>
+                        Móvil
+                        <span t-field="o.partner_id.mobile"/>
+                        <br/>
+                    </group>
+                    <group id="vehicle_data">
+                        Vehiculo
+                        <span t-field="o.vehicle_id.name"/>
+                        <br/>
+                        Matricula
+                        <span t-field="o.vehicle_id.license_plate"/>
+                        <br/>
+                        Bastidor
+                        <span t-field="o.vehicle_id.vin_sn"/>
+                        <br/>
+                    </group>
+                </group>
+            </t>
+        </template>
+
+    </data>
+</odoo>
