@@ -41,4 +41,5 @@
     'demo': [
     ],
     'installable': True,
+    'post_init_hook':'main',
 }

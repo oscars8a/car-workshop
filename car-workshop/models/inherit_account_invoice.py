@@ -19,7 +19,9 @@ class SaleOrder(models.Model):
         :return:
         """
         vals = super(SaleOrder, self)._prepare_invoice()
-        sale_id = self.env['sale.order'].search([('name','=',vals['origin'])])[0].id
-        obj = self.env['car_workshop.repair'].search([('sale_order_id',"=",sale_id)])[0]
-        vals['description'] = obj.description
+        sale_ids = self.env['sale.order'].search([('name','=',vals['origin'])])
+        if len(sale_ids) == 1:
+            sale_id = sale_ids[0].id
+            obj = self.env['car_workshop.repair'].search([('sale_order_id',"=",sale_id)])[0]
+            vals['description'] = obj.description
         return vals

@@ -23,8 +23,10 @@ class CarSaleAdvancePaymentInv(models.TransientModel):
         :return:
         """
         invoice = super(CarSaleAdvancePaymentInv, self)._create_invoice(order, so_line, amount)
-        repair_obj = self.env["car_workshop.repair"].search([('sale_order_id','=',order.id)])[0]
-        invoice.description = repair_obj.description
+        repair_objs = self.env["car_workshop.repair"].search([('sale_order_id','=',order.id)])
+        if len(repair_objs) == 1:
+            repair_obj = repair_objs[0]
+            invoice.description = repair_obj.description
         return invoice
 
     @api.multi
