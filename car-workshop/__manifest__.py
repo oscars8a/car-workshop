@@ -25,6 +25,7 @@
         'wizards/inherit_sale_make_invoice_advance_views.xml',
         'report/cw_head_templates.xml',
         'report/cw_admission_sheet_templates.xml',
+        'report/cw_quotation_templates.xml',
         'report/cw_reports.xml',
         'views/repair.xml',
         'views/inherit_project_project.xml',
