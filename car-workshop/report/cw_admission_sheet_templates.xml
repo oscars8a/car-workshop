@@ -9,11 +9,19 @@
                     <div class="page">
                         <!--HEAD cw_head_templates.xml-->
                         <h2>HOJA DE ADMISIÓN (Esta en Español)</h2>
+                        <br/>
+                        <!--INI CABECERA-->
                         <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
+                        <!--FIN CABECERA-->
+
                         <div id="repair data" colspan="2">
                             <div>
-                                <!--<img class="img img-responsive" src="/car-workshop/static/src/img/car_repair.jpg" style="width: 25%;"/>-->
-                                FOTO
+                                <!--<img class="img img-responsive" src="car-workshop/static/img/car_repair.jpg" style="width: 25%;"/>-->
+                                <!--<div class="_field_image o field_widget oe_avatar" name="car_repair">-->
+                                    <!--<img class="img img-responsige" border="1" name="car_repair" src="/car-workshop/static/img/car_repair.jpg"/>-->
+                                <!--</div>-->
+                                <!--FOTO-->
+                                
                             </div>
                             <div>
                                 <span t-field="o.description"/>

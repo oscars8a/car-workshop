@@ -25,7 +25,7 @@ class Project(models.Model):
         area_count = len(area_ids)
         areas_kanban_ref = self.env.ref('car-workshop.car-workshop_project_view_kanban').id
         action = {
-            "name": "Area",
+            "name": _("Areas"),
             "type": "ir.actions.act_window",
             "res_model": "project.project",
             "views": [[areas_kanban_ref, "kanban"], [False,"tree"], [False, "form"], [False, "search"]],
@@ -34,12 +34,13 @@ class Project(models.Model):
         }
         if unique_area_value and area_count == 1:
             area_id = area_ids[0].id
-            repair_tree_ref = self.env.ref('car-workshop.car-workshop_project_view_kanban').id
+            repair_kanban_ref = self.env.ref('car-workshop.car-workshop_repair_view_kanban').id
+            # Y que pasa cuando queremos traducir estos actios? Los dejamos en inglés? _("Lo que queremos traducir")
             action={
-                "name": "Repairs",
+                "name": _("Repairs"),
                 "type": "ir.actions.act_window",
                 "res_model": "car_workshop.repair",
-                "views": [[False, "kanban"], [False,"tree"], [False,"calendar"], [False, "form"], [False, "search"]],
+                "views": [[repair_kanban_ref, "kanban"], [False,"tree"], [False,"calendar"], [False, "form"], [False, "search"]],
                 "context":{
                     'group_by': 'stage_id',
                     'search_default_project_id': [area_id],

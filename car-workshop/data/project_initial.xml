@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-    <record forcecreate="False" id="project_car-workshop_stage_on_hold" model="project.task.type">
+    <data noupdate="1">
+        <record forcecreate="False" id="project_car-workshop_stage_on_hold" model="project.task.type">
             <field name="sequence">1</field>
             <field name="name">On Hold</field>
-    </record>
+        </record>
 
-    <record forcecreate="False" id="project_car-workshop_stage_in_progress" model="project.task.type">
+        <record forcecreate="False" id="project_car-workshop_stage_in_progress" model="project.task.type">
             <field name="sequence">3</field>
             <field name="name">In Progress</field>
-    </record>
+        </record>
 
-    <record forcecreate="False" id="project_car-workshop_stage_collection_customer" model="project.task.type">
+        <record forcecreate="False" id="project_car-workshop_stage_collection_customer" model="project.task.type">
             <field name="sequence">4</field>
             <field name="name">Collection Customer</field>
-    </record>
+        </record>
 
-    <record id="project_car-workshop_1" model="project.project">
+        <record id="project_car-workshop_1" model="project.project">
             <field name="date_start" eval="time.strftime('%Y-%m-01 10:00:00')"/>
             <field name="name">Repair and Revision</field>
             <field name="color">3</field>
@@ -27,5 +27,6 @@
             (4, ref('car-workshop.project_car-workshop_stage_collection_customer'))]"/>
             <field name="partner_id" ref="base.partner_root"/>
             <field name="privacy_visibility">portal</field>
-    </record>
+        </record>
+    </data>
 </odoo>

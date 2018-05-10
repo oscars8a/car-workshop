@@ -1,55 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
         <!--Translatable Head Vechicle and Customer Template-->
         <template id="report_head_vehicle_customer">
-            <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})">
-                <group>
-                    Orden de Reparación
-                    <span t-field="o.sale_order_id.id"/>
-                    <br/>
-                    Fecha
-                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
-                </group>
-                <group>
-                    Orden de Reparación
-                    <span t-field="o.sale_order_id.id"/>
-                    <br/>
-                    Fecha
-                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
-                </group>
-                <group>
-                    <group id="customer data">
-                        Cliente
-                        <span t-field="o.partner_id.name"/>
+            <t t-foreach="docs" t-as="o">
+                <div>
+                    <p>ORDEN DE REPARACIÓN
+                        <span t-field="o.id"/>
                         <br/>
-                        DNI
-                        <span t-field="o.partner_id.vat"/>
-                        <br/>
-                        Dirección
-                        <span t-field="o.partner_id.street"/>
-                        <br/>
-                        Telefono
-                        <span t-field="o.partner_id.phone"/>
-                        Móvil
-                        <span t-field="o.partner_id.mobile"/>
-                        <br/>
-                    </group>
-                    <group id="vehicle_data">
-                        Vehiculo
-                        <span t-field="o.vehicle_id.name"/>
-                        <br/>
-                        Matricula
-                        <span t-field="o.vehicle_id.license_plate"/>
-                        <br/>
-                        Bastidor
-                        <span t-field="o.vehicle_id.vin_sn"/>
-                        <br/>
-                    </group>
-                </group>
+                        FECHA
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                    </p>
+                </div>
+                    <div class="oe_row">
+                        <table class="col-xs-6">
+                            <tr>
+                                <td>VEHÍCULO</td>
+                                <td>
+                                    <span t-field="o.vehicle_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MATRÍCULA</td>
+                                <td>
+                                    <span t-field="o.vehicle_id.license_plate"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BASTIDOR</td>
+                                <td>
+                                    <span t-field="o.vehicle_id.vin_sn"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KM</td>
+                                <td>
+                                    <span t-field="o.vehicle_id.odometer"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="col-xs-6">
+                            <tr>
+                                <td>CLIENTE</td>
+                                <td>
+                                    <span t-field="o.partner_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DNI</td>
+                                <td>
+                                    <span t-field="o.partner_id.vat"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DIRECCIÓN</td>
+                                <td>
+                                    <span t-field="o.partner_id.street"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TELÉFONO</td>
+                                <td>
+                                    <span t-field="o.partner_id.phone"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MÓVIL</td>
+                                <td>
+                                    <span t-field="o.partner_id.mobile"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
             </t>
         </template>
-
     </data>
 </odoo>

@@ -8,8 +8,9 @@
             report_type="qweb-pdf"
             file="car-workshop.report_admission_sheet"
             name="car-workshop.report_admission_sheet"
-            print_report_name="'Admission Sheet Report PRUEBAS'"
+            print_report_name="'Hoja de Admisión - %s' % (object.name)"
         />
+        <!--Cambiar por qweb-pdf arriba-->
         <report
             id="action_report_quotation"
             string="Quotation"
