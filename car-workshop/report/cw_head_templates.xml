@@ -23,14 +23,12 @@
                                  t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
                             <p t-if="doc.partner_id.vat">DNI:
                                 <span t-field="doc.partner_id.vat"/>
-                            </p>
-                            <p t-if="doc.partner_id.mobile">
-                                <span t-field="doc.partner_id.mobile"/>
-                            </p>
-                            <p t-if="doc.partner_id.phone">
-                                <span t-field="doc.partner_id.phone"/>
+                                <t t-if="doc.partner_id.phone">
+                                        <br/><span t-field="doc.partner_id.phone"/>
+                                </t>
                             </p>
                         </div>
+                        <br/>
         </template>
     </data>
 </odoo>

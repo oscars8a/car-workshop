@@ -17,6 +17,7 @@ class CarSaleAdvancePaymentInv(models.TransientModel):
         """
         Este método sirve para para meter el campo descripción de la orden de reparación asociado en la factura.
         Solo funciona para los cobros en porcentaje o un monto fijo.
+        *** Y para el campo vehículo.
         :param order:
         :param so_line:
         :param amount:
@@ -27,6 +28,7 @@ class CarSaleAdvancePaymentInv(models.TransientModel):
         if len(repair_objs) == 1:
             repair_obj = repair_objs[0]
             invoice.description = repair_obj.description
+            invoice.vehicle_id = invoice.vehicle_id.id
         return invoice
 
     @api.multi

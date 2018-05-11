@@ -21,21 +21,32 @@
                                     <!--<img class="img img-responsige" border="1" name="car_repair" src="/car-workshop/static/img/car_repair.jpg"/>-->
                                 <!--</div>-->
                                 <!--FOTO-->
-
                             </div>
                             <div>
                                 <span t-field="o.description"/>
                             </div>
                         </div>
-                        <div>
-                            Renuncia presupuesto
-                            <input type="checkbox" style="font-size:60px;"/> Sí
-                            <input type="checkbox" style="font-size:60px;"/> No
-                            Recoge Piezas
-                            <input type="checkbox" style="font-size:60px;"/> Sí
-                            <input type="checkbox" style="font-size:60px;"/> No
-                        </div>
-                        <div id="Clauses">
+                        <br/>
+                        <table style="width:80%">
+                             <tr>
+                               <th align="left">Renuncia presupuesto</th>
+                               <th align="left">Recoge Piezas</th>
+                             </tr>
+                                <tr>
+                               <td>
+                                   <input type="checkbox" style="font-size:60px;"/> Sí
+                                   <input type="checkbox" style="font-size:60px;"/> No
+                               </td>
+                               <td>
+                                    <input type="checkbox" style="font-size:60px;"/> Sí
+                           <input type="checkbox" style="font-size:60px;"/> No
+                               </td>
+                             </tr>
+                       </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div id="Clauses" style="text-align: justify; text-justify: inter-word; font-size:10px;">
                             AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERASPARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>
                             TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTESEGÚN TARIFA VIGENTE POR DÍA.<br/>
                             RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL VEHÍCULO.<br/>
@@ -44,16 +55,20 @@
                             EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL V EHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>
                             LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍCOMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
                         </div>
-                        <group id="sign" colspan="2">
-                            <div>
-                                FIRMA DEL CLIENTE<br/>
-                                (LEIDO Y CONFORME)
-                            </div>
-                            <div>
-                                FIRMA DEL TALLER<br/>
-                            </div>
-                        </group>
+                        <br/>
+                        <br/>
+                        <br/>
                         FECHA PREVISTA DE ENTREGA DE VEHÍCULO: <span t-field="o.date_deadline"/>
+                        <table style="width:100%">
+                             <tr>
+                               <td colspan="2">FIRMA DEL CLIENTE<br/>
+                               (LEIDO Y CONFORME)</td>
+                               <td>   FIRMA DEL TALLER  </td>
+                             </tr>
+                       </table>
+                        <br/>
+                        <br/>
+                        <br/>
                     </div>
                 </t>
             </t>

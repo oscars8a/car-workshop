@@ -6,6 +6,7 @@ class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
     description = fields.Html(string="Description")
+    vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
 
 class SaleOrder(models.Model):
     _name = "sale.order"
@@ -16,6 +17,7 @@ class SaleOrder(models.Model):
         """
         Este método sirve para para meter el campo descripción de la orden de reparación asociado en la factura.
         Solo funciona para los cobros de lineas.
+        *** Y el campo vehículo.
         :return:
         """
         vals = super(SaleOrder, self)._prepare_invoice()
@@ -24,4 +26,5 @@ class SaleOrder(models.Model):
             sale_id = sale_ids[0].id
             obj = self.env['car_workshop.repair'].search([('sale_order_id',"=",sale_id)])[0]
             vals['description'] = obj.description
+            vals['vehicle_id'] = obj.vehicle_id.id
         return vals

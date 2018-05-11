@@ -7,11 +7,17 @@
             <field name="name">account.invoice.form</field>
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="priority" eval="70"/>
             <field name="arch" type="xml">
 
                 <field name="sent" position="after">
                     <field name="description"/>
                 </field>
+
+                <!--No consigo meter vehicle_id dentro de Other...-->
+                <!--<xpath expr='//page[@name="other_info"]' position='inside'>-->
+                   <!--<field name="vehicle_id"/>-->
+                <!--</xpath>-->
 
             </field>
         </record>
