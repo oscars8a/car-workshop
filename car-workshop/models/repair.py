@@ -131,7 +131,7 @@ class Repair(models.Model):
 
     @api.multi
     def print_quotation(self):
-        return self.sale_order_id.print_quotation()
+        return self.env.ref('car-workshop.action_report_quotation').report_action(self, data=None)
 
     @api.multi
     def action_quotation_send(self):
