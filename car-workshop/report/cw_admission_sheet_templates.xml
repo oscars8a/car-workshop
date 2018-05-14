@@ -8,26 +8,31 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <!--HEAD cw_head_templates.xml-->
-                        <h2>HOJA DE ADMISIÓN (Esta en Español)</h2>
-                        <br/>
                         <!--INI CABECERA-->
                         <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
                         <!--FIN CABECERA-->
+                         <h2>
+                        Hoja de Admisión # <span t-field="o.name"/>
+                        </h2>
+                        <div id="repair data">
 
-                        <div id="repair data" colspan="2">
-                            <div>
-                                <!--<img class="img img-responsive" src="car-workshop/static/img/car_repair.jpg" style="width: 25%;"/>-->
-                                <!--<div class="_field_image o field_widget oe_avatar" name="car_repair">-->
-                                    <!--<img class="img img-responsige" border="1" name="car_repair" src="/car-workshop/static/img/car_repair.jpg"/>-->
-                                <!--</div>-->
-                                <!--FOTO-->
-                            </div>
-                            <div>
-                                <span t-field="o.description"/>
-                            </div>
-                        </div>
+
+                            <table style="width:100%">
+                                <tr>
+                                    <td>
+                                        <img t-att-src="'data:image/*;base64,%s' % to_text(doc.image_client_vehicle)"
+                                         style="max-height: 250px;"/>
+                                        <!--<span t-field="o.image_client_vehicle"  t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
+                                    </td>
+                                    <td>Hola Que tal estamos</td>
+                                    <td>
+                                        <span t-field="o.description"/>
+                                    </td>
+                                </tr>
+                            </table>
+
                         <br/>
-                        <table style="width:80%">
+                        <table style="width:60%">
                              <tr>
                                <th align="left">Renuncia presupuesto</th>
                                <th align="left">Recoge Piezas</th>
@@ -57,8 +62,8 @@
                         </div>
                         <br/>
                         <br/>
-                        <br/>
                         FECHA PREVISTA DE ENTREGA DE VEHÍCULO: <span t-field="o.date_deadline"/>
+                        <br/>
                         <table style="width:100%">
                              <tr>
                                <td colspan="2">FIRMA DEL CLIENTE<br/>
@@ -69,6 +74,7 @@
                         <br/>
                         <br/>
                         <br/>
+                        </div>
                     </div>
                 </t>
             </t>

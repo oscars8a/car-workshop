@@ -15,6 +15,7 @@ class Project(models.Model):
 
     car_work = fields.Boolean(string="It's Car's work Area?", default=True)
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
+    repair_image = fields.Binary(string="",  )
 
 
     # CAMBIARLO POR module_INSTALARMod en el settings, cuando sea estable.

@@ -6,9 +6,10 @@
             <t t-call="web.external_layout">
                 <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
                 <div class="page">
-                    <div class="row">
+                    <div class="oe_structure"/>
+                        <div class="row">
                             <div class="col-xs-5 col-xs-offset-1">
-
+                                <!--<div t-field="doc.vehicle_id"/>-->
                                 <p>
                                     <span t-field="o.vehicle_id.model_id.brand_id"/>
                                     <span t-field="o.vehicle_id.model_id.name"/><br/>
@@ -19,20 +20,21 @@
                                     <span t-field="o.vehicle_id.odometer"/>
                                 </p>
                             </div>
-                            <div class="col-xs-5 col-xs-offset-1"
-                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
-                            <div t-field="o.partner_id"
-                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
-                            <p t-if="o.partner_id.vat">DNI:
-                                <span t-field="o.partner_id.vat"/>
-                            </p>
-                            <p t-if="o.partner_id.mobile">
-                                <span t-field="o.partner_id.mobile"/>
-                            </p>
-                            <p t-if="o.partner_id.phone">
-                                <span t-field="o.partner_id.phone"/>
-                            </p>
+                            <div class="col-xs-5 col-xs-offset-1">
+                                <p>
+                                    <span t-field="o.partner_id.name"/><br/>
+                                    <span t-field="o.partner_id.vat"/><br/>
+                                    <t t-if="o.partner_id.street"><span t-field="o.partner_id.street"/><br/></t>
+                                    <t t-if="o.partner_id.city"><span t-field="o.partner_id.city"/><br/></t>
+                                    <t t-if="o.partner_id.state_id"><span t-field="o.partner_id.state_id"/></t>
+                                    <t t-if="o.partner_id.zip"><span t-field="o.partner_id.zip"/></t>
+                                    <t t-if="o.partner_id.mobile"><br/><span t-field="o.partner_id.mobile"/><br/></t>
+                                    <t t-if="o.partner_id.phone"><br/><span t-field="o.partner_id.phone"/><br/></t>
+
+                                </p>
+                            </div>
                         </div>
+                        <br/>
                     <h2>
                         Factura # <span t-field="o.number"/>
                     </h2>
