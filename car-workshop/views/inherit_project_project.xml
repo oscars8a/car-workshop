@@ -23,6 +23,7 @@
                 <xpath expr="//field[@name='label_tasks']" position="after">
                     <label for="car_work" class="oe_inline" string="It's a Car's work Area?"/>
                     <field name="car_work"/>
+                    <field name="repair_image"/>
                 </xpath>
             </field>
         </record>

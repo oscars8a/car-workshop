@@ -20,11 +20,11 @@
                             <table style="width:100%">
                                 <tr>
                                     <td>
-                                        <img t-att-src="'data:image/*;base64,%s' % to_text(doc.image_client_vehicle)"
+                                        <br/>
+                                        <img t-att-src="'data:image/*;base64,%s' % to_text(doc.project_id.repair_image)"
                                          style="max-height: 250px;"/>
                                         <!--<span t-field="o.image_client_vehicle"  t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
                                     </td>
-                                    <td>Hola Que tal estamos</td>
                                     <td>
                                         <span t-field="o.description"/>
                                     </td>
@@ -34,7 +34,7 @@
                         <br/>
                         <table style="width:60%">
                              <tr>
-                               <th align="left">Renuncia presupuesto</th>
+                               <th align="left">Renuncia Presupuesto</th>
                                <th align="left">Recoge Piezas</th>
                              </tr>
                                 <tr>
@@ -51,19 +51,18 @@
                         <br/>
                         <br/>
                         <br/>
-                        <div id="Clauses" style="text-align: justify; text-justify: inter-word; font-size:10px;">
-                            AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERASPARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>
-                            TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTESEGÚN TARIFA VIGENTE POR DÍA.<br/>
+                        <div id="Clauses" style="text-align: justify; text-justify: inter-word; font-size:9px;">
+                            AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERAS PARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>
+                            TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTE SEGÚN TARIFA VIGENTE POR DÍA.<br/>
                             RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL VEHÍCULO.<br/>
-                            RENUNCIO A LA CONFECCION DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.<br/>
-                            EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA FACTURA  A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOSINDISTRIALES) CUYO PLAZO SERA DE 15 DÍAS.<br/>
-                            EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL V EHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>
-                            LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍCOMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
+                            RENUNCIO A LA CONFECCIÓN DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.<br/>
+                            EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA FACTURA  A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOS INDUSTRIALES) CUYO PLAZO SERA DE 15 DÍAS.<br/>
+                            EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL VEHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>
+                            LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍ COMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
                         </div>
                         <br/>
-                        <br/>
                         FECHA PREVISTA DE ENTREGA DE VEHÍCULO: <span t-field="o.date_deadline"/>
-                        <br/>
+                        <br/><br/>
                         <table style="width:100%">
                              <tr>
                                <td colspan="2">FIRMA DEL CLIENTE<br/>
