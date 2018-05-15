@@ -3,37 +3,15 @@
     <data>
         <!--Translatable Invoice Template-->
         <template id="cw_report_invoice_document">
+            <t t-set="o" t-value="doc"/>
             <t t-call="web.external_layout">
                 <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
                 <div class="page">
-                    <div class="oe_structure"/>
-                        <div class="row">
-                            <div class="col-xs-5 col-xs-offset-1">
-                                <!--<div t-field="doc.vehicle_id"/>-->
-                                <p>
-                                    <span t-field="o.vehicle_id.model_id.brand_id"/>
-                                    <span t-field="o.vehicle_id.model_id.name"/><br/>
-                                    <span t-field="o.vehicle_id.license_plate"/><br/>
-                                    BASTIDOR:
-                                    <span t-field="o.vehicle_id.vin_sn"/><br/>
-                                    KM:
-                                    <span t-field="o.vehicle_id.odometer"/>
-                                </p>
-                            </div>
-                            <div class="col-xs-5 col-xs-offset-1">
-                                <p>
-                                    <span t-field="o.partner_id.name"/><br/>
-                                    <span t-field="o.partner_id.vat"/><br/>
-                                    <t t-if="o.partner_id.street"><span t-field="o.partner_id.street"/><br/></t>
-                                    <t t-if="o.partner_id.city"><span t-field="o.partner_id.city"/><br/></t>
-                                    <t t-if="o.partner_id.state_id"><span t-field="o.partner_id.state_id"/></t>
-                                    <t t-if="o.partner_id.zip"><span t-field="o.partner_id.zip"/></t>
-                                    <t t-if="o.partner_id.mobile"><br/><span t-field="o.partner_id.mobile"/><br/></t>
-                                    <t t-if="o.partner_id.phone"><br/><span t-field="o.partner_id.phone"/><br/></t>
 
-                                </p>
-                            </div>
-                        </div>
+                        <!--HEAD cw_head_templates.xml-->
+                        <!--INI CABECERA-->
+                        <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
+                        <!--FIN CABECERA-->
                         <br/>
                     <h2>
                         Factura # <span t-field="o.number"/>
@@ -173,8 +151,8 @@
     <!--Invoice Main Template-->
     <template id="cw_report_invoice">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-call="car-workshop.cw_report_invoice_document" t-lang="o.partner_id.lang"/>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="car-workshop.cw_report_invoice_document" t-lang="doc.partner_id.lang"/>
             </t>
         </t>
     </template>

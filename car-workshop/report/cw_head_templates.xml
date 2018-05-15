@@ -9,7 +9,8 @@
                 <div class="col-xs-5 col-xs-offset-1">
                     <!--<div t-field="doc.vehicle_id"/>-->
                     <p>
-                        <table style="width:100%">
+                        <t t-if="doc.vehicle_id">
+                            <table style="width:100%">
                             <tr>
                                 <th colspan="2">Información del Vehículo</th>
                             </tr>
@@ -40,6 +41,8 @@
                             </tr>
 
                         </table>
+                        </t>
+                        <!--<t t-else="">[No se ha encontrado información del vehículo]</t>-->
                     </p>
                 </div>
                 <div class="col-xs-5 col-xs-offset-1">

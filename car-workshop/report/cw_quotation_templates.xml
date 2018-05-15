@@ -44,8 +44,9 @@
                             </div>
                         </div>
                         <!--Lista del Presupuesto-->
-                        <t t-foreach="doc.sale_order_id.order_lines_layouted()" t-as="page">
-                            <table class="table table-condensed">
+                        <div style="align-items: right;">
+                            <t t-foreach="doc.sale_order_id.order_lines_layouted()" t-as="page">
+                            <table class="table table-condensed" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Descripción</th>
@@ -126,6 +127,8 @@
                                 <p style="page-break-before:always;"></p>
                             </t>
                         </t>
+                        </div>
+
                         <div class="clearfix">
                             <div class="row" name="total">
                                 <div class="col-xs-4 pull-right">
