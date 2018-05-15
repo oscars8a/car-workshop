@@ -3,34 +3,79 @@
     <data>
         <!--Translatable Head Vechicle and Customer Template-->
         <template id="report_head_vehicle_customer">
-                        <div class="oe_structure"/>
-                        <div class="row">
-                            <div class="col-xs-5 col-xs-offset-1">
-                                <!--<div t-field="doc.vehicle_id"/>-->
-                                <p>
-                                    <span t-field="doc.vehicle_id.model_id.brand_id"/>
-                                    <span t-field="doc.vehicle_id.model_id.name"/><br/>
-                                    <span t-field="doc.vehicle_id.license_plate"/><br/>
-                                    BASTIDOR:
-                                    <span t-field="doc.vehicle_id.vin_sn"/><br/>
-                                    KM:
-                                    <span t-field="doc.vehicle_id.odometer"/>
-                                </p>
-                            </div>
-                            <div class="col-xs-5 col-xs-offset-1">
-                                <p>
-                                    <span t-field="doc.partner_id.name"/><br/>
-                                    <span t-field="doc.partner_id.vat"/><br/>
-                                    <t t-if="doc.partner_id.street"><span t-field="doc.partner_id.street"/><br/></t>
-                                    <t t-if="doc.partner_id.city"><span t-field="doc.partner_id.city"/><br/></t>
-                                    <t t-if="doc.partner_id.state_id"><span t-field="doc.partner_id.state_id"/></t>
-                                    <t t-if="doc.partner_id.zip"><span t-field="doc.partner_id.zip"/></t>
-                                    <t t-if="doc.partner_id.mobile"><br/><span t-field="doc.partner_id.mobile"/><br/></t>
-                                    <t t-if="doc.partner_id.phone"><br/><span t-field="doc.partner_id.phone"/><br/></t>
 
-                                </p>
-                            </div>
-                        </div>
+            <div class="oe_structure"/>
+            <div class="row">
+                <div class="col-xs-5 col-xs-offset-1">
+                    <!--<div t-field="doc.vehicle_id"/>-->
+                    <p>
+                        <table style="width:100%">
+                            <tr>
+                                <th colspan="2">Información del Vehículo</th>
+                            </tr>
+                            <tr>
+                                <th>VEHÍCULO</th>
+                                <td>
+                                    <span id="vehiculo" t-field="doc.vehicle_id.model_id.brand_id"/>
+                                    <span t-field="doc.vehicle_id.model_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>MATRÍCULA</th>
+                                <td>
+                                    <span id="matricula" t-field="doc.vehicle_id.license_plate"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>BASTIDOR</th>
+                                <td>
+                                    <span id="bastidor" t-field="doc.vehicle_id.vin_sn"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>KM</th>
+                                <td>
+                                    <span id="km" t-field="doc.vehicle_id.odometer"/>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </p>
+                </div>
+                <div class="col-xs-5 col-xs-offset-1">
+                    <p>
+                        <span t-field="doc.partner_id.name"/>
+                        <br/>
+                        <span t-field="doc.partner_id.vat"/>
+                        <br/>
+                        <t t-if="doc.partner_id.street">
+                            <span t-field="doc.partner_id.street"/>
+                            <br/>
+                        </t>
+                        <t t-if="doc.partner_id.city">
+                            <span t-field="doc.partner_id.city"/>
+                            <br/>
+                        </t>
+                        <t t-if="doc.partner_id.state_id">
+                            <span t-field="doc.partner_id.state_id"/>
+                        </t>
+                        <t t-if="doc.partner_id.zip">
+                            <span t-field="doc.partner_id.zip"/>
+                        </t>
+                        <t t-if="doc.partner_id.mobile">
+                            <br/>
+                            <span t-field="doc.partner_id.mobile"/>
+                            <br/>
+                        </t>
+                        <t t-if="doc.partner_id.phone">
+                            <br/>
+                            <span t-field="doc.partner_id.phone"/>
+                            <br/>
+                        </t>
+                    </p>
+                </div>
+            </div>
         </template>
+
     </data>
 </odoo>

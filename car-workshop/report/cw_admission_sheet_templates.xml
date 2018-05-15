@@ -2,7 +2,7 @@
 <odoo>
     <!--Translatable Admission Sheet Template-->
     <template id="report_admission_sheet_document">
-        <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
@@ -11,68 +11,99 @@
                         <!--INI CABECERA-->
                         <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
                         <!--FIN CABECERA-->
-                         <h2>
-                        Hoja de Admisión # <span t-field="o.name"/>
+                        <h2>
+                            Hoja de Admisión #
+                            <span t-field="o.name"/>
                         </h2>
                         <div id="repair data">
-
-
                             <table style="width:100%">
+                                <tr>
+                                    <td></td>
+                                    <th>Descripción</th>
+                                </tr>
                                 <tr>
                                     <td>
                                         <br/>
                                         <img t-att-src="'data:image/*;base64,%s' % to_text(doc.project_id.repair_image)"
-                                         style="max-height: 250px;"/>
-                                        <!--<span t-field="o.image_client_vehicle"  t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>-->
+                                             style="max-height: 250px;"/>
                                     </td>
-                                    <td>
+                                    <td style="border: 1px solid black;">
                                         <span t-field="o.description"/>
                                     </td>
                                 </tr>
                             </table>
-
-                        <br/>
-                        <table style="width:60%">
-                             <tr>
-                               <th align="left">Renuncia Presupuesto</th>
-                               <th align="left">Recoge Piezas</th>
-                             </tr>
+                            <br/>
+                            <br/>
+                            <div>
+                                <table style="width:100%">
+                                    <tr>
+                                        <th >Renuncia Presupuesto</th>
+                                        <td style="text-align: left;">
+                                            <t t-if="o.budget_resignation">
+                                                <input type="checkbox" id="ppto_si" checked="checked"/>
+                                            </t>
+                                            <t t-else="">
+                                                <input type="checkbox" id="ppto_si"/>
+                                            </t>
+                                            Sí
+                                            <input id="ppto_no" type="checkbox"/>
+                                            No
+                                        </td>
+                                        <th >Recoge Piezas</th>
+                                        <td style="text-align: left;">
+                                            <t t-if="o.collect_pieces">
+                                                <input id="piezas_si" type="checkbox" checked="checked"/>
+                                            </t>
+                                            <t t-else="">
+                                                <input id="piezas_si" type="checkbox"/>
+                                            </t>
+                                            Sí
+                                            <input id="piezas_no" type="checkbox"/>
+                                            No
+                                        </td>
+                                        <th style="text-align: center;">
+                                            FECHA PREVISTA DE ENTREGA DE VEHÍCULO:
+                                        </th>
+                                        <td >
+                                            <span t-field="o.date_deadline"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div id="Clauses" style="text-align: left; text-justify: inter-word; font-size:12px;">
+                                AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA
+                                POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERAS PARA EFECTUAR LAS
+                                PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.
+                                TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL
+                                VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTE SEGÚN TARIFA VIGENTE
+                                POR DÍA.
+                                RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL
+                                VEHÍCULO.
+                                RENUNCIO A LA CONFECCIÓN DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL
+                                VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.
+                                EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA
+                                FACTURA A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOS INDUSTRIALES) CUYO
+                                PLAZO SERA DE 15 DÍAS.
+                                EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL VEHÍCULO Y TENDRÁ
+                                VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.
+                                LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE
+                                OPERARIOS O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍ COMO LA IMPOSICIÓN
+                                FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
+                            </div>
+                            <br/>
+                            <table style="width:100%">
                                 <tr>
-                               <td>
-                                   <input type="checkbox" style="font-size:60px;"/> Sí
-                                   <input type="checkbox" style="font-size:60px;"/> No
-                               </td>
-                               <td>
-                                    <input type="checkbox" style="font-size:60px;"/> Sí
-                           <input type="checkbox" style="font-size:60px;"/> No
-                               </td>
-                             </tr>
-                       </table>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <div id="Clauses" style="text-align: justify; text-justify: inter-word; font-size:9px;">
-                            AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERAS PARA EFECTUAR LAS PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.<br/>
-                            TRASCURRIDOS TRES DÍAS HÁBILES DESDE EL PLAZO DE ENTREGA PREVISTO, EL DEPOSITO DEL VEHÍCULO EN EL TALLER DEVENGARÁ GASTOS DE ESTANCIA POR UN IMPORTE SEGÚN TARIFA VIGENTE POR DÍA.<br/>
-                            RENUNCIO A RETIRAR LAS PIEZAS SUSTITUIDAS SI NO FUERAN RECLAMADAS AL RECOGER EL VEHÍCULO.<br/>
-                            RENUNCIO A LA CONFECCIÓN DE PRESUPUESTO PREVIO YA QUE NO LO NOTIFICO, AL ENTRAR EL VEHÍCULO, AUNQUE PONEN EN MI CONOCIMIENTO EL DERECHO QUE TENGO A ELLO.<br/>
-                            EL TALLER ARRIBA INDICADO, GARANTIZA LA REPARACIÓN E INSTALACIÓN IDENTIFICADA EN LA FACTURA  A SU ORDENANTE POR TRES MESES O 2.000 KM. (EXCEPTO VEHÍCULOS INDUSTRIALES) CUYO PLAZO SERA DE 15 DÍAS.<br/>
-                            EL PERIODO DE GARANTÍA SE ENTENDERÁ DESDE LA FECHA DE ENTREGA DEL VEHÍCULO Y TENDRÁ VALIDEZ SIEMPRE QUE EL VEHÍCULO NO SEA REPARADO O MANIPULADO POR TERCEROS.<br/>
-                            LA PRESENTE GARANTÍA INCLUYE MATERIALES, MANO DE OBRA, GASTOS DE DESPLAZAMIENTO DE OPERARIOS  O TRANSPORTE DEL VEHÍCULO SI ESTO FUERA NECESARIO ASÍ COMO LA IMPOSICIÓN FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
-                        </div>
-                        <br/>
-                        FECHA PREVISTA DE ENTREGA DE VEHÍCULO: <span t-field="o.date_deadline"/>
-                        <br/><br/>
-                        <table style="width:100%">
-                             <tr>
-                               <td colspan="2">FIRMA DEL CLIENTE<br/>
-                               (LEIDO Y CONFORME)</td>
-                               <td>   FIRMA DEL TALLER  </td>
-                             </tr>
-                       </table>
-                        <br/>
-                        <br/>
-                        <br/>
+                                    <td colspan="2">FIRMA DEL CLIENTE
+                                        <br/>
+                                        (LEIDO Y CONFORME)
+                                    </td>
+                                    <td>FIRMA DEL TALLER</td>
+                                </tr>
+                            </table>
+                            <br/>
+
                         </div>
                     </div>
                 </t>
