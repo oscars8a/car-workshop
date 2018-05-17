@@ -12,30 +12,30 @@
                         <t t-if="doc.vehicle_id">
                             <table style="width:100%">
                                 <tr>
-                                    <th colspan="2">Información del Vehículo</th>
+                                    <th colspan="2" class="cw_all_padding">Información del Vehículo</th>
                                 </tr>
                                 <tr>
-                                    <th>VEHÍCULO</th>
-                                    <td>
+                                    <th class="cw_all_padding">VEHÍCULO</th>
+                                    <td class="cw_all_padding">
                                         <span id="vehiculo" t-field="doc.vehicle_id.model_id.brand_id"/>
                                         <span t-field="doc.vehicle_id.model_id.name"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>MATRÍCULA</th>
-                                    <td>
+                                    <th class="cw_all_padding">MATRÍCULA</th>
+                                    <td class="cw_all_padding">
                                         <span id="matricula" t-field="doc.vehicle_id.license_plate"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>BASTIDOR</th>
-                                    <td>
+                                    <th class="cw_all_padding">BASTIDOR</th>
+                                    <td class="cw_all_padding">
                                         <span id="bastidor" t-field="doc.vehicle_id.vin_sn"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>KM</th>
-                                    <td>
+                                    <th class="cw_all_padding">KM</th>
+                                    <td class="cw_all_padding">
                                         <span id="km" t-field="doc.vehicle_id.odometer"/>
                                     </td>
                                 </tr>
@@ -46,6 +46,7 @@
                     </p>
                 </div>
                 <div class="col-xs-5 col-xs-offset-1">
+                    <br/>
                     <p>
                         <span t-field="doc.partner_id.name"/>
                         <br/>

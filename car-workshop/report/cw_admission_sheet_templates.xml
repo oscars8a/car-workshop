@@ -2,18 +2,18 @@
 <odoo>
     <!--Translatable Admission Sheet Template-->
     <template id="report_admission_sheet_document">
+
         <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <br/>
                         <!--HEAD cw_head_templates.xml-->
                         <!--INI CABECERA-->
                         <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
                         <!--FIN CABECERA-->
                         <br/>
-                        <h2 class="cw_pruebas">
+                        <h2>
                             Hoja de Admisión #
                             <span t-field="o.name"/>
                         </h2>
@@ -22,28 +22,26 @@
                             <table style="width:100%">
                                 <tr>
                                     <td></td>
-                                    <th style="padding-top: 10px;padding-bottom: 10px;padding-left: 10px;">Descripción</th>
+                                    <th class="cw_all_padding">Descripción</th>
                                 </tr>
                                 <tr>
-                                    <td style="width: 255px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;">
+                                    <td class="cw_all_padding" style="width: 255px;">
                                         <br/>
                                         <img t-att-src="'data:image/*;base64,%s' % to_text(doc.project_id.repair_image)"
                                              style="max-height: 250px;"/>
                                     </td>
-                                    <td style="border: 1px solid black;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
+                                    <td class="cw_all_padding" id="cw_descripcion">
                                         <span t-field="o.description"/>
                                     </td>
                                 </tr>
                             </table>
                             <br/>
                             <br/>
-                            <br/>
-                            <br/>
                             <div>
                                 <table style="width:100%">
                                     <tr>
-                                        <th >Renuncia Presupuesto</th>
-                                        <td style="text-align: left;">
+                                        <th class="cw_all_padding">Renuncia Presupuesto</th>
+                                        <td class="cw_all_padding">
                                             <t t-if="o.budget_resignation">
                                                 <input type="checkbox" id="ppto_si" checked="checked"/>
                                             </t>
@@ -57,13 +55,13 @@
                                         <th style="text-align: center;">
                                             FECHA PREVISTA DE ENTREGA DE VEHÍCULO:
                                         </th>
-                                        <td >
+                                        <td class="cw_all_padding">
                                             <span t-field="o.date_deadline"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th >Recoge Piezas</th>
-                                        <td style="text-align: left;">
+                                        <th class="cw_all_padding">Recoge Piezas</th>
+                                        <td class="cw_all_padding" style="text-align: left;">
                                             <t t-if="o.collect_pieces">
                                                 <input id="piezas_si" type="checkbox" checked="checked"/>
                                             </t>
@@ -80,10 +78,7 @@
                             <br/>
                             <br/>
                             <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <div id="Clauses" style="text-align: justify; text-justify: inter-word; font-size:10px;">
+                            <div class="cw_clausulas">
                                 AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA
                                 POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERAS PARA EFECTUAR LAS
                                 PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.
@@ -105,14 +100,13 @@
                             </div>
                             <br/>
                             <br/>
-                            <br/>
                             <table style="width:100%">
                                 <tr>
-                                    <td colspan="2">FIRMA DEL CLIENTE
+                                    <td class="cw_all_padding" colspan="2">FIRMA DEL CLIENTE
                                         <br/>
                                         (LEIDO Y CONFORME)
                                     </td>
-                                    <td>FIRMA DEL TALLER</td>
+                                    <td class="cw_all_padding">FIRMA DEL TALLER</td>
                                 </tr>
                             </table>
                             <br/>
@@ -122,11 +116,6 @@
                 </t>
             </t>
         </t>
-        <style>
-            .padding_class{
-
-            }
-        </style>
     </template>
 
     <!--Admission Sheet Main Template-->
