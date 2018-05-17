@@ -11,36 +11,36 @@
                     <p>
                         <t t-if="doc.vehicle_id">
                             <table style="width:100%">
-                            <tr>
-                                <th colspan="2">Información del Vehículo</th>
-                            </tr>
-                            <tr>
-                                <th>VEHÍCULO</th>
-                                <td>
-                                    <span id="vehiculo" t-field="doc.vehicle_id.model_id.brand_id"/>
-                                    <span t-field="doc.vehicle_id.model_id.name"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>MATRÍCULA</th>
-                                <td>
-                                    <span id="matricula" t-field="doc.vehicle_id.license_plate"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>BASTIDOR</th>
-                                <td>
-                                    <span id="bastidor" t-field="doc.vehicle_id.vin_sn"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>KM</th>
-                                <td>
-                                    <span id="km" t-field="doc.vehicle_id.odometer"/>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <th colspan="2">Información del Vehículo</th>
+                                </tr>
+                                <tr>
+                                    <th>VEHÍCULO</th>
+                                    <td>
+                                        <span id="vehiculo" t-field="doc.vehicle_id.model_id.brand_id"/>
+                                        <span t-field="doc.vehicle_id.model_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>MATRÍCULA</th>
+                                    <td>
+                                        <span id="matricula" t-field="doc.vehicle_id.license_plate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>BASTIDOR</th>
+                                    <td>
+                                        <span id="bastidor" t-field="doc.vehicle_id.vin_sn"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>KM</th>
+                                    <td>
+                                        <span id="km" t-field="doc.vehicle_id.odometer"/>
+                                    </td>
+                                </tr>
 
-                        </table>
+                            </table>
                         </t>
                         <!--<t t-else="">[No se ha encontrado información del vehículo]</t>-->
                     </p>
@@ -79,6 +79,5 @@
                 </div>
             </div>
         </template>
-
     </data>
 </odoo>

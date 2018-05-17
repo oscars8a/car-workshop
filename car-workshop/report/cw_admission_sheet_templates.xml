@@ -7,31 +7,36 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
+                        <br/>
                         <!--HEAD cw_head_templates.xml-->
                         <!--INI CABECERA-->
                         <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
                         <!--FIN CABECERA-->
-                        <h2>
+                        <br/>
+                        <h2 class="cw_pruebas">
                             Hoja de Admisión #
                             <span t-field="o.name"/>
                         </h2>
+                        <br/>
                         <div id="repair data">
                             <table style="width:100%">
                                 <tr>
                                     <td></td>
-                                    <th>Descripción</th>
+                                    <th style="padding-top: 10px;padding-bottom: 10px;padding-left: 10px;">Descripción</th>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td style="width: 255px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px;">
                                         <br/>
                                         <img t-att-src="'data:image/*;base64,%s' % to_text(doc.project_id.repair_image)"
                                              style="max-height: 250px;"/>
                                     </td>
-                                    <td style="border: 1px solid black;">
+                                    <td style="border: 1px solid black;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 10px;">
                                         <span t-field="o.description"/>
                                     </td>
                                 </tr>
                             </table>
+                            <br/>
+                            <br/>
                             <br/>
                             <br/>
                             <div>
@@ -49,6 +54,14 @@
                                             <input id="ppto_no" type="checkbox"/>
                                             No
                                         </td>
+                                        <th style="text-align: center;">
+                                            FECHA PREVISTA DE ENTREGA DE VEHÍCULO:
+                                        </th>
+                                        <td >
+                                            <span t-field="o.date_deadline"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <th >Recoge Piezas</th>
                                         <td style="text-align: left;">
                                             <t t-if="o.collect_pieces">
@@ -61,18 +74,16 @@
                                             <input id="piezas_no" type="checkbox"/>
                                             No
                                         </td>
-                                        <th style="text-align: center;">
-                                            FECHA PREVISTA DE ENTREGA DE VEHÍCULO:
-                                        </th>
-                                        <td >
-                                            <span t-field="o.date_deadline"/>
-                                        </td>
                                     </tr>
                                 </table>
                             </div>
                             <br/>
                             <br/>
-                            <div id="Clauses" style="text-align: left; text-justify: inter-word; font-size:12px;">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div id="Clauses" style="text-align: justify; text-justify: inter-word; font-size:10px;">
                                 AUTORIZO LA REPARACIÓN DE LAS OPERACIONES DESCRITAS EN LA ORDEN DE REPARACIÓN, FIRMADA
                                 POR MÍ, ASÍ COMO A CONDUCIR MI VEHÍCULO POR CALLES Y CARRETERAS PARA EFECTUAR LAS
                                 PRUEBAS QUE PARA SU REPARACIÓN ESTIMEN NECESARIAS.
@@ -93,6 +104,8 @@
                                 FISCAL QUE GRAVE ESA NUEVA OPERACIÓN.
                             </div>
                             <br/>
+                            <br/>
+                            <br/>
                             <table style="width:100%">
                                 <tr>
                                     <td colspan="2">FIRMA DEL CLIENTE
@@ -109,6 +122,11 @@
                 </t>
             </t>
         </t>
+        <style>
+            .padding_class{
+
+            }
+        </style>
     </template>
 
     <!--Admission Sheet Main Template-->

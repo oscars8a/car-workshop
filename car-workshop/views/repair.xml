@@ -100,7 +100,7 @@
                         <group>
                             <group>
                                 <field name="vehicle_id" domain="[('customer_id','=?',partner_id),]"
-                                       context="{'form_view_ref': 'car-workshop.car-workshop_fleet_vehicle_view_form'}"
+                                       context="{'form_view_ref': 'car-workshop.car-workshop_fleet_vehicle_view_form','default_customer_id':partner_id}"
                                 />
                                 <field name="partner_id" domain="[('customer','=',True)]"
                                        context="{'show_address': 1}"
@@ -407,18 +407,6 @@
             </field>
         </record>
 
-        <!--<template id="assets_backend" name="account assets" inherit_id="web.assets_backend">-->
-        <!--<xpath expr="." position="inside">-->
-        <!--<link rel="stylesheet" href="/car-workshop/static/src/css/car_workshop.css"/>-->
-        <!--</xpath>-->
-        <!--</template>-->
-
-        <!--<style>-->
-        <!--.deadline_value_color {-->
-        <!--color: #FF0000;-->
-        <!--}-->
-        <!--</style>-->
-
         <!--Car-Workshop Repair Kanban View -->
         <record id="car-workshop_repair_view_kanban" model="ir.ui.view">
             <field name="name">car-workshop.repair.kanban</field>
@@ -566,6 +554,7 @@
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="name"/>
                     <field name="repair_title"/>
                     <field name="vehicle_id"/>
                     <field name="partner_id"/>
