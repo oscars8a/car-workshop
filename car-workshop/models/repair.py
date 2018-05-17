@@ -7,6 +7,7 @@ from wdb import set_trace as depurador
 class Repair(models.Model):
     _name = 'car_workshop.repair'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
+    _order = 'id desc'
 
     # track_visibility=True Si quiero hacer seguimiendo de quien hace los cambios
     # incluirlo en los campos que se quiere el seguimiento
@@ -14,7 +15,7 @@ class Repair(models.Model):
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
     image_client_vehicle = fields.Binary(related='vehicle_id.image_client_vehicle', store=True, )
-    name = fields.Char(default="",required=False)
+    name = fields.Char(default="",required=True)
     repair_title = fields.Char()
     finished_stage = fields.Boolean("Finished")
     material_line_ids = fields.One2many(comodel_name="car_workshop.material_line", inverse_name="repair_id",
@@ -58,11 +59,8 @@ class Repair(models.Model):
     def create(self, vals):
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
-            if 'company_id' in vals:
-                vals['name'] = self.env['ir.sequence'].with_context(force_company=vals['company_id']).next_by_code(
-                    'sale.order') or _('')
-            else:
-                vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
+
+            vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
         rec_task = self.project_task_id.create(vals).id
@@ -92,13 +90,13 @@ class Repair(models.Model):
         for repair in self:
             if repair.state not in ('draft', 'cancel'):
                 raise UserError(_('You can not delete a sent quotation or a sales order! Try to cancel it before.'))
-        task_records = self.env["project.task"].search([('id', '=', self.project_task_id.id)])
-        sale_records = self.env["sale.order"].search([('id', '=', self.sale_order_id.id)])
-        super(Repair, self).unlink()
-        for record in task_records:
-            record.unlink()
-        for record in sale_records:
-            record.unlink()
+            task_records = self.env["project.task"].search([('id', '=', repair.project_task_id.id)])
+            sale_records = self.env["sale.order"].search([('id', '=', repair.sale_order_id.id)])
+            super(Repair, repair).unlink()
+            for record in task_records:
+                record.unlink()
+            for record in sale_records:
+                record.unlink()
         return True
 
     @api.multi
