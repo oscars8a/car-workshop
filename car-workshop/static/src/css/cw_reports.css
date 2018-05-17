@@ -1,0 +1,19 @@
+.cw_pruebas{
+    color: red;
+}
+.cw_all_padding{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cw_clausulas{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size:10px;
+}
+#cw_descripcion{
+    max-height: 50px;
+    overflow: auto;
+    border: 1px solid black;
+}

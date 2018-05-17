@@ -23,6 +23,7 @@
     'data': [
         'views/car-workshop.xml',
         'wizards/inherit_sale_make_invoice_advance_views.xml',
+        'report/cw_assets.xml',
         'report/cw_head_templates.xml',
         'report/cw_admission_sheet_templates.xml',
         'report/cw_invoice_templates.xml',

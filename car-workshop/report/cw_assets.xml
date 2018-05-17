@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_admission_sheet_style" inherit_id="car-workshop.report_admission_sheet_document">
+            <xpath expr="//div[@class='page']" position="inside">
+                <link href="/car-workshop/static/src/css/cw_reports.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+        <template id="report_quotation_style" inherit_id="car-workshop.report_quotation_document">
+            <xpath expr="//div[@class='page']" position="inside">
+                <link href="/car-workshop/static/src/css/cw_reports.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+        <template id="cw_report_invoice_style" inherit_id="car-workshop.cw_report_invoice_document">
+            <xpath expr="//div[@class='page']" position="inside">
+                <link href="/car-workshop/static/src/css/cw_reports.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
