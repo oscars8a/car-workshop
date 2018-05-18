@@ -7,7 +7,8 @@
             <t t-call="web.external_layout">
                 <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
                 <div class="page">
-
+                        <!--Estilos-->
+                        <t t-call="car-workshop.cw_report_style"/>
                         <!--HEAD cw_head_templates.xml-->
                         <!--INI CABECERA-->
                         <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
