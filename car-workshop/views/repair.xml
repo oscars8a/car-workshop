@@ -531,7 +531,7 @@
             <field name="arch" type="xml">
                 <search>
                     <field name="repair_title"/>
-                    <field name="name"/>
+                    <field name="sale_order_id" string="Number OR"/>
                     <field name="partner_id"/>
                     <field name="vehicle_id"/>
                     <field name="user_id"/>
@@ -555,7 +555,7 @@
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
+                    <field name="sale_order_id"/>
                     <field name="repair_title"/>
                     <field name="vehicle_id"/>
                     <field name="partner_id"/>

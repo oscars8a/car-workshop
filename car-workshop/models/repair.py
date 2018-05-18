@@ -59,7 +59,11 @@ class Repair(models.Model):
     def create(self, vals):
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
-            vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
+            pruebas = self.env['ir.sequence'].search([('code','=','sale.order')])[0]
+            print('REZA, REZA FUERTE')
+            print(pruebas.number_next_actual)
+            vals['name'] = "SO"+str(pruebas.number_next_actual)
+            print(vals['name'])
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
         rec_task = self.project_task_id.create(vals).id
@@ -67,7 +71,6 @@ class Repair(models.Model):
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
         rec = super(Repair, self).create(vals)
-
         return rec
 
     @api.multi
@@ -165,7 +168,6 @@ class Repair(models.Model):
         if self.vehicle_id:
             if self.vehicle_id.customer_id:
                 self.partner_id = self.vehicle_id.customer_id
-
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
