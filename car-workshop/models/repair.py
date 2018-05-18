@@ -59,7 +59,6 @@ class Repair(models.Model):
     def create(self, vals):
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
-
             vals['name'] = self.env['ir.sequence'].next_by_code('sale.order') or _('')
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
@@ -68,6 +67,7 @@ class Repair(models.Model):
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
         rec = super(Repair, self).create(vals)
+
         return rec
 
     @api.multi

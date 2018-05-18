@@ -17,7 +17,7 @@
                         <br/>
                         <h2>
                             PRESUPUESTO #
-                            <span t-field="doc.name"/>
+                            <span t-field="doc.sale_order_id.name"/>
                         </h2>
                         <br/>
                         <div class="row mt32 mb32" id="informations">
