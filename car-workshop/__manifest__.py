@@ -19,6 +19,7 @@
         'stock',
         'sale_stock',
         'sale_management',
+        'html_text'
     ],
     'data': [
         'views/car-workshop.xml',
