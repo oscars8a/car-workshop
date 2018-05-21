@@ -14,6 +14,6 @@
 }
 #cw_descripcion{
     max-height: 50px;
-    overflow: auto;
+    overflow: hidden;
     border: 1px solid black;
 }
