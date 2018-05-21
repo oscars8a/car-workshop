@@ -36,7 +36,7 @@
                                              style="max-height: 250px;"/>
                                     </td>
                                     <td class="cw_all_padding" id="cw_descripcion">
-                                        <span t-field="o.description"/>
+                                        <span t-esc="env['ir.fields.converter'].text_from_html(o.description)"/>
                                     </td>
                                 </tr>
                             </table>
