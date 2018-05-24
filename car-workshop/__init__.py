@@ -14,14 +14,18 @@ def main(cr, registry):
     :param registry:
     :return:
     """
+    print("INICIANDO...")
     env = api.Environment(cr, 1, {})
     usuarios = env['res.users'].search([])
     espaniol = False
     for u in usuarios:
         if u.login == 'admin' and u.lang == 'es_ES':
             espaniol = True
+            print("ENCONTRADO IDIOMA ESPAÑOL...")
     if espaniol:
         area_ids = env['project.project'].search([('car_work', '=', True)])
         if (len(area_ids) == 1):
             area = area_ids[0]
             area.write({'name': "Reparaciones y Revisiones"})
+            print("CAMBIANDO NOMBRES...")
+    print("FINALIZANDO...")

@@ -13,7 +13,7 @@ class Project(models.Model):
         for project in self:
             project.repair_count = result.get(project.id, 0)
 
-    car_work = fields.Boolean(string="It's Car's work Area?", default=True)
+    car_work = fields.Boolean(string="It's Car's work Area?", default=False)
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
     repair_image = fields.Binary(string="",  )
 

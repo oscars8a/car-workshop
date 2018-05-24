@@ -32,7 +32,7 @@
                   web_icon="car-workshop,static/description/icon.png"/>
 
         <!--Management Menus-->
-        <menuitem id="car_vmanagement_menus" name="Management"
+        <menuitem id="car_vmanagement_menus" name="Delivery and Invoice"
                   parent="main_car_workshop_menu"
                   sequence="3"/>
 
@@ -41,10 +41,10 @@
                   parent="car_vmanagement_menus"
                   sequence="1" action="action_car_stock_move_config"/>
 
-        <!--Account Invoice Menu-->
+        <!-- Invoice Menu-->
         <menuitem id="car_account_invoice_menu" name="Account Invoice"
                   parent="car_vmanagement_menus"
-                  sequence="2" action="action_car_account_invoice_config"/>
+                  sequence="2" action="account.action_invoice_tree1"/>
 
         <!--Customers Menus-->
         <menuitem id="car_customers_menus" name="Customers"

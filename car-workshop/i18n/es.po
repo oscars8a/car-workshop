@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-18 11:26+0000\n"
-"PO-Revision-Date: 2018-05-18 13:28+0200\n"
+"POT-Creation-Date: 2018-05-24 10:14+0000\n"
+"PO-Revision-Date: 2018-05-24 12:18+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgid ""
 "% if object.origin:\n"
 "(with reference: ${object.origin} )\n"
 "% endif\n"
-"amounting in <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong>\n"
+"amounting in <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
 "from ${object.company_id.name}.\n"
 "</p>\n"
 "\n"
@@ -68,48 +68,48 @@ msgid ""
 "</p>\n"
 msgstr ""
 "\n"
-"<p>Estimado(a) ${object.partner_id.name}\n"
+"<p>Estimado ${object.partner_id.name}\n"
 "% set access_action = object.with_context(force_website=True).get_access_action()\n"
 "% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
-"% set doc_name = 'presupuesto' if object.state in ('draft', 'sent') else 'confirmación de orden'\n"
-"% set pay_sign_name =  object.get_portal_confirmation_action()\n"
-"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Aceptar y %s en línea' % pay_sign_name or 'Ver %s' % doc_name\n"
+"% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
+"% set pay_sign_name = object.get_portal_confirmation_action()\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
 "% set access_url = is_online and object.get_mail_url() or ''\n"
 "\n"
 "% if object.partner_id.parent_id:\n"
-"    (<i>${object.partner_id.parent_id.name}</i>)\n"
+" (<i>${object.partner_id.parent_id.name}</i>)\n"
 "% endif\n"
 ",</p>\n"
 "<p>\n"
-"Aqui encontrará\n"
+"Le enviamos\n"
 "% if ctx.get('proforma')\n"
-"en adjunto, su factura proforma\n"
+"in attachment, your pro-forma invoice\n"
 "% else\n"
-"la ${doc_name} <strong>${object.name}</strong>\n"
+"the ${doc_name} <strong>${object.name}</strong>\n"
 "% endif\n"
 "% if object.origin:\n"
-"(con referencia: ${object.origin} )\n"
+"(with reference: ${object.origin} )\n"
 "% endif\n"
-"por un monto de <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong>\n"
-"de ${object.company_id.name}.\n"
+"de importe <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong>\n"
+"desde ${object.company_id.name}.\n"
 "</p>\n"
 "\n"
 "% if is_online and not ctx.get('proforma'):\n"
-"    <br/><br/>\n"
-"    <center>\n"
-"        <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
-"        <br/><br/><br/>\n"
-"        <span style=\"color:#888888\">(o ver el PDF adjunto)</span>\n"
-"    </center>\n"
-"    <br/>\n"
+" <br/><br/>\n"
+" <center>\n"
+" <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+" <br/><br/><br/>\n"
+" <span style=\"color:#888888\">(or view attached PDF)</span>\n"
+" </center>\n"
+" <br/>\n"
 "% endif\n"
 "\n"
-"<p>Usted puede responder este correo si tiene alguna consulta.</p>\n"
-"<p>Gracias,</p>\n"
+"<p>Para cualquier duda puede responder a este email.</p>\n"
+"<p>Muchas gracias,</p>\n"
 "\n"
 "<p style=\"color:#888888;\">\n"
 "% if object.user_id and object.user_id.signature:\n"
-"    ${object.user_id.signature | safe}\n"
+" ${object.user_id.signature | safe}\n"
 "% endif\n"
 "</p>\n"
 
@@ -140,7 +140,7 @@ msgstr "# de Pedidos"
 #: model:ir.model.fields,field_description:sale.field_res_partner_sale_order_count
 #: model:ir.model.fields,field_description:sale.field_res_users_sale_order_count
 msgid "# of Sales Order"
-msgstr "# de Pedido de Ventas"
+msgstr "# de Pedido de Venta"
 
 #. module: sale
 #: model:mail.template,report_name:sale.email_template_edi_sale
@@ -187,7 +187,7 @@ msgid ""
 "<html>\n"
 "                <head></head>\n"
 "                % set record = ctx.get('record')\n"
-"                % set company = record and record.company_id or user.company_id\n"
+"                % set company = record and record.company_id or ctx.get('company')\n"
 "                <body style=\"margin: 0; padding: 0;\">\n"
 "                <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" summary=\"o_mail_notification\">\n"
 "                    <tbody>\n"
@@ -260,12 +260,12 @@ msgstr ""
 "<html>\n"
 "                <head></head>\n"
 "                % set record = ctx.get('record')\n"
-"                % set company = record and record.company_id or user.company_id\n"
+"                % set company = record and record.company_id or ctx.get('company')\n"
 "                <body style=\"margin: 0; padding: 0;\">\n"
 "                <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" summary=\"o_mail_notification\">\n"
 "                    <tbody>\n"
 "\n"
-"                      <!-- HEADER -->\n"
+"                      <!-- CABECERA -->\n"
 "                      <tr>\n"
 "                        <td align=\"center\" style=\"min-width: 590px;\">\n"
 "                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
@@ -283,7 +283,7 @@ msgstr ""
 "                        </td>\n"
 "                      </tr>\n"
 "\n"
-"                      <!-- CONTENT -->\n"
+"                      <!-- CONTENIDO -->\n"
 "                      <tr>\n"
 "                        <td align=\"center\" style=\"min-width: 590px;\">\n"
 "                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;\">\n"
@@ -296,7 +296,7 @@ msgstr ""
 "                        </td>\n"
 "                      </tr>\n"
 "\n"
-"                      <!-- FOOTER -->\n"
+"                      <!-- PIE -->\n"
 "                      <tr>\n"
 "                        <td align=\"center\" style=\"min-width: 590px;\">\n"
 "                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
@@ -321,7 +321,7 @@ msgstr ""
 "                      </tr>\n"
 "                      <tr>\n"
 "                        <td align=\"center\">\n"
-"                            Provisto por <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+"                            Powered by <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
 "                        </td>\n"
 "                      </tr>\n"
 "                    </tbody>\n"
@@ -366,25 +366,15 @@ msgid "<span class=\"label label-danger\"><i class=\"fa fa-fw fa-warning\"/><spa
 msgstr "<span class=\"label label-danger\"><i class=\"fa fa-fw fa-warning\"/><span class=\"hidden-xs\"> Problema</span></span>"
 
 #. module: sale
-#: model:ir.ui.view,arch_db:sale.portal_my_orders
-msgid "<span class=\"label label-default hidden-xs\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Done</span></span>"
-msgstr "<span class=\"label label-default hidden-xs\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Realizado</span></span>"
-
-#. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_my_quotations
 msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-clock-o\"/> Expired</span>"
-msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-clock-o\"/>Expirado</span>"
+msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-clock-o\"/>Caducado</span>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_my_quotations
 #: model:ir.ui.view,arch_db:sale.portal_order_page
 msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/> Cancelled</span>"
 msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/> Cancelado</span>"
-
-#. module: sale
-#: model:ir.ui.view,arch_db:sale.portal_order_page
-msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/> Done</span>"
-msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/> Realizado</span>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
@@ -397,9 +387,19 @@ msgid "<span class=\"label label-info\"><i class=\"fa fa-fw fa-clock-o\"/><span 
 msgstr "<span class=\"label label-info\"><i class=\"fa fa-fw fa-clock-o\"/><span class=\"hidden-xs\"> Facturado</span></span>"
 
 #. module: sale
+#: model:ir.ui.view,arch_db:sale.portal_my_orders
+msgid "<span class=\"label label-success hidden-xs\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Done</span></span>"
+msgstr "<span class=\"label label-success hidden-xs\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Realizado </span></span>"
+
+#. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
 msgid "<span class=\"label label-success orders_label_text_align\"><i class=\"fa fa-fw fa-check\"/> Paid</span>"
 msgstr "<span class=\"label label-success orders_label_text_align\"><i class=\"fa fa-fw fa-check\"/> Pagado</span>"
+
+#. module: sale
+#: model:ir.ui.view,arch_db:sale.portal_order_page
+msgid "<span class=\"label label-success\"><i class=\"fa fa-fw fa-check\"/> Done</span>"
+msgstr "<span class=\"label label-success\"><i class=\"fa fa-fw fa-check\"/> Realizado </span>"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_project_view_kanban
@@ -429,7 +429,7 @@ msgstr "<strong>Contacto</strong>"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "<strong>Date Ordered:</strong>"
-msgstr "<strong>Fecha ordenada:</strong>"
+msgstr "<strong>Fecha de pedido:</strong>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
@@ -448,6 +448,7 @@ msgstr "<strong>Encargado:</strong>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
+#: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "<strong>Expiration Date:</strong>"
 msgstr "<strong>Fecha de caducidad:</strong>"
 
@@ -573,7 +574,7 @@ msgstr "<strong>Total</strong>"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
 msgid "<strong>Unit Price</strong>"
-msgstr "<strong>Precio de Unidad</strong>"
+msgstr "<strong>Precio Unidad</strong>"
 
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_quotation_document
@@ -648,7 +649,7 @@ msgstr ""
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Ability to select a package type in sales orders and to force a quantity that is a multiple of the number of units per package."
-msgstr "Posibilidad de seleccionar un tipo de paquete en pedidos de venta y forzar una cantidad que es un múltiplo de la cantidad de unidades por paquete."
+msgstr "Posibilidad de seleccionar un tipo de empaquetado en pedidos de venta y forzar una cantidad que es un múltiplo de la cantidad de unidades por paquete."
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
@@ -704,7 +705,7 @@ msgstr "Avance: %s"
 #: model:ir.actions.act_window,name:sale.report_all_channels_sales_action
 #: model:ir.ui.menu,name:sale.report_all_channels_sales
 msgid "All Channels Sales Orders"
-msgstr "Todos lo pedidos de ventas"
+msgstr "Pedidos de venta de todos los canales"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_all_channels_sales_view_pivot
@@ -715,7 +716,7 @@ msgstr "Análisis de Todos los canales de pedidos de venta"
 #. module: sale
 #: model:ir.model,name:sale.model_report_all_channels_sales
 msgid "All sales orders grouped by sales channels"
-msgstr "Todos los pedidos de ventas agrupados por canales de venta"
+msgstr "Todos los pedidos de venta agrupados por canal"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
@@ -765,12 +766,12 @@ msgstr "Cuenta analítica"
 #. module: sale
 #: model:res.groups,name:sale.group_analytic_accounting
 msgid "Analytic Accounting for Sales"
-msgstr "Contabilidad analítica para las ventas"
+msgstr "Contabilidad analítica para ventas"
 
 #. module: sale
 #: model:ir.model,name:sale.model_account_analytic_line
 msgid "Analytic Line"
-msgstr "Línea Analítica"
+msgstr "Línea analítica"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_analytic_tag_ids
@@ -798,7 +799,7 @@ msgstr "Asignada a"
 #. module: sale
 #: selection:product.template,expense_policy:0
 msgid "At cost"
-msgstr "A costo"
+msgstr "A coste"
 
 #. module: sale
 #: model:ir.ui.menu,name:sale.menu_variants_action
@@ -816,28 +817,23 @@ msgstr "Atributos"
 msgid "BASTIDOR"
 msgstr "BASTIDOR"
 
-#. module: car-workshop
-#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_collection_customer
-#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_in_progress
-#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_on_hold
-msgid "Blocked"
-msgstr "Bloqueada"
-
 #. module: sale
 #: selection:product.template,sale_line_warn:0
 #: selection:res.partner,sale_warn:0
 msgid "Blocking Message"
 msgstr "Mensaje de bloqueo"
 
+#. module: car-workshop
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_on_hold
+msgid "Bloqueada"
+msgstr "Bloqueada"
+
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Boost your sales with two kinds of discount programs: promotions and coupon codes. Specific conditions can be set (products, customers, minimum purchase amount, period). Rewards can be discounts (% or amount) or free products."
 msgstr "Aumente sus ventas con dos tipos de programas de descuentos: promociones y códigos de cupones. Se pueden establecer condiciones específicas (productos, clientes, cantidad mínima de compra, período). Las recompensas pueden ser descuentos (% o cantidad) o productos gratis."
-
-#. module: car-workshop
-#: model:ir.ui.menu,name:car-workshop.car_vbrands_menu
-msgid "Brands"
-msgstr "Marcas"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_configuration_search_view
@@ -1008,7 +1004,7 @@ msgstr "Calcular los costos de envío y enviar con bpost"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Compute shipping costs on orders"
-msgstr "Calcular los costos de envío en pedidos"
+msgstr "Calcular los costes de envío en pedidos"
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_total_hours_spent
@@ -1087,7 +1083,6 @@ msgid "Create and View Invoices"
 msgstr "Crear y ver facturas"
 
 #. modules: sale, car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_create_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_uid
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv_create_uid
@@ -1098,14 +1093,13 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. modules: sale, car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_create_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_date
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv_create_date
 #: model:ir.model.fields,field_description:sale.field_sale_layout_category_create_date
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado en"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_create_date
@@ -1204,7 +1198,7 @@ msgstr "Entregado"
 
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
-#: code:addons/sale/models/sale.py:836
+#: code:addons/sale/models/sale.py:844
 #: model:ir.ui.view,arch_db:sale.view_order_form
 #, python-format
 msgid "Delivered Quantity"
@@ -1247,6 +1241,11 @@ msgstr "Dirección de entrega de la factura actual."
 #: model:ir.model.fields,help:sale.field_sale_order_partner_shipping_id
 msgid "Delivery address for current sales order."
 msgstr "Dirección de envío para el pedido de ventas actual."
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_vmanagement_menus
+msgid "Delivery and Invoice"
+msgstr "Albaranes y Facturas"
 
 #. module: sale
 #: model:product.product,name:sale.advance_product_0
@@ -1331,7 +1330,7 @@ msgstr "Descuentos"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_display_name
 #: model:ir.model.fields,field_description:sale.field_sale_report_display_name
 msgid "Display Name"
-msgstr "Nombre a Mostrar"
+msgstr "Nombre mostrado"
 
 #. module: sale
 #: code:addons/sale/wizard/sale_make_invoice_advance.py:85
@@ -1397,7 +1396,14 @@ msgstr "Duración"
 #. module: sale
 #: model:ir.model,name:sale.model_mail_compose_message
 msgid "Email composition wizard"
-msgstr "Asistente de redacción de correo electrónico."
+msgstr "Asistente de composición de correo electrónico"
+
+#. module: car-workshop
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_on_hold
+msgid "En Proceso"
+msgstr "En Proceso"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
@@ -1427,7 +1433,7 @@ msgid "Extended Filters"
 msgstr "Filtro avanzado"
 
 #. module: sale
-#: code:addons/sale/models/sale.py:819
+#: code:addons/sale/models/sale.py:827
 #, python-format
 msgid "Extra line with %s "
 msgstr "Linea extra con %s"
@@ -1533,7 +1539,7 @@ msgstr "Peso bruto"
 #: model:ir.ui.view,arch_db:sale.view_sales_order_filter
 #: model:ir.ui.view,arch_db:sale.view_sales_order_line_filter
 msgid "Group By"
-msgstr "Agrupar Por"
+msgstr "Agrupar por"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_configuration_search_view
@@ -1551,7 +1557,6 @@ msgid "Hours Spent"
 msgstr "Horas dedicadas"
 
 #. modules: sale, car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_id
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_id
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_id
 #: model:ir.model.fields,field_description:sale.field_report_all_channels_sales_id
@@ -1582,12 +1587,9 @@ msgid "Impuestos"
 msgstr "Impuestos"
 
 #. module: car-workshop
-#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_collection_customer
-#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_in_progress
-#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_on_hold
 #: model:project.task.type,name:car-workshop.project_car-workshop_stage_in_progress
 msgid "In Progress"
-msgstr "En proceso"
+msgstr "En Proceso"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_car_workshop_advance_payment_inv_deposit_account_id
@@ -1667,7 +1669,7 @@ msgstr "Factura creada"
 #. module: sale
 #: model:ir.model,name:sale.model_account_invoice_line
 msgid "Invoice Line"
-msgstr "Linea de Factura"
+msgstr "Linea de la Factura"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_invoice_lines
@@ -1691,7 +1693,7 @@ msgstr "Facturar pedido de venta"
 #: model:ir.model.fields,field_description:sale.field_sale_order_invoice_status
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_invoice_status
 msgid "Invoice Status"
-msgstr "Estado de la factura"
+msgstr "Estado factura"
 
 #. modules: sale, car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_partner_invoice_id
@@ -1733,7 +1735,7 @@ msgstr "Facturado"
 
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
-#: code:addons/sale/models/sale.py:837
+#: code:addons/sale/models/sale.py:845
 #: model:ir.ui.view,arch_db:sale.view_order_form
 #, python-format
 msgid "Invoiced Quantity"
@@ -1824,7 +1826,7 @@ msgid "Is expired"
 msgstr "Está expirado"
 
 #. module: sale
-#: code:addons/sale/models/sale.py:856
+#: code:addons/sale/models/sale.py:864
 #, python-format
 msgid ""
 "It is forbidden to modify the following fields in a locked order:\n"
@@ -1865,10 +1867,9 @@ msgstr "Estado de kanban"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line___last_update
 #: model:ir.model.fields,field_description:sale.field_sale_report___last_update
 msgid "Last Modified on"
-msgstr "Última Modificación en"
+msgstr "Última modificación en"
 
 #. modules: sale, car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_uid
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv_write_uid
@@ -1876,10 +1877,9 @@ msgstr "Última Modificación en"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_write_uid
 #: model:ir.model.fields,field_description:sale.field_sale_order_write_uid
 msgid "Last Updated by"
-msgstr "Última Actualización por"
+msgstr "Última actualización de"
 
 #. modules: sale, car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_date
 #: model:ir.model.fields,field_description:sale.field_sale_advance_payment_inv_write_date
@@ -1887,7 +1887,7 @@ msgstr "Última Actualización por"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_write_date
 #: model:ir.model.fields,field_description:sale.field_sale_order_write_date
 msgid "Last Updated on"
-msgstr "Última Actualización el"
+msgstr "Última actualización en"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_sales_order_filter
@@ -1915,6 +1915,13 @@ msgstr "Deje que sus clientes firmen y paguen online"
 msgid "Line subtotals in sales orders"
 msgstr "Subtotales de línea en pedidos de venta"
 
+#. module: car-workshop
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_on_hold
+msgid "Listo para la siguiente etapa"
+msgstr "Listo para la siguiente etapa"
+
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 #: model:ir.ui.view,arch_db:sale.view_order_form
@@ -1940,11 +1947,6 @@ msgstr "MATRÍCULA"
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Manage promotion &amp; coupon programs"
 msgstr "Gestionar promociones y programas de cupones"
-
-#. module: car-workshop
-#: model:ir.ui.menu,name:car-workshop.car_vmanagement_menus
-msgid "Management"
-msgstr "Administración"
 
 #. module: sale
 #: selection:product.template,service_type:0
@@ -2001,11 +2003,6 @@ msgstr "Mensaje para el pedido de venta"
 #: model:ir.model.fields,field_description:sale.field_product_template_sale_line_warn_msg
 msgid "Message for Sales Order Line"
 msgstr "Mensaje para la línea de pedido de venta"
-
-#. module: car-workshop
-#: model:ir.ui.menu,name:car-workshop.car_vmodels_menu
-msgid "Models"
-msgstr "Modelos"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings_multi_sales_price
@@ -2068,22 +2065,6 @@ msgstr "Sin mensaje"
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "No longer edit orders once confirmed"
 msgstr "No editar órdenes una vez confirmadas"
-
-#. module: sale
-#: model:ir.actions.act_window,help:sale.action_quotations
-#: model:ir.actions.act_window,help:sale.action_quotations_salesteams
-msgid ""
-"Note that once a Quotation becomes a Sales Order, it will be moved\n"
-"                from the Quotations list to the Sales Order list."
-msgstr ""
-"Tenga en cuenta que una vez que un presupuesto se convierta en un pedido de venta, se moverá\n"
-"                 de la lista de presupuestos a la lista de pedidos de venta."
-
-#. module: sale
-#: model:ir.actions.act_window,help:sale.act_res_partner_2_sale_order
-#: model:ir.actions.act_window,help:sale.action_orders_salesteams
-msgid "Note that once a Quotation becomes a Sales Order, it will be moved from the Quotations list to the Sales Order list."
-msgstr "Tenga en cuenta que una vez que un presupuesto se convierta en un pedido de venta, se moverá de la lista de presupuestos a la lista de pedidos de venta."
 
 #. module: sale
 #: selection:sale.order,invoice_status:0
@@ -2244,7 +2225,7 @@ msgstr "Ctdad pedida"
 
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
-#: code:addons/sale/models/sale.py:833
+#: code:addons/sale/models/sale.py:841
 #: model:ir.ui.view,arch_db:sale.view_order_form
 #, python-format
 msgid "Ordered Quantity"
@@ -2343,11 +2324,6 @@ msgstr "País de la empresa"
 msgid "Payment"
 msgstr "Pagos"
 
-#. module: sale
-#: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
-msgid "Payment Acquirers"
-msgstr "Medios de pago"
-
 #. modules: sale, car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_term_id
 #: model:ir.model.fields,field_description:sale.field_sale_order_payment_term_id
@@ -2371,7 +2347,7 @@ msgid "Please define an accounting sales journal for this company."
 msgstr "Defina un diario de ventas de contabilidad para esta empresa."
 
 #. module: sale
-#: code:addons/sale/models/sale.py:941
+#: code:addons/sale/models/sale.py:949
 #, python-format
 msgid "Please define income account for this product: \"%s\" (id:%d) - or for its category: \"%s\"."
 msgstr "Por favor defina la cuenta de entrada de existencias para este producto: \"%s\" (id:%d) o su categoría: \"%s\"."
@@ -2429,7 +2405,7 @@ msgstr "Precio calculado a partir de fórmulas (descuentos, márgenes, redondeos
 #: model:ir.model.fields,field_description:sale.field_sale_order_pricelist_id
 #: model:ir.model.fields,field_description:sale.field_sale_report_pricelist_id
 msgid "Pricelist"
-msgstr "Tarifa"
+msgstr "Lista de precios"
 
 #. modules: sale, car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_pricelist_id
@@ -2443,7 +2419,7 @@ msgstr "Tarifa para el pedido de venta actual."
 #: model:ir.ui.menu,name:sale.menu_product_pricelist_main
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Pricelists"
-msgstr "Tarifas"
+msgstr "Listas de precios"
 
 #. module: sale
 #: selection:res.config.settings,multi_sales_price_method:0
@@ -2453,7 +2429,7 @@ msgstr "Precios calculados a partir de fórmulas (descuentos, márgenes, redonde
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Pricing"
-msgstr "Precio"
+msgstr "Fijación de precios"
 
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -2513,7 +2489,7 @@ msgstr "Imagen del producto"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_report_all_channels_sales_product_qty
 msgid "Product Quantity"
-msgstr "Cantidad de producto"
+msgstr "Cantidad producto"
 
 #. module: sale
 #: model:ir.model,name:sale.model_product_template
@@ -2725,13 +2701,6 @@ msgid "Re-Invoice Expenses"
 msgstr "Gastos de Re-factura"
 
 #. module: car-workshop
-#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_collection_customer
-#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_in_progress
-#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_on_hold
-msgid "Ready for Next Stage"
-msgstr "Listo para la siguiente etapa"
-
-#. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Recoge Piezas"
 msgstr "Recoge Piezas"
@@ -2752,7 +2721,7 @@ msgstr "Referencia del documento que ha generado esta solicitud de pedido de ven
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_remaining_hours
 msgid "Remaining Hours"
-msgstr "Horas Restantes"
+msgstr "Horas restantes"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
@@ -2848,8 +2817,7 @@ msgstr "Estado de Venta"
 msgid "Sales"
 msgstr "Ventas"
 
-#. modules: sale, car-workshop
-#: model:ir.model,name:car-workshop.model_sale_advance_payment_inv
+#. module: sale
 #: model:ir.model,name:sale.model_sale_advance_payment_inv
 msgid "Sales Advance Payment Invoice"
 msgstr "Ventas. Anticipo pago factura"
@@ -2912,13 +2880,13 @@ msgstr "Información de ventas"
 #: model:res.request.link,name:sale.req_link_sale_order
 #: selection:sale.order,state:0 selection:sale.report,state:0
 msgid "Sales Order"
-msgstr "Pedido de venta"
+msgstr "Pedido de ventas"
 
 #. module: sale
 #: model:mail.message.subtype,name:sale.mt_order_confirmed
 #: model:mail.message.subtype,name:sale.mt_salesteam_order_confirmed
 msgid "Sales Order Confirmed"
-msgstr "Pedido de venta confirmado"
+msgstr "Pedido de ventas confirmado"
 
 #. modules: sale, car-workshop
 #: model:ir.model,name:car-workshop.model_sale_order_line
@@ -2927,7 +2895,7 @@ msgstr "Pedido de venta confirmado"
 #: model:ir.model.fields,field_description:sale.field_product_product_sale_line_warn
 #: model:ir.model.fields,field_description:sale.field_product_template_sale_line_warn
 msgid "Sales Order Line"
-msgstr "Línea de orden de ventas"
+msgstr "Línea de pedido de ventas"
 
 #. modules: sale, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -2936,7 +2904,7 @@ msgstr "Línea de orden de ventas"
 #: model:ir.ui.view,arch_db:sale.view_order_form
 #: model:ir.ui.view,arch_db:sale.view_order_line_tree
 msgid "Sales Order Lines"
-msgstr "Líneas de pedidos de venta"
+msgstr "Líneas pedido de ventas"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_sales_order_line_filter
@@ -2969,7 +2937,7 @@ msgstr "Pedidos de ventas"
 #. module: sale
 #: model:ir.model,name:sale.model_sale_report
 msgid "Sales Orders Statistics"
-msgstr "Estadísticas de pedidos de ventas"
+msgstr "Estadísticas pedidos de ventas"
 
 #. module: sale
 #: selection:product.template,expense_policy:0
@@ -3207,12 +3175,12 @@ msgstr "Ordenar productos en secciones con subtotales y saltos de página"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_origin
 #: model:ir.model.fields,field_description:sale.field_sale_order_origin
 msgid "Source Document"
-msgstr "Documento origen"
+msgstr "Documento de origen"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_location_id
 msgid "Source Location"
-msgstr "Ubicación de origen"
+msgstr "Ubicación origen"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings_module_product_email_template
@@ -3407,7 +3375,7 @@ msgid "There is no income account defined for this product: \"%s\". You may have
 msgstr "No existe una cuenta de ingresos definida para este producto: \"%s\". Puede que necesite instalar un plan contable desde la aplicación de Contabilidad, menú de configuración."
 
 #. module: sale
-#: code:addons/sale/models/sale.py:430 code:addons/sale/models/sale.py:434
+#: code:addons/sale/models/sale.py:438 code:addons/sale/models/sale.py:442
 #, python-format
 msgid "There is no invoiceable line."
 msgstr "No hay líneas facturables."
@@ -3520,7 +3488,7 @@ msgid "Track Service"
 msgstr "Servicio de seguimiento"
 
 #. module: sale
-#: code:addons/sale/models/sale.py:570
+#: code:addons/sale/models/sale.py:578
 #, python-format
 msgid "Uncategorized"
 msgstr "Sin categoría"
@@ -3614,11 +3582,13 @@ msgstr "Vehículo"
 
 #. module: car-workshop
 #: model:ir.actions.act_window,name:car-workshop.action_car_vbrands_config
+#: model:ir.ui.menu,name:car-workshop.car_vbrands_menu
 msgid "Vehicle Brands"
 msgstr "Marcas de vehículo"
 
 #. module: car-workshop
 #: model:ir.actions.act_window,name:car-workshop.action_car_vmodels_config
+#: model:ir.ui.menu,name:car-workshop.car_vmodels_menu
 msgid "Vehicle Models"
 msgstr "Modelos de vehículo"
 
@@ -3654,7 +3624,7 @@ msgid "Warning"
 msgstr "Aviso"
 
 #. module: sale
-#: code:addons/sale/models/sale.py:1029
+#: code:addons/sale/models/sale.py:1037
 #, python-format
 msgid "Warning for %s"
 msgstr "Aviso para %s"
@@ -3701,7 +3671,7 @@ msgid "You can not delete a sent quotation or a sales order! Try to cancel it be
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
 
 #. module: sale
-#: code:addons/sale/models/sale.py:1090
+#: code:addons/sale/models/sale.py:1098
 #, python-format
 msgid ""
 "You can not remove a sales order line.\n"
@@ -3762,11 +3732,6 @@ msgstr "car_workshop.material_line"
 #: model:ir.model,name:car-workshop.model_car_workshop_repair
 msgid "car_workshop.repair"
 msgstr "car_workshop.repair"
-
-#. module: car-workshop
-#: model:ir.model,name:car-workshop.model_carworkshop_advance_payment_inv
-msgid "carworkshop.advance.payment.inv"
-msgstr "carworkshop.advance.payment.inv"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_error
