@@ -167,8 +167,8 @@
 
         <!--Vehicles Menu-->
         <menuitem id="car_vehicles_menu" name="Vehicles"
-                  parent="car_customers_menus"
-                  sequence="2" action="action_car_vehicles_config"/>
+                  parent="main_car_workshop_menu"
+                  sequence="5" action="action_car_vehicles_config"/>
 
         <!--Action Vehicle Models Menu-->
         <record model="ir.actions.act_window" id="action_car_vmodels_config">

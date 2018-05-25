@@ -66,7 +66,7 @@
 
         <!--Tire Brands Menu-->
         <menuitem id="car_tbrands_menu" name="Tire Brands"
-                  parent="car-workshop.tire_catalogue_menus"
+                  parent="car-workshop.car_vconfig_menus"
                   sequence="3" action="action_car_tbrands_config"/>
     </data>
 </odoo>
