@@ -63,7 +63,7 @@
 
         <!--Tires Menu-->
         <menuitem id="car_tire_menu" name="Tires"
-                  parent="car-workshop.tire_catalogue_menus"
+                  parent="car-workshop.car_masters_menus"
                   sequence="2" action="action_tire_view_wizard"/>
 
     </data>

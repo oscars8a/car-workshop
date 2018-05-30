@@ -123,13 +123,15 @@
                                 <field name="date_deadline"/>
                                 <field name="tag_ids" widget="many2many_tags"
                                        options="{'color_field': 'color', 'no_create_edit': True}"/>
-                                <field name="budget_resignation"/>
-                                <field name="collect_pieces"/>
+                                <HR></HR>
+                                <tr colspan="2"><field name="budget_resignation"/><th>Renuncia presupuesto</th></tr>
+                                <tr colspan="2"><field name="collect_pieces"/><th>Recoge piezas</th></tr>
                             </group>
+
                         </group>
                         <group>
                             <div>
-                                <field name="description" default_focus="0"/>
+                                <field name="description"/>
                             </div>
                         </group>
                         <notebook>

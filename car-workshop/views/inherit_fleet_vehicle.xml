@@ -167,7 +167,7 @@
 
         <!--Vehicles Menu-->
         <menuitem id="car_vehicles_menu" name="Vehicles"
-                  parent="main_car_workshop_menu"
+                  parent="car_masters_menus"
                   sequence="5" action="action_car_vehicles_config"/>
 
         <!--Action Vehicle Models Menu-->

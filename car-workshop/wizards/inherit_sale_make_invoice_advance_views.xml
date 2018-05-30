@@ -4,10 +4,10 @@
         <!--Al exportar el archivo es.po del módulo car-workshop, no se refleja este formulario en el poedit-->
         <!--Y por tanto no lo traduce. Lo he solucionado exportanto el es.po de los modulos car-workshop y sale juntos. -->
         <record id="view_sale_advance_payment_inv_for_carworkshop" model="ir.ui.view">
-            <field name="name">Invoice Orders</field>
+            <field name="name">Invoice Orders Taller</field>
             <field name="model">car_workshop.advance.payment.inv</field>
             <field name="arch" type="xml">
-                <form string="Invoice Sales Order">
+                <form string="Invoice Sales Order Taller">
                     <p class="oe_grey">
                         Invoices will be created in draft so that you can review
                         them before validation.
@@ -44,16 +44,13 @@
         </record>
 
         <record id="action_view_sale_advance_payment_inv" model="ir.actions.act_window">
-            <field name="name">Invoice Order</field>
+            <field name="name">Invoice Order Taller</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">car_workshop.advance.payment.inv</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
             <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>
-            <!-- TODO: check if we need this -->
-            <field name="binding_model_id" ref="sale.model_sale_order"/>
-            <field name="view_id" ref="view_sale_advance_payment_inv_for_carworkshop"/>
         </record>
 
     </data>

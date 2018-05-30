@@ -31,12 +31,17 @@
                                 </tr>
                                 <tr>
                                     <td class="cw_all_padding" style="width: 255px;">
+
                                         <br/>
+
                                         <img t-att-src="'data:image/*;base64,%s' % to_text(doc.project_id.repair_image)"
                                              style="max-height: 250px;"/>
+
+                                        <!--<img t-att-src="'data:image/jpeg;base64,/var/www/cbl_openerp/openerp/cap_addons/cap_sale/img/footer.jpeg'"/>-->
+                                        <!--<img t-att-src="data:image/jpeg;base64,/car-workshop/static/src/img/repair_car.png" height="50%" width="50%" />-->
                                     </td>
                                     <td class="cw_all_padding" id="cw_descripcion">
-                                        <span t-esc="env['ir.fields.converter'].text_from_html(o.description)"/>
+                                        <span t-esc="o.description"/>
                                     </td>
                                 </tr>
                             </table>

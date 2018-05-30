@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+            <!-- Inherit Form View -->
+            <!--<record id="" model="ir.ui.view">-->
+                <!--<field name="name"></field>-->
+                <!--<field name="model"></field>-->
+                <!--<field name="inherit_id" ref=""/>-->
+                <!--<field name="arch" type="xml">-->
+
+                    <!--<field name="partner_id" position="after">-->
+                        <!--<field name="repair_id"/>-->
+                    <!--</field>-->
+
+                <!--</field>-->
+            <!--</record>-->
+
+    </data>
+</odoo>

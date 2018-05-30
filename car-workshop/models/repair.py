@@ -28,9 +28,11 @@ class Repair(models.Model):
 
     budget_resignation = fields.Boolean(string="Budged Resignation")
     collect_pieces = fields.Boolean(string="Collect Pieces")
+
+
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
-    description = fields.Html(related="project_task_id.description", store=True)
+    description = fields.Text(string="Descripción")
     project_id = fields.Many2one(related="project_task_id.project_id", store=True)
     user_id = fields.Many2one(related="project_task_id.user_id", store=True)
     kanban_state = fields.Selection(related="project_task_id.kanban_state", default='normal', store=True)

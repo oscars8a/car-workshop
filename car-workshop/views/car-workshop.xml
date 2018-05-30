@@ -40,13 +40,13 @@
         <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"
                   web_icon="car-workshop,static/description/icon.png"/>
 
-        <!--Delivery and Invoices Menus-->
-        <menuitem id="car_vmanagement_menus" name="Delivery and Invoice"
+        <!--Consume and Invoices Menus-->
+        <menuitem id="car_vmanagement_menus" name="Consume and Invoice"
                   parent="main_car_workshop_menu"
                   sequence="3"/>
 
-        <!--Delivery Menu-->
-        <menuitem id="car_stock_move_menu" name="Delivery"
+        <!--Consume Menu-->
+        <menuitem id="car_stock_move_menu" name="Consume"
                   parent="car_vmanagement_menus"
                   sequence="1" action="action_car_stock_move_config"/>
 
@@ -56,17 +56,17 @@
                   sequence="2" action="account.action_invoice_tree1"/>
 
         <!--Customers Menus-->
-        <menuitem id="car_contacs_menus" name="Vendors and Customers"
+        <menuitem id="car_masters_menus" name="Masters"
                   parent="main_car_workshop_menu"
                   sequence="4"/>
 
         <!--Vendors Menu-->
-        <menuitem id="car_vendors_menu" name="Masters"
-                  parent="car_contacs_menus"
+        <menuitem id="car_vendors_menu" name="Vendors"
+                  parent="car_masters_menus"
                   sequence="1" action="action_car_vendors_config"/>
         <!--Customer Menu-->
         <menuitem id="car_customers_menu" name="Customers"
-                  parent="car_contacs_menus"
+                  parent="car_masters_menus"
                   sequence="2" action="action_car_customers_config"/>
 
 
@@ -98,7 +98,6 @@
                   sequence="7" action="product.product_category_action_form"/>
 
 
-
         <!--Action Products Menu-->
         <record model="ir.actions.act_window" id="action_car_vproducts_config">
             <field name="name">Products</field>
@@ -107,16 +106,10 @@
             <field name="view_mode">kanban,form,tree</field>
         </record>
 
-        <!--Catalogue Menu-->
-        <menuitem id="tire_catalogue_menus" name="Catalogue"
-                  parent="main_car_workshop_menu"
-                  sequence="7"/>
-
-
 
         <!--Products Menu-->
         <menuitem id="car_vproducts_menu" name="Products"
-                  parent="tire_catalogue_menus"
+                  parent="car_masters_menus"
                   sequence="1" action="action_car_vproducts_config"/>
 
 
