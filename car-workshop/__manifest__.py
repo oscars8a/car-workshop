@@ -38,6 +38,7 @@
         'data/project_initial.xml',
         'views/inherit_res_partner.xml',
         'views/inherit_res_config_settings.xml',
+        'views/inherit_sale.xml',
         'security/car-workshop_security.xml',
         'security/ir.model.access.csv',
         'views/inherit_account_invoice.xml',

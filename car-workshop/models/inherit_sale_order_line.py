@@ -1,5 +1,6 @@
 from odoo import api, fields, models,_
 
+
 class SaleOrderLine(models.Model):
 
     _inherit = 'sale.order.line'
@@ -9,6 +10,7 @@ class SaleOrderLine(models.Model):
     @api.multi
     @api.onchange('product_id')
     def product_id_change(self):
+
         result = super(SaleOrderLine, self).product_id_change()
         vals = {}
         domain = {'product_uom': [('category_id', '=', self.product_id.uom_id.category_id.id)]}
@@ -36,3 +38,28 @@ class SaleOrderLine(models.Model):
             )
             vals['price_unit'] = product.price
         self.update(vals)
+
+
+    @api.model
+    def create(self, vals):
+        rec = super(SaleOrderLine, self).create(vals)
+
+        warehouse = self.env['stock.warehouse'].search([], limit=1)
+        location_id = warehouse.lot_stock_id.id
+        location_dest_id = self.env['stock.location'].search([('usage', '=', 'production')], limit=1).id
+
+        vars = {
+            'product_uom': vals['product_uom'],
+            'product_uom_qty': vals['product_uom_qty'],
+            'consumed': False,
+            'repair_id': rec.order_id.repair_id.id,
+            'location_id': location_id,
+            'location_dest_id': location_dest_id,
+            'product_id': vals['product_id'],
+            'name': vals['name']
+        }
+        print(vars)
+        self.env['car_workshop.material_line'].create(vars)
+
+        return rec
+
