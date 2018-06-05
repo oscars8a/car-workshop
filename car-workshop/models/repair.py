@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.exceptions import UserError
-from wdb import set_trace as depurador
+# from wdb import set_trace as depurador
 
 
 class Repair(models.Model):
     _name = 'car_workshop.repair'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
     _order = 'id desc'
-
-    # track_visibility=True Si quiero hacer seguimiendo de quien hace los cambios
-    # incluirlo en los campos que se quiere el seguimiento
 
 
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=True, )
@@ -22,9 +19,9 @@ class Repair(models.Model):
                                     string="Material Lines", auto_join=True)
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
-    repair_line = fields.One2many('sale.order.line', 'repair_id', string='Order Lines',
+    repair_line = fields.One2many(comodel_name='sale.order.line', inverse_name='repair_id', string='Order Lines',
                                   states={'cancel': [('readonly', True)], 'done': [('readonly', True)]},
-                                  copy=True, auto_join=True)
+                                  copy=True)
 
     budget_resignation = fields.Boolean(string="Budged Resignation")
     collect_pieces = fields.Boolean(string="Collect Pieces")
@@ -61,11 +58,8 @@ class Repair(models.Model):
     def create(self, vals):
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
-            pruebas = self.env['ir.sequence'].search([('code','=','sale.order')])[0]
-            print('REZA, REZA FUERTE')
-            print(pruebas.number_next_actual)
-            vals['name'] = "SO"+str(pruebas.number_next_actual)
-            print(vals['name'])
+            new_name = self.env['ir.sequence'].search([('code','=','sale.order')])[0]
+            vals['name'] = "SO"+str(new_name.number_next_actual)
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
         rec_task = self.project_task_id.create(vals).id
@@ -73,7 +67,9 @@ class Repair(models.Model):
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
         rec = super(Repair, self).create(vals)
+        rec.sale_order_id.write({'repair_id':rec.id})
         return rec
+
 
     @api.multi
     def copy(self, default=None):
@@ -235,17 +231,6 @@ class Repair(models.Model):
     def action_admission_sheet(self):
         return self.env.ref('car-workshop.action_report_admission_sheet').report_action(self, data=None)
 
-    # DEF de Dario para la DEMO
-    # @api.multi
-    # def action_invoice_create(self, grouped=False, final=False):
-    #     order_ids = [record.sale_order_id.id for record in self]
-    #     sale_obj = self.env['sale.order'].browse(order_ids)
-    #     invoice_id = (sale_obj.action_invoice_create(grouped=False, final=False))
-    #     return invoice_id
     @api.multi
     def action_finised(self):
         self.finished_stage = not self.finished_stage
-
-
-
-

@@ -220,9 +220,11 @@
                                         <field name="product_uom_qty" string="Ordered Qty"
                                                context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"/>
                                         <field name="qty_delivered"
-                                               attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])], 'readonly': [('qty_delivered_updateable', '=', False)]}"/>
+                                               attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])],
+                                               'readonly': [('qty_delivered_updateable', '=', False)]}" invisible="1"/>
                                         <field name="qty_invoiced"
-                                               attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])]}"/>
+                                               attrs="{'column_invisible': [('parent.state', 'not in', ['sale', 'done'])]}"
+                                                invisible="1"/>
                                         <field name="qty_to_invoice" invisible="1"/>
                                         <field name="product_uom"
                                                attrs="{'readonly': [('state', 'in', ('sale','done', 'cancel'))]}"
@@ -251,51 +253,6 @@
                                                                                 <field name="currency_id" invisible="1"/>
                                         -->
                                     </tree>
-                                    <kanban class="o_kanban_mobile">
-                                        <field name="product_id"/>
-                                        <field name="product_uom_qty"/>
-                                        <field name="product_uom" groups="product.group_uom"/>
-                                        <field name="price_subtotal"/>
-                                        <field name="price_unit"/>
-                                        <templates>
-                                            <t t-name="kanban-box">
-                                                <div t-attf-class="oe_kanban_card oe_kanban_global_click">
-                                                    <div class="row">
-                                                        <div class="col-xs-8">
-                                                            <strong>
-                                                                <span>
-                                                                    <t t-esc="record.product_id.value"/>
-                                                                </span>
-                                                            </strong>
-                                                        </div>
-                                                        <div class="col-xs-4">
-                                                            <strong>
-                                                                <span class="pull-right text-right">
-                                                                    <t t-esc="record.price_subtotal.value"/>
-                                                                </span>
-                                                            </strong>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-xs-12 text-muted">
-                                                            <span>Quantity:
-                                                                <t t-esc="record.product_uom_qty.value"/>
-                                                                <t t-esc="record.product_uom.value"/>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-xs-12 text-muted">
-                                                            <span>Unit Price:
-                                                                <t t-esc="record.price_unit.value"/>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr/>
-                                            </t>
-                                        </templates>
-                                    </kanban>
                                 </field>
                                 <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
                                     <field name="amount_untaxed" widget="monetary"
@@ -320,9 +277,6 @@
                                         <field name="product_uom_qty"/>
                                         <field name="product_uom"/>
                                         <field name="name"/>
-                                        <field name="location_id"/>
-                                        <field name="location_dest_id"/>
-                                        <field name="move_id"/>
                                         <button name="consume_done" type="object" string="Consume"
                                                 class="oe_highlight" attrs="{'invisible': [('consumed','=',True)]}"
                                                 icon="fa-bars">
