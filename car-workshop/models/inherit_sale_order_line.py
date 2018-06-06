@@ -7,6 +7,7 @@ class SaleOrderLine(models.Model):
 
     repair_id = fields.Many2one('car_workshop.repair')
 
+
     @api.multi
     @api.onchange('product_id')
     def product_id_change(self):
@@ -39,27 +40,13 @@ class SaleOrderLine(models.Model):
             vals['price_unit'] = product.price
         self.update(vals)
 
-
-    @api.model
-    def create(self, vals):
-        rec = super(SaleOrderLine, self).create(vals)
-
-        warehouse = self.env['stock.warehouse'].search([], limit=1)
-        location_id = warehouse.lot_stock_id.id
-        location_dest_id = self.env['stock.location'].search([('usage', '=', 'production')], limit=1).id
-
-        vars = {
-            'product_uom': vals['product_uom'],
-            'product_uom_qty': vals['product_uom_qty'],
-            'consumed': False,
-            'repair_id': rec.order_id.repair_id.id,
-            'location_id': location_id,
-            'location_dest_id': location_dest_id,
-            'product_id': vals['product_id'],
-            'name': vals['name']
-        }
-        print(vars)
-        self.env['car_workshop.material_line'].create(vars)
-
-        return rec
-
+    @api.multi
+    def _action_launch_procurement_rule(self):
+        #Con este método sólo se pretende evitar que genere un albarán.
+        #De esta forma sólo se llama al padre si no proviene de una orden de reparación.
+        #El consumo de esta línea de pedido se realizará desde el apartado de materiales.
+        for record in self:
+            print(record.order_id.repair_id)
+            if not record.order_id.repair_id:
+                super(SaleOrderLine, self)._action_launch_procurement_rule()
+        return True
