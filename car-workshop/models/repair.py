@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.exceptions import UserError
-# from wdb import set_trace as depurador
+#from wdb import set_trace as depurador
 
 
 class Repair(models.Model):
@@ -17,6 +17,7 @@ class Repair(models.Model):
     finished_stage = fields.Boolean("Finished")
     material_line_ids = fields.One2many(comodel_name="car_workshop.material_line", inverse_name="repair_id",
                                     string="Material Lines", auto_join=True)
+
 
     sale_order_id = fields.Many2one('sale.order', delegate=True, required=True, ondelete='restrict')
     repair_line = fields.One2many(comodel_name='sale.order.line', inverse_name='repair_id', string='Order Lines',
@@ -67,8 +68,57 @@ class Repair(models.Model):
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
         rec = super(Repair, self).create(vals)
+
+        #Meto el id de la orden de reparación en el
         rec.sale_order_id.write({'repair_id':rec.id})
+
+        # Metemos lineas de Presupuesto en Materiales
+        order_line_ids = rec.order_line
+        warehouse = self.env['stock.warehouse'].search([], limit=1)
+        location_id = warehouse.lot_stock_id.id
+        location_dest_id = self.env['stock.location'].search([('usage', '=', 'production')], limit=1).id
+        for line in order_line_ids:
+            if line.product_id.type != "service":
+                vars = {
+                    'product_uom': line.product_uom.id,
+                    'product_uom_qty': line.product_uom_qty,
+                    'consumed': False,
+                    'repair_id': rec.id,
+                    'location_id': location_id,
+                    'location_dest_id': location_dest_id,
+                    'product_id': line.product_id.id,
+                    'name': line.name
+                }
+                self.env['car_workshop.material_line'].create(vars)
+
         return rec
+
+    @api.multi
+    def write(self, vals):
+        # Metemos lineas de Presupuesto en Materiales
+        if 'order_line' in vals and vals['order_line']:
+            warehouse = self.env['stock.warehouse'].search([], limit=1)
+            location_id = warehouse.lot_stock_id.id
+            location_dest_id = self.env['stock.location'].search([('usage', '=', 'production')], limit=1).id
+            lines_vars = vals['order_line']
+            for lines in lines_vars:
+                if lines[2]:
+                    mt_line = lines[2]
+                    product_obj = self.env['product.product'].browse([mt_line['product_id']])
+                    if product_obj.type != 'service':
+                        vars = {
+                            'product_uom': mt_line["product_uom"],
+                            'product_uom_qty': mt_line["product_uom_qty"],
+                            'consumed': False,
+                            'repair_id': self.id,
+                            'location_id': location_id,
+                            'location_dest_id': location_dest_id,
+                            'product_id': mt_line["product_id"],
+                            'name': mt_line["name"]
+                        }
+                        self.env['car_workshop.material_line'].create(vars)
+        super(Repair, self).write(vals)
+
 
 
     @api.multi
@@ -101,31 +151,17 @@ class Repair(models.Model):
         return True
 
     @api.multi
-    def _action_confirm(self):
-        for order in self.filtered(lambda order: order.partner_id not in order.message_partner_ids):
-            order.message_subscribe([order.partner_id.id])
-        self.write({
-            'state': 'sale',
-            'confirmation_date': fields.Datetime.now()
-        })
-        
-        if self.env.context.get('send_email'):
-            self.force_quotation_send()
-
-        # create an analytic account if at least an expense product
-        if any([expense_policy != 'no' for expense_policy in self.order_line.mapped('product_id.expense_policy')]):
-            if not self.analytic_account_id:
-                self._create_analytic_account()
-        return self.sale_order_id._action_confirm()
-
-    @api.multi
     def action_confirm(self):
+
         auto_done = self.env['ir.config_parameter'].sudo().get_param('sale.auto_done_setting')
-        for sale in self:
-            for order in sale.sale_order_id:
+        print(auto_done)
+        for repair in self:
+            print(repair)
+            for order in repair.sale_order_id:
+
                 order.state = 'sale'
             if auto_done:
-                sale.sale_order_id.action_done()
+                repair.sale_order_id.action_done()
         return self.sale_order_id.action_confirm()
 
     @api.multi
