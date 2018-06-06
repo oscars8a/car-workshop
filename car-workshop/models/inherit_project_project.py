@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
-from wdb import set_trace as depurador
+
 
 class Project(models.Model):
     _inherit = 'project.project'

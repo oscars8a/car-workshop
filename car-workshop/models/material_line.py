@@ -2,7 +2,6 @@
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.exceptions import UserError
 from odoo.addons import decimal_precision as dp
-from wdb import set_trace as depurador
 
 
 class StockMove(models.Model):

@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import api, fields, models
-from wdb import set_trace as depurador
+
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
