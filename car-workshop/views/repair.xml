@@ -48,6 +48,7 @@
                                 type="object" attrs="{'invisible': [('state', 'not in', ['sent'])]}"/>
                         <button name="action_confirm" string="Confirm Sale" type="object"
                                 attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+
                         <button name="action_cancel" states="draft,sent,sale" type="object" string="Cancel"/>
                         <button name="action_draft" states="cancel" type="object" string="Set to Quotation"/>
                         <button name="action_done" type="object" string="Lock" states="sale"
@@ -75,10 +76,10 @@
                             <button name="action_finised" type="object" class="oe_stat_button" icon="fa-archive">
                                 <field name="finished_stage" widget="boolean_button" string="Finished"
                                        options='{"terminology": {
-                                    "string_true": "Finished",
-                                    "hover_true": "Activate again?",
-                                    "string_false": "Active",
-                                    "hover_false": "End up?"
+                                    "string_true": "Terminado",
+                                    "hover_true": "Re-Activar?",
+                                    "string_false": "Activo",
+                                    "hover_false": "Terminar?"
                                 }}'/>
                             </button>
                         </div>
@@ -252,6 +253,7 @@
                                         <!--
                                                                                 <field name="currency_id" invisible="1"/>
                                         -->
+
                                     </tree>
                                 </field>
                                 <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
@@ -273,16 +275,23 @@
 
                                 <field name="material_line_ids" mode="tree">
                                     <tree string="Material Lines" editable="bottom">
-                                        <field name="product_id" domain="[['type','=','consu']]"/>
+                                        <field name="product_id" domain="[['type','!=','service']]"/>
+                                        <field name="name"/>
                                         <field name="product_uom_qty"/>
                                         <field name="product_uom"/>
-                                        <field name="name"/>
+                                        <field name="location_id" invisible="1"/>
+                                        <field name="location_dest_id" invisible="1"/>
+                                        <field name="move_id" invisible="1"/>
                                         <button name="consume_done" type="object" string="Consume"
                                                 class="oe_highlight" attrs="{'invisible': [('consumed','=',True)]}"
-                                                icon="fa-bars">
+                                                icon="fa-cubes">
                                             <field name="consumed"/>
                                         </button>
-
+                                        <button name="to_quotation_done" type="object" string="To Quotation"
+                                                class="oe_highlight" attrs="{'invisible': [('to_quotation','=',True)]}"
+                                                icon="fa-credit-card-alt">
+                                            <field name="to_quotation"/>
+                                        </button>
                                     </tree>
                                 </field>
                             </page>

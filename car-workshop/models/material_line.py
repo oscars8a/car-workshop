@@ -13,8 +13,8 @@ class StockMove(models.Model):
 class MaterialLine(models.Model):
     _name = "car_workshop.material_line"
 
-    repair_id = fields.Many2one(comodel_name="car_workshop.repair", string="repair_id", required=True, ondelete="cascade",
-                               index=True, copy=False)
+    repair_id = fields.Many2one(comodel_name="car_workshop.repair", string="repair_id", required=True,
+                                ondelete="cascade", index=True, copy=False)
     location_id = fields.Many2one('stock.location', 'Source Location', index=True, required=True)
     location_dest_id = fields.Many2one('stock.location', 'Dest. Location', index=True, required=True)
     move_id = fields.Many2one('stock.move', 'Inventory Move', copy=False, readonly=True)
@@ -25,6 +25,7 @@ class MaterialLine(models.Model):
                                    required=True)
     product_uom = fields.Many2one('product.uom', 'Product Unit of Measure', required=True)
     consumed = fields.Boolean(default=False)
+    to_quotation = fields.Boolean(default=False)
 
 
     @api.multi
@@ -57,6 +58,24 @@ class MaterialLine(models.Model):
             record.consumed = True
             print(record.consumed)
 
+    @api.multi
+    def to_quotation_done(self):
+        for record in self:
+            vals = {
+                'order_id': record.repair_id.sale_order_id.id,
+                'product_uom_qty': record.product_uom_qty,
+                'price_unit': record.product_id.lst_price,
+                'product_id': record.product_id.id,
+                'layout_category_id': False,
+                'product_uom': record.product_uom.id,
+                'discount': 0,
+                'name': record.name,
+                'tax_id': record.product_id.taxes_id,
+                'customer_lead': 0,
+                'sequence': 10
+            }
+            self.env['sale.order.line'].create(vals)
+            record.to_quotation = True
 
     @api.onchange('repair_id', 'product_id', 'product_uom_qty')
     def onchange_product_id(self):

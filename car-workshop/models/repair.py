@@ -83,6 +83,7 @@ class Repair(models.Model):
                     'product_uom': line.product_uom.id,
                     'product_uom_qty': line.product_uom_qty,
                     'consumed': False,
+                    'to_quotation': True,
                     'repair_id': rec.id,
                     'location_id': location_id,
                     'location_dest_id': location_dest_id,
@@ -90,7 +91,6 @@ class Repair(models.Model):
                     'name': line.name
                 }
                 self.env['car_workshop.material_line'].create(vars)
-
         return rec
 
     @api.multi
@@ -110,6 +110,7 @@ class Repair(models.Model):
                             'product_uom': mt_line["product_uom"],
                             'product_uom_qty': mt_line["product_uom_qty"],
                             'consumed': False,
+                            'to_quotation': True,
                             'repair_id': self.id,
                             'location_id': location_id,
                             'location_dest_id': location_dest_id,
