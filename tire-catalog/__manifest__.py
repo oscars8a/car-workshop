@@ -17,7 +17,6 @@
         'wizards/tire_wizard_view.xml',
         'views/inherit_product_product.xml',
         'views/tire_brand.xml',
-        'security/car-workshop_security.xml',
         'security/ir.model.access.csv',
     ],
     'demo': [

@@ -2,7 +2,6 @@ from odoo import api, fields, models,_
 
 
 class SaleOrderLine(models.Model):
-
     _inherit = 'sale.order.line'
 
     repair_id = fields.Many2one('car_workshop.repair')
