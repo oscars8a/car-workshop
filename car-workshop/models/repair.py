@@ -31,13 +31,12 @@ class Repair(models.Model):
     project_task_id = fields.Many2one('project.task', required=True, ondelete='restrict')
     stage_id = fields.Many2one(group_expand='_read_group_stage_ids', related="project_task_id.stage_id", store=True)
     description = fields.Text(string="Descripción")
-    project_id = fields.Many2one(related="project_task_id.project_id", store=True)
+    project_id = fields.Many2one(related="project_task_id.project_id", store=True, required=True)
     user_id = fields.Many2one(related="project_task_id.user_id", store=True)
     kanban_state = fields.Selection(related="project_task_id.kanban_state", default='normal', store=True)
     date_start = fields.Datetime(related="project_task_id.date_start", string="Entry Date", store=True)
     date_deadline = fields.Date(related="project_task_id.date_deadline", string="Deadline Date", store=True)
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
-    color = fields.Integer(related="project_task_id.color")
     timesheet_ids = fields.One2many(related="project_task_id.timesheet_ids")
     planned_hours = fields.Float(related="project_task_id.planned_hours")
     total_hours_spent = fields.Float(related="project_task_id.total_hours_spent")
@@ -46,6 +45,16 @@ class Repair(models.Model):
     children_hours = fields.Float(related="project_task_id.children_hours")
     remaining_hours = fields.Float(related="project_task_id.remaining_hours")
     priority = fields.Selection(related="project_task_id.priority")
+
+    color = fields.Integer('Color Index', compute="change_colore_on_kanban")
+
+    @api.depends('finished_stage')
+    def change_colore_on_kanban(self):
+        for record in self:
+            color = 0
+            if record.finished_stage:
+                color = 1 #Rojo
+            record.color = color
 
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):
