@@ -104,7 +104,7 @@
                                             <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
                                                 <td>
                                                     <span t-esc="amount_by_group[0]"/>
-                                                    <span>&amp;nbsp;<span>on</span>
+                                                    <span>&amp;nbsp;<span>en</span>
                                                         <t t-esc="amount_by_group[4]"/>
                                                     </span>
                                                 </td>
@@ -142,12 +142,6 @@
                 </div>
             </t>
         </template>
-
-    <!--<template id="cw_report_invoice_document" inherit_id="account.report_invoice_document_with_payments" primary="True">-->
-    <!--<xpath expr="//div[@name='invoice_address']" position="replace">-->
-    <!--PRUEBAS-->
-    <!--</xpath>-->
-    <!--</template>-->
 
     <!--Invoice Main Template-->
     <template id="cw_report_invoice">

@@ -110,7 +110,7 @@
         <!--Products Menu-->
         <menuitem id="car_vproducts_menu" name="Products"
                   parent="car_masters_menus"
-                  sequence="1" action="action_car_vproducts_config"/>
+                  sequence="4" action="action_car_vproducts_config"/>
 
 
     </data>

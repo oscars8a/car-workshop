@@ -147,7 +147,6 @@
             <field name="code">
 obj_project = env['project.project']
 action = obj_project._action_redirect_area()
-
             </field>
         </record>
 
