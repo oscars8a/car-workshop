@@ -5,7 +5,7 @@
         <record id="partner_vehicles" model="ir.actions.act_window">
             <field name="name">Vehicles</field>
             <field name="res_model">fleet.vehicle</field>
-            <field name="domain">[('customer_id', '=', active_id)]</field>
+            <field name="context">{'search_default_customer_id': active_id}</field>
             <field name="view_mode">kanban,form,tree</field>
             <field name="view_type">form</field>
             <field name="view_ids"
@@ -19,7 +19,7 @@
         <record id="partner_repairs" model="ir.actions.act_window">
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
-            <field name="domain">[('partner_id', '=', active_id)]</field>
+            <field name="context">{'search_default_partner_id': active_id}</field>
             <field name="view_mode">kanban,form,tree</field>
             <field name="view_type">form</field>
             <field name="view_ids"

@@ -5,7 +5,7 @@
         <record id="vehicle_repairs" model="ir.actions.act_window">
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
-            <field name="domain">[('vehicle_id', '=', active_id)]</field>
+            <field name="context">{'search_default_vehicle_id': active_id}</field>
             <field name="view_mode">kanban,form,tree</field>
             <field name="view_type">form</field>
             <field name="view_ids"
@@ -55,7 +55,10 @@
                         </div>
                         <group col="2" string="General Properties">
                             <group>
-                                <field name="customer_id" domain="[('customer','=',1)]"/>
+                                <field name="customer_id" domain="[('customer','=',1)]"
+                                       context="{'search_default_customer':1}"/>
+
+
                                 <field name="location"/>
                                 <field name="vin_sn"/>
                                 <field name="model_year"/>
@@ -68,9 +71,9 @@
                                     <field name="odometer"/>
                                     <field name="odometer_unit"/>
                                 </div>
-                                <field name="acquisition_date"/>
-                                <field name="car_value"/>
-                                <field name="residual_value"/>
+                                <field name="acquisition_date" invisible="1"/>
+                                <field name="car_value" invisible="1"/>
+                                <field name="residual_value" invisible="1"/>
                             </group>
                         </group>
                         <group col="2">
@@ -151,6 +154,19 @@
             </field>
         </record>
 
+        <record id="fleet_vehicle_view_search" model="ir.ui.view">
+            <field name="name">fleet.vehicle.search</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
+            <field name="arch" type="xml">
+
+                <field name="driver_id" position="before">
+                    <field name="customer_id"/>
+                </field>
+
+            </field>
+        </record>
+
         <!--Action Vehicles Menu-->
         <record model="ir.actions.act_window" id="action_car_vehicles_config">
             <field name="name">Vehicles</field>
@@ -168,7 +184,7 @@
         <!--Vehicles Menu-->
         <menuitem id="car_vehicles_menu" name="Vehicles"
                   parent="car_masters_menus"
-                  sequence="5" action="action_car_vehicles_config"/>
+                  sequence="3" action="action_car_vehicles_config"/>
 
         <!--Action Vehicle Models Menu-->
         <record model="ir.actions.act_window" id="action_car_vmodels_config">
