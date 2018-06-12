@@ -69,7 +69,11 @@ class Repair(models.Model):
         if vals.get('name'):
             vals['repair_title'] = str(vals['name'])
             new_name = self.env['ir.sequence'].search([('code','=','sale.order')])[0]
-            vals['name'] = "SO"+str(new_name.number_next_actual)
+            digit = int(new_name.number_next_actual)
+            if digit < 10:
+                vals['name'] = "SO00"+str(new_name.number_next_actual)
+            elif digit < 100:
+                vals['name'] = "SO0" + str(new_name.number_next_actual)
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
         rec_task = self.project_task_id.create(vals).id
