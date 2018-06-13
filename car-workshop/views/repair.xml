@@ -71,7 +71,7 @@
                                 <field name="finished_stage" widget="boolean_button" string="Finished"
                                        options='{"terminology": {
                                     "string_true": "Terminado",
-                                    "hover_true": "Re-Activar?",
+                                    "hover_true": "Activar?",
                                     "string_false": "Activo",
                                     "hover_false": "Terminar?"
                                 }}'/>
