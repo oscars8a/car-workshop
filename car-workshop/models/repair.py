@@ -74,6 +74,8 @@ class Repair(models.Model):
                 vals['name'] = "SO00"+str(new_name.number_next_actual)
             elif digit < 100:
                 vals['name'] = "SO0" + str(new_name.number_next_actual)
+            else:
+                vals['name'] = "SO" + str(new_name.number_next_actual)
         if not vals.get('date_start'):
             vals['date_start'] = fields.Date.context_today(self)
         rec_task = self.project_task_id.create(vals).id
