@@ -12,7 +12,8 @@ class SaleOrderLine(models.Model):
         result = super(SaleOrderLine, self).product_id_change()
         vals = {}
 
-        self.order_id = self._context['order_id']
+        if 'order_id' in self._context.keys():
+            self.order_id = self._context['order_id']
         if not self.product_uom or (self.product_id.uom_id.id != self.product_uom.id):
             vals['product_uom'] = self.product_id.uom_id
             vals['product_uom_qty'] = 1.0
