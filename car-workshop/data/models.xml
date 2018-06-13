@@ -46,6 +46,10 @@
             <field name="name">Toledo</field>
             <field name="brand_id" ref="brand_seat"/>
         </record>
+        <record id="model_panda" model="fleet.vehicle.model">
+            <field name="name">Panda</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
 
     </data>
 </odoo>
