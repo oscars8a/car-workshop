@@ -58,7 +58,7 @@
         <!--Customers Menus-->
         <menuitem id="car_masters_menus" name="Masters"
                   parent="main_car_workshop_menu"
-                  sequence="4"/>
+                  sequence="2"/>
 
         <!--Vendors Menu-->
         <menuitem id="car_vendors_menu" name="Vendors"

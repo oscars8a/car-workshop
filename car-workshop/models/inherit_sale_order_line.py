@@ -1,5 +1,5 @@
 from odoo import api, fields, models,_
-from wdb import set_trace as depurador
+
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -49,13 +49,3 @@ class SaleOrderLine(models.Model):
             if not record.order_id.repair_id:
                 super(SaleOrderLine, self)._action_launch_procurement_rule()
         return True
-
-    # @api.onchange('product_uom_qty', 'product_uom', 'route_id')
-    # def _onchange_product_id_check_availability(self):
-    #
-    #     print('HI ODOO DEVELOPER')
-    #     print(self.order_id.id)
-    #     print(self.order_id.warehouse_id.id)
-    #     res = super(SaleOrderLine, self)._onchange_product_id_check_availability()
-    #     print(res)
-    #     return res

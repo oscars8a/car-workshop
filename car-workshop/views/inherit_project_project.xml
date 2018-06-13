@@ -126,19 +126,6 @@
             </field>
         </record>
 
-
-
-        <!--Action Areas Menu-->
-        <!--<record id="action_car_areas_menu" model="ir.actions.act_window">-->
-            <!--<field name="name">Areas</field>-->
-            <!--<field name="res_model">project.project</field>-->
-            <!--<field name="view_type">form</field>-->
-            <!--<field name="domain">[("car_work","=",True)]</field>-->
-            <!--<field name="view_mode">kanban,form,tree</field>-->
-            <!--<field name="view_id" ref="car-workshop_project_view_kanban"/>-->
-            <!--<field name="target">main</field>-->
-        <!--</record>-->
-
         <!--Hacer que se pueda elegir si va a redirigir a la vista kanban-->
         <record id="action_prueba_unique_area" model="ir.actions.server">
             <field name="name">Areas, Redirect</field>
