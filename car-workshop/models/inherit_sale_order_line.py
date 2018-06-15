@@ -18,7 +18,6 @@ class SaleOrderLine(models.Model):
             else:
                 self.order_id = self.env["sale.order"].browse([models.NewId()])
                 self.order_id.warehouse_id = self.env['stock.warehouse'].search([], limit=1)
-                print(self.order_id.warehouse_id.name)
 
         if not self.product_uom or (self.product_id.uom_id.id != self.product_uom.id):
             vals['product_uom'] = self.product_id.uom_id

@@ -56,7 +56,6 @@ class MaterialLine(models.Model):
             record.write({'move_id': move.id})
             move._action_done()
             record.consumed = True
-            print(record.consumed)
 
     @api.multi
     def to_quotation_done(self):

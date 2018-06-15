@@ -170,11 +170,8 @@ class Repair(models.Model):
     def action_confirm(self):
 
         auto_done = self.env['ir.config_parameter'].sudo().get_param('sale.auto_done_setting')
-        print(auto_done)
         for repair in self:
-            print(repair)
             for order in repair.sale_order_id:
-
                 order.state = 'sale'
             if auto_done:
                 repair.sale_order_id.action_done()
