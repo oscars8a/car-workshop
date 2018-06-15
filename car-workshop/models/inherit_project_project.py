@@ -9,11 +9,7 @@ class Project(models.Model):
     def _compute_repair_count(self):
         task_data = self.env['car_workshop.repair'].read_group(
             [('finished_stage', '=', False)], ['project_id'], ['project_id'])
-        print(task_data)
-
         result = dict((data['project_id'][0], data['project_id_count']) for data in task_data)
-        print(result)
-
         for project in self:
             project.repair_count = result.get(project.id, 0)
 
