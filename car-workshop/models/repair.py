@@ -270,6 +270,7 @@ class Repair(models.Model):
 
     @api.onchange('project_id')
     def _onchange_project(self):
+        print(self.id)
         if self.project_id:
             if self.project_id not in self.stage_id.project_ids:
                 self.stage_id = self.project_task_id.stage_find(self.project_id.id, [('fold', '=', False)])
