@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 11:10+0000\n"
-"PO-Revision-Date: 2018-06-08 13:27+0200\n"
+"POT-Creation-Date: 2018-06-21 07:56+0000\n"
+"PO-Revision-Date: 2018-06-21 10:21+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,9 +19,125 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #. module: car-workshop
+#: model:mail.template,body_html:car-workshop.email_template_cw_admission_sheet
+msgid ""
+"\n"
+"                <p>Dear ${object.partner_id.name}</p>\n"
+"            "
+msgstr ""
+"\n"
+"                <p>Estimado ${object.partner_id.name}</p>\n"
+"            "
+
+#. module: car-workshop
+#: model:mail.template,body_html:car-workshop.email_template_cw_quotation
+msgid ""
+"\n"
+"% set access_action = object.with_context(force_website=True).get_access_action()\n"
+"% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
+"% set access_url = is_online and object.get_mail_url() or ''\n"
+"\n"
+"<p>Dear ${object.partner_id.name}\n"
+"\n"
+"% if object.partner_id.parent_id:\n"
+"    (<i>${object.partner_id.parent_id.name}</i>)\n"
+"% endif\n"
+",</p>\n"
+"<p>\n"
+"Here is\n"
+"% if object.origin:\n"
+"(with reference: ${object.origin} )\n"
+"% endif\n"
+"amounting in <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
+"from ${object.company_id.name}.\n"
+"</p>\n"
+"\n"
+"% if access_url :\n"
+"    <br/><br/>\n"
+"    <center>\n"
+"        <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+"        <br/><br/><br/>\n"
+"        <span style=\"color:#888888\">(or view attached PDF)</span>\n"
+"    </center>\n"
+"    <br/>\n"
+"% endif\n"
+"\n"
+"<p>You can reply to this email if you have any questions.</p>\n"
+"<p>Thank you,</p>\n"
+"\n"
+"<p style=\"color:#888888;\">\n"
+"% if object.user_id and object.user_id.signature:\n"
+"    ${object.user_id.signature | safe}\n"
+"% endif\n"
+"</p>\n"
+"            "
+msgstr ""
+"\n"
+"% set access_action = object.with_context(force_website=True).get_access_action()\n"
+"% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
+"% set access_url = is_online and object.get_mail_url() or ''\n"
+"\n"
+"<p>Estimado ${object.partner_id.name}\n"
+"\n"
+"% if object.partner_id.parent_id:\n"
+"    (<i>${object.partner_id.parent_id.name}</i>)\n"
+"% endif\n"
+",</p>\n"
+"<p>\n"
+"Le enviamos el presupuesto\n"
+"% if object.origin:\n"
+"(con la referencia: ${object.origin} )\n"
+"% endif\n"
+"con un importe de<strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
+"desde ${object.company_id.name}.\n"
+"</p>\n"
+"\n"
+"% if access_url :\n"
+"    <br/><br/>\n"
+"    <center>\n"
+"        <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+"        <br/><br/><br/>\n"
+"        <span style=\"color:#888888\">(or view attached PDF)</span>\n"
+"    </center>\n"
+"    <br/>\n"
+"% endif\n"
+"\n"
+"<p>Para cualquier duda puede responder a este email.</p>\n"
+"<p>Muchas gracias,</p>\n"
+"\n"
+"<p style=\"color:#888888;\">\n"
+"% if object.user_id and object.user_id.signature:\n"
+"    ${object.user_id.signature | safe}\n"
+"% endif\n"
+"</p>\n"
+"            "
+
+#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_invoice_count
 msgid "# of Invoices"
 msgstr "# de Facturas"
+
+#. module: car-workshop
+#: model:mail.template,subject:car-workshop.email_template_cw_quotation
+msgid ""
+"${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })\n"
+"            "
+msgstr ""
+"${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })\n"
+"            "
+
+#. module: car-workshop
+#: model:mail.template,subject:car-workshop.email_template_cw_admission_sheet
+msgid ""
+"${object.company_id.name} Admission Sheet (Ref ${object.name or 'n/a' })\n"
+"            "
+msgstr ""
+"${object.company_id.name} Admission Sheet (Ref ${object.name or 'n/a' })\n"
+"            "
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_quotation_document
@@ -30,7 +146,7 @@ msgstr "&amp;bull;"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.cw_report_invoice_document
-msgid "&amp;nbsp;<span>on</span>"
+msgid "&amp;nbsp;<span>en</span>"
 msgstr "&amp;nbsp;<span>en</span>"
 
 #. module: car-workshop
@@ -227,7 +343,7 @@ msgid "Analytic Account"
 msgstr "Cuenta analítica"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/inherit_project_project.py:29
+#: code:addons/car-workshop/models/inherit_project_project.py:30
 #: model:ir.ui.menu,name:car-workshop.car_areas_menu
 #: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
 #, python-format
@@ -287,18 +403,36 @@ msgstr "Taller de reparación"
 #. module: car-workshop
 #: model:res.groups,name:car-workshop.group_car-workshop_manager
 msgid "Car Workshop Manager"
-msgstr "Responsable Taller"
+msgstr "Car Workshop Manager"
 
 #. module: car-workshop
 #: model:res.groups,name:car-workshop.group_car-workshop_operator
 msgid "Car Workshop Operator"
-msgstr "Operario Taller"
+msgstr "Car Workshop Operator"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_image_client_vehicle
 #: model:ir.model.fields,field_description:car-workshop.field_fleet_vehicle_image_client_vehicle
 msgid "Car image"
 msgstr "Imagen del coche"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
+msgid ""
+"Check this for install SDi Tire Catalog. A complete module to specify a product as a tire.\n"
+"                                    And filter it."
+msgstr ""
+"Check this for install SDi Tire Catalog. A complete module to specify a product as a tire.\n"
+"                                    And filter it."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
+msgid ""
+"Check this to install SDi Aesthetics changes for spanish version. This module change\n"
+"                                    the vehicle model form."
+msgstr ""
+"Check this to install SDi Aesthetics changes for spanish version. This module change\n"
+"                                    the vehicle model form."
 
 #. module: sale_management
 #. openerp-web
@@ -373,7 +507,7 @@ msgstr "Consumos y Facturas"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_consumed
 msgid "Consumed"
-msgstr "Consumido"
+msgstr "Consumed"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_res_partner
@@ -496,7 +630,7 @@ msgstr "Desc.(%)"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_display_name
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre a Mostrar"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -574,21 +708,6 @@ msgid "Fiscal Position"
 msgstr "Posición fiscal"
 
 #. module: car-workshop
-#: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
-msgid ""
-"Funcionalidad en TEST.<br/>\n"
-"                                    Utilize la funcionalidad \"Unique Area 'Repair and Revision'\".<br/>\n"
-"                                    Te instala el modulo 'sdi_unique_area'. Este modulo añade un menú\n"
-"                                    'Unique Area' que puedes ver en el archivo unque_area.xml y que llama al action que hay definido\n"
-"                                    encima."
-msgstr ""
-"Funcionalidad en TEST.<br/>\n"
-"                                    Utilize la funcionalidad \"Unique Area 'Repair and Revision'\".<br/>\n"
-"                                    Te instala el modulo 'sdi_unique_area'. Este modulo añade un menú\n"
-"                                    'Unique Area' que puedes ver en el archivo unque_area.xml y que llama al action que hay definido\n"
-"                                    encima."
-
-#. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
 msgid "General Properties"
 msgstr "Propiedades generales"
@@ -596,12 +715,17 @@ msgstr "Propiedades generales"
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_search
 msgid "Group By"
-msgstr "Agrupar Por"
+msgstr "Agrupar por"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
 msgid "Hoja de Admisión #"
 msgstr "Hoja de Admisión #"
+
+#. module: car-workshop
+#: model:mail.template,report_name:car-workshop.email_template_cw_admission_sheet
+msgid "Hoja de Admisión - ${object.name}"
+msgstr "Hoja de Admisión - ${object.name}"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_effective_hours
@@ -649,6 +773,16 @@ msgstr "Información sobre un vehículo"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_planned_hours
 msgid "Initially Planned Hours"
 msgstr "Horas iniciales planificadas"
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_module_aesthetic_changes_spanish
+msgid "Install SDi Aesthetics changes for spanish version."
+msgstr "Install SDi Aesthetics changes for spanish version."
+
+#. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_module_tire_catalog
+msgid "Install SDi Tire Catalog module."
+msgstr "Install SDi Tire Catalog module."
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_incoterm
@@ -745,19 +879,19 @@ msgstr "Estado de kanban"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line___last_update
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última Modificación en"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última Actualización por"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última Actualización el"
 
 #. module: sale_management
 #. openerp-web
@@ -900,6 +1034,11 @@ msgstr "Precio Total"
 #: model:ir.ui.view,arch_db:car-workshop.report_quotation_document
 msgid "Precio Unidad"
 msgstr "Precio Unidad"
+
+#. module: car-workshop
+#: model:mail.template,report_name:car-workshop.email_template_cw_quotation
+msgid "Presupuesto - ${object.name}"
+msgstr "Presupuesto - ${object.name}"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.cw_report_invoice_document
@@ -1053,7 +1192,7 @@ msgid "Repair Title"
 msgstr "Título de la reparación"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/inherit_project_project.py:41
+#: code:addons/car-workshop/models/inherit_project_project.py:42
 #: model:ir.actions.act_window,name:car-workshop.action_car_project_kanban_to_repair_kanban
 #: model:ir.actions.act_window,name:car-workshop.partner_repairs
 #: model:ir.actions.act_window,name:car-workshop.vehicle_repairs
@@ -1130,6 +1269,11 @@ msgstr "Token de seguridad"
 #, python-format
 msgid "Select a product, or create a new one on the fly. The product will define the default sales price (that you can change), taxes and description automatically."
 msgstr "Seleccione un producto o cree uno nuevo sobre la marcha. El producto determinará el precio de venta por defecto (que usted puede cambiar), los impuestos y la descripción automáticamente."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Send Quotation by Email"
+msgstr "Enviar Presupuesto por Correo"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
@@ -1389,7 +1533,7 @@ msgid "Write the name of your customer to create one on the fly, or select an ex
 msgstr "Escriba el nombre de su cliente para crear uno sobre la marcha, o seleccione uno existente."
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:153
+#: code:addons/car-workshop/models/repair.py:159
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
