@@ -35,6 +35,7 @@
         'data/branches.xml',
         'data/models.xml',
         'data/project_initial.xml',
+        'data/mail_template_data.xml',
         'views/inherit_res_partner.xml',
         'views/inherit_res_config_settings.xml',
         'views/inherit_sale.xml',

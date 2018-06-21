@@ -182,8 +182,45 @@ class Repair(models.Model):
         return self.env.ref('car-workshop.action_report_quotation').report_action(self, data=None)
 
     @api.multi
-    def action_quotation_send(self):
-        return self.sale_order_id.action_quotation_send()
+    def action_cw_quotation_send(self):
+        '''
+                This function opens a window to compose an email, with the carworshop repair quotation
+                template message loaded by default
+        '''
+        self.ensure_one()
+        ir_model_data = self.env['ir.model.data']
+        try:
+            # Hay que definir una plantilla para mostrar en el mensaje.
+            # Hay que hacer una plantilla asociada a la anterior para definir
+            template_id = ir_model_data.get_object_reference('car-workshop', 'email_template_cw_quotation')[1]
+        except ValueError:
+            template_id = False
+        try:
+            # Que narices es esto?
+            compose_form_id = ir_model_data.get_object_reference('mail', 'email_compose_message_wizard_form')[1]
+        except ValueError:
+            compose_form_id = False
+        ctx = {
+            'default_model': 'car_workshop.repair',
+            'default_res_id': self.ids[0],
+            'default_use_template': bool(template_id),
+            'default_template_id': template_id,
+            'default_composition_mode': 'comment',
+            'mark_so_as_sent': True,
+            'custom_layout': "sale.mail_template_data_notification_email_sale_order",
+            'force_email': True,
+            'force_website': True,
+        }
+        return {
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'mail.compose.message',
+            'views': [(compose_form_id, 'form')],
+            'view_id': compose_form_id,
+            'target': 'new',
+            'context': ctx,
+        }
 
     @api.multi
     def action_cancel(self):
