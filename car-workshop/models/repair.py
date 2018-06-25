@@ -111,6 +111,7 @@ class Repair(models.Model):
     @api.multi
     def write(self, vals):
         # Metemos lineas de Presupuesto en Materiales
+
         if 'order_line' in vals and vals['order_line']:
             warehouse = self.env['stock.warehouse'].search([], limit=1)
             location_id = warehouse.lot_stock_id.id
@@ -119,22 +120,22 @@ class Repair(models.Model):
             for lines in lines_vars:
                 if lines[2]:
                     mt_line = lines[2]
-                    product_obj = self.env['product.product'].browse([mt_line['product_id']])
-                    if product_obj.type != 'service':
-                        vars = {
-                            'product_uom': mt_line["product_uom"],
-                            'product_uom_qty': mt_line["product_uom_qty"],
-                            'consumed': False,
-                            'to_quotation': True,
-                            'repair_id': self.id,
-                            'location_id': location_id,
-                            'location_dest_id': location_dest_id,
-                            'product_id': mt_line["product_id"],
-                            'name': mt_line["name"]
-                        }
-                        self.env['car_workshop.material_line'].create(vars)
+                    if 'product_id' in mt_line.keys() and mt_line['product_id']:
+                        product_obj = self.env['product.product'].browse([mt_line['product_id']])
+                        if product_obj.type != 'service':
+                            vars = {
+                                'product_uom': mt_line["product_uom"],
+                                'product_uom_qty': mt_line["product_uom_qty"],
+                                'consumed': False,
+                                'to_quotation': True,
+                                'repair_id': self.id,
+                                'location_id': location_id,
+                                'location_dest_id': location_dest_id,
+                                'product_id': mt_line["product_id"],
+                                'name': mt_line["name"]
+                            }
+                            self.env['car_workshop.material_line'].create(vars)
         super(Repair, self).write(vals)
-
 
 
     @api.multi
