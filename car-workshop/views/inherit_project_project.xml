@@ -111,11 +111,6 @@
                                                 <t t-esc="record.repair_count.value"/>
                                             </span>
                                             <span class="o_label">Repairs</span>
-                                            <a t-if="record.task_needaction_count.raw_value" class="o_needaction"
-                                               name="134" type="action"
-                                               context="{'search_default_message_needaction': 1}">
-                                                <t t-esc="record.task_needaction_count.raw_value"/>
-                                            </a>
                                         </div>
                                     </a>
                                 </div>
