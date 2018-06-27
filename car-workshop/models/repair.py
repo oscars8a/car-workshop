@@ -285,7 +285,7 @@ class Repair(models.Model):
         if vehicles_count == 1:
             self.vehicle_id = vehicles_list[0]
         elif vehicles_count > 1:
-            pass
+            self.vehicle_id = False
 
 
     @api.multi
