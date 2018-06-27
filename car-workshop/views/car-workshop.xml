@@ -28,7 +28,7 @@
 
         <!--Action Vendor Menu-->
         <record model="ir.actions.act_window" id="action_car_vendors_config">
-            <field name="name">Masters</field>
+            <field name="name">Vendors</field>
             <field name="res_model">res.partner</field>
             <field name="view_type">form</field>
             <field name="view_mode">kanban,form,tree</field>

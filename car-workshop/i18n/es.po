@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* car-workshop
 # 	* sale_management
+# 	* car-workshop
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-21 07:56+0000\n"
-"PO-Revision-Date: 2018-06-21 12:33+0200\n"
+"POT-Creation-Date: 2018-06-27 10:18+0000\n"
+"PO-Revision-Date: 2018-06-27 12:26+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid ""
 "\n"
 "% set access_action = object.with_context(force_website=True).get_access_action()\n"
-"% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"% set is_online = True\n"
 "% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
 "% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
 "% set access_url = is_online and object.get_mail_url() or ''\n"
@@ -76,24 +76,24 @@ msgid ""
 msgstr ""
 "\n"
 "% set access_action = object.with_context(force_website=True).get_access_action()\n"
-"% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"% set is_online = True\n"
 "% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
 "% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
 "% set access_url = is_online and object.get_mail_url() or ''\n"
 "\n"
-"<p>Estimado ${object.partner_id.name}\n"
+"<p>Dear ${object.partner_id.name}\n"
 "\n"
 "% if object.partner_id.parent_id:\n"
 "    (<i>${object.partner_id.parent_id.name}</i>)\n"
 "% endif\n"
 ",</p>\n"
 "<p>\n"
-"Le enviamos el presupuesto\n"
+"Here is\n"
 "% if object.origin:\n"
-"(con la referencia: ${object.origin} )\n"
+"(with reference: ${object.origin} )\n"
 "% endif\n"
-"con un importe de <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
-"desde ${object.company_id.name}.\n"
+"amounting in <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
+"from ${object.company_id.name}.\n"
 "</p>\n"
 "\n"
 "% if access_url :\n"
@@ -106,8 +106,8 @@ msgstr ""
 "    <br/>\n"
 "% endif\n"
 "\n"
-"<p>Para cualquier duda puede responder a este email.</p>\n"
-"<p>Muchas gracias,</p>\n"
+"<p>You can reply to this email if you have any questions.</p>\n"
+"<p>Thank you,</p>\n"
 "\n"
 "<p style=\"color:#888888;\">\n"
 "% if object.user_id and object.user_id.signature:\n"
@@ -156,14 +156,14 @@ msgstr "&amp;nbsp;<span>en</span>&amp;nbsp;"
 
 #. module: sale_management
 #. openerp-web
-#: code:addons/sale_management/static/src/js/tour.js:79
+#: code:addons/sale_management/static/src/js/tour.js:81
 #, python-format
 msgid "<b>Invite salespeople or managers</b> via email.<br/><i>Enter one email per line.</i>"
 msgstr "<b>Invite a comerciales o responsables</b> vía correo electrónico.<br/><i>Introduzca un correo electrónico por línea.</i>"
 
 #. module: sale_management
 #. openerp-web
-#: code:addons/sale_management/static/src/js/tour.js:60
+#: code:addons/sale_management/static/src/js/tour.js:62
 #, python-format
 msgid "<p><b>Print this quotation.</b> If not yet done, you will be requested to set your company data and to select a document layout.</p>"
 msgstr "<p><b>Imprima este presupuesto.</b> Si aún no está listo, se le solicitará que introduzca los datos de su empresa y que seleccione el diseño del documento.</p>"
@@ -369,7 +369,7 @@ msgstr "BASTIDOR"
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_collection_customer
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_in_progress
 #: model:project.task.type,legend_blocked:car-workshop.project_car-workshop_stage_on_hold
-msgid "Bloqueada"
+msgid "Blocked"
 msgstr "Bloqueada"
 
 #. module: car-workshop
@@ -478,7 +478,7 @@ msgstr "Configuración"
 
 #. module: sale_management
 #. openerp-web
-#: code:addons/sale_management/static/src/js/tour.js:75
+#: code:addons/sale_management/static/src/js/tour.js:77
 #, python-format
 msgid "Configuration options are available in the Settings app."
 msgstr "Las opciones de configuración están disponibles en la aplicación de Configuración."
@@ -507,14 +507,14 @@ msgstr "Consumos y Facturas"
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_consumed
 msgid "Consumed"
-msgstr "Consumed"
+msgstr "Consumido"
 
 #. module: car-workshop
 #: model:ir.model,name:car-workshop.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
 
-#. modules: car-workshop, sale_management
+#. modules: sale_management, car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 #: model:ir.ui.view,arch_db:sale_management.sale_order_view_form
 msgid "Create Invoice"
@@ -531,12 +531,14 @@ msgid "Create and View Invoices"
 msgstr "Crear y ver facturas"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_create_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_create_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_create_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_create_date
 msgid "Created on"
@@ -576,6 +578,11 @@ msgid "Deadline Date"
 msgstr "Fecha de Entrega"
 
 #. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_kanban
+msgid "Deadline Date:"
+msgstr "Fecha de Entrega:"
+
+#. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Delivered Quantity"
 msgstr "Cantidad Entregada"
@@ -599,6 +606,11 @@ msgstr "Órdenes de entrega"
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_partner_shipping_id
 msgid "Delivery address for current sales order."
 msgstr "Dirección de envío para el pedido de ventas actual."
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+msgid "Describe the incidence."
+msgstr "Describe la incidencia."
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_description
@@ -630,19 +642,12 @@ msgstr "Desc.(%)"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_display_name
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_display_name
 msgid "Display Name"
-msgstr "Nombre a Mostrar"
+msgstr "Nombre mostrado"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Duration"
 msgstr "Duración"
-
-#. module: car-workshop
-#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_collection_customer
-#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_in_progress
-#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_on_hold
-msgid "En Proceso"
-msgstr "En Proceso"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_fleet_vehicle_view_form
@@ -654,6 +659,11 @@ msgstr "Opciones del motor"
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_search
 msgid "Entry Date"
 msgstr "Fecha de Entrada"
+
+#. module: car-workshop
+#: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_kanban
+msgid "Entry Date:"
+msgstr "Fecha de Entrada:"
 
 #. module: car-workshop
 #: model:ir.model.fields,help:car-workshop.field_car_workshop_repair_planned_hours
@@ -733,6 +743,7 @@ msgid "Hours Spent"
 msgstr "Horas dedicadas"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_id
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_id
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_id
 msgid "ID"
@@ -750,6 +761,9 @@ msgid "Impuestos"
 msgstr "Impuestos"
 
 #. module: car-workshop
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_normal:car-workshop.project_car-workshop_stage_on_hold
 #: model:project.task.type,name:car-workshop.project_car-workshop_stage_in_progress
 msgid "In Progress"
 msgstr "En Proceso"
@@ -879,15 +893,17 @@ msgstr "Estado de kanban"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line___last_update
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair___last_update
 msgid "Last Modified on"
-msgstr "Última Modificación en"
+msgstr "Última modificación en"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_uid
 msgid "Last Updated by"
 msgstr "Última Actualización por"
 
 #. module: car-workshop
+#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_date
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_write_date
 msgid "Last Updated on"
@@ -899,13 +915,6 @@ msgstr "Última Actualización el"
 #, python-format
 msgid "Let's create a new quotation.<br/><i>Note that colored buttons usually point to the next logical actions.</i>"
 msgstr "Vamos a crear un nuevo presupuesto.<br/><i>Tenga presente que los botones de colores suelen indicar las siguientes acciones lógicas.</i>"
-
-#. module: car-workshop
-#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_collection_customer
-#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_in_progress
-#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_on_hold
-msgid "Listo para la siguiente etapa"
-msgstr "Listo para la siguiente etapa"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -932,7 +941,7 @@ msgstr "Maestros"
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_material_line_ids
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Material Lines"
-msgstr "Material Lines"
+msgstr "Líneas de Material"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -966,7 +975,7 @@ msgstr "En espera"
 
 #. module: sale_management
 #. openerp-web
-#: code:addons/sale_management/static/src/js/tour.js:55
+#: code:addons/sale_management/static/src/js/tour.js:57
 #, python-format
 msgid "Once your quotation is ready, you can save, print or send it by email."
 msgstr "Una vez que su presupuesto esté listo, puede guardarlo, imprimirlo o enviarlo por correo electrónico."
@@ -1124,11 +1133,6 @@ msgid "Pruebas"
 msgstr "Pruebas"
 
 #. module: car-workshop
-#: model:ir.actions.act_window,help:car-workshop.partner_vehicles
-msgid "Pulse aquí para añadir un nuevo documento"
-msgstr "Pulse aquí para añadir un nuevo documento"
-
-#. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_product_uom_qty
 msgid "Quantity"
 msgstr "Cantidad"
@@ -1139,6 +1143,13 @@ msgstr "Cantidad"
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Quotation"
 msgstr "Presupuesto"
+
+#. module: car-workshop
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_collection_customer
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_in_progress
+#: model:project.task.type,legend_done:car-workshop.project_car-workshop_stage_on_hold
+msgid "Ready for Next Stage"
+msgstr "Listo para la siguiente etapa"
 
 #. module: car-workshop
 #: model:ir.ui.view,arch_db:car-workshop.report_admission_sheet_document
@@ -1448,14 +1459,14 @@ msgstr "Base imponible"
 
 #. module: sale_management
 #. openerp-web
-#: code:addons/sale_management/static/src/js/tour.js:65
+#: code:addons/sale_management/static/src/js/tour.js:67
 #, python-format
 msgid "Use the breadcrumbs to <b>go back to preceeding screens</b>."
 msgstr "Utilice las rutas de acceso para <b>volver a las pantallas anteriores</b>."
 
 #. module: sale_management
 #. openerp-web
-#: code:addons/sale_management/static/src/js/tour.js:69
+#: code:addons/sale_management/static/src/js/tour.js:71
 #, python-format
 msgid "Use this menu to access quotations, sales orders and customers."
 msgstr "Utilice este menú para acceder a presupuestos, pedidos de venta y clientes."
@@ -1533,7 +1544,7 @@ msgid "Write the name of your customer to create one on the fly, or select an ex
 msgstr "Escriba el nombre de su cliente para crear uno sobre la marcha, o seleccione uno existente."
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/repair.py:159
+#: code:addons/car-workshop/models/repair.py:160
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."
 msgstr "¡No puede eliminar un presupuesto enviado ni un pedido de cliente! Intenta cancelarlo antes."
