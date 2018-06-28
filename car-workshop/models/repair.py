@@ -285,7 +285,8 @@ class Repair(models.Model):
         if vehicles_count == 1:
             self.vehicle_id = vehicles_list[0]
         elif vehicles_count > 1:
-            self.vehicle_id = False
+            if self.vehicle_id and self.vehicle_id.customer_id.id != self.partner_id.id:
+                self.vehicle_id = False
 
 
     @api.multi
