@@ -20,10 +20,11 @@
             <field name="name">Repairs</field>
             <field name="res_model">car_workshop.repair</field>
             <field name="context">{'search_default_partner_id': active_id}</field>
-            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_mode">tree,form,kanban</field>
             <field name="view_type">form</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('car-workshop_repair_view_tree')}),
                           (0, 0, {'view_mode': 'kanban', 'view_id': ref('car-workshop_repair_view_kanban')}),
                           (0, 0, {'view_mode': 'form', 'view_id': ref('car-workshop_repair_view_form')})]"
             />
@@ -49,6 +50,9 @@
                         <field string="Repairs" name="repairs_count" widget="statinfo"/>
                     </button>
                 </xpath>
+                <field name="mobile" position="attributes">
+                    <attribute name="attrs">{'required':[True]}</attribute>
+                </field>
             </field>
         </record>
         

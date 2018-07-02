@@ -8,7 +8,8 @@ class TireWizard(models.TransientModel):
     widthSelection = []
     for x in range(145, 255, 10):
         widthSelection.append((str(x), str(x)))
-
+    widthSelection.append((str(140), str(140)))
+    widthSelection.append((str(150), str(150)))
     heightSelection = []
     for x in range(40, 80, 5):
         heightSelection.append((str(x), str(x)))
