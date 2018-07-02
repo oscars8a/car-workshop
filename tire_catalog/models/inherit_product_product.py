@@ -2,7 +2,7 @@ from odoo import api, fields, models,_
 
 class Tire(models.Model):
 
-    _inherit = 'product.product'
+    _inherit = 'product.template'
 
     is_a_tire = fields.Boolean(string="It's a tire?",  )
 
