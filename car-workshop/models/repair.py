@@ -35,7 +35,7 @@ class Repair(models.Model):
     user_id = fields.Many2one(related="project_task_id.user_id", store=True)
     kanban_state = fields.Selection(related="project_task_id.kanban_state", default='normal', store=True)
     date_start = fields.Datetime(related="project_task_id.date_start", string="Entry Date", store=True)
-    date_deadline = fields.Date(related="project_task_id.date_deadline", string="Deadline Date", store=True)
+    date_deadline = fields.Datetime(string="Deadline Date")
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
     timesheet_ids = fields.One2many(related="project_task_id.timesheet_ids")
     planned_hours = fields.Float(related="project_task_id.planned_hours")

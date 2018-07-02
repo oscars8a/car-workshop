@@ -486,6 +486,7 @@
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="date_deadline"/>
                     <field name="sale_order_id"/>
                     <field name="repair_title"/>
                     <field name="vehicle_id"/>

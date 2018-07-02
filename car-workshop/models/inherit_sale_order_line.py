@@ -5,6 +5,8 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     repair_id = fields.Many2one('car_workshop.repair')
+    product_id = fields.Many2one('product.product', string='Product', domain=[('sale_ok', '=', True)],
+                                 change_default=True, ondelete='restrict', required=False)
 
     @api.multi
     @api.onchange('product_id')
