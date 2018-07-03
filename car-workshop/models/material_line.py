@@ -4,6 +4,7 @@ from odoo.exceptions import UserError
 from odoo.addons import decimal_precision as dp
 
 
+
 class StockMove(models.Model):
     _inherit = 'stock.move'
 
@@ -40,18 +41,10 @@ class MaterialLine(models.Model):
                 'partner_id': record.repair_id.partner_id.id,
                 'location_id': record.location_id.id,
                 'location_dest_id': record.location_dest_id.id,
-                'move_line_ids': [(0, 0, {'product_id': record.product_id.id,
-                                          'lot_id': False,
-                                          'product_uom_qty': record.product_uom_qty,
-                                          'product_uom_id': record.product_uom.id,
-                                          'qty_done': record.product_uom_qty,
-                                          'package_id': False,
-                                          'result_package_id': False,
-                                          'location_id': record.location_id.id,
-                                          'location_dest_id': record.location_dest_id.id, })],
                 'car_work_repair_id': record.repair_id.id,
                 'origin': record.name,
             }
+            print(vals)
             move = Move.create(vals)
             record.write({'move_id': move.id})
             move._action_done()
