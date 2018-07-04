@@ -48,6 +48,13 @@ class Repair(models.Model):
 
     color = fields.Integer('Color Index', compute="change_colore_on_kanban")
 
+    purchase_count = fields.Integer(compute="_compute_purchase_count")
+    purchase_ids = fields.Many2many(comodel_name='purchase.order',relation="repair_purchase")
+
+    @api.model
+    def _compute_purchase_count(self):
+        return len(self.purchase_ids)
+
     @api.depends('finished_stage')
     def change_colore_on_kanban(self):
         for record in self:
@@ -323,3 +330,16 @@ class Repair(models.Model):
     @api.multi
     def action_finised(self):
         self.finished_stage = not self.finished_stage
+
+    @api.multi
+    def action_purchases(self):
+        # action_view_invoice en purchase.order
+        domain = "[('id', 'in', " + str(self.purchase_ids.ids) + ")]"
+        return {
+            "name": "Purchases",
+            "type": "ir.actions.act_window",
+            "res_model": "purchase.order",
+            "views": [[False, "tree"], [False, "form"], [False, "search"]],
+            "domain": domain,
+            "target": "current",
+        }

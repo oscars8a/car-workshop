@@ -2,7 +2,6 @@
 <odoo>
     <data>
 
-
         <!-- Project Repair Form View -->
         <record id="car-workshop_repair_view_form" model="ir.ui.view">
             <field name="name">car-workshop.repair.form</field>
@@ -40,6 +39,11 @@
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" type="object" icon="fa-shopping-cart"
+                                    name="action_purchases" help="Purchase related with this Repair Order.">
+                                <field string="Purchases" name="purchase_count" widget="statinfo"/>
+                            </button>
+
                             <button name="action_view_invoice" type="object" class="oe_stat_button"
                                     icon="fa-pencil-square-o" attrs="{'invisible': [('invoice_count', '=', 0)]}">
                                 <field name="invoice_count" widget="statinfo" string="Invoices"/>
@@ -53,6 +57,8 @@
                                     icon="fa-print" string="Admission Sheet"/>
                             <button name="print_quotation" type="object" class="oe_stat_button"
                                     icon="fa-print" string="Quotation"/>
+
+
 
                             <button name="action_finised" type="object" class="oe_stat_button" icon="fa-archive">
                                 <field name="finished_stage" widget="boolean_button" string="Finished"

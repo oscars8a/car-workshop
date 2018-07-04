@@ -3,4 +3,4 @@ from . import inherit_project_project, inherit_fleet_vehicle, repair, inherit_re
 from . import inherit_res_partner
 from . import inherit_sale_order_line
 from . import material_line, inherit_account_invoice
-from . import inherit_sale
+from . import inherit_sale, inherit_purchase
