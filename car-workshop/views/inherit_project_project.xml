@@ -6,10 +6,20 @@
         <record id="project_project_view_form_simplified" model="ir.ui.view">
             <field name="name">project.project.view.form.simplified</field>
             <field name="model">project.project</field>
+            <field name="priority">30</field>
             <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="before">
                     <field name="car_work"/>
+                </xpath>
+                <xpath expr="//label[@for='alias_name']" position="attributes">
+                    <attribute name="attrs">{'invisible':[True]}</attribute>
+                </xpath>
+                <xpath expr="//div[@name='alias_def']" position="attributes">
+                    <attribute name="attrs">{'invisible':[True]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='allow_timesheets']" position="attributes">
+                     <attribute name="attrs">{'invisible':[True]}</attribute>
                 </xpath>
             </field>
         </record>
@@ -23,8 +33,8 @@
                 <xpath expr="//field[@name='label_tasks']" position="after">
                     <label for="car_work" class="oe_inline" string="It's a Car's work Area?"/>
                     <field name="car_work"/>
-                    <field name="repair_image"/>
                 </xpath>
+
             </field>
         </record>
 

@@ -5,8 +5,7 @@ class ResPartner(models.Model):
 
     _inherit = 'res.partner'
 
-    vehicles_count = fields.Integer('Vehicles',
-                                        compute='_compute_vehicles_count')
+    vehicles_count = fields.Integer('Vehicles',compute='_compute_vehicles_count')
     repairs_count = fields.Integer('Repairs', compute='_compute_repairs_count')
 
     def _compute_vehicles_count(self):
