@@ -52,7 +52,7 @@ class TireWizard(models.TransientModel):
 
             "name": "Tires",
             "type": "ir.actions.act_window",
-            "res_model": "product.product",
+            "res_model": "product.template",
             "views": [[False,"kanban"],[False, "form"],[False, "tree"],[False, "search"]],
             "context": context,
             "domain": domain,
