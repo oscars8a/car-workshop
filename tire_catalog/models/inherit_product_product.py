@@ -25,4 +25,3 @@ class Tire(models.Model):
     season = fields.Selection(string="Season",
                               selection=[('summer', 'Summer'), ('winter', 'Winter'), ('allseason', 'All season')],
                               required=False, )
-
