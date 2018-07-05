@@ -42,6 +42,7 @@
         'views/inherit_sale.xml',
         'security/car-workshop_security.xml',
         'security/ir.model.access.csv',
+        'security/car-workshop_rules.xml',
         'views/inherit_account_invoice.xml',
     ],
     'demo': [
