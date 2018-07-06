@@ -11,5 +11,14 @@
         <record id="group_car-workshop_operator" model="res.groups">
             <field name="name">Car Workshop Operator</field>
         </record>
+
+
+        <!--Si a un menú le quito todos los grupos en reglas de acceso. Odoo por defecto hará que se muestre para todos los grupos.-->
+        <!--Por lo que por ahora me he creado un tercer grupo Admin al que le añadiré todos los menus que oculte para el resto de perfiles-->
+
+        <!--Group for CarWorkShop Admin -->
+        <record id="group_car-workshop_admin" model="res.groups">
+            <field name="name">Car Workshop Admin</field>
+        </record>
     </data>
 </openerp>

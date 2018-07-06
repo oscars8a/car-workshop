@@ -5,3 +5,6 @@ manager_repair,all_repair,model_car_workshop_repair,group_car-workshop_manager,1
 
 operator_material_line,all_material_line,model_car_workshop_material_line,group_car-workshop_operator,1,1,1,1
 operator_repair,all_repair,model_car_workshop_repair,group_car-workshop_operator,1,1,1,1
+
+admin_material_line,all_material_line,model_car_workshop_material_line,group_car-workshop_admin,1,1,1,1
+admin_repair,all_repair,model_car_workshop_repair,group_car-workshop_admin,1,1,1,1

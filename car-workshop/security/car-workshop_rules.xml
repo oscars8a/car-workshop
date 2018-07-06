@@ -6,7 +6,7 @@
             <field name="groups_id"
                    eval="[
                    (3,ref('fleet.fleet_group_user')),
-                   (4,ref('fleet.fleet_group_manager')),
+                   (4,ref('group_car-workshop_admin'))
                    ]"/>
         </record>
 
@@ -14,6 +14,8 @@
             <field name="groups_id"
                    eval="[
                    (3,ref('project.group_project_user')),
+                   (3,ref('project.group_project_manager')),
+                   (4,ref('group_car-workshop_admin'))
                    ]"/>
         </record>
 
@@ -22,7 +24,7 @@
             <field name="groups_id"
                    eval="[
                    (3,ref('hr_timesheet.group_hr_timesheet_user')),
-                   (4,ref('hr_timesheet.group_timesheet_manager')),
+                   (4,ref('group_car-workshop_admin'))
                    ]"/>
         </record>
 
@@ -32,6 +34,8 @@
                    eval="[
                    (3,ref('hr.group_hr_user')),
                    (3,ref('base.group_user')),
+                   (3,ref('hr.group_hr_manager')),
+                   (4,ref('group_car-workshop_admin'))
                    ]"/>
         </record>
 
@@ -39,6 +43,29 @@
             <field name="groups_id"
                    eval="[
                    (3,ref('stock.group_stock_user')),
+                   (3,ref('stock.group_stock_manager')),
+                   (4,ref('group_car-workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="sale.sales_team_config" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (4,ref('group_car-workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="sale.report_sales_team" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (4,ref('group_car-workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="sale.report_all_channels_sales" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (4,ref('group_car-workshop_admin'))
                    ]"/>
         </record>
     </data>
