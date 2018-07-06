@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'SDI Tire Catalogue',
+    'name': 'SDI Tire Catalog',
     'version': '11.0.1.0.0',
     'summary': "Catalog for Tires",
     'description': 'Complete catalog for tires.',

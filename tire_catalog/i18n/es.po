@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-19 08:34+0000\n"
-"PO-Revision-Date: 2018-06-19 10:36+0200\n"
+"POT-Creation-Date: 2018-07-06 10:43+0000\n"
+"PO-Revision-Date: 2018-07-06 12:48+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,132 +18,148 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #. module: tire_catalog
-#: selection:product.product,diameter:0
+#: model:ir.ui.menu,name:tire_catalog.car_search_tire_menu
+msgid " Search Tires"
+msgstr "Búsqueda de Neumáticos"
+
+#. module: tire_catalog
+#: selection:product.template,diameter:0
 msgid "13"
 msgstr "13"
 
 #. module: tire_catalog
-#: selection:product.product,diameter:0
+#: selection:product.template,diameter:0
 msgid "14"
 msgstr "14"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
+msgid "140"
+msgstr "140"
+
+#. module: tire_catalog
+#: selection:product.template,width:0
 msgid "145"
 msgstr "145"
 
 #. module: tire_catalog
-#: selection:product.product,diameter:0
+#: selection:product.template,diameter:0
 msgid "15"
 msgstr "15"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
+msgid "150"
+msgstr "150"
+
+#. module: tire_catalog
+#: selection:product.template,width:0
 msgid "155"
 msgstr "155"
 
 #. module: tire_catalog
-#: selection:product.product,diameter:0
+#: selection:product.template,diameter:0
 msgid "16"
 msgstr "16"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "165"
 msgstr "165"
 
 #. module: tire_catalog
-#: selection:product.product,diameter:0
+#: selection:product.template,diameter:0
 msgid "17"
 msgstr "17"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "175"
 msgstr "175"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "185"
 msgstr "185"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "195"
 msgstr "195"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "205"
 msgstr "205"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "215"
 msgstr "215"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "225"
 msgstr "225"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "235"
 msgstr "235"
 
 #. module: tire_catalog
-#: selection:product.product,width:0
+#: selection:product.template,width:0
 msgid "245"
 msgstr "245"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "40"
 msgstr "40"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "45"
 msgstr "45"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "50"
 msgstr "50"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "55"
 msgstr "55"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "60"
 msgstr "60"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "65"
 msgstr "65"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "70"
 msgstr "70"
 
 #. module: tire_catalog
-#: selection:product.product,height:0
+#: selection:product.template,height:0
 msgid "75"
 msgstr "75"
 
 #. module: tire_catalog
-#: selection:product.product,season:0
+#: selection:product.template,season:0
 msgid "All season"
-msgstr "Toda la temporada"
+msgstr "All season"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_brand_id
+#: model:ir.model.fields,field_description:tire_catalog.field_product_template_brand_id
 msgid "Brand"
 msgstr "Marca"
 
@@ -166,16 +182,19 @@ msgstr "Creado el"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_diameter
+#: model:ir.model.fields,field_description:tire_catalog.field_product_template_diameter
 msgid "Diameter"
 msgstr "Diámetro"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_height
+#: model:ir.model.fields,field_description:tire_catalog.field_product_template_height
 msgid "Height"
 msgstr "Altura"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_is_a_tire
+#: model:ir.model.fields,field_description:tire_catalog.field_product_template_is_a_tire
 msgid "It's a tire?"
 msgstr "¿Es un neumático?"
 
@@ -197,19 +216,25 @@ msgid "Product"
 msgstr "Producto"
 
 #. module: tire_catalog
+#: model:ir.model,name:tire_catalog.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: tire_catalog
 #: model:ir.ui.view,arch_db:tire_catalog.tire_wizard_view_form
 msgid "Search"
 msgstr "Búsqueda"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_season
+#: model:ir.model.fields,field_description:tire_catalog.field_product_template_season
 msgid "Season"
 msgstr "Temporada"
 
 #. module: tire_catalog
-#: selection:product.product,season:0
+#: selection:product.template,season:0
 msgid "Summer"
-msgstr "Verano"
+msgstr "Summer"
 
 #. module: tire_catalog
 #: model:ir.ui.view,arch_db:tire_catalog.product_template_form_view
@@ -234,19 +259,21 @@ msgid "Tire Wizard"
 msgstr "Búsqueda de Neumáticos"
 
 #. module: tire_catalog
+#: model:ir.actions.act_window,name:tire_catalog.action_tire_view
 #: model:ir.ui.menu,name:tire_catalog.car_tire_menu
 msgid "Tires"
 msgstr "Neumáticos"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_width
+#: model:ir.model.fields,field_description:tire_catalog.field_product_template_width
 msgid "Width"
 msgstr "Anchura"
 
 #. module: tire_catalog
-#: selection:product.product,season:0
+#: selection:product.template,season:0
 msgid "Winter"
-msgstr "Invierno"
+msgstr "Winter"
 
 #. module: tire_catalog
 #: model:ir.model,name:tire_catalog.model_tire_catalog_tire_brand
