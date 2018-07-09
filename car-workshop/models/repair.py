@@ -200,7 +200,7 @@ class Repair(models.Model):
         try:
             # Hay que definir una plantilla para mostrar en el mensaje.
             # Hay que hacer una plantilla asociada a la anterior para definir
-            template_id = ir_model_data.get_object_reference('car-workshop', 'email_template_cw_quotation')[1]
+            template_id = ir_model_data.get_object_reference('car-workshop', 'email_template_cw_quotationn')[1]
         except ValueError:
             template_id = False
         try:
