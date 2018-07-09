@@ -62,7 +62,6 @@ class MaterialLine(models.Model):
                 'product_uom': record.product_uom.id,
                 'discount': 0,
                 'name': record.name,
-                'tax_id': [[6, False, [record.product_id.taxes_id.id]]],
                 'customer_lead': 0,
                 'sequence': 10
             }
