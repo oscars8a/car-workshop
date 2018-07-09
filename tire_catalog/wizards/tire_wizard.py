@@ -28,31 +28,22 @@ class TireWizard(models.TransientModel):
 
     @api.multi
     def create_request(self):
-
-        # Probar a ponerlo como contexto para que el usuario pueda cambiarlo
         domain = [("is_a_tire","=",True)]
         context = {}
         if self.width:
-            # domain.append(("width","=",str(self.width)))
             context["search_default_width"] = self.width
         if self.height:
-            # domain.append(("height","=",str(self.height)))
             context["search_default_height"] = self.height
         if self.diameter:
-            # domain.append(("diameter","=",str(self.diameter)))
             context["search_default_diameter"] = self.diameter
         if self.brand_id:
-            # domain.append(("brand_id","=",str(self.brand_id.name)))
             context["search_default_brand_id"] = self.brand_id.id
-        if self.season is not False:
-            # domain.append(("season","=",str(self.season)))
+        if self.season:
             context["search_default_season"] = self.season
-
         return {
-
-            "name": "Tires",
+            "name": _("Tires"),
             "type": "ir.actions.act_window",
-            "res_model": "product.template",
+            "res_model": "product.product",
             "views": [[False,"kanban"],[False, "form"],[False, "tree"],[False, "search"]],
             "context": context,
             "domain": domain,

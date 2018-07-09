@@ -15,6 +15,7 @@
     ],
     'data': [
         'wizards/tire_wizard_view.xml',
+        'views/inherit_product_template.xml',
         'views/inherit_product_product.xml',
         'views/tire_brand.xml',
         'security/ir.model.access.csv',
