@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-09 11:28+0000\n"
-"PO-Revision-Date: 2018-07-09 14:23+0200\n"
+"POT-Creation-Date: 2018-07-10 07:36+0000\n"
+"PO-Revision-Date: 2018-07-10 09:38+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -202,7 +202,7 @@ msgstr "¿Es un neumático?"
 #: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_write_uid
 #: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última actualización de"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_write_date
@@ -237,6 +237,7 @@ msgid "Summer"
 msgstr "Verano"
 
 #. module: tire_catalog
+#: model:ir.ui.view,arch_db:tire_catalog.product_normal_form_view
 #: model:ir.ui.view,arch_db:tire_catalog.product_template_form_view
 msgid "Tire Attributes"
 msgstr "Atributos de Neumático"
@@ -259,8 +260,10 @@ msgid "Tire Wizard"
 msgstr "Búsqueda de Neumáticos"
 
 #. module: tire_catalog
+#: code:addons/tire_catalog/wizards/tire_wizard.py:44
 #: model:ir.actions.act_window,name:tire_catalog.action_tire_view
 #: model:ir.ui.menu,name:tire_catalog.car_tire_menu
+#, python-format
 msgid "Tires"
 msgstr "Neumáticos"
 
