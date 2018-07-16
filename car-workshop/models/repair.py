@@ -334,11 +334,14 @@ class Repair(models.Model):
     @api.multi
     def action_purchases(self):
         # action_view_invoice en purchase.order
-        domain = "[('id', 'in', " + str(self.purchase_ids.ids) + ")]"
+
+        # domain = "[('id', 'in', " + str(self.purchase_ids.ids) + ")]"
+        domain = "[]"
         return {
-            "name": "Purchases",
+            "name": _("Purchases"),
             "type": "ir.actions.act_window",
             "res_model": "purchase.order",
+            "view_type": "form",
             "views": [[False, "tree"], [False, "form"], [False, "search"]],
             "domain": domain,
             "target": "current",
