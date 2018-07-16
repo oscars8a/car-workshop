@@ -29,7 +29,9 @@ class TireWizard(models.TransientModel):
     @api.multi
     def create_request(self):
         domain = [("is_a_tire","=",True)]
-        context = {}
+        context = {
+                'default_is_a_tire':1
+                }
         if self.width:
             context["search_default_width"] = self.width
         if self.height:
