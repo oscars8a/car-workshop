@@ -44,7 +44,6 @@ class MaterialLine(models.Model):
                 'car_work_repair_id': record.repair_id.id,
                 'origin': record.name,
             }
-            print(vals)
             move = Move.create(vals)
             record.write({'move_id': move.id})
             move._action_done()
