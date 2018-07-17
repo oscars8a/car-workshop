@@ -10,7 +10,7 @@ class PurchaseOrder(models.Model):
     def create(self, vals):
         rec = super(PurchaseOrder, self).create(vals)
         # Registro el repair_id en el campo repair_ids
-        if self._context['active_model'] == 'car_workshop.repair':
+        if 'active_model' in self._context.keys() and self._context['active_model'] == 'car_workshop.repair':
             values = {self._context['active_id'],rec.id}
             rec.write({
                 'repair_ids':[(4,self._context['active_id'],_)]
