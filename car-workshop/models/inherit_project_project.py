@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
-# from wdb import set_trace as depurador
 
 
 class Project(models.Model):
@@ -17,8 +16,7 @@ class Project(models.Model):
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
 
 
-    # CAMBIARLO POR module_INSTALARMod en el settings, cuando sea estable.
-    # Método del Action Server action_prueba_unique_area
+    # Posiblemente se cambie
     def _action_redirect_area(self):
         ICPSudo = self.env['ir.config_parameter'].sudo()
         unique_area_value = ICPSudo.get_param('CarWorkshop.unique_area_setting')

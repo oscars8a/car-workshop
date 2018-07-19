@@ -14,11 +14,6 @@
                     <field name="description"/>
                 </field>
 
-                <!--No consigo meter vehicle_id dentro de Other...-->
-                <!--<xpath expr='//page[@name="other_info"]' position='inside'>-->
-                   <!--<field name="vehicle_id"/>-->
-                <!--</xpath>-->
-
             </field>
         </record>
     </data>

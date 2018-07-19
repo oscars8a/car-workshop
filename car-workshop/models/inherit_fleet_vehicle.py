@@ -7,7 +7,6 @@ class Vehicle(models.Model):
     customer_id = fields.Many2one(comodel_name="res.partner", string="Customer", required=True, )
     image_client_vehicle = fields.Binary(string="Car image")
     repairs_count = fields.Integer('Repairs', compute='_compute_repairs_count')
-    # vin_sn = fields.Char(required=True)
 
 
 

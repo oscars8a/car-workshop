@@ -9,7 +9,6 @@ class ResConfigSettings(models.TransientModel):
 
     unique_area_setting = fields.Boolean(string="Unique Area 'Repair and Revision'")
     areas_count = fields.Integer(compute='_compute_areas_count', string="Pruebas")
-    module_sdi_unique_area = fields.Boolean(string="PRUEBAS Instalar SDi Unique Area")
     module_aesthetic_changes_spanish = fields.Boolean(string="Install SDi Aesthetics changes for spanish version.")
     module_tire_catalog = fields.Boolean(string="Install SDi Tire Catalog module.")
 
