@@ -42,20 +42,25 @@
         <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"
                   web_icon="car-workshop,static/description/icon.png"/>
 
-        <!--Consume and Invoices Menus-->
-        <menuitem id="car_vmanagement_menus" name="Consume and Invoice"
+        <!--Repair Orders Menus-->
+        <menuitem id="main_car_ro_menu" name=" Repair Orders"
                   parent="main_car_workshop_menu"
-                  sequence="3"/>
+                  sequence="1"/>
 
-        <!--Consume Menu-->
-        <menuitem id="car_stock_move_menu" name="Consume"
-                  parent="car_vmanagement_menus"
-                  sequence="1" action="action_car_stock_move_config"/>
+        <!--&lt;!&ndash;Consume and Invoices Menus&ndash;&gt;-->
+        <!--<menuitem id="car_vmanagement_menus" name="Ocultar"-->
+                  <!--parent="main_car_workshop_menu"-->
+                  <!--sequence="4"/>-->
 
-        <!-- Invoice Menu-->
-        <menuitem id="car_account_invoice_menu" name="Account Invoice"
-                  parent="car_vmanagement_menus"
-                  sequence="2" action="account.action_invoice_tree1"/>
+        <!--&lt;!&ndash;Consume Menu&ndash;&gt;-->
+        <!--<menuitem id="car_stock_move_menu" name="Consume"-->
+                  <!--parent="car_vmanagement_menus"-->
+                  <!--sequence="1" action="action_car_stock_move_config"/>-->
+
+        <!--&lt;!&ndash; Invoice Menu&ndash;&gt;-->
+        <!--<menuitem id="car_account_invoice_menu" name="Account Invoice"-->
+                  <!--parent="car_vmanagement_menus"-->
+                  <!--sequence="2" action="account.action_invoice_tree1"/>-->
 
         <!--Customers Menus-->
         <menuitem id="car_masters_menus" name="Masters"
