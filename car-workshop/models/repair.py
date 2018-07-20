@@ -337,6 +337,9 @@ class Repair(models.Model):
         # action_view_invoice en purchase.order
         domain = "[('id', 'in', " + str(self.purchase_ids.ids) + "),]"
         # domain = "[]"
+        context = {
+            'default_repair_ids': self.id
+        }
         return {
             "name": _("Purchases"),
             "type": "ir.actions.act_window",

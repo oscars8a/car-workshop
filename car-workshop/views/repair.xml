@@ -516,7 +516,6 @@
             <field name="res_model">car_workshop.repair</field>
             <field name="view_mode">tree,form,calendar,kanban</field>
             <field name="context">{
-                'group_by': 'stage_id',
                 'search_default_in_work': 1,
                 }
             </field>

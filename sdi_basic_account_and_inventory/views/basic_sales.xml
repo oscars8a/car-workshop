@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--Ventas-->
+
+        <menuitem id="sdi_basic_sales_menu" name="Ventas"
+                  parent="sdi_basic_vc_acc_menus"
+                  sequence="1"/>
+        <menuitem id="sdi_basic_sales_inv_menu" name="Facturas Pendientes"
+                  parent="sdi_basic_sales_menu" action="account.action_invoice_tree1"
+                  sequence="1"/>
+        <menuitem id="sdi_basic_sales_customer_menu" name="Clientes"
+                  parent="sdi_basic_sales_menu" action="base.action_partner_customer_form"
+                  sequence="2"/>
+
+    </data>
+</odoo>

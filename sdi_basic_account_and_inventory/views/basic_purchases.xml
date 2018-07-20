@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--Compras-->
+
+        <record id="action_sdi_basic_purchases" model="ir.actions.act_window">
+            <field name="name">Presupuestos/Pedidos de Compra</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="sdi_basic_purchases_menu" name="Compras"
+                  parent="sdi_basic_vc_acc_menus"
+                  sequence="2"/>
+        <menuitem id="sdi_basic_purchase_or_menu" name="Presupuestos/Pedidos de Compra"
+                  parent="sdi_basic_purchases_menu" action="action_sdi_basic_purchases"
+                  sequence="1"/>
+        <menuitem id="sdi_basic_purchase_inv_menu" name="Facturas de Compras Pendientes"
+                  parent="sdi_basic_purchases_menu" action="purchase.action_invoice_pending"
+                  sequence="2"/>
+        <menuitem id="sdi_basic_supplier_menu" name="Proveedores"
+                  parent="sdi_basic_purchases_menu" action="base.action_partner_supplier_form"
+                  sequence="3"/>
+
+    </data>
+</odoo>

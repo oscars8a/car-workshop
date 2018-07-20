@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="sdi_basic_vc_acc_menus" name="C/V y Contabilidad"
+                  parent="car-workshop.main_car_workshop_menu"
+                  sequence="3"/>
+
+        <menuitem id="sdi_basic_acc_menu" name="Contabilidad"
+                  parent="sdi_basic_vc_acc_menus"
+                  sequence="3"/>
+
+
+    </data>
+</odoo>
