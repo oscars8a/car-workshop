@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
+from wdb import set_trace as depurador
 
 
 class Project(models.Model):
@@ -14,6 +15,24 @@ class Project(models.Model):
 
     car_work = fields.Boolean(string="It's Car's work Area?", default=True)
     repair_count = fields.Integer(compute='_compute_repair_count', string="Repairs")
+
+    def action_car_project_kanban_to_or_kanban(self):
+        active_id = self.id
+        project_id = self.env['project.project'].browse([self.id])
+        context = {
+                'group_by': 'stage_id',
+                'search_default_project_id': [active_id],
+                'default_project_id': active_id,
+                'search_default_in_work': 1,
+        }
+        return {
+            "name": project_id.name,
+            "type": "ir.actions.act_window",
+            "res_model": "car_workshop.repair",
+            "views": [[False, "kanban"], [False, "form"], [False, "tree"], [False, "search"]],
+            "context": context,
+            "target": "current",
+        }
 
 
     # Posiblemente se cambie
@@ -34,7 +53,7 @@ class Project(models.Model):
         if unique_area_value and area_count == 1:
             area_id = area_ids[0].id
             repair_kanban_ref = self.env.ref('car-workshop.car-workshop_repair_view_kanban').id
-            # Y que pasa cuando queremos traducir estos actios? Los dejamos en inglés? _("Lo que queremos traducir")
+            # Y que pasa cuando queremos traducir estos actions? Los dejamos en inglés? _("Lo que queremos traducir")
             action={
                 "name": _("Repairs"),
                 "type": "ir.actions.act_window",
@@ -43,7 +62,6 @@ class Project(models.Model):
                 "context":{
                     'group_by': 'stage_id',
                     'search_default_project_id': [area_id],
-                    'default_project_id': area_id,
                     'search_default_in_work': 1,
                 },
                 "target": "current",

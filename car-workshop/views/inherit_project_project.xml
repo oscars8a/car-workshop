@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="o_project_kanban_boxes">
                                     <a class="o_project_kanban_box"
-                                       name="%(action_car_project_kanban_to_repair_kanban)d" type="action">
+                                       name="action_car_project_kanban_to_or_kanban" type="object">
                                         <div>
                                             <span class="o_value">
                                                 <t t-esc="record.repair_count.value"/>
@@ -131,6 +131,8 @@
             </field>
         </record>
 
+           <!--name="%(action_car_project_kanban_to_repair_kanban)d" type="action">-->
+
         <!--Hacer que se pueda elegir si va a redirigir a la vista kanban-->
         <record id="action_prueba_unique_area" model="ir.actions.server">
             <field name="name">Areas, Redirect</field>
@@ -143,8 +145,8 @@ action = obj_project._action_redirect_area()
         </record>
 
         <!--Project Menu-->
-        <menuitem id="car_areas_menu" name="Areas"
-                  parent="main_car_workshop_menu"
+        <menuitem id="car_areas_menu" name="Ord. Reparación Por Área"
+                  parent="main_car_ro_menu"
                   sequence="1"
                   action="action_prueba_unique_area"
         />
