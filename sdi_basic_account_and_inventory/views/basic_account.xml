@@ -2,14 +2,32 @@
 <odoo>
     <data>
 
-        <menuitem id="sdi_basic_vc_acc_menus" name="C/V y Contabilidad"
+        <menuitem id="sdi_basic_vc_acc_menus" name="V/C y Contabilidad"
                   parent="car-workshop.main_car_workshop_menu"
                   sequence="3"/>
+
+        <!--Contabilidad-->
 
         <menuitem id="sdi_basic_acc_menu" name="Contabilidad"
                   parent="sdi_basic_vc_acc_menus"
                   sequence="3"/>
 
+        <menuitem id="sdi_basic_general_ledger_menu" name="Libro Mayor"
+                  parent="sdi_basic_acc_menu" action="account.action_account_general_ledger_menu"
+                  sequence="1"/>
 
+        <menuitem id="sdi_basic_IVA_ledger_menu" name="Libro de IVA"
+                  parent="sdi_basic_acc_menu" action="	l10n_es_vat_book.l10n_es_vat_book_action"
+                  sequence="2"/>
+
+        <menuitem id="sdi_basic_accounting_entries_menus" name="Asientos Contables"
+                  parent="sdi_basic_acc_menu"
+                  sequence="3"/>
+        <menuitem id="sdi_basic_journal_items_menu" name="Apuntes Contables"
+                  parent="sdi_basic_accounting_entries_menus" action="account.action_account_moves_all_a"
+                  sequence="1"/>
+        <menuitem id="sdi_basic_journal_entries_menu" name="Asientos Contables"
+                  parent="sdi_basic_accounting_entries_menus" action="account.action_move_journal_line"
+                  sequence="2"/>
     </data>
 </odoo>

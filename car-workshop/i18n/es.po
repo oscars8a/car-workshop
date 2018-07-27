@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-09 11:14+0000\n"
-"PO-Revision-Date: 2018-07-09 13:26+0200\n"
+"POT-Creation-Date: 2018-07-27 11:32+0000\n"
+"PO-Revision-Date: 2018-07-27 13:35+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,68 +100,106 @@ msgstr ""
 #: model:mail.template,body_html:sale.email_template_edi_sale
 msgid ""
 "\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Dear ${object.partner_id.name} % set access_action = object.with_context(force_website=True).get_access_action() % set is_online = access_action and access_action['type'] == 'ir.actions.act_url' % set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation' % set pay_sign_name = object.get_portal_confirmation_action() % set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name % set access_url = is_online and object.get_mail_url() or '' % if object.partner_id.parent_id: (<i>${object.partner_id.parent_id.name}</i>) % endif ,</p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><span style=\"font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">Here is\n"
+"<p>Dear ${object.partner_id.name}\n"
+"% set access_action = object.with_context(force_website=True).get_access_action()\n"
+"% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
+"% set pay_sign_name =  object.get_portal_confirmation_action()\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
+"% set access_url = is_online and object.get_mail_url() or ''\n"
+"\n"
+"% if object.partner_id.parent_id:\n"
+"    (<i>${object.partner_id.parent_id.name}</i>)\n"
+"% endif\n"
+",</p>\n"
+"<p>\n"
+"Here is\n"
 "% if ctx.get('proforma')\n"
 "in attachment, your pro-forma invoice\n"
 "% else\n"
-"the ${doc_name} </span><strong style=\"font-weight:bold;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">${object.name}</strong><span style=\"font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
+"the ${doc_name} <strong>${object.name}</strong>\n"
 "% endif\n"
 "% if object.origin:\n"
 "(with reference: ${object.origin} )\n"
 "% endif\n"
-"amounting in </span><strong style=\"font-weight:bold;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">${format_amount(object.amount_total, object.currency_id)}</strong><span style=\"font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
-"from ${object.company_id.name}.</span><br></p>\n"
+"amounting in <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
+"from ${object.company_id.name}.\n"
+"</p>\n"
 "\n"
 "% if is_online and not ctx.get('proforma'):\n"
-"    <br><br>\n"
+"    <br/><br/>\n"
 "    <center>\n"
-"        <a href=\"${access_url}\" style=\"text-decoration:none;color:rgb(124, 123, 173);background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
-"        <br><br><br>\n"
+"        <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+"        <br/><br/><br/>\n"
 "        <span style=\"color:#888888\">(or view attached PDF)</span>\n"
 "    </center>\n"
-"    <br>\n"
+"    <br/>\n"
 "% endif\n"
 "\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">You can reply to this email if you have any questions.</p>\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Thank you,</p>\n"
+"<p>You can reply to this email if you have any questions.</p>\n"
+"<p>Thank you,</p>\n"
 "\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;color:#888888;\">\n"
+"<p style=\"color:#888888;\">\n"
 "% if object.user_id and object.user_id.signature:\n"
 "    ${object.user_id.signature | safe}\n"
 "% endif\n"
 "</p>\n"
 msgstr ""
 "\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Dear ${object.partner_id.name} % set access_action = object.with_context(force_website=True).get_access_action() % set is_online = access_action and access_action['type'] == 'ir.actions.act_url' % set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation' % set pay_sign_name = object.get_portal_confirmation_action() % set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name % set access_url = is_online and object.get_mail_url() or '' % if object.partner_id.parent_id: (<i>${object.partner_id.parent_id.name}</i>) % endif ,</p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\"><span style=\"font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">Here is\n"
+"<p>Estimado ${object.partner_id.name}\n"
+"% set access_action = object.with_context(force_website=True).get_access_action()\n"
+"% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
+"% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
+"% set pay_sign_name = object.get_portal_confirmation_action()\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
+"% set access_url = is_online and object.get_mail_url() or ''\n"
+"\n"
+"% if object.partner_id.parent_id:\n"
+" (<i>${object.partner_id.parent_id.name}</i>)\n"
+"% endif\n"
+",</p>\n"
+"<p>\n"
+"Le enviamos\n"
 "% if ctx.get('proforma')\n"
 "in attachment, your pro-forma invoice\n"
 "% else\n"
-"the ${doc_name} </span><strong style=\"font-weight:bold;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">${object.name}</strong><span style=\"font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
+"the ${doc_name} <strong>${object.name}</strong>\n"
 "% endif\n"
 "% if object.origin:\n"
 "(with reference: ${object.origin} )\n"
 "% endif\n"
-"amounting in </span><strong style=\"font-weight:bold;font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; text-align: inherit;\">${format_amount(object.amount_total, object.currency_id)}</strong><span style=\"font-style: initial; font-variant-ligatures: initial; font-variant-caps: initial; font-weight: initial; text-align: inherit;\">\n"
-"from ${object.company_id.name}.</span><br></p>\n"
+"de importe <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong>\n"
+"desde ${object.company_id.name}.\n"
+"</p>\n"
 "\n"
 "% if is_online and not ctx.get('proforma'):\n"
-"    <br><br>\n"
-"    <center>\n"
-"        <a href=\"${access_url}\" style=\"text-decoration:none;color:rgb(124, 123, 173);background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
-"        <br><br><br>\n"
-"        <span style=\"color:#888888\">(or view attached PDF)</span>\n"
-"    </center>\n"
-"    <br>\n"
+" <br/><br/>\n"
+" <center>\n"
+" <a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
+" <br/><br/><br/>\n"
+" <span style=\"color:#888888\">(or view attached PDF)</span>\n"
+" </center>\n"
+" <br/>\n"
 "% endif\n"
 "\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">You can reply to this email if you have any questions.</p>\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;\">Thank you,</p>\n"
+"<p>Para cualquier duda puede responder a este email.</p>\n"
+"<p>Muchas gracias,</p>\n"
 "\n"
-"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;color:#888888;\">\n"
+"<p style=\"color:#888888;\">\n"
 "% if object.user_id and object.user_id.signature:\n"
-"    ${object.user_id.signature | safe}\n"
+" ${object.user_id.signature | safe}\n"
 "% endif\n"
 "</p>\n"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.main_car_ro_menu
+msgid " Repair Orders"
+msgstr "Órdenes de Reparación"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_all_ro_menu
+msgid " Todas las Reparaciones"
+msgstr " Todas las Reparaciones"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_product_product_sales_count
@@ -726,7 +764,6 @@ msgstr "Aceptar y firmar"
 
 #. module: car-workshop
 #: model:ir.actions.act_window,name:car-workshop.action_car_account_invoice_config
-#: model:ir.ui.menu,name:car-workshop.car_account_invoice_menu
 msgid "Account Invoice"
 msgstr "Factura de venta"
 
@@ -781,6 +818,11 @@ msgstr "Pedidos de venta de todos los canales"
 msgid "All Channels Sales Orders Analysis"
 msgstr "Análisis de Todos los canales de pedidos de venta"
 
+#. module: car-workshop
+#: model:ir.actions.act_window,name:car-workshop.action_car_all_ro_menu
+msgid "All Repairs Orders"
+msgstr "All Repairs Orders"
+
 #. module: sale
 #: model:ir.model,name:sale.model_report_all_channels_sales
 msgid "All sales orders grouped by sales channels"
@@ -802,6 +844,7 @@ msgid "Allows you to send pro-forma invoice."
 msgstr "Le permite enviar una factura proforma."
 
 #. module: sale
+#: model:ir.ui.view,arch_db:sale.report_invoice_layouted
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "Amount"
 msgstr "Importe"
@@ -829,7 +872,7 @@ msgstr "Importe de presupuestos a facturar"
 #: model:ir.model.fields,field_description:sale.field_sale_order_analytic_account_id
 #: model:ir.model.fields,field_description:sale.field_sale_report_analytic_account_id
 msgid "Analytic Account"
-msgstr "Cuenta Analítica"
+msgstr "Cuenta analítica"
 
 #. module: sale
 #: model:res.groups,name:sale.group_analytic_accounting
@@ -847,8 +890,7 @@ msgid "Analytic Tags"
 msgstr "Etiquetas Analíticas"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/inherit_project_project.py:29
-#: model:ir.ui.menu,name:car-workshop.car_areas_menu
+#: code:addons/car-workshop/models/inherit_project_project.py:46
 #: model:ir.ui.view,arch_db:car-workshop.res_config_settings_view_form
 #, python-format
 msgid "Areas"
@@ -1022,11 +1064,6 @@ msgstr ""
 "Check this to install SDi Aesthetics changes for spanish version. This module change\n"
 "                                    the vehicle model form."
 
-#. module: car-workshop
-#: model:ir.actions.act_window,help:car-workshop.action_car_vendors_config
-msgid "Click here to add new document"
-msgstr "Haga clic aquí para agregar un nuevo documento"
-
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.crm_team_salesteams_view_kanban
 msgid "Click to define a target"
@@ -1127,15 +1164,9 @@ msgid "Confirmation Date"
 msgstr "Fecha de confirmación"
 
 #. module: car-workshop
-#: model:ir.ui.menu,name:car-workshop.car_stock_move_menu
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
 msgid "Consume"
 msgstr "Consumo"
-
-#. module: car-workshop
-#: model:ir.ui.menu,name:car-workshop.car_vmanagement_menus
-msgid "Consume and Invoice"
-msgstr "Consumos y Facturas"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_consumed
@@ -1619,7 +1650,7 @@ msgstr "Peso bruto"
 #: model:ir.ui.view,arch_db:sale.view_sales_order_filter
 #: model:ir.ui.view,arch_db:sale.view_sales_order_line_filter
 msgid "Group By"
-msgstr "Agrupar Por"
+msgstr "Agrupar por"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_configuration_search_view
@@ -1653,7 +1684,7 @@ msgstr "Horas dedicadas"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_id
 #: model:ir.model.fields,field_description:sale.field_sale_report_id
 msgid "ID"
-msgstr "ID"
+msgstr "ID (identificación)"
 
 #. modules: car-workshop, sale
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
@@ -1976,11 +2007,6 @@ msgstr "Estado de kanban"
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_tx_id
-msgid "Last Transaction"
-msgstr "Última Transacción"
-
 #. modules: car-workshop, sale
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_advance_payment_inv_write_uid
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_material_line_write_uid
@@ -2194,11 +2220,6 @@ msgstr "Número de Reparación"
 msgid "Number of days between the order confirmation and the shipping of the products to the customer"
 msgstr "Número de días entre la confirmación del pedido y la entrega de los productos al cliente"
 
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_transaction_count
-msgid "Number of payment transactions"
-msgstr "Número de transacciones de pago"
-
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_crm_team_quotations_count
 msgid "Number of quotations to invoice"
@@ -2255,6 +2276,11 @@ msgstr "El único valor válido es un entero."
 #, python-format
 msgid "Operation not allowed"
 msgstr "Operacion no permitida"
+
+#. module: car-workshop
+#: model:ir.ui.menu,name:car-workshop.car_areas_menu
+msgid "Ord. Reparación Por Área"
+msgstr "Ord. Reparación Por Área"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_my_home_menu_sale
@@ -2414,11 +2440,6 @@ msgstr "PRESUPUESTO #"
 msgid "PRO-FORMA Invoice"
 msgstr "Factura PROFORMA"
 
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_res_config_settings_module_sdi_unique_area
-msgid "PRUEBAS Instalar SDi Unique Area"
-msgstr "PRUEBAS Instalar SDi Unique Area"
-
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_report_all_channels_sales_partner_id
 #: model:ir.model.fields,field_description:sale.field_sale_report_partner_id
@@ -2440,11 +2461,6 @@ msgstr "País de la empresa"
 #: selection:res.config.settings,portal_confirmation_options:0
 msgid "Payment"
 msgstr "Pagos"
-
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_acquirer_id
-msgid "Payment Acquirer"
-msgstr "Medio de pago"
 
 #. module: car-workshop
 #: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_mode_id
@@ -2499,11 +2515,6 @@ msgstr "Presupuesto - ${object.name}"
 #: model:ir.ui.view,arch_db:car-workshop.cw_report_invoice_document
 msgid "Presupuesto de Origen"
 msgstr "Presupuesto de Origen"
-
-#. module: sale
-#: model:ir.ui.view,arch_db:sale.report_invoice_layouted
-msgid "Price"
-msgstr "Precio"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_price_reduce
@@ -2691,7 +2702,7 @@ msgid "Pruebas"
 msgstr "Pruebas"
 
 #. module: car-workshop
-#: model:ir.actions.act_window,help:car-workshop.action_car_project_kanban_to_repair_kanban
+#: model:ir.actions.act_window,help:car-workshop.action_car_all_ro_menu
 msgid "Pulse aquí para añadir un nuevo documento"
 msgstr "Pulse aquí para añadir un nuevo documento"
 
@@ -2716,7 +2727,9 @@ msgid "Purchase related with this Repair Order."
 msgstr "Compra relacionada con esta Orden de Reparación."
 
 #. module: car-workshop
+#: code:addons/car-workshop/models/repair.py:343
 #: model:ir.ui.view,arch_db:car-workshop.car-workshop_repair_view_form
+#, python-format
 msgid "Purchases"
 msgstr "Compras"
 
@@ -2924,7 +2937,7 @@ msgid "Repair Title"
 msgstr "Título de la reparación"
 
 #. module: car-workshop
-#: code:addons/car-workshop/models/inherit_project_project.py:41
+#: code:addons/car-workshop/models/inherit_project_project.py:58
 #: model:ir.actions.act_window,name:car-workshop.action_car_project_kanban_to_repair_kanban
 #: model:ir.actions.act_window,name:car-workshop.partner_repairs
 #: model:ir.actions.act_window,name:car-workshop.vehicle_repairs
@@ -3677,11 +3690,6 @@ msgstr "Total de tiempo restante, puede ser reestimado periódicamente por quien
 msgid "Track Service"
 msgstr "Servicio de seguimiento"
 
-#. module: car-workshop
-#: model:ir.model.fields,field_description:car-workshop.field_car_workshop_repair_payment_tx_ids
-msgid "Transactions"
-msgstr "Transacciones"
-
 #. module: sale
 #: code:addons/sale/models/sale.py:578
 #, python-format
@@ -3875,7 +3883,7 @@ msgid "Wrong value entered!"
 msgstr "¡Valor introducido incorrecto!"
 
 #. modules: car-workshop, sale
-#: code:addons/car-workshop/models/repair.py:167
+#: code:addons/car-workshop/models/repair.py:168
 #: code:addons/sale/models/sale.py:188
 #, python-format
 msgid "You can not delete a sent quotation or a sales order! Try to cancel it before."

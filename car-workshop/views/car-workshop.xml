@@ -47,21 +47,6 @@
                   parent="main_car_workshop_menu"
                   sequence="1"/>
 
-        <!--&lt;!&ndash;Consume and Invoices Menus&ndash;&gt;-->
-        <!--<menuitem id="car_vmanagement_menus" name="Ocultar"-->
-                  <!--parent="main_car_workshop_menu"-->
-                  <!--sequence="4"/>-->
-
-        <!--&lt;!&ndash;Consume Menu&ndash;&gt;-->
-        <!--<menuitem id="car_stock_move_menu" name="Consume"-->
-                  <!--parent="car_vmanagement_menus"-->
-                  <!--sequence="1" action="action_car_stock_move_config"/>-->
-
-        <!--&lt;!&ndash; Invoice Menu&ndash;&gt;-->
-        <!--<menuitem id="car_account_invoice_menu" name="Account Invoice"-->
-                  <!--parent="car_vmanagement_menus"-->
-                  <!--sequence="2" action="account.action_invoice_tree1"/>-->
-
         <!--Customers Menus-->
         <menuitem id="car_masters_menus" name="Masters"
                   parent="main_car_workshop_menu"

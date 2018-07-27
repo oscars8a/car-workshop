@@ -4,15 +4,20 @@
 
         <!--Ventas-->
 
+        <record id="action_sdi_basic_pending_sales_inv" model="ir.actions.act_window">
+            <field name="name">Facturas de Compra Pendientes (de Cobro)</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="context">{'type':'out_invoice', 'journal_type': 'sale'}</field>
+            <field name="domain">[('state','!=','paid'),('type','=','in_invoice')]</field>
+        </record>
+
         <menuitem id="sdi_basic_sales_menu" name="Ventas"
                   parent="sdi_basic_vc_acc_menus"
                   sequence="1"/>
-        <menuitem id="sdi_basic_sales_inv_menu" name="Facturas Pendientes"
-                  parent="sdi_basic_sales_menu" action="account.action_invoice_tree1"
+        <menuitem id="sdi_basic_sales_inv_menu" name="Facturas de Venta Pendientes"
+                  parent="sdi_basic_sales_menu" action="action_sdi_basic_pending_sales_inv"
                   sequence="1"/>
-        <menuitem id="sdi_basic_sales_customer_menu" name="Clientes"
-                  parent="sdi_basic_sales_menu" action="base.action_partner_customer_form"
-                  sequence="2"/>
 
     </data>
 </odoo>

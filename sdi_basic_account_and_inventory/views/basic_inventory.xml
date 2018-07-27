@@ -9,6 +9,5 @@
                   parent="sdi_basic_inv_menu"
                   sequence="1"/>
 
-
     </data>
 </odoo>
