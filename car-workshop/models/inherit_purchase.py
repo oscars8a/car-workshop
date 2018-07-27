@@ -8,11 +8,7 @@ class PurchaseOrder(models.Model):
 
     @api.model
     def create(self, vals):
+        if 'repair_id' in self._context.keys():
+            vals['repair_ids'] = [(4,self._context['repair_id'],_)]
         rec = super(PurchaseOrder, self).create(vals)
-        # Registro el repair_id en el campo repair_ids
-        if 'active_model' in self._context.keys() and self._context['active_model'] == 'car_workshop.repair':
-            values = {self._context['active_id'],rec.id}
-            rec.write({
-                'repair_ids':[(4,self._context['active_id'],_)]
-            })
         return rec

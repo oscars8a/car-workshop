@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.exceptions import UserError
-#from wdb import set_trace as depurador
 
 
 class Repair(models.Model):
@@ -334,11 +333,11 @@ class Repair(models.Model):
 
     @api.multi
     def action_purchases(self):
-        # action_view_invoice en purchase.order
-        domain = "[('id', 'in', " + str(self.purchase_ids.ids) + "),]"
-        # domain = "[]"
+        self.ensure_one()
+        purchase_array = self.purchase_ids.mapped('id')
+        domain = [('id','in',purchase_array)]
         context = {
-            'default_repair_ids': self.id
+            'repair_id': self.id
         }
         return {
             "name": _("Purchases"),
@@ -349,5 +348,6 @@ class Repair(models.Model):
             "view_type": "form",
             "views": [[False, "tree"], [False, "form"], [False, "search"]],
             "domain": domain,
+            "context": context,
             "target": "current",
         }
