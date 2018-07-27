@@ -514,7 +514,7 @@
         <record id="action_car_all_ro_menu" model="ir.actions.act_window">
             <field name="name">All Repairs Orders</field>
             <field name="res_model">car_workshop.repair</field>
-            <field name="view_mode">tree,form,calendar,kanban</field>
+            <field name="view_mode">tree,form,calendar</field>
             <field name="context">{
                 'search_default_in_work': 1,
                 }
