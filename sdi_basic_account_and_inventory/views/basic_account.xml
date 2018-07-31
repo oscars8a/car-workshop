@@ -17,12 +17,12 @@
                   sequence="1"/>
 
         <menuitem id="sdi_basic_IVA_ledger_menu" name="Libro de IVA"
-                  parent="sdi_basic_acc_menu" action="	l10n_es_vat_book.l10n_es_vat_book_action"
+                  parent="sdi_basic_acc_menu" action="l10n_es_vat_book.l10n_es_vat_book_action"
                   sequence="2"/>
 
         <menuitem id="sdi_basic_accounting_entries_menus" name="Asientos Contables"
                   parent="sdi_basic_acc_menu"
-                  sequence="3"/>
+                  sequence="4"/>
         <menuitem id="sdi_basic_journal_items_menu" name="Apuntes Contables"
                   parent="sdi_basic_accounting_entries_menus" action="account.action_account_moves_all_a"
                   sequence="1"/>
