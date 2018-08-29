@@ -12,7 +12,6 @@
                 <div class="app_settings_block" data-string="Car Workshop" string="Car Workshop" data-key="car-workshop">
                     <h2>Areas</h2>
                     <div class="row mt16 o_settings_container">
-
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field name="areas_count" attrs="{'invisible':1}"/>
@@ -26,6 +25,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <h2>Modules</h2>
+                    <div class="row mt16 o_settings_container">
                         <div class="col-xs-12 col-md-6 o_setting_box">
                             <div class="o_setting_left_pane">
                                 <field name="module_aesthetic_changes_spanish"/>
@@ -50,8 +52,20 @@
                                 </div>
                             </div>
                         </div>
-
+                         <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_separate_project_and_car_workshop"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_separate_project_and_car_workshop"/>
+                                <div class="text-muted">
+                                    Check this for install SDi Separate Project and CarWorkshop. This will make it
+                                    impossible to see the projects or tasks of Car Workshops from the Projects menu.
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </xpath>
         </field>

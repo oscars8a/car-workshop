@@ -11,6 +11,7 @@ class ResConfigSettings(models.TransientModel):
     areas_count = fields.Integer(compute='_compute_areas_count', string="Pruebas")
     module_aesthetic_changes_spanish = fields.Boolean(string="Install SDi Aesthetics changes for spanish version.")
     module_tire_catalog = fields.Boolean(string="Install SDi Tire Catalog module.")
+    module_separate_project_and_car_workshop = fields.Boolean(string="Install SDi Separate Project and CarWorkshop module.")
 
     @api.multi
     @api.onchange('unique_area_setting')
