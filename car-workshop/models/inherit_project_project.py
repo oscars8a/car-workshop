@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, _
-from wdb import set_trace as depurador
 
 
 class Project(models.Model):
@@ -34,8 +33,6 @@ class Project(models.Model):
             "target": "current",
         }
 
-
-    # Posiblemente se cambie
     def _action_redirect_area(self):
         ICPSudo = self.env['ir.config_parameter'].sudo()
         unique_area_value = ICPSudo.get_param('CarWorkshop.unique_area_setting')
@@ -53,7 +50,6 @@ class Project(models.Model):
         if unique_area_value and area_count == 1:
             area_id = area_ids[0].id
             repair_kanban_ref = self.env.ref('car-workshop.car-workshop_repair_view_kanban').id
-            # Y que pasa cuando queremos traducir estos actions? Los dejamos en inglés? _("Lo que queremos traducir")
             action={
                 "name": _("Repairs"),
                 "type": "ir.actions.act_window",
