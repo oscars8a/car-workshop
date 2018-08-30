@@ -11,11 +11,13 @@
         </record>
 
         <record id="action_sdi_basic_pending_purchases_inv" model="ir.actions.act_window">
-            <field name="name">Facturas de Compra Pendientes (de Pago)</field>
+            <field name="name">Facturas de Compra</field>
             <field name="res_model">account.invoice</field>
             <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
-            <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase'}</field>
-            <field name="domain">[('state','!=','paid'),('type','=','in_invoice')]</field>
+            <field name="context">{
+                'search_default_pending_purchases_inv':1,
+                }</field>
+            <field name="domain">[('type','=','in_invoice')]</field>
         </record>
 
         <menuitem id="sdi_basic_purchases_menu" name="Compras"
