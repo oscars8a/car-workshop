@@ -14,6 +14,8 @@
         'sale_management',
         'account_invoicing',
         'stock',
+        'l10n_es_vat_book',
+        'car-workshop',
     ],
     'data': [
         'views/basic_account.xml',

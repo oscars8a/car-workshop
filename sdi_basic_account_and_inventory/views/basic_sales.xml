@@ -12,7 +12,7 @@
 
                 <xpath expr="//field[@name='date']" position="after">
                     <filter name="pending_sales_inv" string="Pendientes de Cobro"
-                           domain="[('state','!=','paid')]"/>
+                            domain="[('state','!=','paid')]"/>
                     <filter name="pending_purchases_inv" string="Pendientes de Pago"
                            domain="[('state','!=','paid')]"/>
                 </xpath>
@@ -29,7 +29,8 @@
             <field name="res_model">account.invoice</field>
             <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
             <field name="context">{
-                    'search_default_pending_sales_inv':1
+                'type':'out_invoice',
+                'search_default_pending_sales_inv':1,
                 }</field>
             <field name="domain">[('type','=','out_invoice')]</field>
         </record>
