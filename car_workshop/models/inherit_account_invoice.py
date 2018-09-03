@@ -24,7 +24,8 @@ class SaleOrder(models.Model):
         sale_ids = self.env['sale.order'].search([('name','=',vals['origin'])])
         if len(sale_ids) == 1:
             sale_id = sale_ids[0].id
-            obj = self.env['car_workshop.repair'].search([('sale_order_id',"=",sale_id)])[0]
-            vals['description'] = obj.description
-            vals['vehicle_id'] = obj.vehicle_id.id
+            car_objs = self.env['car_workshop.repair'].search([('sale_order_id',"=",sale_id)])
+            if len(car_objs) ==1:
+                vals['description'] = car_objs[0].description
+                vals['vehicle_id'] = car_objs[0].vehicle_id.id
         return vals
