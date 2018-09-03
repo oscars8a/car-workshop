@@ -9,10 +9,10 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <!--Estilos-->
-                        <t t-call="car-workshop.cw_report_style"/>
+                        <t t-call="car_workshop.cw_report_style"/>
                         <!--HEAD cw_head_templates.xml-->
                         <!--INI CABECERA-->
-                        <t t-call="car-workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
+                        <t t-call="car_workshop.report_head_vehicle_customer" t-lang="doc.partner_id.lang"/>
                         <!--FIN CABECERA-->
                         <br/>
                         <h2>
@@ -210,7 +210,7 @@
         <template id="report_quotation">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="doc">
-                    <t t-call="car-workshop.report_quotation_document" t-lang="doc.partner_id.lang"/>
+                    <t t-call="car_workshop.report_quotation_document" t-lang="doc.partner_id.lang"/>
                 </t>
             </t>
         </template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="cw_report_style">
+                <link href="/car_workshop/static/src/css/cw_reports.css" rel="stylesheet"/>
+        </template>
+
+    </data>
+</odoo>

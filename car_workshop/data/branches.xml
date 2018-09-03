@@ -3,7 +3,7 @@
     <data>
         <record id="brand_seat" model="fleet.vehicle.model.brand">
             <field name="name">Seat</field>
-            <field name="image" type="base64" file="car-workshop/static/src/img/brand_seat-image.png"/>
+            <field name="image" type="base64" file="car_workshop/static/src/img/brand_seat-image.png"/>
         </record>
     </data>
 </odoo>

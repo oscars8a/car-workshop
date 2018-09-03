@@ -3,7 +3,7 @@
     <data>
 
         <menuitem id="sdi_basic_vc_acc_menus" name="V/C y Contabilidad"
-                  parent="car-workshop.main_car_workshop_menu"
+                  parent="car_workshop.main_car_workshop_menu"
                   sequence="3"/>
 
         <!--Contabilidad-->

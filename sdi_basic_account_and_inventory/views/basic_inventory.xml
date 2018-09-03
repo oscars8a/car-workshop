@@ -3,7 +3,7 @@
     <data>
 
         <menuitem id="sdi_basic_inv_menu" name="Almacén"
-                  parent="car-workshop.main_car_workshop_menu"
+                  parent="car_workshop.main_car_workshop_menu"
                   sequence="4"/>
         <menuitem id="" name="Movimientos de Almacén"
                   parent="sdi_basic_inv_menu"

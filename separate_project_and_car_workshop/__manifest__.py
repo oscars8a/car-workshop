@@ -12,7 +12,7 @@
     'website': 'https://github.com/SDIsl/car-workshop.git',
     'license': 'AGPL-3',
     'depends': [
-        'car-workshop',
+        'car_workshop',
     ],
     'data': [
         'views/inherit_project_project.xml'

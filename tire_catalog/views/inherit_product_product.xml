@@ -74,12 +74,12 @@
 
         <!--Tires Menu-->
         <menuitem id="car_tire_menu" name="Tires"
-                  parent="car-workshop.car_masters_menus"
+                  parent="car_workshop.car_masters_menus"
                   sequence="5" action="action_tire_view"/>
 
         <!--Search Tires Menu-->
         <menuitem id="car_search_tire_menu" name=" Search Tires"
-                  parent="car-workshop.car_masters_menus"
+                  parent="car_workshop.car_masters_menus"
                   sequence="6" action="action_tire_view_wizard"/>
 
     </data>

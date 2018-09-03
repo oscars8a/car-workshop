@@ -22,7 +22,7 @@
         'purchase'
     ],
     'data': [
-        'views/car-workshop.xml',
+        'views/car_workshop.xml',
         'wizards/inherit_sale_make_invoice_advance_views.xml',
         'report/cw_assets.xml',
         'report/cw_head_templates.xml',
@@ -40,9 +40,9 @@
         'views/inherit_res_partner.xml',
         'views/inherit_res_config_settings.xml',
         'views/inherit_sale.xml',
-        'security/car-workshop_security.xml',
+        'security/car_workshop_security.xml',
         'security/ir.model.access.csv',
-        'security/car-workshop_rules.xml',
+        'security/car_workshop_rules.xml',
         'views/inherit_account_invoice.xml',
     ],
     'demo': [

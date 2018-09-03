@@ -3,8 +3,8 @@
     <data>
 
         <!-- Project Repair Form View -->
-        <record id="car-workshop_repair_view_form" model="ir.ui.view">
-            <field name="name">car-workshop.repair.form</field>
+        <record id="car_workshop_repair_view_form" model="ir.ui.view">
+            <field name="name">car_workshop.repair.form</field>
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <form string="Sales Order" class="o_sale_order">
@@ -87,7 +87,7 @@
                         <group>
                             <group>
                                 <field name="vehicle_id" domain="[('customer_id','=?',partner_id),]"
-                                       context="{'form_view_ref': 'car-workshop.car-workshop_fleet_vehicle_view_form','default_customer_id':partner_id}"
+                                       context="{'form_view_ref': 'car_workshop.car_workshop_fleet_vehicle_view_form','default_customer_id':partner_id}"
                                 />
                                 <field name="partner_id" domain="[('customer','=',True)]"
                                        context="{'show_address': 1}"
@@ -362,8 +362,8 @@
         </record>
 
         <!--Car-Workshop Repair Kanban View -->
-        <record id="car-workshop_repair_view_kanban" model="ir.ui.view">
-            <field name="name">car-workshop.repair.kanban</field>
+        <record id="car_workshop_repair_view_kanban" model="ir.ui.view">
+            <field name="name">car_workshop.repair.kanban</field>
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="stage_id" class="o_res_partner_kanban"
@@ -457,8 +457,8 @@
 
 
         <!--Car-Workshop Repair Calendar View -->
-        <record id="car-workshop_repair_view_calendar" model="ir.ui.view">
-            <field name="name">car-workshop.repair.calendar</field>
+        <record id="car_workshop_repair_view_calendar" model="ir.ui.view">
+            <field name="name">car_workshop.repair.calendar</field>
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <calendar string="Repairs" date_start="date_start" date_delay="planned_hours" color="partner_id">
@@ -468,8 +468,8 @@
         </record>
 
         <!--Car-Workshop Repair Search View -->
-        <record id="car-workshop_repair_view_search" model="ir.ui.view">
-            <field name="name">car-workshop.repair.search</field>
+        <record id="car_workshop_repair_view_search" model="ir.ui.view">
+            <field name="name">car_workshop.repair.search</field>
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <search>
@@ -493,8 +493,8 @@
         </record>
 
         <!--Car-Workshop Repair Tree View -->
-        <record id="car-workshop_repair_view_tree" model="ir.ui.view">
-            <field name="name">car-workshop.repair.tree</field>
+        <record id="car_workshop_repair_view_tree" model="ir.ui.view">
+            <field name="name">car_workshop.repair.tree</field>
             <field name="model">car_workshop.repair</field>
             <field name="arch" type="xml">
                 <tree>

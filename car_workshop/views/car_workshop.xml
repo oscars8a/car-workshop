@@ -40,7 +40,7 @@
 
         <!--Main Menu-->
         <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"
-                  web_icon="car-workshop,static/description/icon.png"/>
+                  web_icon="car_workshop,static/description/icon.png"/>
 
         <!--Repair Orders Menus-->
         <menuitem id="main_car_ro_menu" name=" Repair Orders"

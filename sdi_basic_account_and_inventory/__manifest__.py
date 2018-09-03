@@ -15,7 +15,7 @@
         'account_invoicing',
         'stock',
         'l10n_es_vat_book',
-        'car-workshop',
+        'car_workshop',
     ],
     'data': [
         'views/basic_account.xml',

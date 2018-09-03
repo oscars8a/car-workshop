@@ -11,7 +11,7 @@
     'website': 'https://github.com/oscars8a/car-workshop.git',
     'license': 'AGPL-3',
     'depends': [
-        'car-workshop',
+        'car_workshop',
     ],
     'data': [
         'wizards/tire_wizard_view.xml',

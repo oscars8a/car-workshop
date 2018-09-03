@@ -10,15 +10,15 @@
             <field name="view_type">form</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
-                          (0, 0, {'view_mode': 'tree', 'view_id': ref('car-workshop_repair_view_tree')}),
-                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('car-workshop_repair_view_kanban')}),
-                          (0, 0, {'view_mode': 'form', 'view_id': ref('car-workshop_repair_view_form')})]"
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('car_workshop_repair_view_tree')}),
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('car_workshop_repair_view_kanban')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('car_workshop_repair_view_form')})]"
             />
             <field name="target">current</field>
         </record>
 
         <!-- NEW Form View Fleet Vehicle -->
-        <record id='car-workshop_fleet_vehicle_view_form' model='ir.ui.view'>
+        <record id='car_workshop_fleet_vehicle_view_form' model='ir.ui.view'>
             <field name="name">fleet.vehicle.form</field>
             <field name="model">fleet.vehicle</field>
             <field name="priority">35</field>
@@ -27,7 +27,7 @@
                     <sheet>
                         <div class="oe_button_box" name="button_box">
                             <button class="oe_stat_button" type="action" icon="fa-wrench"
-                                    name="%(car-workshop.vehicle_repairs)d" help="Repairs related with this contact">
+                                    name="%(car_workshop.vehicle_repairs)d" help="Repairs related with this contact">
                                 <field string="Repairs" name="repairs_count" widget="statinfo"/>
                             </button>
                             <button name="return_action_to_open" type="object" class="oe_stat_button"
@@ -109,7 +109,7 @@
             </field>
         </record>
 
-        <record id='car-workshop_fleet_vehicle_view_kanban' model='ir.ui.view'>
+        <record id='car_workshop_fleet_vehicle_view_kanban' model='ir.ui.view'>
             <field name="name">fleet.vehicle.kanban</field>
             <field name="model">fleet.vehicle</field>
             <field name="priority">35</field>
@@ -176,10 +176,8 @@
             <field name="view_mode">kanban,form,tree</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
-                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('car-workshop_fleet_vehicle_view_kanban')}),
-                          (0, 0, {'view_mode': 'form', 'view_id': ref('car-workshop_fleet_vehicle_view_form')})]"/>
-            <!--<field name="view_id" ref="car-workshop_fleet_vehicle_view_kanban"/>-->
-            <!--<field name="form_view_id" ref="car-workshop_fleet_vehicle_view_form"/>-->
+                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('car_workshop_fleet_vehicle_view_kanban')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('car_workshop_fleet_vehicle_view_form')})]"/>
         </record>
 
         <!--Vehicles Menu-->

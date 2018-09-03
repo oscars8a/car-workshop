@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--Al exportar el archivo es.po del módulo car-workshop, no se refleja este formulario en el poedit-->
-        <!--Y por tanto no lo traduce. Lo he solucionado exportanto el es.po de los modulos car-workshop y sale juntos. -->
+        <!--Al exportar el archivo es.po del módulo car_workshop, no se refleja este formulario en el poedit-->
+        <!--Y por tanto no lo traduce. Lo he solucionado exportanto el es.po de los modulos car_workshop y sale juntos. -->
         <record id="view_sale_advance_payment_inv_for_carworkshop" model="ir.ui.view">
             <field name="name">Invoice Orders Taller</field>
             <field name="model">car_workshop.advance.payment.inv</field>

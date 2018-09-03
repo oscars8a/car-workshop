@@ -38,7 +38,7 @@ class Project(models.Model):
         unique_area_value = ICPSudo.get_param('CarWorkshop.unique_area_setting')
         area_ids = self.env['project.project'].search([('car_work','=',True)])
         area_count = len(area_ids)
-        areas_kanban_ref = self.env.ref('car-workshop.car-workshop_project_view_kanban').id
+        areas_kanban_ref = self.env.ref('car_workshop.car_workshop_project_view_kanban').id
         action = {
             "name": _("Areas"),
             "type": "ir.actions.act_window",
@@ -49,7 +49,7 @@ class Project(models.Model):
         }
         if unique_area_value and area_count == 1:
             area_id = area_ids[0].id
-            repair_kanban_ref = self.env.ref('car-workshop.car-workshop_repair_view_kanban').id
+            repair_kanban_ref = self.env.ref('car_workshop.car_workshop_repair_view_kanban').id
             action={
                 "name": _("Repairs"),
                 "type": "ir.actions.act_window",

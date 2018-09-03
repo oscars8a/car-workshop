@@ -188,7 +188,7 @@ class Repair(models.Model):
 
     @api.multi
     def print_quotation(self):
-        return self.env.ref('car-workshop.action_report_quotation').report_action(self, data=None)
+        return self.env.ref('car_workshop.action_report_quotation').report_action(self, data=None)
 
     @api.multi
     def action_cw_quotation_send(self):
@@ -201,7 +201,7 @@ class Repair(models.Model):
         try:
             # Hay que definir una plantilla para mostrar en el mensaje.
             # Hay que hacer una plantilla asociada a la anterior para definir
-            template_id = ir_model_data.get_object_reference('car-workshop', 'email_template_cw_quotationn')[1]
+            template_id = ir_model_data.get_object_reference('car_workshop', 'email_template_cw_quotationn')[1]
         except ValueError:
             template_id = False
         try:
@@ -325,7 +325,7 @@ class Repair(models.Model):
 
     @api.multi
     def action_admission_sheet(self):
-        return self.env.ref('car-workshop.action_report_admission_sheet').report_action(self, data=None)
+        return self.env.ref('car_workshop.action_report_admission_sheet').report_action(self, data=None)
 
     @api.multi
     def action_finised(self):
