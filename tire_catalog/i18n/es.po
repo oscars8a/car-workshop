@@ -1,21 +1,19 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* tire_catalog
+#	* tire_catalog
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-10 07:36+0000\n"
-"PO-Revision-Date: 2018-07-10 09:38+0200\n"
+"POT-Creation-Date: 2018-09-04 07:08+0000\n"
+"PO-Revision-Date: 2018-09-04 07:08+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: es\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: tire_catalog
 #: model:ir.ui.menu,name:tire_catalog.car_search_tire_menu
@@ -24,142 +22,170 @@ msgstr "Búsqueda de Neumáticos"
 
 #. module: tire_catalog
 #: selection:product.template,diameter:0
+#: selection:tire_catalog.tire_wizard,diameter:0
 msgid "13"
 msgstr "13"
 
 #. module: tire_catalog
 #: selection:product.template,diameter:0
+#: selection:tire_catalog.tire_wizard,diameter:0
 msgid "14"
 msgstr "14"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "140"
 msgstr "140"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "145"
 msgstr "145"
 
 #. module: tire_catalog
 #: selection:product.template,diameter:0
+#: selection:tire_catalog.tire_wizard,diameter:0
 msgid "15"
 msgstr "15"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "150"
 msgstr "150"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "155"
 msgstr "155"
 
 #. module: tire_catalog
 #: selection:product.template,diameter:0
+#: selection:tire_catalog.tire_wizard,diameter:0
 msgid "16"
 msgstr "16"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "165"
 msgstr "165"
 
 #. module: tire_catalog
 #: selection:product.template,diameter:0
+#: selection:tire_catalog.tire_wizard,diameter:0
 msgid "17"
 msgstr "17"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "175"
 msgstr "175"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "185"
 msgstr "185"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "195"
 msgstr "195"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "205"
 msgstr "205"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "215"
 msgstr "215"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "225"
 msgstr "225"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "235"
 msgstr "235"
 
 #. module: tire_catalog
 #: selection:product.template,width:0
+#: selection:tire_catalog.tire_wizard,width:0
 msgid "245"
 msgstr "245"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "40"
 msgstr "40"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "45"
 msgstr "45"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "50"
 msgstr "50"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "55"
 msgstr "55"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "60"
 msgstr "60"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "65"
 msgstr "65"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "70"
 msgstr "70"
 
 #. module: tire_catalog
 #: selection:product.template,height:0
+#: selection:tire_catalog.tire_wizard,height:0
 msgid "75"
 msgstr "75"
 
 #. module: tire_catalog
 #: selection:product.template,season:0
+#: selection:tire_catalog.tire_wizard,season:0
 msgid "All season"
 msgstr "Toda la temporada"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_brand_id
 #: model:ir.model.fields,field_description:tire_catalog.field_product_template_brand_id
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_brand_id
 msgid "Brand"
 msgstr "Marca"
 
@@ -183,20 +209,40 @@ msgstr "Creado en"
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_diameter
 #: model:ir.model.fields,field_description:tire_catalog.field_product_template_diameter
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_diameter
 msgid "Diameter"
 msgstr "Diámetro"
 
 #. module: tire_catalog
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_display_name
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_height
 #: model:ir.model.fields,field_description:tire_catalog.field_product_template_height
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_height
 msgid "Height"
 msgstr "Altura"
+
+#. module: tire_catalog
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_id
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_id
+msgid "ID"
+msgstr "ID (identificación)"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_is_a_tire
 #: model:ir.model.fields,field_description:tire_catalog.field_product_template_is_a_tire
 msgid "It's a tire?"
 msgstr "¿Es un neumático?"
+
+#. module: tire_catalog
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand___last_update
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
 
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_write_uid
@@ -211,9 +257,14 @@ msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: tire_catalog
-#: model:ir.model,name:tire_catalog.model_product_product
-msgid "Product"
-msgstr "Producto"
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_image
+msgid "Logo"
+msgstr "Logo"
+
+#. module: tire_catalog
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_brand_name
+msgid "Make"
+msgstr "Marca"
 
 #. module: tire_catalog
 #: model:ir.model,name:tire_catalog.model_product_template
@@ -228,13 +279,20 @@ msgstr "Búsqueda"
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_season
 #: model:ir.model.fields,field_description:tire_catalog.field_product_template_season
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_season
 msgid "Season"
 msgstr "Temporada"
 
 #. module: tire_catalog
 #: selection:product.template,season:0
+#: selection:tire_catalog.tire_wizard,season:0
 msgid "Summer"
 msgstr "Verano"
+
+#. module: tire_catalog
+#: model:ir.model.fields,help:tire_catalog.field_tire_catalog_tire_brand_image
+msgid "This field holds the image used as logo for the brand, limited to 1024x1024px."
+msgstr "Este campo contiene la imagen usado como logo para la marca, limitada a 1024x1024px."
 
 #. module: tire_catalog
 #: model:ir.ui.view,arch_db:tire_catalog.product_normal_form_view
@@ -260,7 +318,7 @@ msgid "Tire Wizard"
 msgstr "Búsqueda de Neumáticos"
 
 #. module: tire_catalog
-#: code:addons/tire_catalog/wizards/tire_wizard.py:44
+#: code:addons/tire_catalog/wizards/tire_wizard.py:46
 #: model:ir.actions.act_window,name:tire_catalog.action_tire_view
 #: model:ir.ui.menu,name:tire_catalog.car_tire_menu
 #, python-format
@@ -270,11 +328,13 @@ msgstr "Neumáticos"
 #. module: tire_catalog
 #: model:ir.model.fields,field_description:tire_catalog.field_product_product_width
 #: model:ir.model.fields,field_description:tire_catalog.field_product_template_width
+#: model:ir.model.fields,field_description:tire_catalog.field_tire_catalog_tire_wizard_width
 msgid "Width"
 msgstr "Anchura"
 
 #. module: tire_catalog
 #: selection:product.template,season:0
+#: selection:tire_catalog.tire_wizard,season:0
 msgid "Winter"
 msgstr "Invierno"
 
@@ -287,3 +347,4 @@ msgstr "tire_catalog.tire_brand"
 #: model:ir.model,name:tire_catalog.model_tire_catalog_tire_wizard
 msgid "tire_catalog.tire_wizard"
 msgstr "tire_catalog.tire_wizard"
+
