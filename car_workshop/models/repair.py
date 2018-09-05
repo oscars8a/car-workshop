@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.exceptions import UserError
+from datetime import datetime
 
 
 class Repair(models.Model):
@@ -33,7 +34,7 @@ class Repair(models.Model):
     project_id = fields.Many2one(related="project_task_id.project_id", store=True, required=True)
     user_id = fields.Many2one(related="project_task_id.user_id", store=True)
     kanban_state = fields.Selection(related="project_task_id.kanban_state", default='normal', store=True)
-    date_start = fields.Datetime(related="project_task_id.date_start", string="Entry Date", store=True)
+    date_start = fields.Datetime(related="project_task_id.date_start", string="Entry Date3", store=True)
     date_deadline = fields.Datetime(string="Deadline Date")
     tag_ids = fields.Many2many(related="project_task_id.tag_ids")
     timesheet_ids = fields.One2many(related="project_task_id.timesheet_ids")
@@ -85,7 +86,7 @@ class Repair(models.Model):
             else:
                 vals['name'] = "SO" + str(new_name.number_next_actual)
         if not vals.get('date_start'):
-            vals['date_start'] = fields.Date.context_today(self)
+            vals['date_start'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         rec_task = self.project_task_id.create(vals).id
         vals['project_task_id'] = rec_task
         if 'message_follower_ids' in vals:
