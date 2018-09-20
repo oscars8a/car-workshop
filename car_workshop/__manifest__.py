@@ -48,5 +48,6 @@
     'demo': [
     ],
     'installable': True,
+    'application': True,
     'post_init_hook':'main',
 }
