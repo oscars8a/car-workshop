@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-06 08:17+0000\n"
-"PO-Revision-Date: 2018-09-19 18:13+0200\n"
+"POT-Creation-Date: 2018-09-20 11:25+0000\n"
+"PO-Revision-Date: 2018-09-20 13:27+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -71,29 +71,30 @@ msgstr ""
 "% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
 "\n"
 "\n"
-"<p>Estimado ${object.partner_id.name}\n"
+"<p>Dear ${object.partner_id.name}\n"
 "\n"
 "% if object.partner_id.parent_id:\n"
 "    (<i>${object.partner_id.parent_id.name}</i>)\n"
 "% endif\n"
 ",</p>\n"
 "<p>\n"
-"Le enviamos\n"
+"Here is\n"
 "% if object.origin:\n"
 "(with reference: ${object.origin} )\n"
 "% endif\n"
-"con un importe de <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
-"desde ${object.company_id.name}.\n"
+"amounting in <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
+"from ${object.company_id.name}.\n"
 "</p>\n"
 "\n"
-"<p>Para cualquier duda puede responder a este email.</p>\n"
-"<p>Muchas gracias,</p>\n"
+"<p>You can reply to this email if you have any questions.</p>\n"
+"<p>Thank you,</p>\n"
 "\n"
 "<p style=\"color:#888888;\">\n"
 "% if object.user_id and object.user_id.signature:\n"
 "    ${object.user_id.signature | safe}\n"
 "% endif\n"
-"</p>"
+"</p>\n"
+"            "
 
 #. module: sale
 #: model:mail.template,body_html:sale.email_template_edi_sale
@@ -518,6 +519,11 @@ msgstr "<span>Factura Proforma # </span>"
 
 #. module: car_workshop
 #: model:ir.ui.view,arch_db:car_workshop.car_workshop_fleet_vehicle_view_form
+msgid "<span>cV</span>"
+msgstr "<span>cV</span>"
+
+#. module: car_workshop
+#: model:ir.ui.view,arch_db:car_workshop.car_workshop_fleet_vehicle_view_form
 msgid "<span>g/km</span>"
 msgstr "<span>g/km</span>"
 
@@ -881,7 +887,7 @@ msgstr "Contabilidad analítica para ventas"
 #. module: sale
 #: model:ir.model,name:sale.model_account_analytic_line
 msgid "Analytic Line"
-msgstr "Línea Analítica"
+msgstr "Línea analítica"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_analytic_tag_ids
@@ -1001,7 +1007,7 @@ msgstr "Cantidad"
 #. module: car_workshop
 #: model:ir.model.fields,field_description:car_workshop.field_stock_move_car_work_repair_id
 msgid "Car Work Repair"
-msgstr "Orden de Reparación"
+msgstr "Car Work Repair"
 
 #. module: car_workshop
 #: model:ir.ui.menu,name:car_workshop.main_car_workshop_menu
@@ -1099,7 +1105,7 @@ msgstr "Recogida Cliente"
 #. module: car_workshop
 #: model:ir.model.fields,field_description:car_workshop.field_car_workshop_repair_color
 msgid "Color Index"
-msgstr "Índice de Colores"
+msgstr "Índice de color"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_report_commercial_partner_id
@@ -1246,7 +1252,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:sale.field_sale_layout_category_create_date
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado en"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_create_date
@@ -1298,11 +1304,6 @@ msgstr "Impuestos de cliente"
 #: model:ir.ui.menu,name:sale.res_partner_menu
 msgid "Customers"
 msgstr "Clientes"
-
-#. module: sale
-#: model:ir.model.fields,field_description:sale.field_res_config_settings_module_delivery_dhl
-msgid "DHL"
-msgstr "DHL"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_report_all_channels_sales_date_order
@@ -1399,12 +1400,6 @@ msgid "Delivery address for current sales order."
 msgstr "Dirección de envío para el pedido de ventas actual."
 
 #. module: sale
-#: model:product.product,name:sale.advance_product_0
-#: model:product.template,name:sale.advance_product_0_product_template
-msgid "Deposit"
-msgstr "Depósito"
-
-#. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings_default_deposit_product_id
 msgid "Deposit Product"
 msgstr "Producto de Depósito"
@@ -1486,7 +1481,7 @@ msgstr "Descuentos"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_display_name
 #: model:ir.model.fields,field_description:sale.field_sale_report_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre mostrado"
 
 #. module: sale
 #: code:addons/sale/wizard/sale_make_invoice_advance.py:85
@@ -1622,11 +1617,6 @@ msgstr "Factura #"
 #: model:ir.actions.report,name:car_workshop.cw_action_report_invoice
 msgid "Factura Taller"
 msgstr "Factura Taller"
-
-#. module: sale
-#: model:ir.model.fields,field_description:sale.field_res_config_settings_module_delivery_fedex
-msgid "FedEx"
-msgstr "FedEx"
 
 #. module: sale
 #: model:ir.model,name:sale.model_ir_model_fields
@@ -2059,7 +2049,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_write_uid
 #: model:ir.model.fields,field_description:sale.field_sale_order_write_uid
 msgid "Last Updated by"
-msgstr "Última Actualización por"
+msgstr "Última actualización de"
 
 #. modules: sale, car_workshop
 #: model:ir.model.fields,field_description:car_workshop.field_car_workshop_advance_payment_inv_write_date
@@ -2509,11 +2499,6 @@ msgstr "País de la empresa"
 #: selection:res.config.settings,portal_confirmation_options:0
 msgid "Payment"
 msgstr "Pagos"
-
-#. module: car_workshop
-#: model:ir.model.fields,field_description:car_workshop.field_car_workshop_repair_payment_mode_id
-msgid "Payment Mode"
-msgstr "Modo de pago"
 
 #. modules: sale, car_workshop
 #: model:ir.model.fields,field_description:car_workshop.field_car_workshop_repair_payment_term_id
@@ -3131,7 +3116,7 @@ msgstr "Pedido de ventas confirmado"
 #: model:ir.model.fields,field_description:sale.field_product_product_sale_line_warn
 #: model:ir.model.fields,field_description:sale.field_product_template_sale_line_warn
 msgid "Sales Order Line"
-msgstr "Línea de orden de ventas"
+msgstr "Línea de pedido de ventas"
 
 #. modules: sale, car_workshop
 #: model:ir.ui.view,arch_db:car_workshop.car_workshop_repair_view_form
@@ -3550,22 +3535,11 @@ msgid "Terms and conditions"
 msgstr "Términos y condiciones"
 
 #. module: sale
-#: code:addons/sale/models/analytic.py:134
-#, python-format
-msgid "The Sales Order %s linked to the Analytic Account %s is cancelled. You cannot register an expense on a cancelled Sales Order."
-msgstr "The Sales Order %s linked to the Analytic Account %s is cancelled. You cannot register an expense on a cancelled Sales Order."
-
-#. module: sale
-#: code:addons/sale/models/analytic.py:133
-#, python-format
-msgid "The Sales Order %s linked to the Analytic Account %s is currently locked. You cannot register an expense on a locked Sales Order. Please create a new SO linked to this Analytic Account."
-msgstr "The Sales Order %s linked to the Analytic Account %s is currently locked. You cannot register an expense on a locked Sales Order. Please create a new SO linked to this Analytic Account."
-
-#. module: sale
 #: code:addons/sale/models/analytic.py:129
+#: code:addons/sale/models/analytic.py:143
 #, python-format
-msgid "The Sales Order %s linked to the Analytic Account %s must be validated before registering expenses."
-msgstr "The Sales Order %s linked to the Analytic Account %s must be validated before registering expenses."
+msgid "The Sales Order %s linked to the Analytic Account must be validated before registering expenses."
+msgstr "Los pedidos de venta %s vinculados a la cuenta analítica deben validarse antes de registrar los gastos."
 
 #. module: sale
 #: model:ir.model.fields,help:sale.field_car_workshop_advance_payment_inv_amount
@@ -3662,11 +3636,6 @@ msgid "This report performs analysis on your sales orders. Analysis check your s
 msgstr "Este informe realiza el análisis de sus pedidos de venta. El análisis comprueba sus ingresos por ventas y los ordena por diferentes criterios de agrupación (comercial, cliente, producto, etc). Use este informe para analizar las ventas que aún no han sido facturadas. Si lo que quiere analizar es su volumen de negocios, debería usar el informe de análisis de facturas en la aplicación de Contabilidad."
 
 #. module: car_workshop
-#: model:ir.ui.view,arch_db:car_workshop.car_workshop_repair_view_form
-msgid "Timesheet Activities"
-msgstr "Actividades del parte de horas"
-
-#. module: car_workshop
 #: model:ir.model.fields,field_description:car_workshop.field_car_workshop_repair_timesheet_count
 msgid "Timesheet activities"
 msgstr "Actividades del parte de horas"
@@ -3743,16 +3712,6 @@ msgstr "Total de tiempo restante, puede ser reestimado periódicamente por quien
 #: model:ir.model.fields,field_description:sale.field_product_template_service_type
 msgid "Track Service"
 msgstr "Servicio de seguimiento"
-
-#. module: sale
-#: model:ir.model.fields,field_description:sale.field_res_config_settings_module_delivery_ups
-msgid "UPS"
-msgstr "UPS"
-
-#. module: sale
-#: model:ir.model.fields,field_description:sale.field_res_config_settings_module_delivery_usps
-msgid "USPS"
-msgstr "USPS"
 
 #. module: sale
 #: code:addons/sale/models/sale.py:578
@@ -3934,6 +3893,11 @@ msgid "Work Area"
 msgstr "Área de Trabajo"
 
 #. module: car_workshop
+#: model:ir.ui.view,arch_db:car_workshop.car_workshop_repair_view_form
+msgid "Work Done:"
+msgstr "Trabajo Realizado:"
+
+#. module: car_workshop
 #: model:ir.actions.act_window,name:car_workshop.action_car_ws_tags_menu
 #: model:ir.ui.menu,name:car_workshop.car_ws_tags_menu
 msgid "Workshop Tags"
@@ -3945,6 +3909,11 @@ msgstr "Etiquetas de Taller"
 #, python-format
 msgid "Wrong value entered!"
 msgstr "¡Valor introducido incorrecto!"
+
+#. module: car_workshop
+#: model:ir.ui.view,arch_db:car_workshop.car_workshop_fleet_vehicle_view_form
+msgid "Year of the vehicle"
+msgstr "Año del vehículo"
 
 #. modules: sale, car_workshop
 #: code:addons/car_workshop/models/repair.py:169
@@ -4001,11 +3970,6 @@ msgstr ""
 "Sus próximas acciones deberían fluir de manera eficiente: confirmar el presupuesto\n"
 "a pedido de venta, luego crear la factura y cobrarla."
 
-#. module: sale
-#: model:ir.model.fields,field_description:sale.field_res_config_settings_module_delivery_bpost
-msgid "bpost"
-msgstr "bpost"
-
 #. module: car_workshop
 #: model:ir.model,name:car_workshop.model_car_workshop_advance_payment_inv
 msgid "car_workshop.advance.payment.inv"
@@ -4035,12 +3999,12 @@ msgstr "días"
 
 #. module: car_workshop
 #: model:ir.ui.view,arch_db:car_workshop.car_workshop_fleet_vehicle_view_form
-msgid "e.g. Model S"
+msgid "e.j. Model S"
 msgstr "ej. Model S"
 
 #. module: car_workshop
 #: model:ir.ui.view,arch_db:car_workshop.car_workshop_fleet_vehicle_view_form
-msgid "e.g. PAE 326"
+msgid "e.j. PAE 326"
 msgstr "ej. PAE 326"
 
 #. module: car_workshop

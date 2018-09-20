@@ -293,9 +293,9 @@
                                         <field name="progress" widget="progressbar"/>
                                     </group>
                                 </group>
+                                <label for="timesheet_ids" string="Work Done:"/>
                                 <field name="timesheet_ids" context="{'default_project_id': project_id}">
-                                    <tree editable="bottom" string="Timesheet Activities" default_order="date">
-
+                                    <tree editable="bottom" default_order="date">
                                         <field name="name"/>
                                         <field name="user_id" invisible="1"/>
                                         <field name="employee_id" required="1"/>
@@ -304,6 +304,8 @@
                                         <field name="project_id" invisible="1"/>
                                     </tree>
                                 </field>
+
+
                                 <group>
                                     <group class="oe_subtotal_footer oe_right" name="project_hours">
                                         <field name="effective_hours" widget="float_time"/>

@@ -13,7 +13,7 @@
                 <xpath expr="//label[@for='name']" position="before">
                     <label for="brand_id" class="oe_edit_only"/>
                     <h2>
-                        <field name="brand_id" placeholder="e.g. Tesla"/>
+                        <field name="brand_id" placeholder="e.j. Seat"/>
                     </h2>
                 </xpath>
 
