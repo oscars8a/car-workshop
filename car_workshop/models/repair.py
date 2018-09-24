@@ -2,6 +2,7 @@
 from odoo import api, fields, models, SUPERUSER_ID, _
 from odoo.exceptions import UserError
 from datetime import datetime
+from wdb import set_trace as depurador
 
 
 class Repair(models.Model):
@@ -91,6 +92,8 @@ class Repair(models.Model):
         vals['project_task_id'] = rec_task
         if 'message_follower_ids' in vals:
             vals.pop('message_follower_ids')
+        if 'timesheet_ids' in vals.keys():
+            del vals['timesheet_ids']
         rec = super(Repair, self).create(vals)
 
         #Meto el id de la orden de reparación en el
