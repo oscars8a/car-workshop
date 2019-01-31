@@ -28,11 +28,12 @@ class MaterialLine(models.Model):
     consumed = fields.Boolean(default=False)
     to_quotation = fields.Boolean(default=False)
 
-
     @api.multi
     def consume_done(self):
         Move = self.env['stock.move']
         for record in self:
+            location_dest_id = record.repair_id.partner_id.property_stock_customer.id
+            print(location_dest_id)
             vals = {
                 'name': record.name,
                 'product_id': record.product_id.id,
@@ -40,7 +41,14 @@ class MaterialLine(models.Model):
                 'product_uom': record.product_uom.id,
                 'partner_id': record.repair_id.partner_id.id,
                 'location_id': record.location_id.id,
-                'location_dest_id': record.location_dest_id.id,
+                'location_dest_id': location_dest_id,
+                'move_line_ids': [(0, 0, {
+                    'product_id': record.product_id.id,
+                    'product_uom_id': record.product_uom.id,
+                    'location_id': record.location_id.id,
+                    'location_dest_id': location_dest_id,
+                    'qty_done': record.product_uom_qty
+                })],
                 'car_work_repair_id': record.repair_id.id,
                 'origin': record.name,
             }
