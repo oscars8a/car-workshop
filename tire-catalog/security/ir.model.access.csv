@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-all_tire_catalog_tire_brand,all_tire_catalog_tire_brand,model_tire_catalog_tire_brand,group_car-workshop_manager,1,1,1,1
-
-all_tire_catalog_tire_brand,all_tire_catalog_tire_brand,model_tire_catalog_tire_brand,group_car-workshop_operator,1,1,1,1

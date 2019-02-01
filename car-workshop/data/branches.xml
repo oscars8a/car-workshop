@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-        <record id="brand_seat" model="fleet.vehicle.model.brand">
-            <field name="name">Seat</field>
-            <field name="image" type="base64" file="car-workshop/static/img/brand_seat-image.png"/>
-        </record>
-    </data>
-</odoo>

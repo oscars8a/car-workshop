@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-all_material_line,all_material_line,model_car_workshop_material_line,group_car-workshop_manager,1,1,1,1
-all_repair,all_material_line,model_car_workshop_repair,group_car-workshop_manager,1,1,1,1
-
-all_material_line,all_material_line,model_car_workshop_material_line,group_car-workshop_operator,1,1,1,1
-all_repair,all_material_line,model_car_workshop_repair,group_car-workshop_operator,1,1,1,1

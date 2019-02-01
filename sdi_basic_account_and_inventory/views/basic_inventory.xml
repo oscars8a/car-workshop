@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="sdi_basic_inv_menu" name="Almacén"
+                  parent="car_workshop.main_car_workshop_menu"
+                  sequence="4"/>
+        <menuitem id="" name="Movimientos de Almacén"
+                  parent="sdi_basic_inv_menu"
+                  sequence="1"/>
+
+    </data>
+</odoo>

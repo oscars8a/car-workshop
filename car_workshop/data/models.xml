@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="model_alhambra" model="fleet.vehicle.model">
+            <field name="name">Alhambra</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_altea" model="fleet.vehicle.model">
+            <field name="name">Altea</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_alteaxl" model="fleet.vehicle.model">
+            <field name="name">Alteaxl</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_arona" model="fleet.vehicle.model">
+            <field name="name">Arona</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_ateca" model="fleet.vehicle.model">
+            <field name="name">Ateca</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_ibiza" model="fleet.vehicle.model">
+            <field name="name">Ibiza</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_leon" model="fleet.vehicle.model">
+            <field name="name">Leon</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_mii" model="fleet.vehicle.model">
+            <field name="name">Mii</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_nuevoibiza" model="fleet.vehicle.model">
+            <field name="name">Nuevoibiza</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_nuevoleon" model="fleet.vehicle.model">
+            <field name="name">Nuevoleon</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_toledo" model="fleet.vehicle.model">
+            <field name="name">Toledo</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+        <record id="model_panda" model="fleet.vehicle.model">
+            <field name="name">Panda</field>
+            <field name="brand_id" ref="brand_seat"/>
+        </record>
+
+    </data>
+</odoo>

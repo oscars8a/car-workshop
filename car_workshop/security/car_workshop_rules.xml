@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="fleet.menu_root" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (3,ref('fleet.fleet_group_user')),
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="project.menu_main_pm" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (3,ref('project.group_project_user')),
+                   (3,ref('project.group_project_manager')),
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <!--Partes de Hora-->
+        <record id="hr_timesheet.timesheet_menu_root" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (3,ref('hr_timesheet.group_hr_timesheet_user')),
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <!--Empleados-->
+        <record id="hr.menu_hr_root" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (3,ref('hr.group_hr_user')),
+                   (3,ref('base.group_user')),
+                   (3,ref('hr.group_hr_manager')),
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="stock.menu_stock_root" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (3,ref('stock.group_stock_user')),
+                   (3,ref('stock.group_stock_manager')),
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="sale.sales_team_config" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="sale.report_sales_team" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+
+        <record id="sale.report_all_channels_sales" model="ir.ui.menu">
+            <field name="groups_id"
+                   eval="[
+                   (4,ref('group_car_workshop_admin'))
+                   ]"/>
+        </record>
+    </data>
+</odoo>

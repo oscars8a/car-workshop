@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Tire Brands View Form-->
+        <record id="tire_brand_view_form" model="ir.ui.view">
+            <field name="name">Tire Brand</field>
+            <field name="model">tire_catalog.tire_brand</field>
+            <field name="arch" type="xml">
+                <form string="Tire Brand">
+                    <sheet>
+                        <group>
+                            <div>
+                                <field name="image" widget="image" class="oe_avatar"/>
+                                <label for="name" class="oe_edit_only"/>
+                                <h1>
+                                    <field name="name"/>
+                                </h1>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tire_brand_view_kanban" model="ir.ui.view">
+            <field name="name">Tire Brand</field>
+            <field name="model">tire_catalog.tire_brand</field>
+            <field name="arch" type="xml">
+                <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="image"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_vignette oe_semantic_html_override">
+                            <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img t-att-src="kanban_image('tire_catalog.tire_brand', 'image', record.id.raw_value)" class="img-responsive" style="width:100px;"/>
+                                 <!--<img t-att-src="kanban_image('tire_catalog.tire_brand', 'image', record.id.raw_value)" class="oe_kanban_picture" style="max-height: 90px; max-width: 60px;"/>-->
+                            </a>
+                            <div class="oe_kanban_details">
+                                <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+            </field>
+        </record>
+
+
+
+        <!-- Tire Brand Action-->
+        <record model="ir.actions.act_window" id="action_car_tbrands_config">
+            <field name="name">Tire Brands</field>
+            <field name="res_model">tire_catalog.tire_brand</field>
+            <field name="form_view_id" ref="tire_brand_view_form"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree</field>
+        </record>
+
+
+
+        <!--Tire Brands Menu-->
+        <menuitem id="car_tbrands_menu" name="Tire Brands"
+                  parent="car_workshop.car_vconfig_menus"
+                  sequence="3" action="action_car_tbrands_config"/>
+    </data>
+</odoo>

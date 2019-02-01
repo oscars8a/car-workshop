@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--Action Stock Move Menu-->
+        <record model="ir.actions.act_window" id="action_car_stock_move_config">
+            <field name="name">Stock Move</field>
+            <field name="res_model">stock.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Action Account Invoice Menu-->
+        <record model="ir.actions.act_window" id="action_car_account_invoice_config">
+            <field name="name">Account Invoice</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Action Customers Menu-->
+        <record model="ir.actions.act_window" id="action_car_customers_config">
+            <field name="name">Customers</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="context">{"search_default_customer":1}</field>
+        </record>
+
+        <!--Action Vendor Menu-->
+        <record model="ir.actions.act_window" id="action_car_vendors_config">
+            <field name="name">Vendors</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="context">{'search_default_supplier': 1,'default_customer': 0,'default_supplier': 1,
+                'default_company_type': 'company'}</field>
+        </record>
+
+
+        <!--Main Menu-->
+        <menuitem id="main_car_workshop_menu" name="Car Workshop" sequence="1"
+                  web_icon="car_workshop,static/description/icon.png"/>
+
+        <!--Repair Orders Menus-->
+        <menuitem id="main_car_ro_menu" name=" Repair Orders"
+                  parent="main_car_workshop_menu"
+                  sequence="1"/>
+
+        <!--Customers Menus-->
+        <menuitem id="car_masters_menus" name="Masters"
+                  parent="main_car_workshop_menu"
+                  sequence="2"/>
+
+        <!--Vendors Menu-->
+        <menuitem id="car_vendors_menu" name="Vendors"
+                  parent="car_masters_menus"
+                  sequence="1" action="action_car_vendors_config"/>
+        <!--Customer Menu-->
+        <menuitem id="car_customers_menu" name="Customers"
+                  parent="car_masters_menus"
+                  sequence="2" action="action_car_customers_config"/>
+
+
+
+        <!--Configuration Menus-->
+        <menuitem id="car_vconfig_menus" name="Configuration"
+                  parent="main_car_workshop_menu"
+                  sequence="10"/>
+
+
+        <!--Action Workshop Tags Menu-->
+        <record model="ir.actions.act_window" id="action_car_ws_tags_menu">
+            <field name="name">Workshop Tags</field>
+            <field name="res_model">project.tags</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Workshop Tags Menu-->
+        <menuitem id="car_ws_tags_menu" name="Workshop Tags"
+                  parent="car_vconfig_menus"
+                  sequence="6" action="action_car_ws_tags_menu"/>
+
+
+
+        <!--Product Category Menu-->
+        <menuitem id="car_prod_cat_menu" name="Product Category"
+                  parent="car_vconfig_menus"
+                  sequence="7" action="product.product_category_action_form"/>
+
+
+        <!--Action Products Menu-->
+        <record model="ir.actions.act_window" id="action_car_vproducts_config">
+            <field name="name">Products</field>
+            <field name="res_model">product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree</field>
+        </record>
+
+
+        <!--Products Menu-->
+        <menuitem id="car_vproducts_menu" name="Products"
+                  parent="car_masters_menus"
+                  sequence="4" action="action_car_vproducts_config"/>
+
+
+    </data>
+</odoo>

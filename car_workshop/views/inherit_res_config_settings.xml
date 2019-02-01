@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.car_workshop</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="5"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Car Workshop" string="Car Workshop" data-key="car_workshop">
+                    <h2>Areas</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="areas_count" attrs="{'invisible':1}"/>
+                                <field name="unique_area_setting" attrs="{'readonly': [('areas_count', '>', 1)]}"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="unique_area_setting"/>
+                                <div class="text-muted">
+                                    Set the interactive Areas menu. If it's check and there is one Area. The menu Area go to the repairs
+                                    of that area.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Modules</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_aesthetic_changes_spanish"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_aesthetic_changes_spanish"/>
+                                <div class="text-muted">
+                                    Check this to install SDi Aesthetics changes for spanish version. This module change
+                                    the vehicle model form.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_tire_catalog"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_tire_catalog"/>
+                                <div class="text-muted">
+                                    Check this for install SDi Tire Catalog. A complete module to specify a product as a tire.
+                                    And filter it.
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_separate_project_and_car_workshop"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_separate_project_and_car_workshop"/>
+                                <div class="text-muted">
+                                    Check this for install SDi Separate Project and CarWorkshop. This will make it
+                                    impossible to see the projects or tasks of Car Workshops from the Projects menu.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_sdi_basic_account_and_inventory"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_sdi_basic_account_and_inventory"/>
+                                <div class="text-muted">
+                                    Check this for install SDi Contabilidad e Inventario Básico.
+                                    This module will add a new menu with accounting and billing functionality.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </xpath>
+        </field>
+        </record>
+
+        <!--Action Settings Menu-->
+        <record id="car_workshop_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="res_config_settings_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'car_workshop'}</field>
+        </record>
+
+        <!--Settings Menu-->
+        <menuitem id="car_settings_menu" name="Settings"
+                  parent="car_vconfig_menus"
+                  sequence="1" action="car_workshop_config_settings_action" groups="base.group_system"/>
+
+    </data>
+</odoo>

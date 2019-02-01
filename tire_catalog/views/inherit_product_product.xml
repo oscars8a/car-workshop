@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Product Product Form View -->
+        <record id="product_normal_form_view" model="ir.ui.view">
+            <field name="name">product.product.common.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_a_tire"/>
+                        <label for="is_a_tire"/>
+                    </div>
+                </xpath>
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page string="Tire Attributes" attrs="{'invisible':[('is_a_tire','=',False)]}"
+                          name="tire_attributes">
+                        <group>
+                            <field name="width"/>
+                            <field name="height"/>
+                            <field name="diameter"/>
+                        </group>
+                        <group>
+                            <field name="brand_id"/>
+                            <field name="season"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Search View -->
+        <record id="product_search_form_view" model="ir.ui.view">
+            <field name="name">Tire Catalog Search</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_search_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_tmpl_id']" position="after">
+                    <field name="width"/>
+                    <field name="height"/>
+                    <field name="diameter"/>
+                    <field name="brand_id"/>
+                    <field name="season"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Action Search Tire Menu-->
+        <record id="action_tire_view_wizard" model="ir.actions.act_window">
+            <field name="name">Tire Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tire_catalog.tire_wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="tire_wizard_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!--Action Tire Menu-->
+        <record model="ir.actions.act_window" id="action_tire_view">
+            <field name="name">Tires</field>
+            <field name="res_model">product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,form,tree</field>
+            <field name="domain">[("is_a_tire","=",True)]</field>
+            <field name="context">{
+                'default_is_a_tire':1
+                }</field>
+            <field name="target">current</field>
+        </record>
+
+
+        <!--Tires Menu-->
+        <menuitem id="car_tire_menu" name="Tires"
+                  parent="car_workshop.car_masters_menus"
+                  sequence="5" action="action_tire_view"/>
+
+        <!--Search Tires Menu-->
+        <menuitem id="car_search_tire_menu" name=" Search Tires"
+                  parent="car_workshop.car_masters_menus"
+                  sequence="6" action="action_tire_view_wizard"/>
+
+    </data>
+</odoo>

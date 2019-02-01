@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Fleet Vehicle Model Form View -->
+        <record id="fleet_vehicle_model_view_form" model="ir.ui.view">
+            <field name="name">fleet.vehicle.model.form</field>
+            <field name="model">fleet.vehicle.model</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_model_view_form"/>
+            <field name="arch" type="xml">
+                <field name="brand_id" position="replace"/>
+                <xpath expr="//label[@for='brand_id']" position="replace"/>
+                <xpath expr="//label[@for='name']" position="before">
+                    <label for="brand_id" class="oe_edit_only"/>
+                    <h2>
+                        <field name="brand_id" placeholder="e.j. Seat"/>
+                    </h2>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
