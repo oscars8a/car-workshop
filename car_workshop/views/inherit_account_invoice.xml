@@ -9,7 +9,12 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="priority" eval="70"/>
             <field name="arch" type="xml">
-
+                <xpath expr="//button[@name='invoice_print']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_invoice_sent']" position="after">
+                    <button name="workshop_invoice_print" string="Print Workshop Invoice" type="object" attrs="{'invisible':['|',('sent','=',True), ('state', 'not in', ('open','paid'))]}" class="oe_highlight" groups="base.group_user"/>
+                </xpath>
                 <field name="sent" position="after">
                     <field name="description"/>
                 </field>

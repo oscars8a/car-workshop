@@ -30,7 +30,6 @@
             />
             <field name="target">current</field>
         </record>
-
         <record id="view_partner_form" model="ir.ui.view">
             <field name="name"> view.partner.form </field>
             <field name="model">res.partner</field>
@@ -52,11 +51,7 @@
                         <field string="Repairs" name="repairs_count" widget="statinfo"/>
                     </button>
                 </xpath>
-                <field name="mobile" position="attributes">
-                    <attribute name="attrs">{'required':[True]}</attribute>
-                </field>
             </field>
         </record>
-        
     </data>
 </openerp>

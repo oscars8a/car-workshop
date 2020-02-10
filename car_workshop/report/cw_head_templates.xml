@@ -15,10 +15,15 @@
                                     <th colspan="2" class="cw_all_padding">Información del Vehículo</th>
                                 </tr>
                                 <tr>
-                                    <th class="cw_all_padding">VEHÍCULO</th>
+                                    <th class="cw_all_padding">MARCA</th>
                                     <td class="cw_all_padding">
-                                        <span id="vehiculo" t-field="doc.vehicle_id.model_id.brand_id"/>
-                                        <span t-field="doc.vehicle_id.model_id.name"/>
+                                        <span id="marca" t-field="doc.vehicle_id.model_id.brand_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="cw_all_padding">MODELO</th>
+                                    <td class="cw_all_padding">
+                                        <span id="modelo" t-field="doc.vehicle_id.model_id"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -27,14 +32,14 @@
                                         <span id="matricula" t-field="doc.vehicle_id.license_plate"/>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr t-if="cw_all_padding">
                                     <th class="cw_all_padding">BASTIDOR</th>
                                     <td class="cw_all_padding">
                                         <span id="bastidor" t-field="doc.vehicle_id.vin_sn"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="cw_all_padding">KM</th>
+                                    <th class="cw_all_padding">KILOMETRAJE</th>
                                     <td class="cw_all_padding">
                                         <span id="km" t-field="doc.vehicle_id.odometer"/>
                                     </td>
