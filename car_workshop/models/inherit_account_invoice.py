@@ -8,6 +8,11 @@ class AccountInvoice(models.Model):
     description = fields.Html(string="Description")
     vehicle_id = fields.Many2one(comodel_name="fleet.vehicle", string="Vehicle", required=False, )
 
+    def workshop_invoice_print(self):
+        self.ensure_one()
+        self.sent = True
+        return self.env.ref('car_workshop.cw_action_report_invoice').report_action(self)
+
 class SaleOrder(models.Model):
     _name = "sale.order"
     _inherit = "sale.order"
