@@ -10,7 +10,7 @@
                     <!--<div t-field="doc.vehicle_id"/>-->
                     <p>
                         <t t-if="doc.vehicle_id">
-                            <table style="width:100%">
+                            <table id="car_info">
                                 <tr>
                                     <th colspan="2" class="cw_all_padding">Información del Vehículo</th>
                                 </tr>
@@ -23,7 +23,7 @@
                                 <tr>
                                     <th class="cw_all_padding">MODELO</th>
                                     <td class="cw_all_padding">
-                                        <span id="modelo" t-field="doc.vehicle_id.model_id"/>
+                                        <span id="modelo" t-field="doc.vehicle_id.model_id.name"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -50,7 +50,7 @@
                         <!--<t t-else="">[No se ha encontrado información del vehículo]</t>-->
                     </p>
                 </div>
-                <div class="col-xs-5 col-xs-offset-1">
+                <div class="col-xs-5 col-xs-offset-1" id="customer_info">
                     <br/>
                     <p>
                         <span t-field="doc.partner_id.name"/>
